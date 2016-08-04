@@ -1,0 +1,1523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hello World</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://helloworld.zhoufei.name/"/>
+  <updated>2016-08-04T05:39:11.785Z</updated>
+  <id>http://helloworld.zhoufei.name/</id>
+  
+  <author>
+    <name>Phil</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu 16.04 LTS无线上网网速慢的解决办法</title>
+    <link href="http://helloworld.zhoufei.name/2016-04-22-ubuntu-wifi-slowly/"/>
+    <id>http://helloworld.zhoufei.name/2016-04-22-ubuntu-wifi-slowly/</id>
+    <published>2016-04-22T11:08:00.000Z</published>
+    <updated>2016-08-04T05:39:11.785Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>装了Ubuntu 16.04 LTS后连接无线上网, 跟另一台windows电脑相比, 发现出奇的慢, 现在附上解决办法。</p>
+</blockquote>
+<ol>
+<li>在终端运行：sudo gedit /etc/modprobe.d/iwlwifi.conf</li>
+<li>在打开的这个配置文件中空白处添加：options iwlwifi 11n_disable=1</li>
+<li>保存文件并重启。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;装了Ubuntu 16.04 LTS后连接无线上网, 跟另一台windows电脑相比, 发现出奇的慢, 现在附上解决办法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;在终端运行：sudo gedit /etc/modprobe.d/iw
+    
+    </summary>
+    
+      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://helloworld.zhoufei.name/tags/Ubuntu/"/>
+    
+      <category term="Wifi" scheme="http://helloworld.zhoufei.name/tags/Wifi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>富文本编辑器-百度Ueditor的使用</title>
+    <link href="http://helloworld.zhoufei.name/2015-05-29-baidu-ueditor-use/"/>
+    <id>http://helloworld.zhoufei.name/2015-05-29-baidu-ueditor-use/</id>
+    <published>2015-05-29T11:08:00.000Z</published>
+    <updated>2016-08-04T05:39:11.784Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>UEditor是由百度web前端研发部开发所见即所得富文本web编辑器，具有轻量，可定制，注重用户体验等特点，开源基于MIT协议，允许自由使用和修改代码…</p>
+</blockquote>
+<p>1. 首先，你要有一个项目，本文中假设我们有个项目article，是在tomcat环境下模拟的一个项目。</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-01.png" alt="Alt text"></p>
+<p>2. 在Ueditor主页下载最新的版本，解压缩，等待拷贝到项目中。</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-02.png" alt="Alt text"></p>
+<p>3. 在article项目中新建文件夹ueditor，把解压的文件拷贝过去。然后把解压包下的jsp文件夹下的jar包拷贝到你的项目中WEB-INF/lib文件夹中。新建static放入编辑器上传的文件。</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-03.png" alt="Alt text"></p>
+<p>原来的jar的路径：</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-04.png" alt="Alt text"></p>
+<p>拷贝到项目中的lib中：</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-05.png" alt="Alt text"></p>
+<p>4. 配置文件的使用，打开ueditor.config.js，然后编辑toolbar，选择你所需要的工具。以下是官网完整版的工具栏和自定义的工具，可以用中括号分行显示，也可以用竖线分开不同类别的工具，见下图：</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-06.png" alt="Alt text"></p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-07.png" alt="Alt text"></p>
+<p>5. 上传文件主要介绍下图片，在static中新建image文件夹以存放文章里的图片。</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-08.png" alt="Alt text"></p>
+<p>6. 然后打开jsp/config.json文件配置图片上传。</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-09.png" alt="Alt text"></p>
+<p>7. 配置项如图，文件上传路径根据自己的需要，相对于项目根路径设置，本文设置的是/static/image/文件夹保存图片，取图时根据url+相对路径访问。</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-10.png" alt="Alt text"></p>
+<p>8. 启动Tomcat</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-11.png" alt="Alt text"></p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-12.png" alt="Alt text"></p>
+<p>9. 新建网页，并正确引入JS文件</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-13.png" alt="Alt text"></p>
+<p>10. 本文中不在新建，使用index.html进行测试</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-14.png" alt="Alt text"></p>
+<p>11. 预览：</p>
+<p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-15.png" alt="Alt text"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;UEditor是由百度web前端研发部开发所见即所得富文本web编辑器，具有轻量，可定制，注重用户体验等特点，开源基于MIT协议，允许自由使用和修改代码…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1. 首先，你要有一个项目，本文中假设我们有个项目
+    
+    </summary>
+    
+      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+    
+    
+      <category term="Ueditor" scheme="http://helloworld.zhoufei.name/tags/Ueditor/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>天气预报接口2</title>
+    <link href="http://helloworld.zhoufei.name/2015-04-13-weather-forecast-interface/"/>
+    <id>http://helloworld.zhoufei.name/2015-04-13-weather-forecast-interface/</id>
+    <published>2015-04-13T03:13:00.000Z</published>
+    <updated>2016-08-04T05:39:11.782Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>看了前两个天气预报接口的童鞋估计不会再看这篇文章了，其实这篇文档也挺有用的，用的是中国天气网-气象数据开放平台的接口，相信这个接口是比较稳定的，也可以放心使用。</p>
+</blockquote>
+<p>1.直接给出代码:</p>
+<pre><code>package name.zhoufei.weather;
+import name.zhoufei.util.HttpPost;
+import name.zhoufei.util.StringUtils;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import java.net.URLEncoder;
+import java.security.InvalidKeyException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by Administrator on 2015/4/13.
+ */
+public class ChinaWeather {
+
+    private static final char last2byte = (char) Integer.parseInt(&quot;00000011&quot;, 2);
+    private static final char last4byte = (char) Integer.parseInt(&quot;00001111&quot;, 2);
+    private static final char last6byte = (char) Integer.parseInt(&quot;00111111&quot;, 2);
+    private static final char lead6byte = (char) Integer.parseInt(&quot;11111100&quot;, 2);
+    private static final char lead4byte = (char) Integer.parseInt(&quot;11110000&quot;, 2);
+    private static final char lead2byte = (char) Integer.parseInt(&quot;11000000&quot;, 2);
+    private static final char[] encodeTable = new char[] { &apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;,
+        &apos;E&apos;, &apos;F&apos;, &apos;G&apos;, &apos;H&apos;, &apos;I&apos;, &apos;J&apos;, &apos;K&apos;, &apos;L&apos;, &apos;M&apos;, &apos;N&apos;, &apos;O&apos;, &apos;P&apos;, &apos;Q&apos;,
+        &apos;R&apos;, &apos;S&apos;, &apos;T&apos;, &apos;U&apos;, &apos;V&apos;, &apos;W&apos;, &apos;X&apos;, &apos;Y&apos;, &apos;Z&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;,
+        &apos;e&apos;, &apos;f&apos;, &apos;g&apos;, &apos;h&apos;, &apos;i&apos;, &apos;j&apos;, &apos;k&apos;, &apos;l&apos;, &apos;m&apos;, &apos;n&apos;, &apos;o&apos;, &apos;p&apos;, &apos;q&apos;,
+        &apos;r&apos;, &apos;s&apos;, &apos;t&apos;, &apos;u&apos;, &apos;v&apos;, &apos;w&apos;, &apos;x&apos;, &apos;y&apos;, &apos;z&apos;, &apos;0&apos;, &apos;1&apos;, &apos;2&apos;, &apos;3&apos;,
+        &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;, &apos;+&apos;, &apos;/&apos;
+    };
+
+    public static String standardURLEncoder(String data, String key) {
+    byte[] byteHMAC = null;
+    String urlEncoder = &quot;&quot;;
+    try {
+        Mac mac = Mac.getInstance(&quot;HmacSHA1&quot;);
+        SecretKeySpec spec = new SecretKeySpec(key.getBytes(), &quot;HmacSHA1&quot;);
+        mac.init(spec);
+        byteHMAC = mac.doFinal(data.getBytes());
+        if (byteHMAC != null) {
+        String oauth = encode(byteHMAC);
+        if (oauth != null) {
+            urlEncoder = URLEncoder.encode(oauth, &quot;utf8&quot;);
+        }
+        }
+    } catch (InvalidKeyException e1) {
+        e1.printStackTrace();
+    } catch (Exception e2) {
+        e2.printStackTrace();
+    }
+    return urlEncoder;
+    }
+
+    public static String encode(byte[] from) {
+    StringBuffer to = new StringBuffer((int) (from.length * 1.34) + 3);
+    int num = 0;
+    char currentByte = 0;
+    for (int i = 0; i &amp;lt; from.length; i++) {
+        num = num % 8;
+        while (num &amp;lt; 8) {
+        switch (num) {
+            case 0:
+                currentByte = (char) (from[i] &amp;amp; lead6byte);
+                currentByte = (char) (currentByte &amp;gt;&amp;gt;&amp;gt; 2);
+                break;
+            case 2:
+                currentByte = (char) (from[i] &amp;amp; last6byte);
+                break;
+            case 4:
+                currentByte = (char) (from[i] &amp;amp; last4byte);
+                currentByte = (char) (currentByte &amp;lt;&amp;lt; 2);
+                if ((i + 1) &amp;lt; from.length) {
+                    currentByte |= (from[i + 1] &amp;amp; lead2byte) &amp;gt;&amp;gt;&amp;gt; 6;
+                }
+                break;
+            case 6:
+                currentByte = (char) (from[i] &amp;amp; last2byte);
+                currentByte = (char) (currentByte &amp;lt;&amp;lt; 4);
+                if ((i + 1) &amp;lt; from.length) {
+                    currentByte |= (from[i + 1] &amp;amp; lead4byte) &amp;gt;&amp;gt;&amp;gt; 4;
+                }
+                break;
+        }
+        to.append(encodeTable[currentByte]);
+        num += 6;
+        }
+    }
+    if (to.length() % 4 != 0) {
+        for (int i = 4 - to.length() % 4; i &amp;gt; 0; i--) {
+        to.append(&quot;=&quot;);
+        }
+    }
+    return to.toString();
+    }
+
+
+    /**
+     * 以上是中国天气网气象数据开放平台给出的JAVA的demo  地址：http://openweather.weather.com.cn/
+     */
+
+
+    public static void main(String[] args) {
+    SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyyMMddhhmm&quot;);
+    String date = dateFormat.format(new Date());
+
+    //需要加密的数据
+    String data = &quot;http://open.weather.com.cn/data/?areaid=&quot;+getAreaId()+&quot;&amp;amp;type=forecast_v&amp;amp;date=&quot;+date+&quot;&amp;amp;appid=b39305a0fffb05&quot;;
+    //密钥
+    String key = &quot;d6858_SmartWeatherAPI_bef440&quot;;
+
+    String url = &quot;http://open.weather.com.cn/data/?areaid=&quot;+getAreaId()+&quot;&amp;amp;type=forecast_v&amp;amp;date=&quot;+date+&quot;&amp;amp;appid=b39305&amp;amp;key=&quot; + standardURLEncoder(data, key);
+
+    String content = HttpPost.sendGET(url, &quot;utf8&quot;);
+
+    JSONObject jsonObject = JSON.parseObject(content);
+
+    JSONObject city = jsonObject.getJSONObject(&quot;c&quot;);
+    JSONObject weather = jsonObject.getJSONObject(&quot;f&quot;).getJSONArray(&quot;f1&quot;).getJSONObject(0);
+
+    Map&amp;lt;String, Object&amp;gt; dataMap = new HashMap&amp;lt;&amp;gt;();
+    dataMap.put(&quot;city&quot;,city.get(&quot;c3&quot;));
+
+
+    if (!StringUtils.isEmpty(weather.getString(&quot;fa&quot;))){
+        dataMap.put(&quot;weather&quot;,weather.getString(&quot;fa&quot;));
+    }else if (StringUtils.isEmpty(weather.getString(&quot;fa&quot;)) &amp;amp;&amp;amp; !StringUtils.isEmpty(weather.getString(&quot;fb&quot;))){
+        dataMap.put(&quot;weather&quot;,weather.getString(&quot;fb&quot;));
+    }
+
+    if (!StringUtils.isEmpty(weather.getString(&quot;fc&quot;))){
+        dataMap.put(&quot;temperature&quot;,weather.getString(&quot;fc&quot;)+&quot;~&quot;+weather.getString(&quot;fd&quot;)+&quot;℃&quot;);
+    }else if (StringUtils.isEmpty(weather.getString(&quot;fc&quot;)) &amp;amp;&amp;amp; !StringUtils.isEmpty(weather.getString(&quot;fd&quot;))){
+        dataMap.put(&quot;temperature&quot;,weather.getString(&quot;fd&quot;)+&quot;℃&quot;);
+    }
+
+    System.out.println(&quot;city:&quot;+dataMap.get(&quot;city&quot;));
+    System.out.println(&quot;weather:&quot;+dataMap.get(&quot;weather&quot;));
+    System.out.println(&quot;temperature:&quot;+dataMap.get(&quot;temperature&quot;));
+    }
+
+    /**
+     * 根据网络请求获得IP地址，同时得到该网关下的城市ID
+     * @return 城市ID
+     */
+    public static String getAreaId(){
+    String result = HttpPost.sendGET(&quot;http://61.4.185.48:81/g/&quot;,&quot;UTF-8&quot;);
+    return result.substring(result.indexOf(&quot;id=&quot;)+3,result.indexOf(&quot;;if&quot;));
+    }
+
+}
+</code></pre><p>2. 从中国天气网的接口得到的JSON如下：</p>
+<pre><code>{
+ &quot;c&quot;: {
+ &quot;c1&quot;: &quot;101010100&quot;,
+ &quot;c2&quot;: &quot;beijing&quot;,
+ &quot;c3&quot;: &quot;北京&quot;,
+ &quot;c4&quot;: &quot;beijing&quot;,
+ &quot;c5&quot;: &quot;北京&quot;,
+ &quot;c6&quot;: &quot;beijing&quot;,
+ &quot;c7&quot;: &quot;北京&quot;,
+ &quot;c8&quot;: &quot;china&quot;,
+ &quot;c9&quot;: &quot;中国&quot;,
+ &quot;c10&quot;: &quot;1&quot;,
+ &quot;c11&quot;: &quot;010&quot;,
+ &quot;c12&quot;: &quot;100000&quot;,
+ &quot;c13&quot;: 116.391,
+ &quot;c14&quot;: 39.904,
+ &quot;c15&quot;: &quot;33&quot;,
+ &quot;c16&quot;: &quot;AZ9010&quot;,
+ &quot;c17&quot;: &quot;+8&quot;
+ },
+ &quot;f&quot;: {
+ &quot;f1&quot;: [
+ {
+ &quot;fa&quot;: &quot;01&quot;,
+ &quot;fb&quot;: &quot;00&quot;,
+ &quot;fc&quot;: &quot;18&quot;,
+ &quot;fd&quot;: &quot;5&quot;,
+ &quot;fe&quot;: &quot;8&quot;,
+ &quot;ff&quot;: &quot;0&quot;,
+ &quot;fg&quot;: &quot;1&quot;,
+ &quot;fh&quot;: &quot;0&quot;,
+ &quot;fi&quot;: &quot;05:40|18:49&quot;
+ },
+ {
+ &quot;fa&quot;: &quot;00&quot;,
+ &quot;fb&quot;: &quot;01&quot;,
+ &quot;fc&quot;: &quot;24&quot;,
+ &quot;fd&quot;: &quot;10&quot;,
+ &quot;fe&quot;: &quot;0&quot;,
+ &quot;ff&quot;: &quot;0&quot;,
+ &quot;fg&quot;: &quot;0&quot;,
+ &quot;fh&quot;: &quot;0&quot;,
+ &quot;fi&quot;: &quot;05:38|18:50&quot;
+ },
+ {
+ &quot;fa&quot;: &quot;02&quot;,
+ &quot;fb&quot;: &quot;00&quot;,
+ &quot;fc&quot;: &quot;25&quot;,
+ &quot;fd&quot;: &quot;13&quot;,
+ &quot;fe&quot;: &quot;8&quot;,
+ &quot;ff&quot;: &quot;8&quot;,
+ &quot;fg&quot;: &quot;1&quot;,
+ &quot;fh&quot;: &quot;2&quot;,
+ &quot;fi&quot;: &quot;05:37|18:51&quot;
+ }
+ ],
+ &quot;f0&quot;: &quot;201504130800&quot;
+ }
+}
+</code></pre><p>3. 解析之后的结果如下：</p>
+<pre><code>city:上海
+weather:07
+temperature:15~8℃
+</code></pre><p>4. 其中weather是天气编码，对应的天气情况如下表：</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>中文名称</th>
+<th>英文名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>晴</td>
+<td>Sunny</td>
+</tr>
+<tr>
+<td>01</td>
+<td>多云</td>
+<td>Cloudy</td>
+</tr>
+<tr>
+<td>02</td>
+<td>阴</td>
+<td>Overcast</td>
+</tr>
+<tr>
+<td>03</td>
+<td>阵雨</td>
+<td>Shower</td>
+</tr>
+<tr>
+<td>04</td>
+<td>雷阵雨</td>
+<td>Thundershower</td>
+</tr>
+<tr>
+<td>05</td>
+<td>雷阵雨伴有冰雹</td>
+<td>Thundershower with hail</td>
+</tr>
+<tr>
+<td>06</td>
+<td>雨夹雪</td>
+<td>Sleet</td>
+</tr>
+<tr>
+<td>07</td>
+<td>小雨</td>
+<td>Light rain</td>
+</tr>
+<tr>
+<td>08</td>
+<td>中雨</td>
+<td>Moderate rain</td>
+</tr>
+<tr>
+<td>09</td>
+<td>大雨</td>
+<td>Heavy rain</td>
+</tr>
+<tr>
+<td>10</td>
+<td>暴雨</td>
+<td>Storm</td>
+</tr>
+<tr>
+<td>11</td>
+<td>大暴雨</td>
+<td>Heavy storm</td>
+</tr>
+<tr>
+<td>12</td>
+<td>特大暴雨</td>
+<td>Severe storm</td>
+</tr>
+<tr>
+<td>13</td>
+<td>阵雪</td>
+<td>Snow flurry</td>
+</tr>
+<tr>
+<td>14</td>
+<td>小雪</td>
+<td>Light snow</td>
+</tr>
+<tr>
+<td>15</td>
+<td>中雪</td>
+<td>Moderate snow</td>
+</tr>
+<tr>
+<td>16</td>
+<td>大雪</td>
+<td>Heavy snow</td>
+</tr>
+<tr>
+<td>17</td>
+<td>暴雪</td>
+<td>Snowstorm</td>
+</tr>
+<tr>
+<td>18</td>
+<td>雾</td>
+<td>Foggy</td>
+</tr>
+<tr>
+<td>19</td>
+<td>冻雨</td>
+<td>Ice rain</td>
+</tr>
+<tr>
+<td>20</td>
+<td>沙尘暴</td>
+<td>Dust Storm</td>
+</tr>
+<tr>
+<td>21</td>
+<td>小到中雨</td>
+<td>Light to moderate rain</td>
+</tr>
+<tr>
+<td>22</td>
+<td>中到大雨</td>
+<td>Moderate to heavy rain</td>
+</tr>
+<tr>
+<td>23</td>
+<td>大到暴雨</td>
+<td>Heavy rain to storm</td>
+</tr>
+<tr>
+<td>24</td>
+<td>暴雨到大暴雨</td>
+<td>Storm to heavy storm</td>
+</tr>
+<tr>
+<td>25</td>
+<td>大暴雨到特大暴雨</td>
+<td>Heavy to severe storm</td>
+</tr>
+<tr>
+<td>26</td>
+<td>小到中雪</td>
+<td>Light to moderate snow</td>
+</tr>
+<tr>
+<td>27</td>
+<td>中到大雪</td>
+<td>Moderate to heavy snow</td>
+</tr>
+<tr>
+<td>28</td>
+<td>大到暴雪</td>
+<td>Heavy snow to snowstorm</td>
+</tr>
+<tr>
+<td>29</td>
+<td>浮尘</td>
+<td>Dust</td>
+</tr>
+<tr>
+<td>30</td>
+<td>扬沙</td>
+<td>Sandv</td>
+</tr>
+<tr>
+<td>31</td>
+<td>强沙尘暴</td>
+<td>Sandstormv</td>
+</tr>
+<tr>
+<td>32</td>
+<td>霾</td>
+<td>Haze</td>
+</tr>
+<tr>
+<td>33</td>
+<td>无</td>
+<td>Unknown</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;看了前两个天气预报接口的童鞋估计不会再看这篇文章了，其实这篇文档也挺有用的，用的是中国天气网-气象数据开放平台的接口，相信这个接口是比较稳定的，也可以放心使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1.直接给出代码:&lt;/p&gt;
+&lt;pre&gt;&lt;co
+    
+    </summary>
+    
+      <category term="Coding" scheme="http://helloworld.zhoufei.name/categories/Coding/"/>
+    
+    
+      <category term="Weather" scheme="http://helloworld.zhoufei.name/tags/Weather/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>天气预报接口1</title>
+    <link href="http://helloworld.zhoufei.name/2015-03-06-weather-forecast-interface/"/>
+    <id>http://helloworld.zhoufei.name/2015-03-06-weather-forecast-interface/</id>
+    <published>2015-03-06T03:13:00.000Z</published>
+    <updated>2016-08-04T05:39:11.780Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>最近使用天气预报接口很不如意啊，稳定的要收费，免费的又不稳定, 记录下自己的做法……</p>
+</blockquote>
+<p>1. 根据网络请求获得当前城市的ID,方法,额,百度吧.或者直接搜天气咯.</p>
+<p>2. 根据百度搜索天气预报第一条获得的数据，进去<a href="http://www.weather.com.cn/weather1d/101020100.shtml进行网页抓取" target="_blank" rel="external">http://www.weather.com.cn/weather1d/101020100.shtml进行网页抓取</a></p>
+<p><img src="/images/post_images/2015-03-06-weather-forecast-interface-01.png" alt="Alt text"></p>
+<p>3. 根据今天的白天和夜晚得到的数据进行组合,具体要显示哪些信息,由自己根据需求拼在一起.</p>
+<p><img src="/images/post_images/2015-03-06-weather-forecast-interface-02.png" alt="Alt text"></p>
+<p>4. 代码如下：</p>
+<pre><code>package name.zhoufei.weather;
+
+import name.zhoufei.util.HttpPost;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+/**
+ * Created by ZhouFei on 2015/3/6.
+ */
+public class Weather {
+
+    public static void main(String[] args){
+    getWeather(getAreaId());
+    }
+
+    /**
+     * 根据网络请求获得IP地址，同时得到该网关下的城市ID
+     * @return 城市ID
+     */
+    public static String getAreaId(){
+    String result = HttpPost.sendGET(&quot;http://61.4.185.48:81/g/&quot;,&quot;UTF-8&quot;);
+    return result.substring(result.indexOf(&quot;id=&quot;)+3,result.indexOf(&quot;;if&quot;));
+    }
+
+    /**
+     * 调用百度搜索&quot;上海天气&quot;第一条，进去http://www.weather.com.cn/weather1d/101020100.shtml 进行网页抓取（本吊初级程序员）
+     * @param areaId 城市ID
+     */
+    public static void getWeather(String areaId){
+    String URL = &quot;http://www.weather.com.cn/weather1d/&quot;+areaId+&quot;.shtml&quot;;
+    String content = HttpPost.sendGET(URL, &quot;utf8&quot;);
+    String weatherHtml  = content.substring(content.indexOf(&quot;&amp;lt;!-- 今天明天预报 begin--&amp;gt;&quot;)+20,content.indexOf(&quot;&amp;lt;!-- 今天明天预报 end--&amp;gt;&quot;));
+    content = content.replaceAll(&quot;\\s*&quot;, &quot;&quot;);
+    String city  = content.substring(content.indexOf(&quot;&amp;lt;h1&amp;gt;城区&amp;lt;/h1&amp;gt;&amp;lt;h3&amp;gt;&quot;)+15,content.indexOf(&quot;&amp;lt;/h3&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;!--嵌套周边景点divbegin--&amp;gt;&quot;));
+    String THtml  = weatherHtml.substring(weatherHtml.indexOf(&quot;&amp;lt;li&quot;),weatherHtml.indexOf(&quot;&amp;lt;/li&amp;gt;&quot;)+5);
+    String NHtml  = weatherHtml.substring(weatherHtml.lastIndexOf(&quot;&amp;lt;li&quot;),weatherHtml.lastIndexOf(&quot;&amp;lt;/li&amp;gt;&quot;)+5);
+    Document doc = Jsoup.parse(THtml);
+    String dw = doc.select(&quot;p&quot;).first().text();//dw = day weather
+    String dt = doc.select(&quot;p&quot;).get(1).text(); //da = day temperature
+    Document doc1 = Jsoup.parse(NHtml);
+    String nw = doc1.select(&quot;p&quot;).first().text();//night weather
+    String nt = doc1.select(&quot;p&quot;).get(1).text();//night temperature
+    System.out.println(&quot;city：&quot;+city);
+    if(dw.contains(&quot;，&quot;)){
+        dw = dw.substring(0,dw.indexOf(&quot;，&quot;)); //把天气中   阴，有雾霾  这样的 ，后面的内容去掉，让白天的天气和完善的天气组合起来形成一天的天气
+    }
+    if(nw.contains(&quot;，&quot;)){
+        nw = nw.substring(0,nw.indexOf(&quot;，&quot;)); //把天气中   阴，有雾霾  这样的 ，后面的内容去掉，让白天的天气和完善的天气组合起来形成一天的天气
+    }
+    System.out.println(&quot;weather：&quot;+dw+&quot;-&quot;+nw);
+    System.out.println(&quot;temperature：&quot;+(dt+&quot;~&quot;+nt).replaceAll(&quot;\\s*&quot;, &quot;&quot;).replaceAll(&quot;°C&quot;,&quot;℃&quot;));
+    }
+}
+</code></pre><p>5. 得到的结果如图显示</p>
+<p><img src="/images/post_images/2015-03-06-weather-forecast-interface-03.png" alt="Alt text"></p>
+<p>6. 4月5号对此篇文章中稍作优化，但是有时候还是会有不美观的地方(网络/解析等原因)。代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> name.zhoufei.weather;</div><div class="line"></div><div class="line"><span class="keyword">import</span> name.zhoufei.util.HttpPost;</div><div class="line"><span class="keyword">import</span> org.jsoup.Jsoup;</div><div class="line"><span class="keyword">import</span> org.jsoup.nodes.Document;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by ZhouFei on 2015/3/6.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Weather</span> </span>&#123;</div><div class="line"></div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line"> getWeather1D(getAreaId());</div><div class="line"> getWeather(getAreaId());</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> <span class="comment">/**</span></div><div class="line"> * 根据网络请求获得IP地址，同时得到该网关下的城市ID</div><div class="line"> * <span class="doctag">@return</span> 城市ID</div><div class="line"> */</div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getAreaId</span><span class="params">()</span></span>&#123;</div><div class="line"> String result = HttpPost.sendGET(<span class="string">"http://61.4.185.48:81/g/"</span>,<span class="string">"UTF-8"</span>);</div><div class="line"> <span class="keyword">return</span> result.substring(result.indexOf(<span class="string">"id="</span>)+<span class="number">3</span>,result.indexOf(<span class="string">";if"</span>));</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> <span class="comment">/**</span></div><div class="line"> * 调用百度搜索"上海天气"第一条，进去http://www.weather.com.cn/weather1d/101020100.shtml 进行网页抓取（本吊初级程序员）</div><div class="line"> * <span class="doctag">@param</span> areaId 城市ID</div><div class="line"> */</div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getWeather1D</span><span class="params">(String areaId)</span></span>&#123;</div><div class="line"> String URL = <span class="string">"http://www.weather.com.cn/weather1d/"</span>+areaId+<span class="string">".shtml"</span>;</div><div class="line"> String content = HttpPost.sendGET(URL, <span class="string">"utf8"</span>);</div><div class="line"> String weatherHtml = content.substring(content.indexOf(<span class="string">"&amp;lt;!-- 今天明天预报 begin--&amp;gt;"</span>)+<span class="number">20</span>,content.indexOf(<span class="string">"&amp;lt;!-- 今天明天预报 end--&amp;gt;"</span>));</div><div class="line"> content = content.replaceAll(<span class="string">"\\s*"</span>, <span class="string">""</span>);</div><div class="line"> String city = content.substring(content.indexOf(<span class="string">"&amp;lt;h1&amp;gt;城区&amp;lt;/h1&amp;gt;&amp;lt;h3&amp;gt;"</span>)+<span class="number">15</span>,content.indexOf(<span class="string">"&amp;lt;/h3&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;!--嵌套周边景点divbegin--&amp;gt;"</span>));</div><div class="line"> String THtml = weatherHtml.substring(weatherHtml.indexOf(<span class="string">"&amp;lt;li"</span>),weatherHtml.indexOf(<span class="string">"&amp;lt;/li&amp;gt;"</span>)+<span class="number">5</span>);</div><div class="line"> String NHtml = weatherHtml.substring(weatherHtml.lastIndexOf(<span class="string">"&amp;lt;li"</span>),weatherHtml.lastIndexOf(<span class="string">"&amp;lt;/li&amp;gt;"</span>)+<span class="number">5</span>);</div><div class="line"> Document doc = Jsoup.parse(THtml);</div><div class="line"> String dw = doc.select(<span class="string">"p"</span>).first().text();<span class="comment">//dw = day weather</span></div><div class="line"> String dt = doc.select(<span class="string">"p"</span>).get(<span class="number">1</span>).text(); <span class="comment">//da = day temperature</span></div><div class="line"> Document doc1 = Jsoup.parse(NHtml);</div><div class="line"> String nw = doc1.select(<span class="string">"p"</span>).first().text();<span class="comment">//night weather</span></div><div class="line"> String nt = doc1.select(<span class="string">"p"</span>).get(<span class="number">1</span>).text();<span class="comment">//night temperature</span></div><div class="line"> System.out.println(<span class="string">"city："</span>+city);</div><div class="line"> <span class="keyword">if</span>(dw.contains(<span class="string">"，"</span>))&#123;</div><div class="line"> dw = dw.substring(<span class="number">0</span>,dw.indexOf(<span class="string">"，"</span>)); <span class="comment">//把天气中 阴，有雾霾 这样的 ，后面的内容去掉，让白天的天气和完善的天气组合起来形成一天的天气</span></div><div class="line"> &#125;</div><div class="line"> <span class="keyword">if</span>(nw.contains(<span class="string">"，"</span>))&#123;</div><div class="line"> nw = nw.substring(<span class="number">0</span>,nw.indexOf(<span class="string">"，"</span>)); <span class="comment">//把天气中 阴，有雾霾 这样的 ，后面的内容去掉，让白天的天气和完善的天气组合起来形成一天的天气</span></div><div class="line"> &#125;</div><div class="line"> System.out.println(<span class="string">"weather："</span>+dw+<span class="string">"-"</span>+nw);</div><div class="line"> System.out.println(<span class="string">"temperature："</span>+(dt+<span class="string">"~"</span>+nt).replaceAll(<span class="string">"\\s*"</span>, <span class="string">""</span>).replaceAll(<span class="string">"°C"</span>,<span class="string">"℃"</span>));</div><div class="line"> &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"> <span class="comment">/**</span></div><div class="line"> * 调用百度搜索"上海天气"第一条，进去http://www.weather.com.cn/weather1d/101020100.shtml，</div><div class="line"> * 然后点击七天预报 进入http://www.weather.com.cn/weather/101020100.shtml 进行网页抓取</div><div class="line"> * <span class="doctag">@param</span> areaId 城市ID</div><div class="line"> */</div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getWeather</span><span class="params">(String areaId)</span></span>&#123;</div><div class="line"> String URL = <span class="string">"http://www.weather.com.cn/weather/"</span>+areaId+<span class="string">".shtml"</span>;</div><div class="line"> <span class="keyword">try</span> &#123;</div><div class="line"> Document doc = Jsoup.connect(URL).get();</div><div class="line"> <span class="comment">//System.out.println(doc);</span></div><div class="line"> System.out.println(<span class="string">"找到ID为7d的NODE："</span>+doc.getElementById(<span class="string">"7d"</span>).select(<span class="string">"li"</span>).first());</div><div class="line"> System.out.println(<span class="string">"城市："</span>+doc.getElementsByClass(<span class="string">"cityName"</span>).select(<span class="string">"h3"</span>).get(<span class="number">0</span>).text());</div><div class="line"> String weather = doc.getElementById(<span class="string">"7d"</span>).select(<span class="string">"p"</span>).first().text();</div><div class="line"> System.out.println(<span class="string">"天气："</span>+weather);</div><div class="line"> String t1 = doc.getElementById(<span class="string">"7d"</span>).select(<span class="string">"span"</span>).get(<span class="number">0</span>).text();</div><div class="line"> <span class="comment">//System.out.println(t1);</span></div><div class="line"> String t2 = doc.getElementById(<span class="string">"7d"</span>).select(<span class="string">"span"</span>).get(<span class="number">1</span>).text();</div><div class="line"> <span class="comment">//System.out.println(t2);</span></div><div class="line"> String temp = <span class="keyword">null</span>;</div><div class="line"> <span class="keyword">if</span>(t1==<span class="keyword">null</span>)&#123;</div><div class="line"> temp=t2+<span class="string">"℃"</span>;</div><div class="line"> &#125;<span class="keyword">else</span>&#123;</div><div class="line"> temp=t1+<span class="string">"℃~"</span>+t2+<span class="string">"℃"</span>;</div><div class="line"> &#125;</div><div class="line"> System.out.println(<span class="string">"温度："</span>+temp);</div><div class="line"> &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line"> e.printStackTrace();</div><div class="line"> &#125;</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>7.测试如下图,另外可以使用UC首页和中国天气网合作的接口，也可以使用百度等一切天气接口，为了更加的稳定，建议使用付费接口。</p>
+<p><img src="/images/post_images/2015-03-06-weather-forecast-interface-04.png" alt="Alt text"></p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>中文名称</th>
+<th>英文名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>晴</td>
+<td>Sunny</td>
+</tr>
+<tr>
+<td>01</td>
+<td>多云</td>
+<td>Cloudy</td>
+</tr>
+<tr>
+<td>02</td>
+<td>阴</td>
+<td>Overcast</td>
+</tr>
+<tr>
+<td>03</td>
+<td>阵雨</td>
+<td>Shower</td>
+</tr>
+<tr>
+<td>04</td>
+<td>雷阵雨</td>
+<td>Thundershower</td>
+</tr>
+<tr>
+<td>05</td>
+<td>雷阵雨伴有冰雹</td>
+<td>Thundershower with hail</td>
+</tr>
+<tr>
+<td>06</td>
+<td>雨夹雪</td>
+<td>Sleet</td>
+</tr>
+<tr>
+<td>07</td>
+<td>小雨</td>
+<td>Light rain</td>
+</tr>
+<tr>
+<td>08</td>
+<td>中雨</td>
+<td>Moderate rain</td>
+</tr>
+<tr>
+<td>09</td>
+<td>大雨</td>
+<td>Heavy rain</td>
+</tr>
+<tr>
+<td>10</td>
+<td>暴雨</td>
+<td>Storm</td>
+</tr>
+<tr>
+<td>11</td>
+<td>大暴雨</td>
+<td>Heavy storm</td>
+</tr>
+<tr>
+<td>12</td>
+<td>特大暴雨</td>
+<td>Severe storm</td>
+</tr>
+<tr>
+<td>13</td>
+<td>阵雪</td>
+<td>Snow flurry</td>
+</tr>
+<tr>
+<td>14</td>
+<td>小雪</td>
+<td>Light snow</td>
+</tr>
+<tr>
+<td>15</td>
+<td>中雪</td>
+<td>Moderate snow</td>
+</tr>
+<tr>
+<td>16</td>
+<td>大雪</td>
+<td>Heavy snow</td>
+</tr>
+<tr>
+<td>17</td>
+<td>暴雪</td>
+<td>Snowstorm</td>
+</tr>
+<tr>
+<td>18</td>
+<td>雾</td>
+<td>Foggy</td>
+</tr>
+<tr>
+<td>19</td>
+<td>冻雨</td>
+<td>Ice rain</td>
+</tr>
+<tr>
+<td>20</td>
+<td>沙尘暴</td>
+<td>Dust Storm</td>
+</tr>
+<tr>
+<td>21</td>
+<td>小到中雨</td>
+<td>Light to moderate rain</td>
+</tr>
+<tr>
+<td>22</td>
+<td>中到大雨</td>
+<td>Moderate to heavy rain</td>
+</tr>
+<tr>
+<td>23</td>
+<td>大到暴雨</td>
+<td>Heavy rain to storm</td>
+</tr>
+<tr>
+<td>24</td>
+<td>暴雨到大暴雨</td>
+<td>Storm to heavy storm</td>
+</tr>
+<tr>
+<td>25</td>
+<td>大暴雨到特大暴雨</td>
+<td>Heavy to severe storm</td>
+</tr>
+<tr>
+<td>26</td>
+<td>小到中雪</td>
+<td>Light to moderate snow</td>
+</tr>
+<tr>
+<td>27</td>
+<td>中到大雪</td>
+<td>Moderate to heavy snow</td>
+</tr>
+<tr>
+<td>28</td>
+<td>大到暴雪</td>
+<td>Heavy snow to snowstorm</td>
+</tr>
+<tr>
+<td>29</td>
+<td>浮尘</td>
+<td>Dust</td>
+</tr>
+<tr>
+<td>30</td>
+<td>扬沙</td>
+<td>Sandv</td>
+</tr>
+<tr>
+<td>31</td>
+<td>强沙尘暴</td>
+<td>Sandstormv</td>
+</tr>
+<tr>
+<td>32</td>
+<td>霾</td>
+<td>Haze</td>
+</tr>
+<tr>
+<td>33</td>
+<td>无</td>
+<td>Unknown</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;最近使用天气预报接口很不如意啊，稳定的要收费，免费的又不稳定, 记录下自己的做法……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1. 根据网络请求获得当前城市的ID,方法,额,百度吧.或者直接搜天气咯.&lt;/p&gt;
+&lt;p&gt;2. 根据百度搜索天气预报第一
+    
+    </summary>
+    
+      <category term="Coding" scheme="http://helloworld.zhoufei.name/categories/Coding/"/>
+    
+    
+      <category term="Weather" scheme="http://helloworld.zhoufei.name/tags/Weather/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu主题图标美化</title>
+    <link href="http://helloworld.zhoufei.name/2014-09-20-ubuntu-theme-icon/"/>
+    <id>http://helloworld.zhoufei.name/2014-09-20-ubuntu-theme-icon/</id>
+    <published>2014-09-20T08:47:04.000Z</published>
+    <updated>2016-08-04T05:39:11.779Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>对于那些想要一个易于使用的界面的用户，Ubuntu是一个很好的Linux发行版，并且对于一个Linux新手也可以说是最好的Linux发行版。不过这产生了一些副作用，那就是，对于界面和外观，Canonical公司已经为用户做了很多设定，尤其是Unity桌面环境。</p>
+<p>然而这些不是一成不变的。下面是一些关于怎样让你更加舒心地使用Ubuntu的技巧。看过上面的截图中我对Ubuntu的设定，你可以看到我的的Unity桌面，相比于默认设定的桌面有何不同。</p>
+</blockquote>
+<p>首先来一张预览图,然后让我们分步来实现定制Ubuntu桌面。</p>
+<p><img src="/images/post_images/2014-09-20-ubuntu-theme-icon-01.png" alt="桌面预览图"></p>
+<p>1. 安装Unity Tweak Tool</p>
+<p>在你能对Ubuntu外观做任何有效地修改之前，你不得不安装Unity Tweak Tool。这是一个Unity桌面环境下特殊设置管理软件，并且通过它你可以实现替换系统图标和主题。你可以从Ubuntu软件中心下载该软件，如果你更加偏爱terminal终端的话，你也可以使用下面的命令：</p>
+<pre><code>sudo apt-get install unity-tweak-tool
+</code></pre><p>如果你正在使用Gnome桌面环境，那么你可能需要尝试Gnome Tweak Tool这款软件。你也可以从Ubuntu软件中心和使用以下命令来安装该软件：</p>
+<pre><code>sudo apt-get install gnome-tweak-tool
+</code></pre><p>2. 安装GTK主题</p>
+<p>对于Ubuntu有很多定制的主题，这些主题可以影响应用和窗口的外观。我正在使用的主题是Numix GTK+。你可以在<a href="http://numixproject.org/" target="_blank" rel="external">http://numixproject.org/</a>找到关于Numix主题和图标的更多信息。你可以通过打开终端并输入以下命令来安装Numix主题：</p>
+<pre><code>sudo add-apt-repository ppa:numix/ppa
+sudo apt-get update &amp;&amp; sudo apt-get install numix-gtk-theme
+</code></pre><p>为了使该主题生效，我们需要打开Unity Tweak Tool，选择“外观标题”下的“主题”选项，然后在“已有主题”一栏中选择该主题。只要相应的软件仓库名字一致，对于其他主题，你可以重复该过程来应用。你可以访问<a href="http://Gnome-Look.org" target="_blank" rel="external">http://Gnome-Look.org</a>获得更多的主题。另一个和Numix主题很相似的主题是Moka，你可以在<a href="http://mokaproject.com/" target="_blank" rel="external">http://mokaproject.com/</a>获得更多关于Moka主题的信息。</p>
+<p>3. 安装图标</p>
+<p>以上预览图中使用的图标是来自Numix主题的Numix圆形图标。你可以通过在终端输入以下命令来安装该图标集：</p>
+<pre><code>sudo apt-add-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install numix-icon-theme-circle
+</code></pre><p>为了使该图标集生效，我们需要在Unity Tweak Tool中选择“图标”选项，然后选择该图标集。再一次声明，这个方法对于任何图标集是可行的。Moka也提供给你的桌面带来多彩的、一致性设计的图标集。</p>
+<p>到此为止,我的桌面就安装好了,我尽量使用原生的,但是不满意其图标太丑,当然你可以再进行深入的定制.</p>
+<p>4. 安装conky系统监视软件 如果你喜欢</p>
+<p>Conky是一个轻量级桌面系统监视软件。该软件本身是非常简单的，不过它是可定制的，这样一来它就可以显示很多的有用的信息。你可以通过在终端输入以下命令来安装Conky：</p>
+<pre><code>sudo apt-get install conky conky-all
+</code></pre><p>你将会需要curl这个软件，你可以通过以下这个命令来安装该软件：</p>
+<pre><code>sudo apt-get install curl
+</code></pre><p>我使用的conky主题是<a href="http://zagortenay333.deviantart.com/art/Conky-Harmattan-426662366" target="_blank" rel="external">Harmattan</a>，它可以以15种不同的样式来显示时间、天气、以及系统进程。要安装该主题，你可以从<a href="http://www.deviantart.com/art/Conky-Harmattan-426662366" target="_blank" rel="external">deviantART</a>下载zip文件，然后解压。将.conky-weather文件夹和位于主题文件夹的.conkyrc文件（你可能需要按Ctrl+H来显示这些隐藏文件）移动到你的home文件夹。Conky有很多的主题。尝试这些主题，你所需要做的就是用所要使用主题的.conkyrc文件替换在home文件夹的.conkyrc文件。</p>
+<p>5. 安装一些指示器程序 如果你喜欢</p>
+<p>有很多第三方的指示器程序，通过这些程序你可以监视你的桌面信息，例如天气、系统性能等。我所使用的指示器程序相当简单。因为天气和系统性能已经在conky中显示，所以我没有安装这些指示器。不过你可以在终端输入以下命令来安装他们：</p>
+<pre><code>sudo apt-get install indicator-weather
+sudo apt-get install indicator-multiload
+</code></pre><p>我所使用的两个指示器程序是大小写指示程序以及触摸板控制器，这是因为我的笔记本没有大小写指示灯和控制触摸板开关的热键。你可以通过以下命令来安装这两个软件：</p>
+<pre><code>sudo add-apt-repository ppa:tsbarnes/indicator-keylock
+sudo add-apt-repository ppa:atareao/atareao
+sudo apt-get update
+sudo apt-get install indicator-keylock
+sudo apt-get install touchpad-indicator
+</code></pre><p>你可能需要注销并重新登录来使用这些应用。</p>
+<p>6. 通过Compiz设置管理器深度定制你的桌面 如果你喜欢</p>
+<p>如果对于你来说Unity Tweak Tool不够强大，那么你可以尝试<a href="https://apps.ubuntu.com/cat/applications/compizconfig-settings-manager/" target="_blank" rel="external">Compiz</a>设置管理器.</p>
+<p><strong>警告:</strong> </p>
+<p>如果错误的设置被应用的话，Compiz设置管理器可能会损害到你的系统。所以使用时要格外小心。你可以看到Ubuntu系统中隐藏的各种设置。你可以在Ubuntu软件中心获取该软件或者终端输入以下命令来安装：</p>
+<pre><code>sudo apt-get install compiz compizconfig-settings-manager compiz-fusion-plugins-extra compiz-fusion-plugins-main compiz-plugins
+</code></pre><p>7. 安装docky 如果你喜欢</p>
+<pre><code>sudo add-apt-repository ppa:ricotz/docky
+sudo apt-get update    
+sudo apt-get install  docky
+</code></pre><p>装好自己设置咯,附上卸载…</p>
+<pre><code>sudo apt-get remove docky
+</code></pre><p>现在你的Ubuntu桌面变得具有超棒了！所有的这些步骤都有成千上万种选择，所以折腾是无极限的。还在等什么？还不赶紧去享受你的新Ubuntu桌面！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;对于那些想要一个易于使用的界面的用户，Ubuntu是一个很好的Linux发行版，并且对于一个Linux新手也可以说是最好的Linux发行版。不过这产生了一些副作用，那就是，对于界面和外观，Canonical公司已经为用户做了很多设定，尤其是Unit
+    
+    </summary>
+    
+      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://helloworld.zhoufei.name/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu安装QQ国际版wine-qqintl</title>
+    <link href="http://helloworld.zhoufei.name/2014-08-08-install-wine-qqintl/"/>
+    <id>http://helloworld.zhoufei.name/2014-08-08-install-wine-qqintl/</id>
+    <published>2014-08-08T14:08:00.000Z</published>
+    <updated>2016-08-04T05:39:11.778Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>wine-qqintl比wineqq2013sp6-20更好用,问题更少,Ubuntu 16.04运行良好.</p>
+</blockquote>
+<p>1. 下载wine-qqintl.zip压缩文件 <a href="http://pan.baidu.com/s/1bp6yQuj" target="_blank" rel="external">http://pan.baidu.com/s/1bp6yQuj</a></p>
+<p>2. 解压后进入解压目录</p>
+<p>3. 输入命令安装</p>
+<pre><code>sudo dpkg -i font*
+sudp dpkg -i ttf*
+sudo dpkg -i win*
+sudo apt-get -f install
+</code></pre><p>4. 查看wine QQ的安装信息：</p>
+<pre><code>sudo dpkg -l|grep qq
+sudo find / -name qq*
+</code></pre><p>5. 三种方式打开QQ</p>
+<ul>
+<li>打开终端输入命令<code>wine-qqintl</code>后回车.</li>
+<li>按一下徽标键，在搜索框中输入QQ，找到QQ点击即可运行,如果找不到可以重启后重试.</li>
+<li>进入默认启动路径为<code>/usr/share/applications/</code> 找到QQ international图标点击.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;wine-qqintl比wineqq2013sp6-20更好用,问题更少,Ubuntu 16.04运行良好.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1. 下载wine-qqintl.zip压缩文件 &lt;a href=&quot;http://pan.bai
+    
+    </summary>
+    
+      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://helloworld.zhoufei.name/tags/Ubuntu/"/>
+    
+      <category term="wine-qq" scheme="http://helloworld.zhoufei.name/tags/wine-qq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown中文文档</title>
+    <link href="http://helloworld.zhoufei.name/2014-07-01-markdown-syntax-doc/"/>
+    <id>http://helloworld.zhoufei.name/2014-07-01-markdown-syntax-doc/</id>
+    <published>2014-07-01T04:03:00.000Z</published>
+    <updated>2016-08-04T05:39:11.776Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="宗旨"><a href="#宗旨" class="headerlink" title="宗旨"></a>宗旨</h3><p>Markdown 的目标是实现「易读易写」。</p>
+<p>可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、atx、Textile、reStructuredText、Grutatext 和 EtText，而最大灵感来源其实是纯文本电子邮件的格式。</p>
+<p>总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像*强调*。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。</p>
+<h3 id="兼容-HTML"><a href="#兼容-HTML" class="headerlink" title="兼容 HTML"></a>兼容 HTML</h3><p>Markdown 语法的目标是：成为一种适用于网络的书写语言。</p>
+<p>Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想不是要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种发布的格式，Markdown 是一种书写的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。</p>
+<p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。</p>
+<p>要制约的只有一些 HTML 区块元素――比如 <code>&lt;div&gt;</code>、<code>&lt;table&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;p&gt;</code> 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 <code>&lt;p&gt;</code> 标签。</p>
+<p>例子如下，在 Markdown 文件里加上一段 HTML 表格：</p>
+<pre><code>这是一个普通段落。
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Foo&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+这是另一个普通段落。
+</code></pre><p>请注意，在 HTML 区块标签间的 Markdown 格式语法将不会被处理。比如，你在 HTML 区块内使用 Markdown 样式的<code>*强调*</code>会没有效果。</p>
+<p>HTML 的区段（行内）标签如 <code>&lt;span&gt;</code>、<code>&lt;cite&gt;</code>、<code>&lt;del&gt;</code> 可以在 Markdown 的段落、列表或是标题里随意使用。依照个人习惯，甚至可以不用 Markdown 格式，而直接采用 HTML 标签来格式化。举例说明：如果比较喜欢 HTML 的 <code>&lt;a&gt;</code> 或 <code>&lt;img&gt;</code> 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图像标签语法。</p>
+<p>和处在 HTML 区块标签间不同，Markdown 语法在 HTML 区段标签间是有效的。</p>
+<h3 id="特殊字符自动转换"><a href="#特殊字符自动转换" class="headerlink" title="特殊字符自动转换"></a>特殊字符自动转换</h3><p>在 HTML 文件中，有两个字符需要特殊处理： <code>&lt;</code> 和 <code>&amp;</code> 。 <code>&lt;</code> 符号用于起始标签，&amp; 符号则用于标记 HTML 实体，如果你只是想要显示这些字符的原型，你必须要使用实体的形式，像是 <code>&amp;lt;</code> 和 <code>&amp;amp;</code>。</p>
+<p><code>&amp;</code> 字符尤其让网络文档编写者受折磨，如果你要打「<code>AT&amp;T</code>」 ，你必须要写成「<code>AT&amp;amp;T</code>」。而网址中的 <code>&amp;</code> 字符也要转换。比如你要链接到：</p>
+<pre><code>http://images.google.com/images?num=30&amp;q=larry+bird
+</code></pre><p>你必须要把网址转换写为：</p>
+<pre><code>http://images.google.com/images?num=30&amp;amp;q=larry+bird
+</code></pre><p>才能放到链接标签的 <code>href</code> 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。</p>
+<p>Markdown 让你可以自然地书写字符，需要转换的由它来处理好了。如果你使用的 <code>&amp;</code> 字符是 HTML 字符实体的一部分，它会保留原状，否则它会被转换成 <code>&amp;amp;</code>。</p>
+<p>所以你如果要在文档中插入一个版权符号 <code>©</code>，你可以这样写：</p>
+<pre><code>&amp;copy;
+</code></pre><p>Markdown 会保留它不动。而若你写：</p>
+<pre><code>AT&amp;T
+</code></pre><p>Markdown 就会将它转为：</p>
+<pre><code>AT&amp;amp;T
+</code></pre><p>类似的状况也会发生在 <code>&lt;</code> 符号上，因为 Markdown 允许 兼容 HTML ，如果你是把 <code>&lt;</code> 符号作为 HTML 标签的定界符使用，那 Markdown 也不会对它做任何转换，但是如果你写：</p>
+<pre><code>4 &lt; 5
+</code></pre><p>Markdown 将会把它转换为：</p>
+<pre><code>4 &amp;lt; 5
+</code></pre><p>不过需要注意的是，code 范围内，不论是行内还是区块， <code>&lt;</code> 和 <code>&amp;</code> 两个符号都一定会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code （和 HTML 相对而言， HTML 语法中，你要把所有的 <code>&lt;</code> 和 <code>&amp;</code> 都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code）。</p>
+<hr>
+<h2 id="区块元素"><a href="#区块元素" class="headerlink" title="区块元素"></a>区块元素</h2><h3 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h3><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。</p>
+<p>「由一个或多个连续的文本行组成」这句话其实暗示了 Markdown 允许段落内的强迫换行（插入换行符），这个特性和其他大部分的 text-to-HTML 格式不一样（包括 Movable Type 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成 <code>&lt;br /&gt;</code> 标签。</p>
+<p>如果你确实想要依赖 Markdown 来插入 <code>&lt;br /&gt;</code> 标签的话，在插入处先按入两个以上的空格然后回车。</p>
+<p>的确，需要多费点事（多加空格）来产生 <code>&lt;br /&gt;</code> ，但是简单地「每个换行都转换为 <br>」的方法在 Markdown 中并不适合， Markdown 中 email 式的 区块引用 和多段落的 列表 在使用换行来排版的时候，不但更好用，还更方便阅读。</p>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>Markdown 支持两种标题的语法，类 Setext 和类 atx 形式。</p>
+<p>类 Setext 形式是用底线的形式，利用 <code>=</code> （最高阶标题）和 <code>-</code> （第二阶标题），例如：</p>
+<pre><code>This is an H1
+=============
+
+This is an H2
+-------------
+</code></pre><p>任何数量的 <code>=</code> 和 <code>-</code> 都可以有效果。</p>
+<p>类 Atx 形式则是在行首插入 1 到 6 个 <code>#</code> ，对应到标题 1 到 6 阶，例如：</p>
+<pre><code># 这是 H1
+
+## 这是 H2
+
+###### 这是 H6
+</code></pre><p>你可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 <code>#</code>，而行尾的 <code>#</code> 数量也不用和开头一样（行首的井字符数量决定标题的阶数）：</p>
+<pre><code># 这是 H1 #
+
+## 这是 H2 ##
+
+### 这是 H3 ######
+</code></pre><h3 id="区块引用-Blockquotes"><a href="#区块引用-Blockquotes" class="headerlink" title="区块引用 Blockquotes"></a>区块引用 Blockquotes</h3><p>Markdown 标记区块引用是使用类似 email 中用 <code>&gt;</code> 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 <code>&gt;</code> ：</p>
+<blockquote>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse<br>id sem consectetuer libero luctus adipiscing.</p>
+</blockquote>
+<p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 <code>&gt;</code> ：</p>
+<blockquote>
+<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>  consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>  Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
+<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse<br>  id sem consectetuer libero luctus adipiscing.</p>
+</blockquote>
+<p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 <code>&gt;</code> ：</p>
+<blockquote>
+<p>This is the first level of quoting.</p>
+<blockquote>
+<p>This is nested blockquote.</p>
+</blockquote>
+<p>Back to the first level.</p>
+</blockquote>
+<p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</p>
+<blockquote>
+<p>## 这是一个标题。</p>
+<ol>
+<li>这是第一行列表项。</li>
+<li>这是第二行列表项。</li>
+</ol>
+<p>给出一些例子代码：</p>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);
+</code></pre></blockquote>
+<p>任何像样的文本编辑器都能轻松地建立 email 型的引用。例如在 BBEdit 中，你可以选取文字后然后从选单中选择增加引用阶层。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>Markdown 支持有序列表和无序列表。</p>
+<p>无序列表使用星号、加号或是减号作为列表标记：</p>
+<pre><code>* Red
+* Green
+* Blue
+</code></pre><p>等同于：</p>
+<pre><code>+ Red
++ Green
++ Blue
+</code></pre><p>也等同于：</p>
+<pre><code>- Red
+- Green
+- Blue
+</code></pre><p>有序列表则使用数字接着一个英文句点：</p>
+<pre><code>1. Bird
+2. McHale
+3. Parish
+</code></pre><p>很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为：</p>
+<pre><code>&lt;ol&gt;
+  &lt;li&gt;Bird&lt;/li&gt;
+  &lt;li&gt;McHale&lt;/li&gt;
+  &lt;li&gt;Parish&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre><p>如果你的列表标记写成：</p>
+<pre><code>1. Bird
+1. McHale
+1. Parish
+</code></pre><p>或甚至是：</p>
+<pre><code>3. Bird
+1. McHale
+8. Parish
+</code></pre><p>你都会得到完全相同的 HTML 输出。重点在于，你可以让 Markdown 文件的列表数字和输出的结果相同，或是你懒一点，你可以完全不用在意数字的正确性。</p>
+<p>如果你使用懒惰的写法，建议第一个项目最好还是从 1. 开始，因为 Markdown 未来可能会支持有序列表的 start 属性。</p>
+<p>列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。</p>
+<p>要让列表看起来更漂亮，你可以把内容用固定的缩进整理好：</p>
+<pre><code>* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+  Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+  viverra nec, fringilla in, laoreet vitae, risus.
+* Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+  Suspendisse id sem consectetuer libero luctus adipiscing.
+</code></pre><p>但是如果你懒，那也行：</p>
+<pre><code>* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.
+* Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.
+</code></pre><p>如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 <code>&lt;p&gt;</code> 标签包起来，举例来说：</p>
+<pre><code>* Bird
+* Magic
+</code></pre><p>会被转换为：</p>
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;Bird&lt;/li&gt;
+  &lt;li&gt;Magic&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>但是这个：</p>
+<pre><code>*   Bird
+
+*   Magic
+</code></pre><p>会被转换为：</p>
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;&lt;p&gt;Bird&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;Magic&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符：</p>
+<pre><code>1.  This is a list item with two paragraphs. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sit amet velit.
+
+2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+</code></pre><p>如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许：</p>
+<pre><code>*   This is a list item with two paragraphs.
+
+    This is the second paragraph in the list item. You&apos;re
+only required to indent the first line. Lorem ipsum dolor
+sit amet, consectetuer adipiscing elit.
+
+*   Another item in the same list.
+</code></pre><p>如果要在列表项目内放进引用，那 &gt; 就需要缩进：</p>
+<pre><code>*   A list item with a blockquote:
+
+    &gt; This is a blockquote
+    &gt; inside a list item.
+</code></pre><p>如果要放代码区块的话，该区块就需要缩进两次，也就是 8 个空格或是 2 个制表符：</p>
+<pre><code>*   一列表项包含一个列表区块：
+
+        &lt;代码写在这&gt;
+</code></pre><p>当然，项目列表很可能会不小心产生，像是下面这样的写法：</p>
+<pre><code>1986. What a great season.
+</code></pre><p>换句话说，也就是在行首出现数字-句点-空白，要避免这样的状况，你可以在句点前面加上反斜杠。</p>
+<pre><code>1986\. What a great season.
+</code></pre><h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是照原来的样子显示，Markdown 会用 <code>&lt;pre&gt;</code> 和 <code>&lt;code&gt;</code> 标签来把代码区块包起来。</p>
+<p>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：</p>
+<pre><code>这是一个普通段落：
+
+    这是一个代码区块。
+</code></pre><p>Markdown 会转换成：</p>
+<pre><code>&lt;p&gt;这是一个普通段落：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;这是一个代码区块。
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre><p>这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：</p>
+<pre><code>Here is an example of AppleScript:
+
+    tell application &quot;Foo&quot;
+        beep
+    end tell
+</code></pre><p>会被转换为：</p>
+<pre><code>&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tell application &quot;Foo&quot;
+    beep
+end tell
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre><p>一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。</p>
+<p>在代码区块里面， <code>&amp;</code> 、 <code>&lt;</code> 和 <code>&gt;</code> 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：</p>
+<pre><code>&lt;div class=&quot;footer&quot;&gt;
+  &amp;copy; 2004 Foo Corporation
+&lt;/div&gt;
+</code></pre><p>会被转换为：</p>
+<pre><code>&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;footer&quot;&amp;gt;
+    &amp;amp;copy; 2004 Foo Corporation
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre><p>代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。</p>
+<h3 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h3><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<pre><code>* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
+</code></pre><hr>
+<h2 id="区段元素"><a href="#区段元素" class="headerlink" title="区段元素"></a>区段元素</h2><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。</p>
+<p>不管是哪一种，链接文字都是用 [方括号] 来标记。</p>
+<p>要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：</p>
+<pre><code>This is [an example](http://example.com/ &quot;Title&quot;) inline link.
+
+[This link](http://example.net/) has no title attribute.
+</code></pre><p>会产生：</p>
+<pre><code>&lt;p&gt;This is &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;
+an example&lt;/a&gt; inline link.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no
+title attribute.&lt;/p&gt;
+</code></pre><p>如果你是要链接到同样主机的资源，你可以使用相对路径：</p>
+<pre><code>See my [About](/about/) page for details.
+</code></pre><p>参考式的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记：</p>
+<pre><code>This is [an example][id] reference-style link.
+</code></pre><p>你也可以选择性地在两个方括号中间加上一个空格：</p>
+<pre><code>This is [an example] [id] reference-style link.
+</code></pre><p>接着，在文件的任意处，你可以把这个标记的链接内容定义出来：</p>
+<pre><code>[id]: http://example.com/  &quot;Optional Title Here&quot;
+</code></pre><p>链接内容定义的形式为：</p>
+<ul>
+<li>方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字</li>
+<li>接着一个冒号</li>
+<li>接着一个以上的空格或制表符</li>
+<li>接着链接的网址</li>
+<li>选择性地接着 title 内容，可以用单引号、双引号或是括弧包着</li>
+</ul>
+<p>下面这三种链接的定义都是相同：</p>
+<pre><code>[foo]: http://example.com/  &quot;Optional Title Here&quot;
+[foo]: http://example.com/  &apos;Optional Title Here&apos;
+[foo]: http://example.com/  (Optional Title Here)
+</code></pre><p>请注意：有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title。</p>
+<p>链接网址也可以用方括号包起来：</p>
+<pre><code>[id]: &lt;http://example.com/&gt;  &quot;Optional Title Here&quot;
+</code></pre><p>你也可以把 title 属性放到下一行，也可以加一些缩进，若网址太长的话，这样会比较好看：</p>
+<pre><code>[id]: http://example.com/longish/path/to/resource/here
+    &quot;Optional Title Here&quot;
+</code></pre><p>网址定义只有在产生链接的时候用到，并不会直接出现在文件之中。</p>
+<p>链接辨别标签可以有字母、数字、空白和标点符号，但是并不区分大小写，因此下面两个链接是一样的：</p>
+<pre><code>[link text][a]
+[link text][A]
+</code></pre><p>隐式链接标记功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 “Google” 链接到 google.com，你可以简化成：</p>
+<pre><code>[Google][]
+</code></pre><p>然后定义链接内容：</p>
+<pre><code>[Google]: http://google.com/  
+</code></pre><p>由于链接文字可能包含空白，所以这种简化型的标记内也许包含多个单词：</p>
+<pre><code>Visit [Daring Fireball][] for more information.
+</code></pre><p>然后接着定义链接：</p>
+<pre><code>[Daring Fireball]: http://daringfireball.net/
+</code></pre><p>链接的定义可以放在文件中的任何一个地方，我比较偏好直接放在链接出现段落的后面，你也可以把它放在文件最后面，就像是注解一样。</p>
+<p>下面是一个参考式链接的范例：</p>
+<pre><code>I get 10 times more traffic from [Google] [1] than from
+[Yahoo] [2] or [MSN] [3].
+
+  [1]: http://google.com/        &quot;Google&quot;
+  [2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;
+  [3]: http://search.msn.com/    &quot;MSN Search&quot;
+</code></pre><p>如果改成用链接名称的方式写：</p>
+<pre><code>I get 10 times more traffic from [Google][] than from
+[Yahoo][] or [MSN][].
+
+  [google]: http://google.com/        &quot;Google&quot;
+  [yahoo]:  http://search.yahoo.com/  &quot;Yahoo Search&quot;
+  [msn]:    http://search.msn.com/    &quot;MSN Search&quot;
+</code></pre><p>上面两种写法都会产生下面的 HTML。</p>
+<pre><code>&lt;p&gt;
+  I get 10 times more traffic from &lt;a href=&quot;http://google.com/&quot; title=&quot;Google&quot;&gt;Google&lt;/a&gt; than from &lt;a href=&quot;http://search.yahoo.com/&quot; title=&quot;Yahoo Search&quot;&gt;Yahoo&lt;/a&gt; or &lt;a href=&quot;http://search.msn.com/&quot; title=&quot;MSN Search&quot;&gt;MSN&lt;/a&gt;.
+&lt;/p&gt;
+</code></pre><p>下面是用行内式写的同样一段内容的 Markdown 文件，提供作为比较之用：</p>
+<pre><code>I get 10 times more traffic from [Google](http://google.com/ &quot;Google&quot;)
+than from [Yahoo](http://search.yahoo.com/ &quot;Yahoo Search&quot;) or
+[MSN](http://search.msn.com/ &quot;MSN Search&quot;).
+</code></pre><p>参考式的链接其实重点不在于它比较好写，而是它比较好读，比较一下上面的范例，使用参考式的文章本身只有 81 个字符，但是用行内形式的却会增加到 176 个字元，如果是用纯 HTML 格式来写，会有 234 个字元，在 HTML 格式中，标签比文本还要多。</p>
+<p>使用 Markdown 的参考式链接，可以让文件更像是浏览器最后产生的结果，让你可以把一些标记相关的元数据移到段落文字之外，你就可以增加链接而不让文章的阅读感觉被打断。</p>
+<h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><p>Markdown 使用星号（<code>*</code>）和底线（<code>_</code>）作为标记强调字词的符号，被 <code>*</code> 或 <code>_</code> 包围的字词会被转成用 <code>&lt;em&gt;</code> 标签包围，用两个 <code>*</code> 或 <code>_</code> 包起来的话，则会被转成 <code>&lt;strong&gt;</code>，例如：</p>
+<pre><code>*single asterisks*
+
+_single underscores_
+
+**double asterisks**
+
+__double underscores__
+</code></pre><p>会转成：</p>
+<pre><code>&lt;em&gt;single asterisks&lt;/em&gt;
+
+&lt;em&gt;single underscores&lt;/em&gt;
+
+&lt;strong&gt;double asterisks&lt;/strong&gt;
+
+&lt;strong&gt;double underscores&lt;/strong&gt;
+</code></pre><p>你可以随便用你喜欢的样式，唯一的限制是，你用什么符号开启标签，就要用什么符号结束。</p>
+<p>强调也可以直接插在文字中间：</p>
+<pre><code>un*frigging*believable
+</code></pre><p>但是如果你的 <code>*</code> 和 <code>_</code> 两边都有空白的话，它们就只会被当成普通的符号。</p>
+<p>如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：</p>
+<pre><code>\*this text is surrounded by literal asterisks\*
+</code></pre><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>如果要标记一小段行内代码，你可以用反引号把它包起来（`），例如：</p>
+<pre><code>Use the `printf()` function.
+</code></pre><p>会产生：</p>
+<pre><code>&lt;p&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/p&gt;
+</code></pre><p>如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：</p>
+<pre><code>``There is a literal backtick (`) here.``
+</code></pre><p>这段语法会产生：</p>
+<pre><code>&lt;p&gt;&lt;code&gt;There is a literal backtick (`) here.&lt;/code&gt;&lt;/p&gt;
+</code></pre><p>代码区段的起始和结束端都可以放入一个空白，起始端后面一个，结束端前面一个，这样你就可以在区段的一开始就插入反引号：</p>
+<pre><code>A single backtick in a code span: `` ` ``
+
+A backtick-delimited string in a code span: `` `foo` ``
+</code></pre><p>会产生：</p>
+<pre><code>&lt;p&gt;A single backtick in a code span: &lt;code&gt;`&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;A backtick-delimited string in a code span: &lt;code&gt;`foo`&lt;/code&gt;&lt;/p&gt;
+</code></pre><p>在代码区段内，<code>&amp;</code> 和方括号都会被自动地转成 HTML 实体，这使得插入 HTML 原始码变得很容易，Markdown 会把下面这段：</p>
+<pre><code>Please don&apos;t use any `&lt;blink&gt;` tags.
+</code></pre><p>转为：</p>
+<pre><code>&lt;p&gt;Please don&apos;t use any &lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+</code></pre><p>你也可以这样写：</p>
+<pre><code>`&amp;#8212;` is the decimal-encoded equivalent of `&amp;mdash;`.
+</code></pre><p>以产生：</p>
+<pre><code>&lt;p&gt;&lt;code&gt;&amp;amp;#8212;&lt;/code&gt; is the decimal-encoded
+equivalent of &lt;code&gt;&amp;amp;mdash;&lt;/code&gt;.&lt;/p&gt;
+</code></pre><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。</p>
+<p>Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： 行内式和参考式。</p>
+<p>行内式的图片语法看起来像是：</p>
+<pre><code>![Alt text](/path/to/img.jpg)
+
+![Alt text](/path/to/img.jpg &quot;Optional title&quot;)
+</code></pre><p>详细叙述如下：</p>
+<ul>
+<li>一个惊叹号 !</li>
+<li>接着一个方括号，里面放上图片的替代文字</li>
+<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上 选择性的 ‘title’ 文字。</li>
+</ul>
+<p>参考式的图片语法则长得像这样：</p>
+<pre><code>![Alt text][id]
+</code></pre><p>「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：</p>
+<pre><code>[id]: url/to/image  &quot;Optional title attribute&quot;
+</code></pre><p>到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 <code>&lt;img&gt;</code> 标签。</p>
+<hr>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h3><p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</p>
+<pre><code>&lt;http://example.com/&gt;
+</code></pre><p>Markdown 会转为：</p>
+<pre><code>&lt;a href=&quot;http://example.com/&quot;&gt;http://example.com/&lt;/a&gt;
+</code></pre><p>邮址的自动链接也很类似，只是 Markdown 会先做一个编码转换的过程，把文字字符转成 16 进位码的 HTML 实体，这样的格式可以糊弄一些不好的邮址收集机器人，例如：</p>
+<pre><code>&lt;address@example.com&gt;
+</code></pre><p>Markdown 会转成：</p>
+<pre><code>&lt;a href=&quot;&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;
+&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;
+&amp;#109;&quot;&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;
+&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;
+</code></pre><p>在浏览器里面，这段字串（其实是 <code>&lt;a href=&quot;mailto:address@example.com&quot;&gt;address@example.com&lt;/a&gt;</code>）会变成一个可以点击的「address@example.com」链接。</p>
+<p>（这种作法虽然可以糊弄不少的机器人，但并不能全部挡下来，不过总比什么都不做好些。不管怎样，公开你的信箱终究会引来广告信件的。）</p>
+<h3 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠"></a>反斜杠</h3><p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 <code>&lt;em&gt;</code> 标签），你可以在星号的前面加上反斜杠：</p>
+<pre><code>\*literal asterisks\*
+</code></pre><p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</p>
+<pre><code>\   反斜线
+`   反引号
+*   星号
+_   底线
+{}  花括号
+[]  方括号
+()  括弧
+#   井字号
++   加号
+-   减号
+.   英文句点
+!   惊叹号
+</code></pre><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>通过<code>----</code>来分割表头,通过<code>:</code>来规定是靠左,靠右还是居中展示,默认居左.</p>
+<pre><code>| ABCD | EFGH | IJKL |
+|------|:----:| ----:|
+| a    | b    | c    |
+| d    | e    |  f   |
+| g    | h    |   i  |
+
+
+ABCD | EFGH | IJKL
+-----|------|----
+a    | b    | c
+d    | e    | f
+g    | h    | i
+</code></pre><p>预览效果:</p>
+<table>
+<thead>
+<tr>
+<th>ABCD</th>
+<th style="text-align:center">EFGH</th>
+<th style="text-align:right">IJKL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td style="text-align:center">b</td>
+<td style="text-align:right">c</td>
+</tr>
+<tr>
+<td>d</td>
+<td style="text-align:center">e</td>
+<td style="text-align:right">f</td>
+</tr>
+<tr>
+<td>g</td>
+<td style="text-align:center">h</td>
+<td style="text-align:right">i</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>ABCD</th>
+<th>EFGH</th>
+<th>IGKL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>b</td>
+<td>c</td>
+</tr>
+<tr>
+<td>d</td>
+<td>e</td>
+<td>f</td>
+</tr>
+<tr>
+<td>g</td>
+<td>h</td>
+<td>i</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;宗旨&quot;&gt;&lt;a href=&quot;#宗旨&quot; class=&quot;headerlink&quot; title=&quot;宗旨&quot;&gt;&lt;/a&gt;宗旨&lt;/h3&gt;&lt;p&gt;Mar
+    
+    </summary>
+    
+      <category term="Document" scheme="http://helloworld.zhoufei.name/categories/Document/"/>
+    
+    
+      <category term="Markdown" scheme="http://helloworld.zhoufei.name/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>环境变量的配置</title>
+    <link href="http://helloworld.zhoufei.name/2014-06-21-install-jdk-and-maven/"/>
+    <id>http://helloworld.zhoufei.name/2014-06-21-install-jdk-and-maven/</id>
+    <published>2014-06-21T11:08:00.000Z</published>
+    <updated>2016-08-04T05:39:11.774Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>贴出这些主要是方便自己查看,配了好几次也没有具体记在心里,大写的尴尬……</p>
+</blockquote>
+<h3 id="JDK环境变量配置"><a href="#JDK环境变量配置" class="headerlink" title="JDK环境变量配置"></a>JDK环境变量配置</h3><p>1. 官网下载JDK：<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
+<p>2. 安装JDK 选择安装目录 安装过程中会出现两次安装提示 。第一次是安装 jdk ，第二次是安装 jre 。建议两个都安装在同一个java文件夹中的不同文件夹中,如下图。</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-01.png" alt="Alt text"></p>
+<p>3. 安装完JDK后配置环境变量  计算机→属性→高级系统设置→高级→环境变量 如下图。</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-02.png" alt="Alt text"></p>
+<p>4. 系统变量→新建 JAVA_HOME 变量 。变量值填写jdk的安装目录（本人是 D:\Program Files\Java\jdk1.7.0_75)</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-03.png" alt="Alt text"></p>
+<p>5. 系统变量→寻找 Path 变量→编辑，在变量值最后输入 %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码）</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-04.png" alt="Alt text"></p>
+<p>6. 系统变量→新建 CLASSPATH 变量，变量值填写   .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar（注意最前面有一点）</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-05.png" alt="Alt text"></p>
+<p>7. 检验是否配置成功 运行cmd 输入 java -version （java 和 -version 之间有空格）若如图所示 显示版本信息 则说明安装和配置成功。</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-06.png" alt="Alt text"></p>
+<h3 id="Maven环境变量配置"><a href="#Maven环境变量配置" class="headerlink" title="Maven环境变量配置"></a>Maven环境变量配置</h3><p>1. 官网下载Maven：<a href="http://maven.apache.org/" target="_blank" rel="external">http://maven.apache.org/</a></p>
+<p>2. 解压maven到软件安装常用目录如： D:\Program Files\apache-maven-3.2.5</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-07.png" alt="Alt text"></p>
+<p>3. 开始配置环境变量  计算机→属性→高级系统设置→高级→环境变量</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-08.png" alt="Alt text"></p>
+<p>4. 添加新的系统环境变量M2_HOME， 并设置其值为你安装的目录 M2_HOME= D:\Program Files\apache-maven-3.2.5</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-09.png" alt="Alt text"></p>
+<p>5. 添加新的系统环境变量M2， 并设置其值为你安装的目录 M2= %M2_HOME%\bin，注释：此处的M2可以省略，跟上个变量合并写在下一步Path中，添加;%M2_HOME%\bin;到尾部。</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-10.png" alt="Alt text"></p>
+<p>6. 系统变量→寻找 Path 变量→编辑，在变量值最后输入 %M2%;（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码）</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-11.png" alt="Alt text"></p>
+<p>7. 测试maven配置是否成功，打开命令行窗口，输入mvn -v，如果有maven 版本信息输出则证明配置成功，否则请查看自己配置路径等是否正确。</p>
+<p><strong>注意</strong>：安装maven前请确保已安装JDK并成功配置其环境变量。</p>
+<p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-12.png" alt="Alt text"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;贴出这些主要是方便自己查看,配了好几次也没有具体记在心里,大写的尴尬……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;JDK环境变量配置&quot;&gt;&lt;a href=&quot;#JDK环境变量配置&quot; class=&quot;headerlink&quot; title=&quot;JDK
+    
+    </summary>
+    
+      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+    
+    
+      <category term="JDK" scheme="http://helloworld.zhoufei.name/tags/JDK/"/>
+    
+      <category term="Maven" scheme="http://helloworld.zhoufei.name/tags/Maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://helloworld.zhoufei.name/2014-06-06-hello-world/"/>
+    <id>http://helloworld.zhoufei.name/2014-06-06-hello-world/</id>
+    <published>2014-06-05T17:00:00.000Z</published>
+    <updated>2016-08-04T05:39:11.773Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>Welcome to Hello World! This is my very first post,I will share one of my favorite poems for everyone,Let us encourage each other in our endeavours.</p>
+</blockquote>
+<blockquote class="blockquote-center"><h4 id="Seven-times-have-I-despised-my-soul"><a href="#Seven-times-have-I-despised-my-soul" class="headerlink" title="Seven times have I despised my soul"></a>Seven times have I despised my soul</h4><p><code>by Kahlil Gibran</code></p>
+<p>The first time when I saw her being meek that she might attain height .</p>
+<p>The second time when I saw her limping before the crippled .</p>
+<p>The third time when she was given to choose between the hard and the easy , and she chose the easy .</p>
+<p>The fourth time when she committed a wrong , and comforted herself that others also commit wrong .</p>
+<p>The fifth time when she forbore for weakness , and attributed her patience to strength .</p>
+<p>The sixth time when she despised the ugliness of a face , and knew not that it was one of her own masks .</p>
+<p>And the seventh time when she sang a song of praise , and deemed it a virtue .</p>
+<h4 id="曾有七次我鄙视了自己的灵魂"><a href="#曾有七次我鄙视了自己的灵魂" class="headerlink" title="曾有七次我鄙视了自己的灵魂"></a>曾有七次我鄙视了自己的灵魂</h4><p><code>冰心译</code></p>
+<p>第一次是在她可以上升而却谦让的时候。</p>
+<p>第二次是我看见她在瘸者面前跛行的时候。</p>
+<p>第三次是让她选择难易，而她选择了易的时候。</p>
+<p>第四次是她做错了事，却安慰自己说别人也也同样做错了事。</p>
+<p>第五次是她容忍了软弱，而把她的忍受称为坚强。</p>
+<p>第六次是当她轻蔑一个丑恶的容颜的时候，却不知道那是她自己的面具中之一。</p>
+<p>第七次是当她唱一首颂歌的时候，自己相信这是一种美德。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Welcome to Hello World! This is my very first post,I will share one of my favorite poems for everyone,Let us encourage each 
+    
+    </summary>
+    
+      <category term="Essay" scheme="http://helloworld.zhoufei.name/categories/Essay/"/>
+    
+    
+      <category term="Hello World" scheme="http://helloworld.zhoufei.name/tags/Hello-World/"/>
+    
+  </entry>
+  
+</feed>
