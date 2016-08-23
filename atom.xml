@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helloworld.zhoufei.name/"/>
-  <updated>2016-08-23T01:18:01.511Z</updated>
+  <updated>2016-08-23T02:05:11.332Z</updated>
   <id>http://helloworld.zhoufei.name/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/"/>
     <id>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</id>
     <published>2016-07-26T11:08:00.000Z</published>
-    <updated>2016-08-23T01:18:01.511Z</updated>
+    <updated>2016-08-23T02:05:11.332Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><h2 id="chunk"><a href="#chunk" class="headerlink" title="_.chunk"></a>_.chunk</h2><p><strong><code>_.chunk(array, [size=0])</code></strong></p>
 <p>将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。</p>
@@ -512,6 +512,83 @@ _.intersectionWith(objects, others, _.isEqual);
 // 使用了 `fromIndex`
 _.lastIndexOf([1, 2, 1, 2], 2, 2);
 // =&gt; 1
+</code></pre><h2 id="pull"><a href="#pull" class="headerlink" title="_.pull"></a>_.pull</h2><p><strong><code>_.pull(array, [values])</code></strong></p>
+<p>移除所有经过 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 等值比较为 true 的元素。</p>
+<p>注意: 不同于 _.without，这个方法会改变数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要调整的数组</p>
+</li>
+<li><p>[values] (…*):要移除的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组本身</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1, 2, 3, 1, 2, 3];
+
+_.pull(array, 2, 3);
+console.log(array);
+// =&gt; [1, 1]
+</code></pre><h2 id="pullAll"><a href="#pullAll" class="headerlink" title="_.pullAll"></a>_.pullAll</h2><p><strong><code>_.pullAll(array, values)</code></strong></p>
+<p>这个方式类似 _.pull，但它接受数组形式的一系列值。 </p>
+<p>注意: 不同于 _.difference，这个方法会改变数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要调整的数组</p>
+</li>
+<li><p>values (Array)：要移除的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组本身</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1, 2, 3, 1, 2, 3];
+
+_.pullAll(array, [2, 3]);
+console.log(array);
+// =&gt; [1, 1]
+</code></pre><h2 id="pullAllBy"><a href="#pullAllBy" class="headerlink" title="_.pullAllBy"></a>_.pullAllBy</h2><p><strong><code>_.pullAllBy(array, values, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.pullAll，除了它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入一个参数：(value)。 </p>
+<p>注意: 不同于 _.differenceBy，这个方法会改变数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要调整的数组</p>
+</li>
+<li><p>values (Array):要移除的值</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组本身</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [{ &apos;x&apos;: 1 }, { &apos;x&apos;: 2 }, { &apos;x&apos;: 3 }, { &apos;x&apos;: 1 }];
+
+_.pullAllBy(array, [{ &apos;x&apos;: 1 }, { &apos;x&apos;: 3 }], &apos;x&apos;);
+console.log(array);
+// =&gt; [{ &apos;x&apos;: 2 }]
+</code></pre><h2 id="pullAt"><a href="#pullAt" class="headerlink" title="_.pullAt"></a>_.pullAt</h2><p><strong><code>_.pullAt(array, [indexes])</code></strong></p>
+<p>根据给的 indexes 移除对应的数组元素并返回被移除的元素。 </p>
+<p>注意: 不同于 _.at，这个方法会改变数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要调整的数组</p>
+</li>
+<li><p>[indexes] (…(number|number[]):indexes 可以是特殊的数组队列，或者个别的单个或多个参数</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回被移除的元素数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [5, 10, 15, 20];
+var evens = _.pullAt(array, 1, 3);
+
+console.log(array);
+// =&gt; [5, 15]
+
+console.log(evens);
+// =&gt; [10, 20]
 </code></pre>]]></content>
     
     <summary type="html">
