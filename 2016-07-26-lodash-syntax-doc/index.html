@@ -1,0 +1,1210 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Lodash," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Array_.chunk_.chunk(array, [size=0])
+将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。
+参数
+
+array (Array):需要被处理的数组
+[size=0] (number):每个块的长度
+
+返回值 (Array)
+返回一个拆分好的新数组
+示例
+_.chunk([&amp;apos;a&amp;apo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lodash中文文档">
+<meta property="og:url" content="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="Array_.chunk_.chunk(array, [size=0])
+将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。
+参数
+
+array (Array):需要被处理的数组
+[size=0] (number):每个块的长度
+
+返回值 (Array)
+返回一个拆分好的新数组
+示例
+_.chunk([&amp;apos;a&amp;apo">
+<meta property="og:updated_time" content="2016-08-23T01:18:01.511Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lodash中文文档">
+<meta name="twitter:description" content="Array_.chunk_.chunk(array, [size=0])
+将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。
+参数
+
+array (Array):需要被处理的数组
+[size=0] (number):每个块的长度
+
+返回值 (Array)
+返回一个拆分好的新数组
+示例
+_.chunk([&amp;apos;a&amp;apo">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 63064331961248000000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Lodash中文文档 | Hello World </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1259920222&web_id=1259920222" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hello World</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Lodash中文文档
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-26T19:08:00+08:00" content="2016-07-26">
+              2016-07-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Document/" itemprop="url" rel="index">
+                    <span itemprop="name">Document</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-07-26-lodash-syntax-doc/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-07-26-lodash-syntax-doc/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><h2 id="chunk"><a href="#chunk" class="headerlink" title="_.chunk"></a>_.chunk</h2><p><strong><code>_.chunk(array, [size=0])</code></strong></p>
+<p>将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要被处理的数组</li>
+<li>[size=0] (number):每个块的长度</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个拆分好的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.chunk([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;], 2);
+// =&gt; [[&apos;a&apos;, &apos;b&apos;], [&apos;c&apos;, &apos;d&apos;]]
+
+_.chunk([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;], 3);
+// =&gt; [[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;], [&apos;d&apos;]]
+</code></pre><h2 id="compact"><a href="#compact" class="headerlink" title="_.compact"></a>_.compact</h2><p><strong><code>_.compact(array)</code></strong></p>
+<p>创建一个移除了所有假值的数组。例如：false、null、 0、””、undefined， 以及NaN 都是 “假值”.</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要被处理的数组。</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回移除了假值的数组。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.compact([0, 1, false, 2, &apos;&apos;, 3]);
+// =&gt; [1, 2, 3]
+</code></pre><h2 id="concat"><a href="#concat" class="headerlink" title="_.concat"></a>_.concat</h2><p><strong><code>_.concat(array, [values])</code></strong></p>
+<p>创建一个用任何数组 或 值连接的新数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要被连接的数组</p>
+</li>
+<li><p>[values] (…*):需要被连接的值的队列</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回连接后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1];
+var other = _.concat(array, 2, [3], [[4]]);
+
+console.log(other);
+// =&gt; [1, 2, 3, [4]]
+
+console.log(array);
+// =&gt; [1]
+</code></pre><h2 id="difference"><a href="#difference" class="headerlink" title="_.difference"></a>_.difference</h2><p><strong><code>_.difference(array, [values])</code></strong></p>
+<p>创建一个差异化后的数组，不包括使用 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 方法提供的数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[values] (…Array):用于对比差异的数组</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个差异化后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.difference([3, 2, 1], [4, 2]);
+// =&gt; [3, 1]
+</code></pre><h2 id="differenceBy"><a href="#differenceBy" class="headerlink" title="_.differenceBy"></a>_.differenceBy</h2><p><strong><code>_.differenceBy(array, [values], [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.difference，此外它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[values] (…Array):用于对比差异的数组</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个差异化后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.differenceBy([3.1, 2.2, 1.3], [4.4, 2.5], Math.floor);
+// =&gt; [3.1, 1.3]
+
+// 使用了 `_.property` 的回调结果
+_.differenceBy([{ &apos;x&apos;: 2 }, { &apos;x&apos;: 1 }], [{ &apos;x&apos;: 1 }], &apos;x&apos;);
+// =&gt; [{ &apos;x&apos;: 2 }]
+</code></pre><h2 id="differenceWith"><a href="#differenceWith" class="headerlink" title="_.differenceWith"></a>_.differenceWith</h2><p><strong><code>_.differenceWith(array, [values], [comparator])</code></strong></p>
+<p>这个方法类似 _.difference，此外它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[values] (…Array):用于对比差异的数组</p>
+</li>
+<li><p>[comparator] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个差异化后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var objects = [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }, { &apos;x&apos;: 2, &apos;y&apos;: 1 }];
+
+_.differenceWith(objects, [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }], _.isEqual);
+// =&gt; [{ &apos;x&apos;: 2, &apos;y&apos;: 1 }]
+</code></pre><h2 id="drop"><a href="#drop" class="headerlink" title="_.drop"></a>_.drop</h2><p><strong><code>_.drop(array, [n=1])</code></strong></p>
+<p>裁剪数组中的前 N 个数组，返回剩余的部分。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[n=1] (number):裁剪的个数</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组的剩余的部分。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.drop([1, 2, 3]);
+// =&gt; [2, 3]
+
+_.drop([1, 2, 3], 2);
+// =&gt; [3]
+
+_.drop([1, 2, 3], 5);
+// =&gt; []
+
+_.drop([1, 2, 3], 0);
+// =&gt; [1, 2, 3]
+</code></pre><h2 id="dropRight"><a href="#dropRight" class="headerlink" title="_.dropRight"></a>_.dropRight</h2><p><strong><code>_.dropRight(array, [n=1])</code></strong></p>
+<p>从右边开始裁剪数组中的 N 个数组，返回剩余的部分。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[n=1] (number):裁剪的个数</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组的剩余的部分。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.dropRight([1, 2, 3]);
+// =&gt; [1, 2]
+
+_.dropRight([1, 2, 3], 2);
+// =&gt; [1]
+
+_.dropRight([1, 2, 3], 5);
+// =&gt; []
+
+_.dropRight([1, 2, 3], 0);
+// =&gt; [1, 2, 3]
+</code></pre><h2 id="dropRightWhile"><a href="#dropRightWhile" class="headerlink" title="_.dropRightWhile"></a>_.dropRightWhile</h2><p><strong><code>_.dropRightWhile(array, [predicate=_.identity])</code></strong></p>
+<p>从右边开始裁剪数组，起点从 predicate 返回假值开始。predicate 会传入3个参数：(value, index, array)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会在每一次迭代调用</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回裁剪后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var resolve = _.partial(_.map, _, &apos;user&apos;);
+
+var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;active&apos;: true },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: false }
+];
+
+resolve( _.dropRightWhile(users, function(o) { return !o.active; }) );
+// =&gt; [&apos;barney&apos;]
+
+// 使用了 `_.matches` 的回调结果
+resolve( _.dropRightWhile(users, { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: false }) );
+// =&gt; [&apos;barney&apos;, &apos;fred&apos;]
+
+// 使用了 `_.matchesProperty` 的回调结果
+resolve( _.dropRightWhile(users, [&apos;active&apos;, false]) );
+// =&gt; [&apos;barney&apos;]
+
+// 使用了 `_.property` 的回调结果
+resolve( _.dropRightWhile(users, &apos;active&apos;) );
+// =&gt; [&apos;barney&apos;, &apos;fred&apos;, &apos;pebbles&apos;]
+</code></pre><h2 id="dropWhile"><a href="#dropWhile" class="headerlink" title="_.dropWhile"></a>_.dropWhile</h2><p><strong><code>_.dropWhile(array, [predicate=_.identity])</code></strong></p>
+<p>裁剪数组，起点从 predicate 返回假值开始。predicate 会传入3个参数：(value, index, array)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会在每一次迭代调用</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回裁剪后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: true }
+];
+
+_.dropWhile(users, function(o) { return !o.active; });
+// =&gt; 结果: [&apos;pebbles&apos;]
+
+// 使用了 `_.matches` 的回调处理
+_.dropWhile(users, { &apos;user&apos;: &apos;barney&apos;, &apos;active&apos;: false });
+// =&gt; 结果: [&apos;fred&apos;, &apos;pebbles&apos;]
+
+// 使用了 `_.matchesProperty` 的回调处理
+_.dropWhile(users, [&apos;active&apos;, false]);
+// =&gt; 结果: [&apos;pebbles&apos;]
+
+// 使用了 `_.property` 的回调处理
+_.dropWhile(users, &apos;active&apos;);
+// =&gt; 结果: [&apos;barney&apos;, &apos;fred&apos;, &apos;pebbles&apos;]
+</code></pre><h2 id="fill"><a href="#fill" class="headerlink" title="_.fill"></a>_.fill</h2><p><strong><code>_.fill(array, value, [start=0], [end=array.length])</code></strong></p>
+<p>指定 值 填充数组，从 start 到 end 的位置，但不包括 end 本身的位置。 </p>
+<p>注意: 这个方法会改变数组</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要填充的数组</p>
+</li>
+<li><p>value (*):填充的值</p>
+</li>
+<li><p>[start=0] (number):开始位置</p>
+</li>
+<li><p>[end=array.length] (number):结束位置</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1, 2, 3];
+
+_.fill(array, &apos;a&apos;);
+console.log(array);
+// =&gt; [&apos;a&apos;, &apos;a&apos;, &apos;a&apos;]
+
+_.fill(Array(3), 2);
+// =&gt; [2, 2, 2]
+
+_.fill([4, 6, 8, 10], &apos;*&apos;, 1, 3);
+// =&gt; [4, &apos;*&apos;, &apos;*&apos;, 10]
+</code></pre><h2 id="findIndex"><a href="#findIndex" class="headerlink" title="_.findIndex"></a>_.findIndex</h2><p><strong><code>_.findIndex(array, [predicate=_.identity])</code></strong></p>
+<p>这个方法类似 _.find。除了它返回最先通过 predicate 判断为真值的元素的 index ，而不是元素本身。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要搜索的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会在每一次迭代调用</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回符合元素的 index，否则返回 -1。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: true }
+];
+
+_.findIndex(users, function(o) { return o.user == &apos;barney&apos;; });
+// =&gt; 0
+
+// 使用了 `_.matches` 的回调结果
+_.findIndex(users, { &apos;user&apos;: &apos;fred&apos;, &apos;active&apos;: false });
+// =&gt; 1
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.findIndex(users, [&apos;active&apos;, false]);
+// =&gt; 0
+
+// 使用了 `_.property` 的回调结果
+_.findIndex(users, &apos;active&apos;);
+// =&gt; 2
+</code></pre><h2 id="findLastIndex"><a href="#findLastIndex" class="headerlink" title="_.findLastIndex"></a>_.findLastIndex</h2><p><strong><code>_.findLastIndex(array, [predicate=_.identity])</code></strong></p>
+<p>这个方式类似 _.findIndex ， 不过它是从右到左的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要搜索的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会在每一次迭代调用</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回符合元素的 index，否则返回 -1。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;active&apos;: true },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: false }
+];
+
+_.findLastIndex(users, function(o) { return o.user == &apos;pebbles&apos;; });
+// =&gt; 2
+
+// 使用了 `_.matches` 的回调结果
+_.findLastIndex(users, { &apos;user&apos;: &apos;barney&apos;, &apos;active&apos;: true });
+// =&gt; 0
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.findLastIndex(users, [&apos;active&apos;, false]);
+// =&gt; 2
+
+// 使用了 `_.property` 的回调结果
+_.findLastIndex(users, &apos;active&apos;);
+// =&gt; 0
+</code></pre><h2 id="flatten"><a href="#flatten" class="headerlink" title="_.flatten"></a>_.flatten</h2><p><strong><code>_.flatten(array)</code></strong></p>
+<p>向上一级展平数组嵌套</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要展平的数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回展平后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.flatten([1, [2, [3, [4]], 5]]);
+// =&gt; [1, 2, [3, [4]], 5]
+</code></pre><h2 id="flattenDeep"><a href="#flattenDeep" class="headerlink" title="_.flattenDeep"></a>_.flattenDeep</h2><p><strong><code>_.flattenDeep(array)</code></strong></p>
+<p>递归展平 数组.</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要展平的数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回展平后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.flattenDeep([1, [2, [3, [4]], 5]]);
+// =&gt; [1, 2, 3, 4, 5]
+</code></pre><h2 id="flattenDepth"><a href="#flattenDepth" class="headerlink" title="_.flattenDepth"></a>_.flattenDepth</h2><p><strong><code>_.flattenDepth(array, [depth=1])</code></strong></p>
+<p>根据 depth 递归展平 数组 的层级</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要展平的数组</p>
+</li>
+<li><p>[depth=1] (number):展平的层级</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回展平后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1, [2, [3, [4]], 5]];
+
+_.flattenDepth(array, 1);
+// =&gt; [1, 2, [3, [4]], 5]
+
+_.flattenDepth(array, 2);
+// =&gt; [1, 2, 3, [4], 5]
+</code></pre><h2 id="fromPairs"><a href="#fromPairs" class="headerlink" title="_.fromPairs"></a>_.fromPairs</h2><p><strong><code>_.fromPairs(pairs)</code></strong></p>
+<p>反向版 _.toPairs，这个方法返回一个由键值对构成的对象。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>pairs (Array):键值对</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回一个新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.fromPairs([[&apos;fred&apos;, 30], [&apos;barney&apos;, 40]]);
+// =&gt; { &apos;fred&apos;: 30, &apos;barney&apos;: 40 }
+</code></pre><h2 id="head-first"><a href="#head-first" class="headerlink" title="_.head(first)"></a>_.head(first)</h2><p><strong><code>_.head(array)</code></strong></p>
+<p>获得数组的首个元素</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):要检索的数组</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回数组中的首个元素</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.head([1, 2, 3]);
+// =&gt; 1
+
+_.head([]);
+// =&gt; undefined
+</code></pre><h2 id="indexOf"><a href="#indexOf" class="headerlink" title="_.indexOf"></a>_.indexOf</h2><p><strong><code>_.indexOf(array, value, [fromIndex=0])</code></strong></p>
+<p>根据 value 使用 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 等值比较返回数组中首次匹配的 index， 如果 fromIndex 为负值，将从数组尾端索引进行匹配，如果将 fromIndex 设置为 true，将使用更快的二进制检索机制。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):要检索的数组</p>
+</li>
+<li><p>value (*):要检索的值</p>
+</li>
+<li><p>[fromIndex=0] (number):需要检索的起始位置，如果为 true 将使用二进制检索方式。</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回匹配值的index，否则返回 -1。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.indexOf([1, 2, 1, 2], 2);
+// =&gt; 1
+
+// 使用了 `fromIndex`
+_.indexOf([1, 2, 1, 2], 2, 2);
+// =&gt; 3
+</code></pre><h2 id="initial"><a href="#initial" class="headerlink" title="_.initial"></a>_.initial</h2><p><strong><code>_.initial(array)</code></strong></p>
+<p>获取数组中除了最后一个元素之外的所有元素。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):原数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回没有最后一个元素的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.initial([1, 2, 3]);
+// =&gt; [1, 2]
+</code></pre><h2 id="intersection"><a href="#intersection" class="headerlink" title="_.intersection"></a>_.intersection</h2><p><strong><code>_.intersection([arrays])</code></strong></p>
+<p>创建一个包含所有使用 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 进行等值比较后筛选的唯一值数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>[arrays] (…Array)：需要处理的数组队列</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组中所有数组共享元素的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.intersection([2, 1], [4, 2], [1, 2]);
+// =&gt; [2]
+</code></pre><h2 id="intersectionBy"><a href="#intersectionBy" class="headerlink" title="_.intersectionBy"></a>_.intersectionBy</h2><p><strong><code>_.intersectionBy([arrays], [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.intersection，此外它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[arrays] (…Array)：需要处理的数组队列</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组中共享元素的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.intersectionBy([2.1, 1.2], [4.3, 2.4], Math.floor);
+// =&gt; [2.1]
+
+// 使用了 `_.property` 的回调结果
+_.intersectionBy([{ &apos;x&apos;: 1 }], [{ &apos;x&apos;: 2 }, { &apos;x&apos;: 1 }], &apos;x&apos;);
+// =&gt; [{ &apos;x&apos;: 1 }]
+</code></pre><h2 id="intersectionWith"><a href="#intersectionWith" class="headerlink" title="_.intersectionWith"></a>_.intersectionWith</h2><p><strong><code>_.intersectionWith([arrays], [comparator])</code></strong></p>
+<p>这个方法类似 _.intersection，此外它接受一个 comparator 调用每一个数组和值。iteratee 会传入2个参数：((arrVal, othVal)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[arrays] (…Array)：需要处理的数组队列</p>
+</li>
+<li><p>[comparator] (Function)：这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组中共享元素的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var objects = [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }, { &apos;x&apos;: 2, &apos;y&apos;: 1 }];
+var others = [{ &apos;x&apos;: 1, &apos;y&apos;: 1 }, { &apos;x&apos;: 1, &apos;y&apos;: 2 }];
+
+_.intersectionWith(objects, others, _.isEqual);
+// =&gt; [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }]
+</code></pre><h2 id="join"><a href="#join" class="headerlink" title="_.join"></a>_.join</h2><p><strong><code>_.join(array, [separator=&#39;,&#39;])</code></strong></p>
+<p>将数组中的所有元素转换为由 separator 分隔的字符串。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要转换的数组</p>
+</li>
+<li><p>[separator=’,’] (string):分隔符</p>
+</li>
+</ol>
+<p><strong><code>返回值 (String)</code></strong></p>
+<p>返回连接好的字符串</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.join([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;], &apos;~&apos;);
+// =&gt; &apos;a~b~c&apos;}]
+</code></pre><h2 id="last"><a href="#last" class="headerlink" title="_.last"></a>_.last</h2><p><strong><code>_.last(array)</code></strong></p>
+<p>获取数组中的最后一个元素</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要检索的数组</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回数组中的最后一个元素</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.last([1, 2, 3]);
+// =&gt; 3
+</code></pre><h2 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="_.lastIndexOf"></a>_.lastIndexOf</h2><p><strong><code>_.lastIndexOf(array, value, [fromIndex=array.length-1])</code></strong></p>
+<p>这个方法类似 _.indexOf，但它是从右到左遍历元素的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):要检索的数组</p>
+</li>
+<li><p>value (*):要检索的值</p>
+</li>
+<li><p>[fromIndex=array.length-1] (number)：检索 index 的起点</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回匹配值的index，否则返回 -1。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.lastIndexOf([1, 2, 1, 2], 2);
+// =&gt; 3
+
+// 使用了 `fromIndex`
+_.lastIndexOf([1, 2, 1, 2], 2, 2);
+// =&gt; 1
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Lodash/" rel="tag">#Lodash</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015-05-29-baidu-ueditor-use/" rel="next" title="富文本编辑器-百度Ueditor的使用">
+                <i class="fa fa-chevron-left"></i> 富文本编辑器-百度Ueditor的使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016-07-26-lodash-syntax-doc/"
+           data-title="Lodash中文文档" data-url="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Phil" />
+          <p class="site-author-name" itemprop="name">Phil</p>
+          <p class="site-description motion-element" itemprop="description">JUST DO IT.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://helloworld.zhoufei.name/2048/" target="_blank" title="2048">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  2048
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/zhoufei.name" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/cn_zhoufei" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">1.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chunk"><span class="nav-number">1.1.</span> <span class="nav-text">_.chunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compact"><span class="nav-number">1.2.</span> <span class="nav-text">_.compact</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">1.3.</span> <span class="nav-text">_.concat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#difference"><span class="nav-number">1.4.</span> <span class="nav-text">_.difference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceBy"><span class="nav-number">1.5.</span> <span class="nav-text">_.differenceBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceWith"><span class="nav-number">1.6.</span> <span class="nav-text">_.differenceWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop"><span class="nav-number">1.7.</span> <span class="nav-text">_.drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRight"><span class="nav-number">1.8.</span> <span class="nav-text">_.dropRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRightWhile"><span class="nav-number">1.9.</span> <span class="nav-text">_.dropRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropWhile"><span class="nav-number">1.10.</span> <span class="nav-text">_.dropWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fill"><span class="nav-number">1.11.</span> <span class="nav-text">_.fill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findIndex"><span class="nav-number">1.12.</span> <span class="nav-text">_.findIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastIndex"><span class="nav-number">1.13.</span> <span class="nav-text">_.findLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatten"><span class="nav-number">1.14.</span> <span class="nav-text">_.flatten</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDeep"><span class="nav-number">1.15.</span> <span class="nav-text">_.flattenDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDepth"><span class="nav-number">1.16.</span> <span class="nav-text">_.flattenDepth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fromPairs"><span class="nav-number">1.17.</span> <span class="nav-text">_.fromPairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head-first"><span class="nav-number">1.18.</span> <span class="nav-text">_.head(first)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOf"><span class="nav-number">1.19.</span> <span class="nav-text">_.indexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initial"><span class="nav-number">1.20.</span> <span class="nav-text">_.initial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection"><span class="nav-number">1.21.</span> <span class="nav-text">_.intersection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionBy"><span class="nav-number">1.22.</span> <span class="nav-text">_.intersectionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionWith"><span class="nav-number">1.23.</span> <span class="nav-text">_.intersectionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">1.24.</span> <span class="nav-text">_.join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last"><span class="nav-number">1.25.</span> <span class="nav-text">_.last</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">1.26.</span> <span class="nav-text">_.lastIndexOf</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-keyboard-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Phil</span>
+</div>
+<!-- fa-heart -->
+<!-- 
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+ -->
+
+<!-- 后面修改 -->
+
+<div class="powered-by">
+  由
+  <a class="theme-link" href="http://hexo.io" target="_blank">
+    Hexo
+  </a>
+  强力驱动
+</div>
+
+<div class="theme-info">
+  托管于
+  <a class="theme-link" href="https://github.com" target="_blank">
+    GitHub
+  </a>
+</div>
+
+<div class="fangketongji">
+  <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zhoufei"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>

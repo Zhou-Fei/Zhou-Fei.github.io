@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="zhoufei,name,java,zhoufei.name,helloworld.zhoufei.name,linux,ubuntu" />
+  <meta name="keywords" content="helloworld,hello world,zhoufei,name,java,zhoufei.name,helloworld.zhoufei.name,linux,ubuntu" />
 
 
 
@@ -259,8 +259,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016-04-22-ubuntu-wifi-slowly/" itemprop="url">
-                  Ubuntu 16.04 LTS无线上网网速慢的解决办法
+                <a class="post-title-link" href="/2016-07-26-lodash-syntax-doc/" itemprop="url">
+                  Lodash中文文档
                 </a>
               
             
@@ -273,8 +273,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-22T19:08:00+08:00" content="2016-04-22">
-              2016-04-22
+            <time itemprop="dateCreated" datetime="2016-07-26T19:08:00+08:00" content="2016-07-26">
+              2016-07-26
             </time>
           </span>
 
@@ -287,8 +287,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tutorial/" itemprop="url" rel="index">
-                    <span itemprop="name">Tutorial</span>
+                  <a href="/categories/Document/" itemprop="url" rel="index">
+                    <span itemprop="name">Document</span>
                   </a>
                 </span>
 
@@ -303,8 +303,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016-04-22-ubuntu-wifi-slowly/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-04-22-ubuntu-wifi-slowly/" itemprop="commentsCount"></span>
+                <a href="/2016-07-26-lodash-syntax-doc/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-07-26-lodash-syntax-doc/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -329,19 +329,24 @@
       
         
           
-          
-装了Ubuntu 16.04 LTS后连接无线上网, 跟另一台windows电脑相比, 发现出奇的慢, 现在附上解决办法。
+          Array_.chunk_.chunk(array, [size=0])
+将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。
+参数
 
+array (Array):需要被处理的数组
+[size=0] (number):每个块的长度
 
-在终端运行：sudo gedit /etc/modprobe.d/iwlwifi.conf
-在打开的这个配置文件中空白处添加：options iwlwifi 11n_disable=1
-保存文件并重启。
+返回值 (Array)
+返回一个拆分好的新数组
+示例
+_.chunk([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;], 2);
+// =&gt; [[&apos;a&apos;, &apos;b&apos;], [&apos;c&apos;, &apos;d&apos;]]
 
-
-          
+_.chunk([&apos;a&apos
+          ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016-04-22-ubuntu-wifi-slowly/#more" rel="contents">
+            <a class="btn" href="/2016-07-26-lodash-syntax-doc/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -808,6 +813,150 @@ import org.jsoup.nodes.Document;
             
               
                 
+                <a class="post-title-link" href="/2014-10-15-sort-algorithm-java/" itemprop="url">
+                  程序员必须掌握的8大排序算法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-10-15T11:13:00+08:00" content="2014-10-15">
+              2014-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Coding/" itemprop="url" rel="index">
+                    <span itemprop="name">Coding</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014-10-15-sort-algorithm-java/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014-10-15-sort-algorithm-java/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+分类：
+
+插入排序（直接插入排序、希尔排序）
+交换排序（冒泡排序、快速排序）
+选择排序（直接选择排序、堆排序）
+归并排序
+分配排序（基数排序）
+
+所需辅助空间最多：归并排序所需辅助空间最少：堆排序平均速度最快：快速排序
+不稳定：快速排序，希尔排序，堆排序。
+
+直接插入排序在要排序的一组数中，假设前面(n-1)[n&gt;=2] 个数已经是排好顺序的，现在要把第n个数插到前面的有序数中，使得这个数也是排好顺序的。如此反复循环，直到全部排好顺序。
+package name.zhoufei.helloworld.sort;
+
+import java.util.Arrays;
+
+/**
+ * 排序算法: 直接插入排序
+ * 基本思想: 在要排序的一组数中，假设前面(n-1)[n&gt;=2] 个数
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014-10-15-sort-algorithm-java/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2014-09-20-ubuntu-theme-icon/" itemprop="url">
                   Ubuntu主题图标美化
                 </a>
@@ -1031,6 +1180,169 @@ sudo find / -name qq*
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2014-08-08-install-wine-qqintl/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2014-07-22-idea-keymap/" itemprop="url">
+                  IntelliJ IDEA 快捷键和设置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-07-22T02:08:00+08:00" content="2014-07-22">
+              2014-07-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tutorial/" itemprop="url" rel="index">
+                    <span itemprop="name">Tutorial</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014-07-22-idea-keymap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014-07-22-idea-keymap/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          实用快捷键Ctrl+/ 或 Ctrl+Shift+/ 注释（// 或者/*…*/ ）
+
+Ctrl+D 复制行
+
+Ctrl+X 删除行
+
+快速修复 alt+enter (modify/cast)
+
+代码提示 alt+/
+
+ctr+G 定位某一行
+
+Shift+F6 重构-重命名
+
+Ctrl+R 替换文本
+
+Ctrl+F 查找文本
+
+Ctrl+E 最近打开的文件
+
+Ctrl+J 自动代码
+
+组织导入 ctr+alt+O
+
+格式化代码 ctr+alt+L
+
+大小写转化 ctr+shift+U
+
+常用快捷键列表Alt+回车 导入包,自动修正
+
+Ctrl+N   查找类
+
+Ctrl+Shift+N 查找文件
+
+Ctrl+Alt+L  格式化代码
+
+Ctrl+Alt+O 优化导入的类和包
+
+Alt+In
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014-07-22-idea-keymap/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1322,140 +1634,13 @@ JDK环境变量配置1. 官网下载JDK：http://www.oracle.com/technetwork/java
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014-06-06-hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-06-06T01:00:00+08:00" content="2014-06-06">
-              2014-06-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Essay/" itemprop="url" rel="index">
-                    <span itemprop="name">Essay</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2014-06-06-hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014-06-06-hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-Welcome to Hello World! This is my very first post,I will share one of my favorite poems for everyone,Let us encourage each other in our endeavours.
-
-Seven times have I despised my soulby Kahlil Gibran
-The first time when I saw her being meek that she might attain height .
-The second time when I saw her limping before the crippled .
-The third time
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2014-06-06-hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1494,7 +1679,7 @@ The third time
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1511,7 +1696,7 @@ The third time
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1525,11 +1710,11 @@ The third time
           
             
               <span class="links-of-author-item">
-                <a href="https://plus.google.com/117907656189789442940" target="_blank" title="Google">
+                <a href="http://helloworld.zhoufei.name/2048/" target="_blank" title="2048">
                   
-                    <i class="fa fa-fw fa-google-plus"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Google
+                  2048
                 </a>
               </span>
             

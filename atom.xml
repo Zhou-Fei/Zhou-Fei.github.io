@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helloworld.zhoufei.name/"/>
-  <updated>2016-08-04T05:39:11.785Z</updated>
+  <updated>2016-08-23T01:18:01.511Z</updated>
   <id>http://helloworld.zhoufei.name/</id>
   
   <author>
@@ -16,38 +16,514 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Ubuntu 16.04 LTS无线上网网速慢的解决办法</title>
-    <link href="http://helloworld.zhoufei.name/2016-04-22-ubuntu-wifi-slowly/"/>
-    <id>http://helloworld.zhoufei.name/2016-04-22-ubuntu-wifi-slowly/</id>
-    <published>2016-04-22T11:08:00.000Z</published>
-    <updated>2016-08-04T05:39:11.785Z</updated>
+    <title>Lodash中文文档</title>
+    <link href="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/"/>
+    <id>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</id>
+    <published>2016-07-26T11:08:00.000Z</published>
+    <updated>2016-08-23T01:18:01.511Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p>装了Ubuntu 16.04 LTS后连接无线上网, 跟另一台windows电脑相比, 发现出奇的慢, 现在附上解决办法。</p>
-</blockquote>
+    <content type="html"><![CDATA[<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><h2 id="chunk"><a href="#chunk" class="headerlink" title="_.chunk"></a>_.chunk</h2><p><strong><code>_.chunk(array, [size=0])</code></strong></p>
+<p>将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。</p>
+<p><strong><code>参数</code></strong></p>
 <ol>
-<li>在终端运行：sudo gedit /etc/modprobe.d/iwlwifi.conf</li>
-<li>在打开的这个配置文件中空白处添加：options iwlwifi 11n_disable=1</li>
-<li>保存文件并重启。</li>
+<li>array (Array):需要被处理的数组</li>
+<li>[size=0] (number):每个块的长度</li>
 </ol>
-]]></content>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个拆分好的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.chunk([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;], 2);
+// =&gt; [[&apos;a&apos;, &apos;b&apos;], [&apos;c&apos;, &apos;d&apos;]]
+
+_.chunk([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;], 3);
+// =&gt; [[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;], [&apos;d&apos;]]
+</code></pre><h2 id="compact"><a href="#compact" class="headerlink" title="_.compact"></a>_.compact</h2><p><strong><code>_.compact(array)</code></strong></p>
+<p>创建一个移除了所有假值的数组。例如：false、null、 0、””、undefined， 以及NaN 都是 “假值”.</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要被处理的数组。</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回移除了假值的数组。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.compact([0, 1, false, 2, &apos;&apos;, 3]);
+// =&gt; [1, 2, 3]
+</code></pre><h2 id="concat"><a href="#concat" class="headerlink" title="_.concat"></a>_.concat</h2><p><strong><code>_.concat(array, [values])</code></strong></p>
+<p>创建一个用任何数组 或 值连接的新数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要被连接的数组</p>
+</li>
+<li><p>[values] (…*):需要被连接的值的队列</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回连接后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1];
+var other = _.concat(array, 2, [3], [[4]]);
+
+console.log(other);
+// =&gt; [1, 2, 3, [4]]
+
+console.log(array);
+// =&gt; [1]
+</code></pre><h2 id="difference"><a href="#difference" class="headerlink" title="_.difference"></a>_.difference</h2><p><strong><code>_.difference(array, [values])</code></strong></p>
+<p>创建一个差异化后的数组，不包括使用 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 方法提供的数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[values] (…Array):用于对比差异的数组</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个差异化后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.difference([3, 2, 1], [4, 2]);
+// =&gt; [3, 1]
+</code></pre><h2 id="differenceBy"><a href="#differenceBy" class="headerlink" title="_.differenceBy"></a>_.differenceBy</h2><p><strong><code>_.differenceBy(array, [values], [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.difference，此外它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[values] (…Array):用于对比差异的数组</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个差异化后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.differenceBy([3.1, 2.2, 1.3], [4.4, 2.5], Math.floor);
+// =&gt; [3.1, 1.3]
+
+// 使用了 `_.property` 的回调结果
+_.differenceBy([{ &apos;x&apos;: 2 }, { &apos;x&apos;: 1 }], [{ &apos;x&apos;: 1 }], &apos;x&apos;);
+// =&gt; [{ &apos;x&apos;: 2 }]
+</code></pre><h2 id="differenceWith"><a href="#differenceWith" class="headerlink" title="_.differenceWith"></a>_.differenceWith</h2><p><strong><code>_.differenceWith(array, [values], [comparator])</code></strong></p>
+<p>这个方法类似 _.difference，此外它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[values] (…Array):用于对比差异的数组</p>
+</li>
+<li><p>[comparator] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个差异化后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var objects = [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }, { &apos;x&apos;: 2, &apos;y&apos;: 1 }];
+
+_.differenceWith(objects, [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }], _.isEqual);
+// =&gt; [{ &apos;x&apos;: 2, &apos;y&apos;: 1 }]
+</code></pre><h2 id="drop"><a href="#drop" class="headerlink" title="_.drop"></a>_.drop</h2><p><strong><code>_.drop(array, [n=1])</code></strong></p>
+<p>裁剪数组中的前 N 个数组，返回剩余的部分。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[n=1] (number):裁剪的个数</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组的剩余的部分。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.drop([1, 2, 3]);
+// =&gt; [2, 3]
+
+_.drop([1, 2, 3], 2);
+// =&gt; [3]
+
+_.drop([1, 2, 3], 5);
+// =&gt; []
+
+_.drop([1, 2, 3], 0);
+// =&gt; [1, 2, 3]
+</code></pre><h2 id="dropRight"><a href="#dropRight" class="headerlink" title="_.dropRight"></a>_.dropRight</h2><p><strong><code>_.dropRight(array, [n=1])</code></strong></p>
+<p>从右边开始裁剪数组中的 N 个数组，返回剩余的部分。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[n=1] (number):裁剪的个数</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组的剩余的部分。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.dropRight([1, 2, 3]);
+// =&gt; [1, 2]
+
+_.dropRight([1, 2, 3], 2);
+// =&gt; [1]
+
+_.dropRight([1, 2, 3], 5);
+// =&gt; []
+
+_.dropRight([1, 2, 3], 0);
+// =&gt; [1, 2, 3]
+</code></pre><h2 id="dropRightWhile"><a href="#dropRightWhile" class="headerlink" title="_.dropRightWhile"></a>_.dropRightWhile</h2><p><strong><code>_.dropRightWhile(array, [predicate=_.identity])</code></strong></p>
+<p>从右边开始裁剪数组，起点从 predicate 返回假值开始。predicate 会传入3个参数：(value, index, array)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会在每一次迭代调用</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回裁剪后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var resolve = _.partial(_.map, _, &apos;user&apos;);
+
+var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;active&apos;: true },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: false }
+];
+
+resolve( _.dropRightWhile(users, function(o) { return !o.active; }) );
+// =&gt; [&apos;barney&apos;]
+
+// 使用了 `_.matches` 的回调结果
+resolve( _.dropRightWhile(users, { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: false }) );
+// =&gt; [&apos;barney&apos;, &apos;fred&apos;]
+
+// 使用了 `_.matchesProperty` 的回调结果
+resolve( _.dropRightWhile(users, [&apos;active&apos;, false]) );
+// =&gt; [&apos;barney&apos;]
+
+// 使用了 `_.property` 的回调结果
+resolve( _.dropRightWhile(users, &apos;active&apos;) );
+// =&gt; [&apos;barney&apos;, &apos;fred&apos;, &apos;pebbles&apos;]
+</code></pre><h2 id="dropWhile"><a href="#dropWhile" class="headerlink" title="_.dropWhile"></a>_.dropWhile</h2><p><strong><code>_.dropWhile(array, [predicate=_.identity])</code></strong></p>
+<p>裁剪数组，起点从 predicate 返回假值开始。predicate 会传入3个参数：(value, index, array)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会在每一次迭代调用</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回裁剪后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: true }
+];
+
+_.dropWhile(users, function(o) { return !o.active; });
+// =&gt; 结果: [&apos;pebbles&apos;]
+
+// 使用了 `_.matches` 的回调处理
+_.dropWhile(users, { &apos;user&apos;: &apos;barney&apos;, &apos;active&apos;: false });
+// =&gt; 结果: [&apos;fred&apos;, &apos;pebbles&apos;]
+
+// 使用了 `_.matchesProperty` 的回调处理
+_.dropWhile(users, [&apos;active&apos;, false]);
+// =&gt; 结果: [&apos;pebbles&apos;]
+
+// 使用了 `_.property` 的回调处理
+_.dropWhile(users, &apos;active&apos;);
+// =&gt; 结果: [&apos;barney&apos;, &apos;fred&apos;, &apos;pebbles&apos;]
+</code></pre><h2 id="fill"><a href="#fill" class="headerlink" title="_.fill"></a>_.fill</h2><p><strong><code>_.fill(array, value, [start=0], [end=array.length])</code></strong></p>
+<p>指定 值 填充数组，从 start 到 end 的位置，但不包括 end 本身的位置。 </p>
+<p>注意: 这个方法会改变数组</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要填充的数组</p>
+</li>
+<li><p>value (*):填充的值</p>
+</li>
+<li><p>[start=0] (number):开始位置</p>
+</li>
+<li><p>[end=array.length] (number):结束位置</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1, 2, 3];
+
+_.fill(array, &apos;a&apos;);
+console.log(array);
+// =&gt; [&apos;a&apos;, &apos;a&apos;, &apos;a&apos;]
+
+_.fill(Array(3), 2);
+// =&gt; [2, 2, 2]
+
+_.fill([4, 6, 8, 10], &apos;*&apos;, 1, 3);
+// =&gt; [4, &apos;*&apos;, &apos;*&apos;, 10]
+</code></pre><h2 id="findIndex"><a href="#findIndex" class="headerlink" title="_.findIndex"></a>_.findIndex</h2><p><strong><code>_.findIndex(array, [predicate=_.identity])</code></strong></p>
+<p>这个方法类似 _.find。除了它返回最先通过 predicate 判断为真值的元素的 index ，而不是元素本身。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要搜索的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会在每一次迭代调用</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回符合元素的 index，否则返回 -1。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: true }
+];
+
+_.findIndex(users, function(o) { return o.user == &apos;barney&apos;; });
+// =&gt; 0
+
+// 使用了 `_.matches` 的回调结果
+_.findIndex(users, { &apos;user&apos;: &apos;fred&apos;, &apos;active&apos;: false });
+// =&gt; 1
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.findIndex(users, [&apos;active&apos;, false]);
+// =&gt; 0
+
+// 使用了 `_.property` 的回调结果
+_.findIndex(users, &apos;active&apos;);
+// =&gt; 2
+</code></pre><h2 id="findLastIndex"><a href="#findLastIndex" class="headerlink" title="_.findLastIndex"></a>_.findLastIndex</h2><p><strong><code>_.findLastIndex(array, [predicate=_.identity])</code></strong></p>
+<p>这个方式类似 _.findIndex ， 不过它是从右到左的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要搜索的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会在每一次迭代调用</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回符合元素的 index，否则返回 -1。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;active&apos;: true },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: false }
+];
+
+_.findLastIndex(users, function(o) { return o.user == &apos;pebbles&apos;; });
+// =&gt; 2
+
+// 使用了 `_.matches` 的回调结果
+_.findLastIndex(users, { &apos;user&apos;: &apos;barney&apos;, &apos;active&apos;: true });
+// =&gt; 0
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.findLastIndex(users, [&apos;active&apos;, false]);
+// =&gt; 2
+
+// 使用了 `_.property` 的回调结果
+_.findLastIndex(users, &apos;active&apos;);
+// =&gt; 0
+</code></pre><h2 id="flatten"><a href="#flatten" class="headerlink" title="_.flatten"></a>_.flatten</h2><p><strong><code>_.flatten(array)</code></strong></p>
+<p>向上一级展平数组嵌套</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要展平的数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回展平后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.flatten([1, [2, [3, [4]], 5]]);
+// =&gt; [1, 2, [3, [4]], 5]
+</code></pre><h2 id="flattenDeep"><a href="#flattenDeep" class="headerlink" title="_.flattenDeep"></a>_.flattenDeep</h2><p><strong><code>_.flattenDeep(array)</code></strong></p>
+<p>递归展平 数组.</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要展平的数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回展平后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.flattenDeep([1, [2, [3, [4]], 5]]);
+// =&gt; [1, 2, 3, 4, 5]
+</code></pre><h2 id="flattenDepth"><a href="#flattenDepth" class="headerlink" title="_.flattenDepth"></a>_.flattenDepth</h2><p><strong><code>_.flattenDepth(array, [depth=1])</code></strong></p>
+<p>根据 depth 递归展平 数组 的层级</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要展平的数组</p>
+</li>
+<li><p>[depth=1] (number):展平的层级</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回展平后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1, [2, [3, [4]], 5]];
+
+_.flattenDepth(array, 1);
+// =&gt; [1, 2, [3, [4]], 5]
+
+_.flattenDepth(array, 2);
+// =&gt; [1, 2, 3, [4], 5]
+</code></pre><h2 id="fromPairs"><a href="#fromPairs" class="headerlink" title="_.fromPairs"></a>_.fromPairs</h2><p><strong><code>_.fromPairs(pairs)</code></strong></p>
+<p>反向版 _.toPairs，这个方法返回一个由键值对构成的对象。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>pairs (Array):键值对</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回一个新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.fromPairs([[&apos;fred&apos;, 30], [&apos;barney&apos;, 40]]);
+// =&gt; { &apos;fred&apos;: 30, &apos;barney&apos;: 40 }
+</code></pre><h2 id="head-first"><a href="#head-first" class="headerlink" title="_.head(first)"></a>_.head(first)</h2><p><strong><code>_.head(array)</code></strong></p>
+<p>获得数组的首个元素</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):要检索的数组</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回数组中的首个元素</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.head([1, 2, 3]);
+// =&gt; 1
+
+_.head([]);
+// =&gt; undefined
+</code></pre><h2 id="indexOf"><a href="#indexOf" class="headerlink" title="_.indexOf"></a>_.indexOf</h2><p><strong><code>_.indexOf(array, value, [fromIndex=0])</code></strong></p>
+<p>根据 value 使用 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 等值比较返回数组中首次匹配的 index， 如果 fromIndex 为负值，将从数组尾端索引进行匹配，如果将 fromIndex 设置为 true，将使用更快的二进制检索机制。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):要检索的数组</p>
+</li>
+<li><p>value (*):要检索的值</p>
+</li>
+<li><p>[fromIndex=0] (number):需要检索的起始位置，如果为 true 将使用二进制检索方式。</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回匹配值的index，否则返回 -1。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.indexOf([1, 2, 1, 2], 2);
+// =&gt; 1
+
+// 使用了 `fromIndex`
+_.indexOf([1, 2, 1, 2], 2, 2);
+// =&gt; 3
+</code></pre><h2 id="initial"><a href="#initial" class="headerlink" title="_.initial"></a>_.initial</h2><p><strong><code>_.initial(array)</code></strong></p>
+<p>获取数组中除了最后一个元素之外的所有元素。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):原数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回没有最后一个元素的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.initial([1, 2, 3]);
+// =&gt; [1, 2]
+</code></pre><h2 id="intersection"><a href="#intersection" class="headerlink" title="_.intersection"></a>_.intersection</h2><p><strong><code>_.intersection([arrays])</code></strong></p>
+<p>创建一个包含所有使用 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 进行等值比较后筛选的唯一值数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>[arrays] (…Array)：需要处理的数组队列</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组中所有数组共享元素的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.intersection([2, 1], [4, 2], [1, 2]);
+// =&gt; [2]
+</code></pre><h2 id="intersectionBy"><a href="#intersectionBy" class="headerlink" title="_.intersectionBy"></a>_.intersectionBy</h2><p><strong><code>_.intersectionBy([arrays], [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.intersection，此外它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[arrays] (…Array)：需要处理的数组队列</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组中共享元素的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.intersectionBy([2.1, 1.2], [4.3, 2.4], Math.floor);
+// =&gt; [2.1]
+
+// 使用了 `_.property` 的回调结果
+_.intersectionBy([{ &apos;x&apos;: 1 }], [{ &apos;x&apos;: 2 }, { &apos;x&apos;: 1 }], &apos;x&apos;);
+// =&gt; [{ &apos;x&apos;: 1 }]
+</code></pre><h2 id="intersectionWith"><a href="#intersectionWith" class="headerlink" title="_.intersectionWith"></a>_.intersectionWith</h2><p><strong><code>_.intersectionWith([arrays], [comparator])</code></strong></p>
+<p>这个方法类似 _.intersection，此外它接受一个 comparator 调用每一个数组和值。iteratee 会传入2个参数：((arrVal, othVal)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[arrays] (…Array)：需要处理的数组队列</p>
+</li>
+<li><p>[comparator] (Function)：这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组中共享元素的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var objects = [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }, { &apos;x&apos;: 2, &apos;y&apos;: 1 }];
+var others = [{ &apos;x&apos;: 1, &apos;y&apos;: 1 }, { &apos;x&apos;: 1, &apos;y&apos;: 2 }];
+
+_.intersectionWith(objects, others, _.isEqual);
+// =&gt; [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }]
+</code></pre><h2 id="join"><a href="#join" class="headerlink" title="_.join"></a>_.join</h2><p><strong><code>_.join(array, [separator=&#39;,&#39;])</code></strong></p>
+<p>将数组中的所有元素转换为由 separator 分隔的字符串。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要转换的数组</p>
+</li>
+<li><p>[separator=’,’] (string):分隔符</p>
+</li>
+</ol>
+<p><strong><code>返回值 (String)</code></strong></p>
+<p>返回连接好的字符串</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.join([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;], &apos;~&apos;);
+// =&gt; &apos;a~b~c&apos;}]
+</code></pre><h2 id="last"><a href="#last" class="headerlink" title="_.last"></a>_.last</h2><p><strong><code>_.last(array)</code></strong></p>
+<p>获取数组中的最后一个元素</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要检索的数组</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回数组中的最后一个元素</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.last([1, 2, 3]);
+// =&gt; 3
+</code></pre><h2 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="_.lastIndexOf"></a>_.lastIndexOf</h2><p><strong><code>_.lastIndexOf(array, value, [fromIndex=array.length-1])</code></strong></p>
+<p>这个方法类似 _.indexOf，但它是从右到左遍历元素的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):要检索的数组</p>
+</li>
+<li><p>value (*):要检索的值</p>
+</li>
+<li><p>[fromIndex=array.length-1] (number)：检索 index 的起点</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回匹配值的index，否则返回 -1。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.lastIndexOf([1, 2, 1, 2], 2);
+// =&gt; 3
+
+// 使用了 `fromIndex`
+_.lastIndexOf([1, 2, 1, 2], 2, 2);
+// =&gt; 1
+</code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;装了Ubuntu 16.04 LTS后连接无线上网, 跟另一台windows电脑相比, 发现出奇的慢, 现在附上解决办法。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;在终端运行：sudo gedit /etc/modprobe.d/iw
+      &lt;h1 id=&quot;Array&quot;&gt;&lt;a href=&quot;#Array&quot; class=&quot;headerlink&quot; title=&quot;Array&quot;&gt;&lt;/a&gt;Array&lt;/h1&gt;&lt;h2 id=&quot;chunk&quot;&gt;&lt;a href=&quot;#chunk&quot; class=&quot;headerlink&quot; title=&quot;_.c
     
     </summary>
     
-      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+      <category term="Document" scheme="http://helloworld.zhoufei.name/categories/Document/"/>
     
     
-      <category term="Ubuntu" scheme="http://helloworld.zhoufei.name/tags/Ubuntu/"/>
-    
-      <category term="Wifi" scheme="http://helloworld.zhoufei.name/tags/Wifi/"/>
+      <category term="Lodash" scheme="http://helloworld.zhoufei.name/tags/Lodash/"/>
     
   </entry>
   
@@ -813,6 +1289,442 @@ public class Weather {
   </entry>
   
   <entry>
+    <title>程序员必须掌握的8大排序算法</title>
+    <link href="http://helloworld.zhoufei.name/2014-10-15-sort-algorithm-java/"/>
+    <id>http://helloworld.zhoufei.name/2014-10-15-sort-algorithm-java/</id>
+    <published>2014-10-15T03:13:00.000Z</published>
+    <updated>2016-08-23T00:47:20.762Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>分类：</p>
+<ol>
+<li>插入排序（直接插入排序、希尔排序）</li>
+<li>交换排序（冒泡排序、快速排序）</li>
+<li>选择排序（直接选择排序、堆排序）</li>
+<li>归并排序</li>
+<li>分配排序（基数排序）</li>
+</ol>
+<p>所需辅助空间最多：归并排序<br>所需辅助空间最少：堆排序<br>平均速度最快：快速排序</p>
+<p>不稳定：快速排序，希尔排序，堆排序。</p>
+</blockquote>
+<h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>在要排序的一组数中，假设前面(n-1)[n&gt;=2] 个数已经是排好顺序的，现在要把第n个数插到前面的有序数中，使得这个数也是排好顺序的。如此反复循环，直到全部排好顺序。</p>
+<pre><code>package name.zhoufei.helloworld.sort;
+
+import java.util.Arrays;
+
+/**
+ * 排序算法: 直接插入排序
+ * 基本思想: 在要排序的一组数中，假设前面(n-1)[n&gt;=2] 个数已经是排好顺序的，现在要把第n个数插到前面的有序数中，
+ *          使得这n个数也是排好顺序的。如此反复循环，直到全部排好顺序。
+ * Created by phil.
+ */
+public class InsertSort {
+
+    public static void main(String[] args) {
+    int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
+    insertSort(a);
+    System.out.println(Arrays.toString(a));
+    }
+
+    public static void insertSort(int[] a){
+    int temp;
+    for(int i=1;i&lt;a.length;i++){
+        int j=i-1;
+        temp=a[i];
+        for(;j&gt;=0&amp;&amp;temp&lt;a[j];j--){
+        a[j+1]=a[j];  //将大于temp的值整体后移一个单位
+        }
+        a[j+1]=temp;
+    }
+    }
+}
+</code></pre><h3 id="希尔排序-最小增量排序"><a href="#希尔排序-最小增量排序" class="headerlink" title="希尔排序(最小增量排序)"></a>希尔排序(最小增量排序)</h3><p>算法先将要排序的一组数按某个增量d（n/2,n为要排序数的个数）分成若干组，每组中记录的下标相差d.对每组中全部元素进行直接插入排序，然后再用一个较小的增量（d/2）对它进行分组，在每组中再进行直接插入排序。当增量减到1时，进行直接插入排序后，排序完成。</p>
+<pre><code>package name.zhoufei.helloworld.sort;
+
+import java.util.Arrays;
+
+/**
+ * 排序算法: 希尔排序（最小增量排序）
+ * 基本思想: 算法先将要排序的一组数按某个增量d（n/2,n为要排序数的个数）分成若干组，
+ *          每组中记录的下标相差d.对每组中全部元素进行直接插入排序，
+ *          然后再用一个较小的增量（d/2）对它进行分组，在每组中再进行直接插入排序。
+ *          当增量减到1时，进行直接插入排序后，排序完成。
+ * Created by phil.
+ */
+public class ShellSort {
+
+    public static void main(String[] args) {
+    int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
+    shellSort(a);
+    System.out.println(Arrays.toString(a));
+    }
+
+    public static void shellSort(int[] a) {
+    double d1 = a.length;
+    int temp;
+    while (true) {
+        d1 = Math.ceil(d1 / 2);
+        int d = (int) d1;
+        for (int x = 0; x &lt; d; x++) {
+
+        for (int i = x + d; i &lt; a.length; i += d) {
+            int j = i - d;
+            temp = a[i];
+            for (; j &gt;= 0 &amp;&amp; temp &lt; a[j]; j -= d) {
+                a[j + d] = a[j];
+            }
+            a[j + d] = temp;
+        }
+        }
+        if (d == 1) {
+        break;
+        }
+    }
+    }
+}
+</code></pre><h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><p>在要排序的一组数中，选出最小的一个数与第一个位置的数交换；然后在剩下的数当中再找最小的与第二个位置的数交换，如此循环到倒数第二个数和最后一个数比较为止。</p>
+<pre><code>package name.zhoufei.helloworld.sort;
+
+import java.util.Arrays;
+
+/**
+ * 排序算法: 简单选择排序
+ * 基本思想: 在要排序的一组数中，选出最小的一个数与第一个位置的数交换；
+ *          然后在剩下的数当中再找最小的与第二个位置的数交换，如此循环到倒数第二个数和最后一个数比较为止。
+ * Created by phil.
+ */
+public class SelectSort {
+
+    public static void main(String[] args) {
+    int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
+    selectSort(a);
+    System.out.println(Arrays.toString(a));
+    }
+
+    public static void selectSort(int[] a) {
+    int position;
+    for (int i = 0; i &lt; a.length; i++) {
+        int j = i + 1;
+        position = i;
+        int temp = a[i];
+        for (; j &lt; a.length; j++) {
+        if (a[j] &lt; temp) {
+            temp = a[j];
+            position = j;
+        }
+        }
+        a[position] = a[i];
+        a[i] = temp;
+    }
+    }
+}
+</code></pre><h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>堆排序是一种树形选择排序，是对直接选择排序的有效改进。</p>
+<p>堆的定义如下：具有n个元素的序列（h1,h2,…,hn),当且仅当满足（hi&gt;=h2i,hi&gt;=2i+1）或（hi&lt;=h2i,hi&lt;=2i+1）(i=1,2,…,n/2)时称之为堆。在这里只讨论满足前者条件的堆。由堆的定义可以看出，堆顶元素（即第一个元素）必为最大项（大顶堆）。完全二叉树可以很直观地表示堆的结构。堆顶为根，其它为左子树、右子树。初始时把要排序的数的序列看作是一棵顺序存储的二叉树，调整它们的存储序，使之成为一个堆，这时堆的根节点的数最大。然后将根节点与堆的最后一个节点交换。然后对前面(n-1)个数重新调整使之成为堆。依此类推，直到只有两个节点的堆，并对它们作交换，最后得到有n个节点的有序序列。从算法描述来看，堆排序需要两个过程，一是建立堆，二是堆顶与堆的最后一个元素交换位置。所以堆排序有两个函数组成。一是建堆的渗透函数，二是反复调用渗透函数实现排序的函数。</p>
+<pre><code>package name.zhoufei.helloworld.sort;
+
+import java.util.Arrays;
+
+/**
+ * 排序算法: 堆排序
+ * 基本思想: 堆排序是一种树形选择排序，是对直接选择排序的有效改进。
+ *          堆的定义如下：具有n个元素的序列（h1,h2,…,hn),当且仅当满足
+ *          （hi&gt;=h2i,hi&gt;=2i+1）或（hi&lt;=h2i,hi&lt;=2i+1）(i=1,2,…,n/2)时称之为堆。
+ *          在这里只讨论满足前者条件的堆。由堆的定义可以看出，堆顶元素（即第一个元素）必为最大项（大顶堆）。
+ *          完全二叉树可以很直观地表示堆的结构。堆顶为根，其它为左子树、右子树。
+ *          初始时把要排序的数的序列看作是一棵顺序存储的二叉树，调整它们的存储序，
+ *          使之成为一个堆，这时堆的根节点的数最大。然后将根节点与堆的最后一个节点交换。
+ *          然后对前面(n-1)个数重新调整使之成为堆。依此类推，直到只有两个节点的堆，并对它们作交换，
+ *          最后得到有n个节点的有序序列。从算法描述来看，堆排序需要两个过程，一是建立堆，
+ *          二是堆顶与堆的最后一个元素交换位置。所以堆排序有两个函数组成。一是建堆的渗透函数，
+ *          二是反复调用渗透函数实现排序的函数。
+ * Created by phil.
+ */
+public class HeapSort {
+
+    public static void main(String[] args) {
+    int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
+    heapSort(a);
+    System.out.println(Arrays.toString(a));
+    }
+
+    public static void heapSort(int[] a){
+    int arrayLength=a.length;
+    //循环建堆
+    for(int i=0;i&lt;arrayLength-1;i++){
+        //建堆
+        buildMaxHeap(a,arrayLength-1-i);
+        //交换堆顶和最后一个元素
+        swap(a,0,arrayLength-1-i);
+        System.out.println(Arrays.toString(a));
+    }
+    }
+
+    private static void swap(int[] data, int i, int j) {
+    int tmp=data[i];
+    data[i]=data[j];
+    data[j]=tmp;
+    }
+
+    //对data数组从0到lastIndex建大顶堆
+    private static void buildMaxHeap(int[] data, int lastIndex) {
+    //从lastIndex处节点（最后一个节点）的父节点开始
+    for(int i=(lastIndex-1)/2;i&gt;=0;i--){
+        //k保存正在判断的节点
+        int k=i;
+        //如果当前k节点的子节点存在
+        while(k*2+1&lt;=lastIndex){
+        //k节点的左子节点的索引
+        int biggerIndex=2*k+1;
+        //如果biggerIndex小于lastIndex，即biggerIndex+1代表的k节点的右子节点存在
+        if(biggerIndex&lt;lastIndex){
+            //若果右子节点的值较大
+            if(data[biggerIndex]&lt;data[biggerIndex+1]){
+                //biggerIndex总是记录较大子节点的索引
+                biggerIndex++;
+            }
+        }
+
+        //如果k节点的值小于其较大的子节点的值
+        if(data[k]&lt;data[biggerIndex]){
+            //交换他们
+            swap(data,k,biggerIndex);
+            //将biggerIndex赋予k，开始while循环的下一次循环，重新保证k节点的值大于其左右子节点的值
+            k=biggerIndex;
+        }else{
+            break;
+        }
+        }
+    }
+    }
+}
+</code></pre><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。</p>
+<pre><code>package name.zhoufei.helloworld.sort;
+
+import java.util.Arrays;
+
+/**
+ * 排序算法: 冒泡排序
+ * 基本思想: 在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，
+ *          让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。
+ * Created by phil.
+ */
+public class BubbleSort {
+
+    public static void main(String[] args) {
+    int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
+    bubbleSort(a);
+    System.out.println(Arrays.toString(a));
+    }
+
+    public static void bubbleSort(int[] a){
+    int temp;
+    for(int i=0;i&lt;a.length-1;i++){
+        for(int j=0;j&lt;a.length-1-i;j++){
+        if(a[j]&gt;a[j+1]){
+            temp=a[j];
+            a[j]=a[j+1];
+            a[j+1]=temp;
+        }
+        }
+    }
+    }
+}
+</code></pre><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>选择一个基准元素,通常选择第一个元素或者最后一个元素,通过一趟扫描，将待排序列分成两部分,一部分比基准元素小,一部分大于等于基准元素,此时基准元素在其排好序后的正确位置,然后再用同样的方法递归地排序划分的两部分。</p>
+<pre><code>package name.zhoufei.helloworld.sort;
+
+import java.util.Arrays;
+
+/**
+ * 排序算法: 快速排序
+ * 基本思想: 选择一个基准元素,通常选择第一个元素或者最后一个元素,通过一趟扫描，将待排序列分成两部分,
+ *          一部分比基准元素小,一部分大于等于基准元素,此时基准元素在其排好序后的正确位置,
+ *          然后再用同样的方法递归地排序划分的两部分。
+ * Created by phil on 16-8-6.
+ */
+public class QuickSort {
+
+    public static void main(String[] args) {
+    int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
+    quickSort(a,0, a.length - 1);
+    System.out.println(Arrays.toString(a));
+    }
+
+    public static int getMiddle(int[] list, int low, int high) {
+    int tmp =list[low];    //数组的第一个作为中轴
+    while (low &lt; high){
+        while (low &lt; high&amp;&amp; list[high] &gt;= tmp) {
+        high--;
+        }
+        list[low] =list[high];   //比中轴小的记录移到低端
+        while (low &lt; high&amp;&amp; list[low] &lt;= tmp) {
+        low++;
+        }
+        list[high] =list[low];   //比中轴大的记录移到高端
+    }
+    list[low] = tmp;              //中轴记录到尾
+    return low;                   //返回中轴的位置
+    }
+
+    public static void quickSort(int[] list, int low, int high) {
+    if (low &lt; high){
+        int middle =getMiddle(list, low, high);  //将list数组进行一分为二
+        quickSort(list, low, middle - 1);       //对低字表进行递归排序
+        quickSort(list,middle + 1, high);       //对高字表进行递归排序
+    }
+    }
+}
+</code></pre><h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，即把待排序序列分为若干个子序列，每个子序列是有序的。然后再把有序子序列合并为整体有序序列。</p>
+<pre><code>package name.zhoufei.helloworld.sort;
+
+import java.util.Arrays;
+
+/**
+ * 排序算法: 归并排序
+ * 基本思想: 归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，
+ *          即把待排序序列分为若干个子序列，每个子序列是有序的。然后再把有序子序列合并为整体有序序列。
+ * Created by phil.
+ */
+public class MergeSort {
+
+    public static void main(String[] args) {
+    int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
+    sort(a,0,a.length-1);
+    System.out.println(Arrays.toString(a));
+    }
+
+    public static void sort(int[] data, int left, int right) {
+    if(left&lt;right){
+        //找出中间索引
+        int center=(left+right)/2;
+        //对左边数组进行递归
+        sort(data,left,center);
+        //对右边数组进行递归
+        sort(data,center+1,right);
+        //合并
+        merge(data,left,center,right);
+    }
+
+    }
+
+    public static void merge(int[] data, int left, int center, int right) {
+    int [] tmpArr=new int[data.length];
+    int mid=center+1;
+    //third记录中间数组的索引
+    int third=left;
+    int tmp=left;
+    while(left&lt;=center&amp;&amp;mid&lt;=right){
+        //从两个数组中取出最小的放入中间数组
+        if(data[left]&lt;=data[mid]){
+        tmpArr[third++]=data[left++];
+        }else{
+        tmpArr[third++]=data[mid++];
+        }
+    }
+    //剩余部分依次放入中间数组
+    while(mid&lt;=right){
+        tmpArr[third++]=data[mid++];
+    }
+    while(left&lt;=center){
+        tmpArr[third++]=data[left++];
+    }
+    //将中间数组中的内容复制回原数组
+    while(tmp&lt;=right){
+        data[tmp]=tmpArr[tmp++];
+    }
+    System.out.println(Arrays.toString(data));
+    }
+}
+</code></pre><h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><p>将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后,数列就变成一个有序序列。</p>
+<pre><code>package name.zhoufei.helloworld.sort;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * 排序算法: 基数排序
+ * 基本思想: 将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。
+ *          然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后,数列就变成一个有序序列。
+ * Created by phil.
+ */
+public class RadixSort {
+
+    public static void main(String[] args) {
+    int[] a={49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
+    sort(a);
+    System.out.println(Arrays.toString(a));
+    }
+
+    public static void sort(int[] array){
+    //首先确定排序的趟数;
+    int max=array[0];
+    for(int i=1;i&lt;array.length;i++){
+        if(array[i]&gt;max){
+        max=array[i];
+        }
+    }
+    int time=0;
+    //判断位数;
+    while(max&gt;0){
+        max/=10;
+        time++;
+    }
+
+    //建立10个队列;
+    List&lt;ArrayList&lt;Integer&gt;&gt; queue = new ArrayList&lt;ArrayList&lt;Integer&gt;&gt;();
+    for(int i=0;i&lt;10;i++){
+        ArrayList&lt;Integer&gt; queue1=new ArrayList&lt;Integer&gt;();
+        queue.add(queue1);
+    }
+
+    //进行time次分配和收集;
+    for(int i=0;i&lt;time;i++){
+        //分配数组元素;
+        for(int j=0;j&lt;array.length;j++){
+        //得到数字的第time+1位数;
+        int x=array[j]%(int)Math.pow(10,i+1)/(int)Math.pow(10, i);
+        ArrayList&lt;Integer&gt; queue2= queue.get(x);
+        queue2.add(array[j]);
+        queue.set(x, queue2);
+        }
+        int count=0;//元素计数器;
+        //收集队列元素;
+        for(int k=0;k&lt;10;k++){
+        while(queue.get(k).size()&gt;0){
+            ArrayList&lt;Integer&gt; queue3= queue.get(k);
+            array[count]=queue3.get(0);
+            queue3.remove(0);
+            count++;
+        }
+        }
+    }
+    }
+}
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;分类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;插入排序（直接插入排序、希尔排序）&lt;/li&gt;
+&lt;li&gt;交换排序（冒泡排序、快速排序）&lt;/li&gt;
+&lt;li&gt;选择排序（直接选择排序、堆排序）&lt;/li&gt;
+&lt;li&gt;归并排序&lt;/li&gt;
+&lt;li&gt;分配排序（基数排序）&lt;/li&gt;
+    
+    </summary>
+    
+      <category term="Coding" scheme="http://helloworld.zhoufei.name/categories/Coding/"/>
+    
+    
+      <category term="Sort" scheme="http://helloworld.zhoufei.name/tags/Sort/"/>
+    
+      <category term="Algorithm" scheme="http://helloworld.zhoufei.name/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu主题图标美化</title>
     <link href="http://helloworld.zhoufei.name/2014-09-20-ubuntu-theme-icon/"/>
     <id>http://helloworld.zhoufei.name/2014-09-20-ubuntu-theme-icon/</id>
@@ -934,11 +1846,279 @@ sudo find / -name qq*
   </entry>
   
   <entry>
+    <title>IntelliJ IDEA 快捷键和设置</title>
+    <link href="http://helloworld.zhoufei.name/2014-07-22-idea-keymap/"/>
+    <id>http://helloworld.zhoufei.name/2014-07-22-idea-keymap/</id>
+    <published>2014-07-21T18:08:00.000Z</published>
+    <updated>2016-08-22T01:01:21.189Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="实用快捷键"><a href="#实用快捷键" class="headerlink" title="实用快捷键"></a>实用快捷键</h3><pre><code>Ctrl+/ 或 Ctrl+Shift+/ 注释（// 或者/*…*/ ）
+
+Ctrl+D 复制行
+
+Ctrl+X 删除行
+
+快速修复 alt+enter (modify/cast)
+
+代码提示 alt+/
+
+ctr+G 定位某一行
+
+Shift+F6 重构-重命名
+
+Ctrl+R 替换文本
+
+Ctrl+F 查找文本
+
+Ctrl+E 最近打开的文件
+
+Ctrl+J 自动代码
+
+组织导入 ctr+alt+O
+
+格式化代码 ctr+alt+L
+
+大小写转化 ctr+shift+U
+</code></pre><hr>
+<h3 id="常用快捷键列表"><a href="#常用快捷键列表" class="headerlink" title="常用快捷键列表"></a>常用快捷键列表</h3><pre><code>Alt+回车 导入包,自动修正
+
+Ctrl+N   查找类
+
+Ctrl+Shift+N 查找文件
+
+Ctrl+Alt+L  格式化代码
+
+Ctrl+Alt+O 优化导入的类和包
+
+Alt+Insert 生成代码(如get,set方法,构造函数等)
+
+Ctrl+E或者Alt+Shift+C  最近更改的代码
+
+Ctrl+R 替换文本
+
+Ctrl+F 查找文本
+
+Ctrl+Shift+Space 自动补全代码
+
+Ctrl+空格 代码提示
+
+Ctrl+Alt+Space 类名或接口名提示
+
+Ctrl+P 方法参数提示
+
+Ctrl+Shift+Alt+N 查找类中的方法或变量
+
+Alt+Shift+C 对比最近修改的代码
+
+
+
+Shift+F6  重构-重命名
+
+Ctrl+Shift+先上键
+
+Ctrl+X 删除行
+
+Ctrl+D 复制行
+
+Ctrl+/ 或 Ctrl+Shift+/  注释（// 或者/*…*/ ）
+
+Ctrl+J  自动代码
+
+Ctrl+E 最近打开的文件
+
+Ctrl+H 显示类结构图
+
+Ctrl+Q 显示注释文档
+
+Alt+F1 查找代码所在位置
+
+Alt+1 快速打开或隐藏工程面板
+
+Ctrl+Alt+ left/right 返回至上次浏览的位置
+
+Alt+ left/right 切换代码视图
+
+Alt+ Up/Down 在方法间快速移动定位
+
+Ctrl+Shift+Up/Down 代码向上/下移动。
+
+F2 或Shift+F2 高亮错误或警告快速定位
+
+
+
+代码标签输入完成后，按Tab，生成代码。
+
+选中文本，按Ctrl+Shift+F7 ，高亮显示所有该文本，按Esc高亮消失。
+
+Ctrl+W 选中代码，连续按会有其他效果
+
+选中文本，按Alt+F3 ，逐个往下查找相同文本，并高亮显示。
+
+Ctrl+Up/Down 光标跳转到第一行或最后一行下
+
+Ctrl+B 快速打开光标处的类或方法
+</code></pre><hr>
+<h3 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h3><ol>
+<li><p>IDEA内存优化</p>
+<pre><code>因机器本身的配置而配置：
+
+\IntelliJ IDEA 8\bin\idea.exe.vmoptions
+
+—————————————–
+
+-Xms64m
+
+-Xmx256m
+
+-XX:MaxPermSize=92m
+
+-ea
+
+-server
+
+-Dsun.awt.keepWorkingSetOnMinimize=true
+</code></pre></li>
+<li><p>查询快捷键</p>
+<pre><code>CTRL+N   查找类
+
+CTRL+SHIFT+N  查找文件
+
+CTRL+SHIFT+ALT+N 查找类中的方法或变量
+
+CIRL+B   找变量的来源
+
+CTRL+ALT+B  找所有的子类
+
+CTRL+SHIFT+B  找变量的类
+
+CTRL+G   定位行
+
+CTRL+F   在当前窗口查找文本
+
+CTRL+SHIFT+F  在指定窗口查找文本
+
+CTRL+R   在 当前窗口替换文本
+
+CTRL+SHIFT+R  在指定窗口替换文本
+
+ALT+SHIFT+C  查找修改的文件
+
+CTRL+E   最近打开的文件
+
+F3   向下查找关键字出现位置
+
+SHIFT+F3  向上一个关键字出现位置
+
+F4   查找变量来源
+
+CTRL+ALT+F7  选中的字符查找工程出现的地方
+
+CTRL+SHIFT+O  弹出显示查找内容
+</code></pre></li>
+<li><p>自动代码</p>
+<pre><code>ALT+回车  导入包,自动修正
+
+CTRL+ALT+L  格式化代码
+
+CTRL+ALT+I  自动缩进
+
+CTRL+ALT+O  优化导入的类和包
+
+ALT+INSERT  生成代码(如GET,SET方法,构造函数等)
+
+CTRL+E 最近更改的代码
+
+CTRL+SHIFT+SPACE 自动补全代码
+
+CTRL+空格  代码提示
+
+CTRL+ALT+SPACE  类名或接口名提示
+
+CTRL+P   方法参数提示
+
+CTRL+J   自动代码
+
+CTRL+ALT+T  把选中的代码放在 TRY{} IF{} ELSE{} 里
+</code></pre></li>
+<li><p>复制快捷方式</p>
+<pre><code>CTRL+D   复制行
+
+CTRL+X   剪切,删除行
+</code></pre></li>
+<li><p>其他快捷方式</p>
+<pre><code>CIRL+U   大小写切换
+
+CTRL+Z   倒退
+
+CTRL+SHIFT+Z  向前
+
+CTRL+ALT+F12  资源管理器打开文件夹
+
+ALT+F1   查找文件所在目录位置
+
+SHIFT+ALT+INSERT 竖编辑模式
+
+CTRL+/   注释//
+
+CTRL+SHIFT+/  注释/*…*/
+
+CTRL+W   选中代码，连续按会有其他效果
+
+CTRL+B   快速打开光标处的类或方法
+
+ALT+ ←/→  切换代码视图
+
+CTRL+ALT ←/→  返回上次编辑的位置
+
+ALT+ ↑/↓  在方法间快速移动定位
+
+SHIFT+F6  重构-重命名
+
+CTRL+H   显示类结构图
+
+CTRL+Q   显示注释文档
+
+ALT+1   快速打开或隐藏工程面板
+
+CTRL+SHIFT+UP/DOWN 代码向上/下移动。
+
+CTRL+UP/DOWN  光标跳转到第一行或最后一行下
+
+ESC   光标返回编辑框
+
+SHIFT+ESC  光标返回编辑框,关闭无用的窗口
+
+F1   帮助千万别按,很卡!
+
+CTRL+F4   非常重要下班都用
+</code></pre></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;实用快捷键&quot;&gt;&lt;a href=&quot;#实用快捷键&quot; class=&quot;headerlink&quot; title=&quot;实用快捷键&quot;&gt;&lt;/a&gt;实用快捷键&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;Ctrl+/ 或 Ctrl+Shift+/ 注释（// 或者/*…*/ ）
+
+Ctrl+D 复制行
+
+    
+    </summary>
+    
+      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+    
+    
+      <category term="Idea" scheme="http://helloworld.zhoufei.name/tags/Idea/"/>
+    
+      <category term="Keymap" scheme="http://helloworld.zhoufei.name/tags/Keymap/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Markdown中文文档</title>
     <link href="http://helloworld.zhoufei.name/2014-07-01-markdown-syntax-doc/"/>
     <id>http://helloworld.zhoufei.name/2014-07-01-markdown-syntax-doc/</id>
     <published>2014-07-01T04:03:00.000Z</published>
-    <updated>2016-08-04T05:39:11.776Z</updated>
+    <updated>2016-08-09T00:40:26.755Z</updated>
     
     <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="宗旨"><a href="#宗旨" class="headerlink" title="宗旨"></a>宗旨</h3><p>Markdown 的目标是实现「易读易写」。</p>
 <p>可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、atx、Textile、reStructuredText、Grutatext 和 EtText，而最大灵感来源其实是纯文本电子邮件的格式。</p>
@@ -1405,7 +2585,9 @@ g    | h    | i
 </tr>
 </tbody>
 </table>
-]]></content>
+<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><p><del>文字删除线语法如下</del></p>
+<pre><code>~~文字删除线~~
+</code></pre>]]></content>
     
     <summary type="html">
     
