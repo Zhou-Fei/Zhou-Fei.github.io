@@ -110,7 +110,7 @@ array (Array):需要被处理的数组
 返回一个拆分好的新数组
 示例
 _.chunk([&amp;apos;a&amp;apo">
-<meta property="og:updated_time" content="2016-08-23T02:05:11.332Z">
+<meta property="og:updated_time" content="2016-08-23T02:43:49.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lodash中文文档">
 <meta name="twitter:description" content="Array_.chunk_.chunk(array, [size=0])
@@ -920,6 +920,62 @@ console.log(array);
 
 console.log(evens);
 // =&gt; [10, 20]
+</code></pre><h2 id="remove"><a href="#remove" class="headerlink" title="_.remove"></a>_.remove</h2><p><strong><code>_.remove(array, [predicate=_.identity])</code></strong></p>
+<p>移除经过 predicate 处理为真值的元素，并返回被移除的元素。predicate 会传入3个参数：(value, index, array) </p>
+<p>注意: 不同于 _.filter，这个方法会改变数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array)：需要调整的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string)：这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回被移除的元素的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1, 2, 3, 4];
+var evens = _.remove(array, function(n) {
+  return n % 2 == 0;
+});
+
+console.log(array);
+// =&gt; [1, 3]
+
+console.log(evens);
+// =&gt; [2, 4]
+</code></pre><h2 id="reverse"><a href="#reverse" class="headerlink" title="_.reverse"></a>_.reverse</h2><p><strong><code>_.reverse(array)</code></strong></p>
+<p>反转数组，第一个元素移动到最后一位，第二个元素移动到倒数第二，类似这样。 </p>
+<p>注意: 这个方法会改变数组，根据 Array#<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank" rel="external">reverse</a></p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array)：需要调整的数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回原数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1, 2, 3];
+
+_.reverse(array);
+// =&gt; [3, 2, 1]
+
+console.log(array);
+// =&gt; [3, 2, 1]
+</code></pre><h2 id="slice"><a href="#slice" class="headerlink" title="_.slice"></a>_.slice</h2><p><strong><code>_.slice(array, [start=0], [end=array.length])</code></strong></p>
+<p>创建一个裁剪后的数组，从 start 到 end 的位置，但不包括 end 本身的位置。 </p>
+<p>注意: 这个方法用于代替 Array#<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="external">slice</a> 来确保数组正确返回。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array)：需要裁剪的数组</p>
+</li>
+<li><p>[start=0] (number)：开始位置</p>
+</li>
+<li><p>[end=array.length] (number)：结束位置</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回裁剪后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>。。。
 </code></pre>
       
     </div>
@@ -1103,7 +1159,7 @@ console.log(evens);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">1.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chunk"><span class="nav-number">1.1.</span> <span class="nav-text">_.chunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compact"><span class="nav-number">1.2.</span> <span class="nav-text">_.compact</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">1.3.</span> <span class="nav-text">_.concat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#difference"><span class="nav-number">1.4.</span> <span class="nav-text">_.difference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceBy"><span class="nav-number">1.5.</span> <span class="nav-text">_.differenceBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceWith"><span class="nav-number">1.6.</span> <span class="nav-text">_.differenceWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop"><span class="nav-number">1.7.</span> <span class="nav-text">_.drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRight"><span class="nav-number">1.8.</span> <span class="nav-text">_.dropRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRightWhile"><span class="nav-number">1.9.</span> <span class="nav-text">_.dropRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropWhile"><span class="nav-number">1.10.</span> <span class="nav-text">_.dropWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fill"><span class="nav-number">1.11.</span> <span class="nav-text">_.fill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findIndex"><span class="nav-number">1.12.</span> <span class="nav-text">_.findIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastIndex"><span class="nav-number">1.13.</span> <span class="nav-text">_.findLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatten"><span class="nav-number">1.14.</span> <span class="nav-text">_.flatten</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDeep"><span class="nav-number">1.15.</span> <span class="nav-text">_.flattenDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDepth"><span class="nav-number">1.16.</span> <span class="nav-text">_.flattenDepth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fromPairs"><span class="nav-number">1.17.</span> <span class="nav-text">_.fromPairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head-first"><span class="nav-number">1.18.</span> <span class="nav-text">_.head(first)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOf"><span class="nav-number">1.19.</span> <span class="nav-text">_.indexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initial"><span class="nav-number">1.20.</span> <span class="nav-text">_.initial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection"><span class="nav-number">1.21.</span> <span class="nav-text">_.intersection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionBy"><span class="nav-number">1.22.</span> <span class="nav-text">_.intersectionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionWith"><span class="nav-number">1.23.</span> <span class="nav-text">_.intersectionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">1.24.</span> <span class="nav-text">_.join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last"><span class="nav-number">1.25.</span> <span class="nav-text">_.last</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">1.26.</span> <span class="nav-text">_.lastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull"><span class="nav-number">1.27.</span> <span class="nav-text">_.pull</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAll"><span class="nav-number">1.28.</span> <span class="nav-text">_.pullAll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAllBy"><span class="nav-number">1.29.</span> <span class="nav-text">_.pullAllBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAt"><span class="nav-number">1.30.</span> <span class="nav-text">_.pullAt</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">1.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chunk"><span class="nav-number">1.1.</span> <span class="nav-text">_.chunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compact"><span class="nav-number">1.2.</span> <span class="nav-text">_.compact</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">1.3.</span> <span class="nav-text">_.concat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#difference"><span class="nav-number">1.4.</span> <span class="nav-text">_.difference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceBy"><span class="nav-number">1.5.</span> <span class="nav-text">_.differenceBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceWith"><span class="nav-number">1.6.</span> <span class="nav-text">_.differenceWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop"><span class="nav-number">1.7.</span> <span class="nav-text">_.drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRight"><span class="nav-number">1.8.</span> <span class="nav-text">_.dropRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRightWhile"><span class="nav-number">1.9.</span> <span class="nav-text">_.dropRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropWhile"><span class="nav-number">1.10.</span> <span class="nav-text">_.dropWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fill"><span class="nav-number">1.11.</span> <span class="nav-text">_.fill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findIndex"><span class="nav-number">1.12.</span> <span class="nav-text">_.findIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastIndex"><span class="nav-number">1.13.</span> <span class="nav-text">_.findLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatten"><span class="nav-number">1.14.</span> <span class="nav-text">_.flatten</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDeep"><span class="nav-number">1.15.</span> <span class="nav-text">_.flattenDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDepth"><span class="nav-number">1.16.</span> <span class="nav-text">_.flattenDepth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fromPairs"><span class="nav-number">1.17.</span> <span class="nav-text">_.fromPairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head-first"><span class="nav-number">1.18.</span> <span class="nav-text">_.head(first)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOf"><span class="nav-number">1.19.</span> <span class="nav-text">_.indexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initial"><span class="nav-number">1.20.</span> <span class="nav-text">_.initial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection"><span class="nav-number">1.21.</span> <span class="nav-text">_.intersection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionBy"><span class="nav-number">1.22.</span> <span class="nav-text">_.intersectionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionWith"><span class="nav-number">1.23.</span> <span class="nav-text">_.intersectionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">1.24.</span> <span class="nav-text">_.join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last"><span class="nav-number">1.25.</span> <span class="nav-text">_.last</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">1.26.</span> <span class="nav-text">_.lastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull"><span class="nav-number">1.27.</span> <span class="nav-text">_.pull</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAll"><span class="nav-number">1.28.</span> <span class="nav-text">_.pullAll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAllBy"><span class="nav-number">1.29.</span> <span class="nav-text">_.pullAllBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAt"><span class="nav-number">1.30.</span> <span class="nav-text">_.pullAt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#remove"><span class="nav-number">1.31.</span> <span class="nav-text">_.remove</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">1.32.</span> <span class="nav-text">_.reverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slice"><span class="nav-number">1.33.</span> <span class="nav-text">_.slice</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

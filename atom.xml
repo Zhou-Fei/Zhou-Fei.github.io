@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helloworld.zhoufei.name/"/>
-  <updated>2016-08-23T02:05:11.332Z</updated>
+  <updated>2016-08-23T02:43:49.878Z</updated>
   <id>http://helloworld.zhoufei.name/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/"/>
     <id>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</id>
     <published>2016-07-26T11:08:00.000Z</published>
-    <updated>2016-08-23T02:05:11.332Z</updated>
+    <updated>2016-08-23T02:43:49.878Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><h2 id="chunk"><a href="#chunk" class="headerlink" title="_.chunk"></a>_.chunk</h2><p><strong><code>_.chunk(array, [size=0])</code></strong></p>
 <p>将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。</p>
@@ -589,6 +589,62 @@ console.log(array);
 
 console.log(evens);
 // =&gt; [10, 20]
+</code></pre><h2 id="remove"><a href="#remove" class="headerlink" title="_.remove"></a>_.remove</h2><p><strong><code>_.remove(array, [predicate=_.identity])</code></strong></p>
+<p>移除经过 predicate 处理为真值的元素，并返回被移除的元素。predicate 会传入3个参数：(value, index, array) </p>
+<p>注意: 不同于 _.filter，这个方法会改变数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array)：需要调整的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string)：这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回被移除的元素的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1, 2, 3, 4];
+var evens = _.remove(array, function(n) {
+  return n % 2 == 0;
+});
+
+console.log(array);
+// =&gt; [1, 3]
+
+console.log(evens);
+// =&gt; [2, 4]
+</code></pre><h2 id="reverse"><a href="#reverse" class="headerlink" title="_.reverse"></a>_.reverse</h2><p><strong><code>_.reverse(array)</code></strong></p>
+<p>反转数组，第一个元素移动到最后一位，第二个元素移动到倒数第二，类似这样。 </p>
+<p>注意: 这个方法会改变数组，根据 Array#<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank" rel="external">reverse</a></p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array)：需要调整的数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回原数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [1, 2, 3];
+
+_.reverse(array);
+// =&gt; [3, 2, 1]
+
+console.log(array);
+// =&gt; [3, 2, 1]
+</code></pre><h2 id="slice"><a href="#slice" class="headerlink" title="_.slice"></a>_.slice</h2><p><strong><code>_.slice(array, [start=0], [end=array.length])</code></strong></p>
+<p>创建一个裁剪后的数组，从 start 到 end 的位置，但不包括 end 本身的位置。 </p>
+<p>注意: 这个方法用于代替 Array#<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="external">slice</a> 来确保数组正确返回。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array)：需要裁剪的数组</p>
+</li>
+<li><p>[start=0] (number)：开始位置</p>
+</li>
+<li><p>[end=array.length] (number)：结束位置</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回裁剪后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>。。。
 </code></pre>]]></content>
     
     <summary type="html">
