@@ -110,7 +110,7 @@ array (Array):需要被处理的数组
 返回一个拆分好的新数组
 示例
 _.chunk([&amp;apos;a&amp;apo">
-<meta property="og:updated_time" content="2016-08-23T02:43:49.878Z">
+<meta property="og:updated_time" content="2016-08-24T00:52:40.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lodash中文文档">
 <meta name="twitter:description" content="Array_.chunk_.chunk(array, [size=0])
@@ -976,6 +976,129 @@ console.log(array);
 <p>返回裁剪后的数组</p>
 <p><strong><code>示例</code></strong></p>
 <pre><code>。。。
+</code></pre><h2 id="sortedIndex"><a href="#sortedIndex" class="headerlink" title="_.sortedIndex"></a>_.sortedIndex</h2><p><strong><code>_.sortedIndex(array, value)</code></strong></p>
+<p>使用二进制的方式检索来决定 value 应该插入在数组中位置。它的 index 应该尽可能的小以保证数组的排序。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的已排序数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回 value 应该在数组中插入的 index。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedIndex([30, 50], 40);
+// =&gt; 1
+
+_.sortedIndex([4, 5], 4);
+// =&gt; 0
+</code></pre><h2 id="sortedIndexBy"><a href="#sortedIndexBy" class="headerlink" title="_.sortedIndexBy"></a>_.sortedIndexBy</h2><p><strong><code>_.sortedIndexBy(array, value, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.sortedIndex，它还接受一个 iteratee 调用每一个数组和值来计算排序。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的已排序数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回 value 应该在数组中插入的 index。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var dict = { &apos;thirty&apos;: 30, &apos;forty&apos;: 40, &apos;fifty&apos;: 50 };
+
+_.sortedIndexBy([&apos;thirty&apos;, &apos;fifty&apos;], &apos;forty&apos;, _.propertyOf(dict));
+// =&gt; 1
+
+// 使用了 `_.property` 回调结果
+_.sortedIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos;: 4 }, &apos;x&apos;);
+// =&gt; 0
+</code></pre><h2 id="sortedIndexOf"><a href="#sortedIndexOf" class="headerlink" title="_.sortedIndexOf"></a>_.sortedIndexOf</h2><p><strong><code>_.sortedIndexOf(array, value)</code></strong></p>
+<p>这个方法类似 _.indexOf，但它是执行二进制来检索已经排序的数组的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的已排序数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回匹配值的 index ，否则返回 -1.</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedIndexOf([1, 1, 2, 2], 2);
+// =&gt; 2
+</code></pre><h2 id="sortedLastIndex"><a href="#sortedLastIndex" class="headerlink" title="_.sortedLastIndex"></a>_.sortedLastIndex</h2><p><strong><code>_.sortedLastIndex(array, value)</code></strong></p>
+<p>这个方法类似 _.sortedIndex，它返回在 value 中尽可能大的 index 位置。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的已排序数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回 value 应该在数组中插入的 index。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedLastIndex([4, 5], 4);
+// =&gt; 1
+</code></pre><h2 id="sortedLastIndexBy"><a href="#sortedLastIndexBy" class="headerlink" title="_.sortedLastIndexBy"></a>_.sortedLastIndexBy</h2><p><strong><code>_.sortedLastIndexBy(array, value, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.sortedLastIndex，它接受一个 iteratee 调用每一个数组和值来计算排序。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的已排序数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回 value 应该在数组中插入的 index。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>// 使用了 `_.property` 的回调结果
+_.sortedLastIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos;: 4 }, &apos;x&apos;);
+// =&gt; 1
+</code></pre><h2 id="sortedLastIndexOf"><a href="#sortedLastIndexOf" class="headerlink" title="_.sortedLastIndexOf"></a>_.sortedLastIndexOf</h2><p><strong><code>_.sortedLastIndexOf(array, value)</code></strong></p>
+<p>这个方法类似 _.lastIndexOf，除了它是执行二进制来检索已经排序的数组的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回匹配值的 index ，否则返回 -1.</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedLastIndexOf([1, 1, 2, 2], 2);
+// =&gt; 3
+</code></pre><h2 id="sortedUniq"><a href="#sortedUniq" class="headerlink" title="_.sortedUniq"></a>_.sortedUniq</h2><p><strong><code>_.sortedUniq(array)</code></strong></p>
+<p>这个方法类似 _.uniq，并且它会排序并优化数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要检索的已排序数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个不重复的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedUniq([1, 1, 2]);
+// =&gt; [1, 2]
+</code></pre><h2 id="sortedUniqBy"><a href="#sortedUniqBy" class="headerlink" title="_.sortedUniqBy"></a>_.sortedUniqBy</h2><p><strong><code>_.sortedUniqBy(array, [iteratee])</code></strong></p>
+<p>这个方法类似 _.uniqBy，它接受一个 iteratee 调用每一个数组和值来排序并优化数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的数组</p>
+</li>
+<li><p>[iteratee] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个不重复的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
+// =&gt; [1.1, 2.3]
 </code></pre>
       
     </div>
@@ -1159,7 +1282,7 @@ console.log(array);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">1.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chunk"><span class="nav-number">1.1.</span> <span class="nav-text">_.chunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compact"><span class="nav-number">1.2.</span> <span class="nav-text">_.compact</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">1.3.</span> <span class="nav-text">_.concat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#difference"><span class="nav-number">1.4.</span> <span class="nav-text">_.difference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceBy"><span class="nav-number">1.5.</span> <span class="nav-text">_.differenceBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceWith"><span class="nav-number">1.6.</span> <span class="nav-text">_.differenceWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop"><span class="nav-number">1.7.</span> <span class="nav-text">_.drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRight"><span class="nav-number">1.8.</span> <span class="nav-text">_.dropRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRightWhile"><span class="nav-number">1.9.</span> <span class="nav-text">_.dropRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropWhile"><span class="nav-number">1.10.</span> <span class="nav-text">_.dropWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fill"><span class="nav-number">1.11.</span> <span class="nav-text">_.fill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findIndex"><span class="nav-number">1.12.</span> <span class="nav-text">_.findIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastIndex"><span class="nav-number">1.13.</span> <span class="nav-text">_.findLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatten"><span class="nav-number">1.14.</span> <span class="nav-text">_.flatten</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDeep"><span class="nav-number">1.15.</span> <span class="nav-text">_.flattenDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDepth"><span class="nav-number">1.16.</span> <span class="nav-text">_.flattenDepth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fromPairs"><span class="nav-number">1.17.</span> <span class="nav-text">_.fromPairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head-first"><span class="nav-number">1.18.</span> <span class="nav-text">_.head(first)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOf"><span class="nav-number">1.19.</span> <span class="nav-text">_.indexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initial"><span class="nav-number">1.20.</span> <span class="nav-text">_.initial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection"><span class="nav-number">1.21.</span> <span class="nav-text">_.intersection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionBy"><span class="nav-number">1.22.</span> <span class="nav-text">_.intersectionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionWith"><span class="nav-number">1.23.</span> <span class="nav-text">_.intersectionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">1.24.</span> <span class="nav-text">_.join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last"><span class="nav-number">1.25.</span> <span class="nav-text">_.last</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">1.26.</span> <span class="nav-text">_.lastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull"><span class="nav-number">1.27.</span> <span class="nav-text">_.pull</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAll"><span class="nav-number">1.28.</span> <span class="nav-text">_.pullAll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAllBy"><span class="nav-number">1.29.</span> <span class="nav-text">_.pullAllBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAt"><span class="nav-number">1.30.</span> <span class="nav-text">_.pullAt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#remove"><span class="nav-number">1.31.</span> <span class="nav-text">_.remove</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">1.32.</span> <span class="nav-text">_.reverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slice"><span class="nav-number">1.33.</span> <span class="nav-text">_.slice</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">1.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chunk"><span class="nav-number">1.1.</span> <span class="nav-text">_.chunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compact"><span class="nav-number">1.2.</span> <span class="nav-text">_.compact</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">1.3.</span> <span class="nav-text">_.concat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#difference"><span class="nav-number">1.4.</span> <span class="nav-text">_.difference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceBy"><span class="nav-number">1.5.</span> <span class="nav-text">_.differenceBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceWith"><span class="nav-number">1.6.</span> <span class="nav-text">_.differenceWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop"><span class="nav-number">1.7.</span> <span class="nav-text">_.drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRight"><span class="nav-number">1.8.</span> <span class="nav-text">_.dropRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRightWhile"><span class="nav-number">1.9.</span> <span class="nav-text">_.dropRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropWhile"><span class="nav-number">1.10.</span> <span class="nav-text">_.dropWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fill"><span class="nav-number">1.11.</span> <span class="nav-text">_.fill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findIndex"><span class="nav-number">1.12.</span> <span class="nav-text">_.findIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastIndex"><span class="nav-number">1.13.</span> <span class="nav-text">_.findLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatten"><span class="nav-number">1.14.</span> <span class="nav-text">_.flatten</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDeep"><span class="nav-number">1.15.</span> <span class="nav-text">_.flattenDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDepth"><span class="nav-number">1.16.</span> <span class="nav-text">_.flattenDepth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fromPairs"><span class="nav-number">1.17.</span> <span class="nav-text">_.fromPairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head-first"><span class="nav-number">1.18.</span> <span class="nav-text">_.head(first)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOf"><span class="nav-number">1.19.</span> <span class="nav-text">_.indexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initial"><span class="nav-number">1.20.</span> <span class="nav-text">_.initial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection"><span class="nav-number">1.21.</span> <span class="nav-text">_.intersection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionBy"><span class="nav-number">1.22.</span> <span class="nav-text">_.intersectionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionWith"><span class="nav-number">1.23.</span> <span class="nav-text">_.intersectionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">1.24.</span> <span class="nav-text">_.join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last"><span class="nav-number">1.25.</span> <span class="nav-text">_.last</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">1.26.</span> <span class="nav-text">_.lastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull"><span class="nav-number">1.27.</span> <span class="nav-text">_.pull</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAll"><span class="nav-number">1.28.</span> <span class="nav-text">_.pullAll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAllBy"><span class="nav-number">1.29.</span> <span class="nav-text">_.pullAllBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAt"><span class="nav-number">1.30.</span> <span class="nav-text">_.pullAt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#remove"><span class="nav-number">1.31.</span> <span class="nav-text">_.remove</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">1.32.</span> <span class="nav-text">_.reverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slice"><span class="nav-number">1.33.</span> <span class="nav-text">_.slice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndex"><span class="nav-number">1.34.</span> <span class="nav-text">_.sortedIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndexBy"><span class="nav-number">1.35.</span> <span class="nav-text">_.sortedIndexBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndexOf"><span class="nav-number">1.36.</span> <span class="nav-text">_.sortedIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndex"><span class="nav-number">1.37.</span> <span class="nav-text">_.sortedLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndexBy"><span class="nav-number">1.38.</span> <span class="nav-text">_.sortedLastIndexBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndexOf"><span class="nav-number">1.39.</span> <span class="nav-text">_.sortedLastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedUniq"><span class="nav-number">1.40.</span> <span class="nav-text">_.sortedUniq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedUniqBy"><span class="nav-number">1.41.</span> <span class="nav-text">_.sortedUniqBy</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

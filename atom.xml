@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helloworld.zhoufei.name/"/>
-  <updated>2016-08-23T02:43:49.878Z</updated>
+  <updated>2016-08-24T00:52:40.239Z</updated>
   <id>http://helloworld.zhoufei.name/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/"/>
     <id>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</id>
     <published>2016-07-26T11:08:00.000Z</published>
-    <updated>2016-08-23T02:43:49.878Z</updated>
+    <updated>2016-08-24T00:52:40.239Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><h2 id="chunk"><a href="#chunk" class="headerlink" title="_.chunk"></a>_.chunk</h2><p><strong><code>_.chunk(array, [size=0])</code></strong></p>
 <p>将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。</p>
@@ -645,6 +645,129 @@ console.log(array);
 <p>返回裁剪后的数组</p>
 <p><strong><code>示例</code></strong></p>
 <pre><code>。。。
+</code></pre><h2 id="sortedIndex"><a href="#sortedIndex" class="headerlink" title="_.sortedIndex"></a>_.sortedIndex</h2><p><strong><code>_.sortedIndex(array, value)</code></strong></p>
+<p>使用二进制的方式检索来决定 value 应该插入在数组中位置。它的 index 应该尽可能的小以保证数组的排序。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的已排序数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回 value 应该在数组中插入的 index。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedIndex([30, 50], 40);
+// =&gt; 1
+
+_.sortedIndex([4, 5], 4);
+// =&gt; 0
+</code></pre><h2 id="sortedIndexBy"><a href="#sortedIndexBy" class="headerlink" title="_.sortedIndexBy"></a>_.sortedIndexBy</h2><p><strong><code>_.sortedIndexBy(array, value, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.sortedIndex，它还接受一个 iteratee 调用每一个数组和值来计算排序。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的已排序数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回 value 应该在数组中插入的 index。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var dict = { &apos;thirty&apos;: 30, &apos;forty&apos;: 40, &apos;fifty&apos;: 50 };
+
+_.sortedIndexBy([&apos;thirty&apos;, &apos;fifty&apos;], &apos;forty&apos;, _.propertyOf(dict));
+// =&gt; 1
+
+// 使用了 `_.property` 回调结果
+_.sortedIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos;: 4 }, &apos;x&apos;);
+// =&gt; 0
+</code></pre><h2 id="sortedIndexOf"><a href="#sortedIndexOf" class="headerlink" title="_.sortedIndexOf"></a>_.sortedIndexOf</h2><p><strong><code>_.sortedIndexOf(array, value)</code></strong></p>
+<p>这个方法类似 _.indexOf，但它是执行二进制来检索已经排序的数组的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的已排序数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回匹配值的 index ，否则返回 -1.</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedIndexOf([1, 1, 2, 2], 2);
+// =&gt; 2
+</code></pre><h2 id="sortedLastIndex"><a href="#sortedLastIndex" class="headerlink" title="_.sortedLastIndex"></a>_.sortedLastIndex</h2><p><strong><code>_.sortedLastIndex(array, value)</code></strong></p>
+<p>这个方法类似 _.sortedIndex，它返回在 value 中尽可能大的 index 位置。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的已排序数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回 value 应该在数组中插入的 index。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedLastIndex([4, 5], 4);
+// =&gt; 1
+</code></pre><h2 id="sortedLastIndexBy"><a href="#sortedLastIndexBy" class="headerlink" title="_.sortedLastIndexBy"></a>_.sortedLastIndexBy</h2><p><strong><code>_.sortedLastIndexBy(array, value, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.sortedLastIndex，它接受一个 iteratee 调用每一个数组和值来计算排序。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的已排序数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回 value 应该在数组中插入的 index。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>// 使用了 `_.property` 的回调结果
+_.sortedLastIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos;: 4 }, &apos;x&apos;);
+// =&gt; 1
+</code></pre><h2 id="sortedLastIndexOf"><a href="#sortedLastIndexOf" class="headerlink" title="_.sortedLastIndexOf"></a>_.sortedLastIndexOf</h2><p><strong><code>_.sortedLastIndexOf(array, value)</code></strong></p>
+<p>这个方法类似 _.lastIndexOf，除了它是执行二进制来检索已经排序的数组的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的数组</p>
+</li>
+<li><p>value (*):要评估位置的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回匹配值的 index ，否则返回 -1.</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedLastIndexOf([1, 1, 2, 2], 2);
+// =&gt; 3
+</code></pre><h2 id="sortedUniq"><a href="#sortedUniq" class="headerlink" title="_.sortedUniq"></a>_.sortedUniq</h2><p><strong><code>_.sortedUniq(array)</code></strong></p>
+<p>这个方法类似 _.uniq，并且它会排序并优化数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要检索的已排序数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个不重复的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedUniq([1, 1, 2]);
+// =&gt; [1, 2]
+</code></pre><h2 id="sortedUniqBy"><a href="#sortedUniqBy" class="headerlink" title="_.sortedUniqBy"></a>_.sortedUniqBy</h2><p><strong><code>_.sortedUniqBy(array, [iteratee])</code></strong></p>
+<p>这个方法类似 _.uniqBy，它接受一个 iteratee 调用每一个数组和值来排序并优化数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要检索的数组</p>
+</li>
+<li><p>[iteratee] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个不重复的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
+// =&gt; [1.1, 2.3]
 </code></pre>]]></content>
     
     <summary type="html">
