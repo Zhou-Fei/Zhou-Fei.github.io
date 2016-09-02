@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helloworld.zhoufei.name/"/>
-  <updated>2016-08-24T00:52:40.239Z</updated>
+  <updated>2016-09-02T10:01:00.207Z</updated>
   <id>http://helloworld.zhoufei.name/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/"/>
     <id>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</id>
     <published>2016-07-26T11:08:00.000Z</published>
-    <updated>2016-08-24T00:52:40.239Z</updated>
+    <updated>2016-09-02T10:01:00.207Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><h2 id="chunk"><a href="#chunk" class="headerlink" title="_.chunk"></a>_.chunk</h2><p><strong><code>_.chunk(array, [size=0])</code></strong></p>
+    <content type="html"><![CDATA[<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><hr>
+<h2 id="chunk"><a href="#chunk" class="headerlink" title="_.chunk"></a>_.chunk</h2><p><strong><code>_.chunk(array, [size=0])</code></strong></p>
 <p>将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -37,7 +38,8 @@
 
 _.chunk([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;], 3);
 // =&gt; [[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;], [&apos;d&apos;]]
-</code></pre><h2 id="compact"><a href="#compact" class="headerlink" title="_.compact"></a>_.compact</h2><p><strong><code>_.compact(array)</code></strong></p>
+</code></pre><hr>
+<h2 id="compact"><a href="#compact" class="headerlink" title="_.compact"></a>_.compact</h2><p><strong><code>_.compact(array)</code></strong></p>
 <p>创建一个移除了所有假值的数组。例如：false、null、 0、””、undefined， 以及NaN 都是 “假值”.</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -48,7 +50,8 @@ _.chunk([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;], 3);
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.compact([0, 1, false, 2, &apos;&apos;, 3]);
 // =&gt; [1, 2, 3]
-</code></pre><h2 id="concat"><a href="#concat" class="headerlink" title="_.concat"></a>_.concat</h2><p><strong><code>_.concat(array, [values])</code></strong></p>
+</code></pre><hr>
+<h2 id="concat"><a href="#concat" class="headerlink" title="_.concat"></a>_.concat</h2><p><strong><code>_.concat(array, [values])</code></strong></p>
 <p>创建一个用任何数组 或 值连接的新数组。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -68,7 +71,8 @@ console.log(other);
 
 console.log(array);
 // =&gt; [1]
-</code></pre><h2 id="difference"><a href="#difference" class="headerlink" title="_.difference"></a>_.difference</h2><p><strong><code>_.difference(array, [values])</code></strong></p>
+</code></pre><hr>
+<h2 id="difference"><a href="#difference" class="headerlink" title="_.difference"></a>_.difference</h2><p><strong><code>_.difference(array, [values])</code></strong></p>
 <p>创建一个差异化后的数组，不包括使用 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 方法提供的数组。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -82,7 +86,8 @@ console.log(array);
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.difference([3, 2, 1], [4, 2]);
 // =&gt; [3, 1]
-</code></pre><h2 id="differenceBy"><a href="#differenceBy" class="headerlink" title="_.differenceBy"></a>_.differenceBy</h2><p><strong><code>_.differenceBy(array, [values], [iteratee=_.identity])</code></strong></p>
+</code></pre><hr>
+<h2 id="differenceBy"><a href="#differenceBy" class="headerlink" title="_.differenceBy"></a>_.differenceBy</h2><p><strong><code>_.differenceBy(array, [values], [iteratee=_.identity])</code></strong></p>
 <p>这个方法类似 _.difference，此外它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -102,7 +107,8 @@ console.log(array);
 // 使用了 `_.property` 的回调结果
 _.differenceBy([{ &apos;x&apos;: 2 }, { &apos;x&apos;: 1 }], [{ &apos;x&apos;: 1 }], &apos;x&apos;);
 // =&gt; [{ &apos;x&apos;: 2 }]
-</code></pre><h2 id="differenceWith"><a href="#differenceWith" class="headerlink" title="_.differenceWith"></a>_.differenceWith</h2><p><strong><code>_.differenceWith(array, [values], [comparator])</code></strong></p>
+</code></pre><hr>
+<h2 id="differenceWith"><a href="#differenceWith" class="headerlink" title="_.differenceWith"></a>_.differenceWith</h2><p><strong><code>_.differenceWith(array, [values], [comparator])</code></strong></p>
 <p>这个方法类似 _.difference，此外它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -120,7 +126,8 @@ _.differenceBy([{ &apos;x&apos;: 2 }, { &apos;x&apos;: 1 }], [{ &apos;x&apos;: 1
 
 _.differenceWith(objects, [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }], _.isEqual);
 // =&gt; [{ &apos;x&apos;: 2, &apos;y&apos;: 1 }]
-</code></pre><h2 id="drop"><a href="#drop" class="headerlink" title="_.drop"></a>_.drop</h2><p><strong><code>_.drop(array, [n=1])</code></strong></p>
+</code></pre><hr>
+<h2 id="drop"><a href="#drop" class="headerlink" title="_.drop"></a>_.drop</h2><p><strong><code>_.drop(array, [n=1])</code></strong></p>
 <p>裁剪数组中的前 N 个数组，返回剩余的部分。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -143,7 +150,8 @@ _.drop([1, 2, 3], 5);
 
 _.drop([1, 2, 3], 0);
 // =&gt; [1, 2, 3]
-</code></pre><h2 id="dropRight"><a href="#dropRight" class="headerlink" title="_.dropRight"></a>_.dropRight</h2><p><strong><code>_.dropRight(array, [n=1])</code></strong></p>
+</code></pre><hr>
+<h2 id="dropRight"><a href="#dropRight" class="headerlink" title="_.dropRight"></a>_.dropRight</h2><p><strong><code>_.dropRight(array, [n=1])</code></strong></p>
 <p>从右边开始裁剪数组中的 N 个数组，返回剩余的部分。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -166,7 +174,8 @@ _.dropRight([1, 2, 3], 5);
 
 _.dropRight([1, 2, 3], 0);
 // =&gt; [1, 2, 3]
-</code></pre><h2 id="dropRightWhile"><a href="#dropRightWhile" class="headerlink" title="_.dropRightWhile"></a>_.dropRightWhile</h2><p><strong><code>_.dropRightWhile(array, [predicate=_.identity])</code></strong></p>
+</code></pre><hr>
+<h2 id="dropRightWhile"><a href="#dropRightWhile" class="headerlink" title="_.dropRightWhile"></a>_.dropRightWhile</h2><p><strong><code>_.dropRightWhile(array, [predicate=_.identity])</code></strong></p>
 <p>从右边开始裁剪数组，起点从 predicate 返回假值开始。predicate 会传入3个参数：(value, index, array)。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -200,7 +209,8 @@ resolve( _.dropRightWhile(users, [&apos;active&apos;, false]) );
 // 使用了 `_.property` 的回调结果
 resolve( _.dropRightWhile(users, &apos;active&apos;) );
 // =&gt; [&apos;barney&apos;, &apos;fred&apos;, &apos;pebbles&apos;]
-</code></pre><h2 id="dropWhile"><a href="#dropWhile" class="headerlink" title="_.dropWhile"></a>_.dropWhile</h2><p><strong><code>_.dropWhile(array, [predicate=_.identity])</code></strong></p>
+</code></pre><hr>
+<h2 id="dropWhile"><a href="#dropWhile" class="headerlink" title="_.dropWhile"></a>_.dropWhile</h2><p><strong><code>_.dropWhile(array, [predicate=_.identity])</code></strong></p>
 <p>裁剪数组，起点从 predicate 返回假值开始。predicate 会传入3个参数：(value, index, array)。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -232,7 +242,8 @@ _.dropWhile(users, [&apos;active&apos;, false]);
 // 使用了 `_.property` 的回调处理
 _.dropWhile(users, &apos;active&apos;);
 // =&gt; 结果: [&apos;barney&apos;, &apos;fred&apos;, &apos;pebbles&apos;]
-</code></pre><h2 id="fill"><a href="#fill" class="headerlink" title="_.fill"></a>_.fill</h2><p><strong><code>_.fill(array, value, [start=0], [end=array.length])</code></strong></p>
+</code></pre><hr>
+<h2 id="fill"><a href="#fill" class="headerlink" title="_.fill"></a>_.fill</h2><p><strong><code>_.fill(array, value, [start=0], [end=array.length])</code></strong></p>
 <p>指定 值 填充数组，从 start 到 end 的位置，但不包括 end 本身的位置。 </p>
 <p>注意: 这个方法会改变数组</p>
 <p><strong><code>参数</code></strong></p>
@@ -260,7 +271,8 @@ _.fill(Array(3), 2);
 
 _.fill([4, 6, 8, 10], &apos;*&apos;, 1, 3);
 // =&gt; [4, &apos;*&apos;, &apos;*&apos;, 10]
-</code></pre><h2 id="findIndex"><a href="#findIndex" class="headerlink" title="_.findIndex"></a>_.findIndex</h2><p><strong><code>_.findIndex(array, [predicate=_.identity])</code></strong></p>
+</code></pre><hr>
+<h2 id="findIndex"><a href="#findIndex" class="headerlink" title="_.findIndex"></a>_.findIndex</h2><p><strong><code>_.findIndex(array, [predicate=_.identity])</code></strong></p>
 <p>这个方法类似 _.find。除了它返回最先通过 predicate 判断为真值的元素的 index ，而不是元素本身。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -292,7 +304,8 @@ _.findIndex(users, [&apos;active&apos;, false]);
 // 使用了 `_.property` 的回调结果
 _.findIndex(users, &apos;active&apos;);
 // =&gt; 2
-</code></pre><h2 id="findLastIndex"><a href="#findLastIndex" class="headerlink" title="_.findLastIndex"></a>_.findLastIndex</h2><p><strong><code>_.findLastIndex(array, [predicate=_.identity])</code></strong></p>
+</code></pre><hr>
+<h2 id="findLastIndex"><a href="#findLastIndex" class="headerlink" title="_.findLastIndex"></a>_.findLastIndex</h2><p><strong><code>_.findLastIndex(array, [predicate=_.identity])</code></strong></p>
 <p>这个方式类似 _.findIndex ， 不过它是从右到左的。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -324,7 +337,8 @@ _.findLastIndex(users, [&apos;active&apos;, false]);
 // 使用了 `_.property` 的回调结果
 _.findLastIndex(users, &apos;active&apos;);
 // =&gt; 0
-</code></pre><h2 id="flatten"><a href="#flatten" class="headerlink" title="_.flatten"></a>_.flatten</h2><p><strong><code>_.flatten(array)</code></strong></p>
+</code></pre><hr>
+<h2 id="flatten"><a href="#flatten" class="headerlink" title="_.flatten"></a>_.flatten</h2><p><strong><code>_.flatten(array)</code></strong></p>
 <p>向上一级展平数组嵌套</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -335,7 +349,8 @@ _.findLastIndex(users, &apos;active&apos;);
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.flatten([1, [2, [3, [4]], 5]]);
 // =&gt; [1, 2, [3, [4]], 5]
-</code></pre><h2 id="flattenDeep"><a href="#flattenDeep" class="headerlink" title="_.flattenDeep"></a>_.flattenDeep</h2><p><strong><code>_.flattenDeep(array)</code></strong></p>
+</code></pre><hr>
+<h2 id="flattenDeep"><a href="#flattenDeep" class="headerlink" title="_.flattenDeep"></a>_.flattenDeep</h2><p><strong><code>_.flattenDeep(array)</code></strong></p>
 <p>递归展平 数组.</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -346,7 +361,8 @@ _.findLastIndex(users, &apos;active&apos;);
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.flattenDeep([1, [2, [3, [4]], 5]]);
 // =&gt; [1, 2, 3, 4, 5]
-</code></pre><h2 id="flattenDepth"><a href="#flattenDepth" class="headerlink" title="_.flattenDepth"></a>_.flattenDepth</h2><p><strong><code>_.flattenDepth(array, [depth=1])</code></strong></p>
+</code></pre><hr>
+<h2 id="flattenDepth"><a href="#flattenDepth" class="headerlink" title="_.flattenDepth"></a>_.flattenDepth</h2><p><strong><code>_.flattenDepth(array, [depth=1])</code></strong></p>
 <p>根据 depth 递归展平 数组 的层级</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -365,7 +381,8 @@ _.flattenDepth(array, 1);
 
 _.flattenDepth(array, 2);
 // =&gt; [1, 2, 3, [4], 5]
-</code></pre><h2 id="fromPairs"><a href="#fromPairs" class="headerlink" title="_.fromPairs"></a>_.fromPairs</h2><p><strong><code>_.fromPairs(pairs)</code></strong></p>
+</code></pre><hr>
+<h2 id="fromPairs"><a href="#fromPairs" class="headerlink" title="_.fromPairs"></a>_.fromPairs</h2><p><strong><code>_.fromPairs(pairs)</code></strong></p>
 <p>反向版 _.toPairs，这个方法返回一个由键值对构成的对象。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -376,7 +393,8 @@ _.flattenDepth(array, 2);
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.fromPairs([[&apos;fred&apos;, 30], [&apos;barney&apos;, 40]]);
 // =&gt; { &apos;fred&apos;: 30, &apos;barney&apos;: 40 }
-</code></pre><h2 id="head-first"><a href="#head-first" class="headerlink" title="_.head(first)"></a>_.head(first)</h2><p><strong><code>_.head(array)</code></strong></p>
+</code></pre><hr>
+<h2 id="head-first"><a href="#head-first" class="headerlink" title="_.head(first)"></a>_.head(first)</h2><p><strong><code>_.head(array)</code></strong></p>
 <p>获得数组的首个元素</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -390,7 +408,8 @@ _.flattenDepth(array, 2);
 
 _.head([]);
 // =&gt; undefined
-</code></pre><h2 id="indexOf"><a href="#indexOf" class="headerlink" title="_.indexOf"></a>_.indexOf</h2><p><strong><code>_.indexOf(array, value, [fromIndex=0])</code></strong></p>
+</code></pre><hr>
+<h2 id="indexOf"><a href="#indexOf" class="headerlink" title="_.indexOf"></a>_.indexOf</h2><p><strong><code>_.indexOf(array, value, [fromIndex=0])</code></strong></p>
 <p>根据 value 使用 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 等值比较返回数组中首次匹配的 index， 如果 fromIndex 为负值，将从数组尾端索引进行匹配，如果将 fromIndex 设置为 true，将使用更快的二进制检索机制。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -410,7 +429,8 @@ _.head([]);
 // 使用了 `fromIndex`
 _.indexOf([1, 2, 1, 2], 2, 2);
 // =&gt; 3
-</code></pre><h2 id="initial"><a href="#initial" class="headerlink" title="_.initial"></a>_.initial</h2><p><strong><code>_.initial(array)</code></strong></p>
+</code></pre><hr>
+<h2 id="initial"><a href="#initial" class="headerlink" title="_.initial"></a>_.initial</h2><p><strong><code>_.initial(array)</code></strong></p>
 <p>获取数组中除了最后一个元素之外的所有元素。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -421,7 +441,8 @@ _.indexOf([1, 2, 1, 2], 2, 2);
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.initial([1, 2, 3]);
 // =&gt; [1, 2]
-</code></pre><h2 id="intersection"><a href="#intersection" class="headerlink" title="_.intersection"></a>_.intersection</h2><p><strong><code>_.intersection([arrays])</code></strong></p>
+</code></pre><hr>
+<h2 id="intersection"><a href="#intersection" class="headerlink" title="_.intersection"></a>_.intersection</h2><p><strong><code>_.intersection([arrays])</code></strong></p>
 <p>创建一个包含所有使用 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 进行等值比较后筛选的唯一值数组。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -432,7 +453,8 @@ _.indexOf([1, 2, 1, 2], 2, 2);
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.intersection([2, 1], [4, 2], [1, 2]);
 // =&gt; [2]
-</code></pre><h2 id="intersectionBy"><a href="#intersectionBy" class="headerlink" title="_.intersectionBy"></a>_.intersectionBy</h2><p><strong><code>_.intersectionBy([arrays], [iteratee=_.identity])</code></strong></p>
+</code></pre><hr>
+<h2 id="intersectionBy"><a href="#intersectionBy" class="headerlink" title="_.intersectionBy"></a>_.intersectionBy</h2><p><strong><code>_.intersectionBy([arrays], [iteratee=_.identity])</code></strong></p>
 <p>这个方法类似 _.intersection，此外它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -450,7 +472,8 @@ _.indexOf([1, 2, 1, 2], 2, 2);
 // 使用了 `_.property` 的回调结果
 _.intersectionBy([{ &apos;x&apos;: 1 }], [{ &apos;x&apos;: 2 }, { &apos;x&apos;: 1 }], &apos;x&apos;);
 // =&gt; [{ &apos;x&apos;: 1 }]
-</code></pre><h2 id="intersectionWith"><a href="#intersectionWith" class="headerlink" title="_.intersectionWith"></a>_.intersectionWith</h2><p><strong><code>_.intersectionWith([arrays], [comparator])</code></strong></p>
+</code></pre><hr>
+<h2 id="intersectionWith"><a href="#intersectionWith" class="headerlink" title="_.intersectionWith"></a>_.intersectionWith</h2><p><strong><code>_.intersectionWith([arrays], [comparator])</code></strong></p>
 <p>这个方法类似 _.intersection，此外它接受一个 comparator 调用每一个数组和值。iteratee 会传入2个参数：((arrVal, othVal)。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -467,7 +490,8 @@ var others = [{ &apos;x&apos;: 1, &apos;y&apos;: 1 }, { &apos;x&apos;: 1, &apos;
 
 _.intersectionWith(objects, others, _.isEqual);
 // =&gt; [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }]
-</code></pre><h2 id="join"><a href="#join" class="headerlink" title="_.join"></a>_.join</h2><p><strong><code>_.join(array, [separator=&#39;,&#39;])</code></strong></p>
+</code></pre><hr>
+<h2 id="join"><a href="#join" class="headerlink" title="_.join"></a>_.join</h2><p><strong><code>_.join(array, [separator=&#39;,&#39;])</code></strong></p>
 <p>将数组中的所有元素转换为由 separator 分隔的字符串。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -481,7 +505,8 @@ _.intersectionWith(objects, others, _.isEqual);
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.join([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;], &apos;~&apos;);
 // =&gt; &apos;a~b~c&apos;}]
-</code></pre><h2 id="last"><a href="#last" class="headerlink" title="_.last"></a>_.last</h2><p><strong><code>_.last(array)</code></strong></p>
+</code></pre><hr>
+<h2 id="last"><a href="#last" class="headerlink" title="_.last"></a>_.last</h2><p><strong><code>_.last(array)</code></strong></p>
 <p>获取数组中的最后一个元素</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -492,7 +517,8 @@ _.intersectionWith(objects, others, _.isEqual);
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.last([1, 2, 3]);
 // =&gt; 3
-</code></pre><h2 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="_.lastIndexOf"></a>_.lastIndexOf</h2><p><strong><code>_.lastIndexOf(array, value, [fromIndex=array.length-1])</code></strong></p>
+</code></pre><hr>
+<h2 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="_.lastIndexOf"></a>_.lastIndexOf</h2><p><strong><code>_.lastIndexOf(array, value, [fromIndex=array.length-1])</code></strong></p>
 <p>这个方法类似 _.indexOf，但它是从右到左遍历元素的。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -512,7 +538,8 @@ _.intersectionWith(objects, others, _.isEqual);
 // 使用了 `fromIndex`
 _.lastIndexOf([1, 2, 1, 2], 2, 2);
 // =&gt; 1
-</code></pre><h2 id="pull"><a href="#pull" class="headerlink" title="_.pull"></a>_.pull</h2><p><strong><code>_.pull(array, [values])</code></strong></p>
+</code></pre><hr>
+<h2 id="pull"><a href="#pull" class="headerlink" title="_.pull"></a>_.pull</h2><p><strong><code>_.pull(array, [values])</code></strong></p>
 <p>移除所有经过 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 等值比较为 true 的元素。</p>
 <p>注意: 不同于 _.without，这个方法会改变数组。</p>
 <p><strong><code>参数</code></strong></p>
@@ -530,7 +557,8 @@ _.lastIndexOf([1, 2, 1, 2], 2, 2);
 _.pull(array, 2, 3);
 console.log(array);
 // =&gt; [1, 1]
-</code></pre><h2 id="pullAll"><a href="#pullAll" class="headerlink" title="_.pullAll"></a>_.pullAll</h2><p><strong><code>_.pullAll(array, values)</code></strong></p>
+</code></pre><hr>
+<h2 id="pullAll"><a href="#pullAll" class="headerlink" title="_.pullAll"></a>_.pullAll</h2><p><strong><code>_.pullAll(array, values)</code></strong></p>
 <p>这个方式类似 _.pull，但它接受数组形式的一系列值。 </p>
 <p>注意: 不同于 _.difference，这个方法会改变数组。</p>
 <p><strong><code>参数</code></strong></p>
@@ -548,7 +576,8 @@ console.log(array);
 _.pullAll(array, [2, 3]);
 console.log(array);
 // =&gt; [1, 1]
-</code></pre><h2 id="pullAllBy"><a href="#pullAllBy" class="headerlink" title="_.pullAllBy"></a>_.pullAllBy</h2><p><strong><code>_.pullAllBy(array, values, [iteratee=_.identity])</code></strong></p>
+</code></pre><hr>
+<h2 id="pullAllBy"><a href="#pullAllBy" class="headerlink" title="_.pullAllBy"></a>_.pullAllBy</h2><p><strong><code>_.pullAllBy(array, values, [iteratee=_.identity])</code></strong></p>
 <p>这个方法类似 _.pullAll，除了它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入一个参数：(value)。 </p>
 <p>注意: 不同于 _.differenceBy，这个方法会改变数组。</p>
 <p><strong><code>参数</code></strong></p>
@@ -568,7 +597,8 @@ console.log(array);
 _.pullAllBy(array, [{ &apos;x&apos;: 1 }, { &apos;x&apos;: 3 }], &apos;x&apos;);
 console.log(array);
 // =&gt; [{ &apos;x&apos;: 2 }]
-</code></pre><h2 id="pullAt"><a href="#pullAt" class="headerlink" title="_.pullAt"></a>_.pullAt</h2><p><strong><code>_.pullAt(array, [indexes])</code></strong></p>
+</code></pre><hr>
+<h2 id="pullAt"><a href="#pullAt" class="headerlink" title="_.pullAt"></a>_.pullAt</h2><p><strong><code>_.pullAt(array, [indexes])</code></strong></p>
 <p>根据给的 indexes 移除对应的数组元素并返回被移除的元素。 </p>
 <p>注意: 不同于 _.at，这个方法会改变数组。</p>
 <p><strong><code>参数</code></strong></p>
@@ -589,7 +619,8 @@ console.log(array);
 
 console.log(evens);
 // =&gt; [10, 20]
-</code></pre><h2 id="remove"><a href="#remove" class="headerlink" title="_.remove"></a>_.remove</h2><p><strong><code>_.remove(array, [predicate=_.identity])</code></strong></p>
+</code></pre><hr>
+<h2 id="remove"><a href="#remove" class="headerlink" title="_.remove"></a>_.remove</h2><p><strong><code>_.remove(array, [predicate=_.identity])</code></strong></p>
 <p>移除经过 predicate 处理为真值的元素，并返回被移除的元素。predicate 会传入3个参数：(value, index, array) </p>
 <p>注意: 不同于 _.filter，这个方法会改变数组。</p>
 <p><strong><code>参数</code></strong></p>
@@ -612,7 +643,8 @@ console.log(array);
 
 console.log(evens);
 // =&gt; [2, 4]
-</code></pre><h2 id="reverse"><a href="#reverse" class="headerlink" title="_.reverse"></a>_.reverse</h2><p><strong><code>_.reverse(array)</code></strong></p>
+</code></pre><hr>
+<h2 id="reverse"><a href="#reverse" class="headerlink" title="_.reverse"></a>_.reverse</h2><p><strong><code>_.reverse(array)</code></strong></p>
 <p>反转数组，第一个元素移动到最后一位，第二个元素移动到倒数第二，类似这样。 </p>
 <p>注意: 这个方法会改变数组，根据 Array#<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank" rel="external">reverse</a></p>
 <p><strong><code>参数</code></strong></p>
@@ -629,7 +661,8 @@ _.reverse(array);
 
 console.log(array);
 // =&gt; [3, 2, 1]
-</code></pre><h2 id="slice"><a href="#slice" class="headerlink" title="_.slice"></a>_.slice</h2><p><strong><code>_.slice(array, [start=0], [end=array.length])</code></strong></p>
+</code></pre><hr>
+<h2 id="slice"><a href="#slice" class="headerlink" title="_.slice"></a>_.slice</h2><p><strong><code>_.slice(array, [start=0], [end=array.length])</code></strong></p>
 <p>创建一个裁剪后的数组，从 start 到 end 的位置，但不包括 end 本身的位置。 </p>
 <p>注意: 这个方法用于代替 Array#<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="external">slice</a> 来确保数组正确返回。</p>
 <p><strong><code>参数</code></strong></p>
@@ -645,7 +678,8 @@ console.log(array);
 <p>返回裁剪后的数组</p>
 <p><strong><code>示例</code></strong></p>
 <pre><code>。。。
-</code></pre><h2 id="sortedIndex"><a href="#sortedIndex" class="headerlink" title="_.sortedIndex"></a>_.sortedIndex</h2><p><strong><code>_.sortedIndex(array, value)</code></strong></p>
+</code></pre><hr>
+<h2 id="sortedIndex"><a href="#sortedIndex" class="headerlink" title="_.sortedIndex"></a>_.sortedIndex</h2><p><strong><code>_.sortedIndex(array, value)</code></strong></p>
 <p>使用二进制的方式检索来决定 value 应该插入在数组中位置。它的 index 应该尽可能的小以保证数组的排序。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -662,7 +696,8 @@ console.log(array);
 
 _.sortedIndex([4, 5], 4);
 // =&gt; 0
-</code></pre><h2 id="sortedIndexBy"><a href="#sortedIndexBy" class="headerlink" title="_.sortedIndexBy"></a>_.sortedIndexBy</h2><p><strong><code>_.sortedIndexBy(array, value, [iteratee=_.identity])</code></strong></p>
+</code></pre><hr>
+<h2 id="sortedIndexBy"><a href="#sortedIndexBy" class="headerlink" title="_.sortedIndexBy"></a>_.sortedIndexBy</h2><p><strong><code>_.sortedIndexBy(array, value, [iteratee=_.identity])</code></strong></p>
 <p>这个方法类似 _.sortedIndex，它还接受一个 iteratee 调用每一个数组和值来计算排序。iteratee 会传入一个参数：(value)。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -684,7 +719,8 @@ _.sortedIndexBy([&apos;thirty&apos;, &apos;fifty&apos;], &apos;forty&apos;, _.pr
 // 使用了 `_.property` 回调结果
 _.sortedIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos;: 4 }, &apos;x&apos;);
 // =&gt; 0
-</code></pre><h2 id="sortedIndexOf"><a href="#sortedIndexOf" class="headerlink" title="_.sortedIndexOf"></a>_.sortedIndexOf</h2><p><strong><code>_.sortedIndexOf(array, value)</code></strong></p>
+</code></pre><hr>
+<h2 id="sortedIndexOf"><a href="#sortedIndexOf" class="headerlink" title="_.sortedIndexOf"></a>_.sortedIndexOf</h2><p><strong><code>_.sortedIndexOf(array, value)</code></strong></p>
 <p>这个方法类似 _.indexOf，但它是执行二进制来检索已经排序的数组的。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -698,7 +734,8 @@ _.sortedIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos;: 4
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.sortedIndexOf([1, 1, 2, 2], 2);
 // =&gt; 2
-</code></pre><h2 id="sortedLastIndex"><a href="#sortedLastIndex" class="headerlink" title="_.sortedLastIndex"></a>_.sortedLastIndex</h2><p><strong><code>_.sortedLastIndex(array, value)</code></strong></p>
+</code></pre><hr>
+<h2 id="sortedLastIndex"><a href="#sortedLastIndex" class="headerlink" title="_.sortedLastIndex"></a>_.sortedLastIndex</h2><p><strong><code>_.sortedLastIndex(array, value)</code></strong></p>
 <p>这个方法类似 _.sortedIndex，它返回在 value 中尽可能大的 index 位置。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -712,7 +749,8 @@ _.sortedIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos;: 4
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.sortedLastIndex([4, 5], 4);
 // =&gt; 1
-</code></pre><h2 id="sortedLastIndexBy"><a href="#sortedLastIndexBy" class="headerlink" title="_.sortedLastIndexBy"></a>_.sortedLastIndexBy</h2><p><strong><code>_.sortedLastIndexBy(array, value, [iteratee=_.identity])</code></strong></p>
+</code></pre><hr>
+<h2 id="sortedLastIndexBy"><a href="#sortedLastIndexBy" class="headerlink" title="_.sortedLastIndexBy"></a>_.sortedLastIndexBy</h2><p><strong><code>_.sortedLastIndexBy(array, value, [iteratee=_.identity])</code></strong></p>
 <p>这个方法类似 _.sortedLastIndex，它接受一个 iteratee 调用每一个数组和值来计算排序。iteratee 会传入一个参数：(value)。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -729,7 +767,8 @@ _.sortedIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos;: 4
 <pre><code>// 使用了 `_.property` 的回调结果
 _.sortedLastIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos;: 4 }, &apos;x&apos;);
 // =&gt; 1
-</code></pre><h2 id="sortedLastIndexOf"><a href="#sortedLastIndexOf" class="headerlink" title="_.sortedLastIndexOf"></a>_.sortedLastIndexOf</h2><p><strong><code>_.sortedLastIndexOf(array, value)</code></strong></p>
+</code></pre><hr>
+<h2 id="sortedLastIndexOf"><a href="#sortedLastIndexOf" class="headerlink" title="_.sortedLastIndexOf"></a>_.sortedLastIndexOf</h2><p><strong><code>_.sortedLastIndexOf(array, value)</code></strong></p>
 <p>这个方法类似 _.lastIndexOf，除了它是执行二进制来检索已经排序的数组的。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -743,7 +782,8 @@ _.sortedLastIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.sortedLastIndexOf([1, 1, 2, 2], 2);
 // =&gt; 3
-</code></pre><h2 id="sortedUniq"><a href="#sortedUniq" class="headerlink" title="_.sortedUniq"></a>_.sortedUniq</h2><p><strong><code>_.sortedUniq(array)</code></strong></p>
+</code></pre><hr>
+<h2 id="sortedUniq"><a href="#sortedUniq" class="headerlink" title="_.sortedUniq"></a>_.sortedUniq</h2><p><strong><code>_.sortedUniq(array)</code></strong></p>
 <p>这个方法类似 _.uniq，并且它会排序并优化数组。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -754,7 +794,8 @@ _.sortedLastIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.sortedUniq([1, 1, 2]);
 // =&gt; [1, 2]
-</code></pre><h2 id="sortedUniqBy"><a href="#sortedUniqBy" class="headerlink" title="_.sortedUniqBy"></a>_.sortedUniqBy</h2><p><strong><code>_.sortedUniqBy(array, [iteratee])</code></strong></p>
+</code></pre><hr>
+<h2 id="sortedUniqBy"><a href="#sortedUniqBy" class="headerlink" title="_.sortedUniqBy"></a>_.sortedUniqBy</h2><p><strong><code>_.sortedUniqBy(array, [iteratee])</code></strong></p>
 <p>这个方法类似 _.uniqBy，它接受一个 iteratee 调用每一个数组和值来排序并优化数组。</p>
 <p><strong><code>参数</code></strong></p>
 <ol>
@@ -768,11 +809,1281 @@ _.sortedLastIndexBy([{ &apos;x&apos;: 4 }, { &apos;x&apos;: 5 }], { &apos;x&apos
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.sortedUniqBy([1.1, 1.2, 2.3, 2.4], Math.floor);
 // =&gt; [1.1, 2.3]
-</code></pre>]]></content>
+</code></pre><hr>
+<h2 id="tail"><a href="#tail" class="headerlink" title="_.tail"></a>_.tail</h2><p><strong><code>_.tail(array)</code></strong></p>
+<p>获取数组中除了第一个元素的剩余数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要检索的数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组中除了第一个元素的剩余数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.tail([1, 2, 3]);
+// =&gt; [2, 3]
+</code></pre><hr>
+<h2 id="take"><a href="#take" class="headerlink" title="_.take"></a>_.take</h2><p><strong><code>_.take(array, [n=1])</code></strong></p>
+<p>从数组的起始元素开始提取 N 个元素。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[n=1] (number):要提取的个数</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回提取的元素数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.take([1, 2, 3]);
+// =&gt; [1]
+
+_.take([1, 2, 3], 2);
+// =&gt; [1, 2]
+
+_.take([1, 2, 3], 5);
+// =&gt; [1, 2, 3]
+
+_.take([1, 2, 3], 0);
+// =&gt; []
+</code></pre><hr>
+<h2 id="takeRight"><a href="#takeRight" class="headerlink" title="_.takeRight"></a>_.takeRight</h2><p><strong><code>_.takeRight(array, [n=1])</code></strong></p>
+<p>从数组的结束元素开始提取 N 个数组.</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[n=1] (number):要提取的个数</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回提取的元素数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.takeRight([1, 2, 3]);
+// =&gt; [3]
+
+_.takeRight([1, 2, 3], 2);
+// =&gt; [2, 3]
+
+_.takeRight([1, 2, 3], 5);
+// =&gt; [1, 2, 3]
+
+_.takeRight([1, 2, 3], 0);
+// =&gt; []
+</code></pre><hr>
+<h2 id="takeRightWhile"><a href="#takeRightWhile" class="headerlink" title="_.takeRightWhile"></a>_.takeRightWhile</h2><p><strong><code>_.takeRightWhile(array, [predicate=_.identity])</code></strong></p>
+<p>从数组的最右边开始提取数组，直到 predicate 返回假值。predicate 会传入三个参数：(value, index, array)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回提取的元素数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;active&apos;: true },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: false }
+];
+
+_.takeRightWhile(users, function(o) { return !o.active; });
+// =&gt; 结果:  [&apos;fred&apos;, &apos;pebbles&apos;]
+
+// 使用了 `_.matches` 的回调处理
+_.takeRightWhile(users, { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: false });
+// =&gt; 结果:  [&apos;pebbles&apos;]
+
+// 使用了 `_.matchesProperty` 的回调处理
+_.takeRightWhile(users, [&apos;active&apos;, false]);
+// =&gt; 结果:  [&apos;fred&apos;, &apos;pebbles&apos;]
+
+// 使用了 `_.property` 的回调处理
+_.takeRightWhile(users, &apos;active&apos;);
+// =&gt; []
+</code></pre><hr>
+<h2 id="takeWhile"><a href="#takeWhile" class="headerlink" title="_.takeWhile"></a>_.takeWhile</h2><p><strong><code>_.takeWhile(array, [predicate=_.identity])</code></strong></p>
+<p>从数组的开始提取数组，直到 predicate 返回假值。predicate 会传入三个参数：(value, index, array)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回提取的元素数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;active&apos;: false},
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;active&apos;: true }
+];
+
+_.takeWhile(users, function(o) { return !o.active; });
+// =&gt; objects for [&apos;barney&apos;, &apos;fred&apos;]
+
+// 使用了 `_.matches` 的回调处理
+_.takeWhile(users, { &apos;user&apos;: &apos;barney&apos;, &apos;active&apos;: false });
+// =&gt;结果: [&apos;barney&apos;]
+
+// 使用了 `_.matchesProperty` 的回调处理
+_.takeWhile(users, [&apos;active&apos;, false]);
+// =&gt;结果: [&apos;barney&apos;, &apos;fred&apos;]
+
+// 使用了 `_.property` 的回调处理
+_.takeWhile(users, &apos;active&apos;);
+// =&gt; []
+</code></pre><hr>
+<h2 id="union"><a href="#union" class="headerlink" title="_.union"></a>_.union</h2><p><strong><code>_.union([arrays])</code></strong></p>
+<p>创建顺序排列的唯一值组成的数组。所有值经过 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 等值比较。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>[arrays] (…Array):需要处理的数组队列</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回处理好的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.union([2, 1], [4, 2], [1, 2]);
+// =&gt; [2, 1, 4]
+</code></pre><hr>
+<h2 id="unionBy"><a href="#unionBy" class="headerlink" title="_.unionBy"></a>_.unionBy</h2><p><strong><code>_.unionBy([arrays], [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.union，此外它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[arrays] (…Array):需要处理的数组队列</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回处理好的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.unionBy([2.1, 1.2], [4.3, 2.4], Math.floor);
+// =&gt; [2.1, 1.2, 4.3]
+
+// 使用了 `_.property` 的回调结果
+_.unionBy([{ &apos;x&apos;: 1 }], [{ &apos;x&apos;: 2 }, { &apos;x&apos;: 1 }], &apos;x&apos;);
+// =&gt; [{ &apos;x&apos;: 1 }, { &apos;x&apos;: 2 }]
+</code></pre><hr>
+<h2 id="unionWith"><a href="#unionWith" class="headerlink" title="_.unionWith"></a>_.unionWith</h2><p><strong><code>_.unionWith([arrays], [comparator])</code></strong></p>
+<p>这个方法类似 _.union， 此外它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[arrays] (…Array):需要处理的数组队列</p>
+</li>
+<li><p>[comparator] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回处理好的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var objects = [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }, { &apos;x&apos;: 2, &apos;y&apos;: 1 }];
+var others = [{ &apos;x&apos;: 1, &apos;y&apos;: 1 }, { &apos;x&apos;: 1, &apos;y&apos;: 2 }];
+
+_.unionWith(objects, others, _.isEqual);
+// =&gt; [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }, { &apos;x&apos;: 2, &apos;y&apos;: 1 }, { &apos;x&apos;: 1, &apos;y&apos;: 1 }]
+</code></pre><hr>
+<h2 id="uniq"><a href="#uniq" class="headerlink" title="_.uniq"></a>_.uniq</h2><p><strong><code>_.uniq(array)</code></strong></p>
+<p>创建一个不重复的数组副本。使用了 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 等值比较。只有首次出现的元素才会被保留。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要处理的数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回不重复的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.uniq([2, 1, 2]);
+// =&gt; [2, 1]
+</code></pre><hr>
+<h2 id="uniqBy"><a href="#uniqBy" class="headerlink" title="_.uniqBy"></a>_.uniqBy</h2><p><strong><code>_.uniqBy(array, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.uniq，但它接受一个 iteratee 调用每一个数组和值来计算唯一性。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回不重复的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.uniqBy([2.1, 1.2, 2.3], Math.floor);
+// =&gt; [2.1, 1.2]
+
+// 使用了 `_.property` 的回调结果
+_.uniqBy([{ &apos;x&apos;: 1 }, { &apos;x&apos;: 2 }, { &apos;x&apos;: 1 }], &apos;x&apos;);
+// =&gt; [{ &apos;x&apos;: 1 }, { &apos;x&apos;: 2 }]
+</code></pre><hr>
+<h2 id="uniqWith"><a href="#uniqWith" class="headerlink" title="_.uniqWith"></a>_.uniqWith</h2><p><strong><code>_.uniqWith(array, [comparator])</code></strong></p>
+<p>这个方法类似 _.uniq，除了它接受一个 comparator 来比较计算唯一性。 comparator 会传入2个参数：(arrVal, othVal).</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要处理的数组</p>
+</li>
+<li><p>[comparator] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回不重复的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var objects = [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }, { &apos;x&apos;: 2, &apos;y&apos;: 1 },  { &apos;x&apos;: 1, &apos;y&apos;: 2 }];
+
+_.uniqWith(objects, _.isEqual);
+// =&gt; [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }, { &apos;x&apos;: 2, &apos;y&apos;: 1 }]
+</code></pre><hr>
+<h2 id="unzip"><a href="#unzip" class="headerlink" title="_.unzip"></a>_.unzip</h2><p><strong><code>_.unzip(array)</code></strong></p>
+<p>这个方法类似 _.zip，除了它接收一个打包后的数组并且还原为打包前的状态。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>array (Array):需要解包的已打包数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个解包后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var zipped = _.zip([&apos;fred&apos;, &apos;barney&apos;], [30, 40], [true, false]);
+// =&gt; [[&apos;fred&apos;, 30, true], [&apos;barney&apos;, 40, false]]
+
+_.unzip(zipped);
+// =&gt; [[&apos;fred&apos;, &apos;barney&apos;], [30, 40], [true, false]]
+</code></pre><hr>
+<h2 id="unzipWith"><a href="#unzipWith" class="headerlink" title="_.unzipWith"></a>_.unzipWith</h2><p><strong><code>_.unzipWith(array, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.unzip，除了它接受一个 iteratee 来决定如何重组解包后的数组。iteratee 会传入4个参数：(accumulator, value, index, group)。每组的第一个元素作为初始化的值。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):需要解包的已打包数组</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):决定如何重组解包后的元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个解包后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var zipped = _.zip([1, 2], [10, 20], [100, 200]);
+// =&gt; [[1, 10, 100], [2, 20, 200]]
+
+_.unzipWith(zipped, _.add);
+// =&gt; [3, 30, 300]
+</code></pre><hr>
+<h2 id="without"><a href="#without" class="headerlink" title="_.without"></a>_.without</h2><p><strong><code>_.without(array, [values])</code></strong></p>
+<p>创建一个移除了所有提供的 values 的数组。使用了 <a href="http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero" target="_blank" rel="external">SameValueZero</a> 等值比较。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>array (Array):要处理的数组</p>
+</li>
+<li><p>[values] (…*):要排除的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个处理好的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.without([1, 2, 1, 3], 1, 2);
+// =&gt; [3]
+</code></pre><hr>
+<h2 id="xor"><a href="#xor" class="headerlink" title="_.xor"></a>_.xor</h2><p><strong><code>_.xor([arrays])</code></strong></p>
+<p>创建一个包含了所有唯一值的数组。使用了 <a href="https://en.wikipedia.org/wiki/Symmetric_difference" target="_blank" rel="external">symmetric difference</a> 等值比较。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>[arrays] (…Array):要处理的数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>包含了所有唯一值的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.xor([2, 1], [4, 2]);
+// =&gt; [1, 4]
+</code></pre><hr>
+<h2 id="xorBy"><a href="#xorBy" class="headerlink" title="_.xorBy"></a>_.xorBy</h2><p><strong><code>_.xorBy([arrays], [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.xor，除了它接受一个 iteratee 调用每一个数组和值。iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[arrays] (…Array):要处理的数组</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>包含了所有唯一值的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.xorBy([2.1, 1.2], [4.3, 2.4], Math.floor);
+// =&gt; [1.2, 4.3]
+
+// 使用了 `_.property` 的回调结果
+_.xorBy([{ &apos;x&apos;: 1 }], [{ &apos;x&apos;: 2 }, { &apos;x&apos;: 1 }], &apos;x&apos;);
+// =&gt; [{ &apos;x&apos;: 2 }]
+</code></pre><hr>
+<h2 id="xorWith"><a href="#xorWith" class="headerlink" title="_.xorWith"></a>_.xorWith</h2><p><strong><code>_.xorWith([arrays], [comparator])</code></strong></p>
+<p>这个方法类似 _.xor，除了它接受一个 comparator 调用每一个数组元素的值。 comparator 会传入2个参数：(arrVal, othVal)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[arrays] (…Array):要处理的数组</p>
+</li>
+<li><p>[comparator] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>包含了所有唯一值的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var objects = [{ &apos;x&apos;: 1, &apos;y&apos;: 2 }, { &apos;x&apos;: 2, &apos;y&apos;: 1 }];
+var others = [{ &apos;x&apos;: 1, &apos;y&apos;: 1 }, { &apos;x&apos;: 1, &apos;y&apos;: 2 }];
+
+_.xorWith(objects, others, _.isEqual);
+// =&gt; [{ &apos;x&apos;: 2, &apos;y&apos;: 1 }, { &apos;x&apos;: 1, &apos;y&apos;: 1 }]
+</code></pre><hr>
+<h2 id="zip"><a href="#zip" class="headerlink" title="_.zip"></a>_.zip</h2><p><strong><code>_.zip([arrays])</code></strong></p>
+<p>创建一个打包所有元素后的数组。第一个元素包含所有提供数组的第一个元素，第二个包含所有提供数组的第二个元素，以此类推。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>[arrays] (…Array):要处理的数组</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个打包后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.zip([&apos;fred&apos;, &apos;barney&apos;], [30, 40], [true, false]);
+// =&gt; [[&apos;fred&apos;, 30, true], [&apos;barney&apos;, 40, false]]
+</code></pre><hr>
+<h2 id="zipObject"><a href="#zipObject" class="headerlink" title="_.zipObject"></a>_.zipObject</h2><p><strong><code>_.zipObject([props=[]], [values=[]])</code></strong></p>
+<p>这个方法类似 _.fromPairs，除了它接受2个数组，一个作为属性名，一个作为属性值。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[props=[]] (Array):属性名</p>
+</li>
+<li><p>[values=[]] (Array):属性值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回一个新的对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.zipObject([&apos;a&apos;, &apos;b&apos;], [1, 2]);
+// =&gt; { &apos;a&apos;: 1, &apos;b&apos;: 2 }
+</code></pre><hr>
+<h2 id="zipObjectDeep"><a href="#zipObjectDeep" class="headerlink" title="_.zipObjectDeep"></a>_.zipObjectDeep</h2><p><strong><code>_.zipObjectDeep([props=[]], [values=[]])</code></strong></p>
+<p>这个方法类似 _.zipObject，除了它支持属性路径。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[props=[]] (Array):属性名</p>
+</li>
+<li><p>[values=[]] (Array):属性值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回一个新的对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.zipObjectDeep([&apos;a.b[0].c&apos;, &apos;a.b[1].d&apos;], [1, 2]);
+// =&gt; { &apos;a&apos;: { &apos;b&apos;: [{ &apos;c&apos;: 1 }, { &apos;d&apos;: 2 }] } }
+</code></pre><hr>
+<h2 id="zipWith"><a href="#zipWith" class="headerlink" title="_.zipWith"></a>_.zipWith</h2><p><strong><code>_.zipWith([arrays], [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.zip， 除了它接受一个 iteratee 决定如何重组值。 iteratee 会调用每一组元素。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>[arrays] (…Array):要处理的数组</p>
+</li>
+<li><p>[iteratee=_.identity] (Function): The function to combine grouped values.</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个打包后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.zipWith([1, 2], [10, 20], [100, 200], function(a, b, c) {
+  return a + b + c;
+});
+// =&gt; [111, 222]
+</code></pre><hr>
+<h1 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h1><hr>
+<h2 id="countBy"><a href="#countBy" class="headerlink" title="_.countBy"></a>_.countBy</h2><p><strong><code>_.countBy(collection, [iteratee=_.identity])</code></strong></p>
+<p>创建一个组成对象，key是经过 iteratee 处理的集合的结果，value 是处理结果的次数。 iteratee 会传入一个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回一个组成汇总的对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.countBy([6.1, 4.2, 6.3], Math.floor);
+// =&gt; { &apos;4&apos;: 1, &apos;6&apos;: 2 }
+
+_.countBy([&apos;one&apos;, &apos;two&apos;, &apos;three&apos;], &apos;length&apos;);
+// =&gt; { &apos;3&apos;: 2, &apos;5&apos;: 1 }
+</code></pre><hr>
+<h2 id="every"><a href="#every" class="headerlink" title="_.every"></a>_.every</h2><p><strong><code>_.every(collection, [predicate=_.identity])</code></strong></p>
+<p>通过 predicate 检查集合中的元素是否都返回 真值，只要 predicate 返回一次假值，遍历就停止，并返回 false。 predicate 会传入3个参数：(value, index|key, collection)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Boolean)</code></strong></p>
+<p>返回 true，如果所有元素经 predicate 检查都为真值，否则返回 false。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.every([true, 1, null, &apos;yes&apos;], Boolean);
+// =&gt; false
+
+var users = [
+  { &apos;user&apos;: &apos;barney&apos;, &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;fred&apos;,   &apos;active&apos;: false }
+];
+
+// 使用了 `_.matches` 的回调结果
+_.every(users, { &apos;user&apos;: &apos;barney&apos;, &apos;active&apos;: false });
+// =&gt; false
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.every(users, [&apos;active&apos;, false]);
+// =&gt; true
+
+// 使用了 `_.property` 的回调结果
+_.every(users, &apos;active&apos;);
+// =&gt; false
+</code></pre><hr>
+<h2 id="filter"><a href="#filter" class="headerlink" title="_.filter"></a>_.filter</h2><p><strong><code>_.filter(collection, [predicate=_.identity])</code></strong></p>
+<p>遍历集合中的元素，筛选出一个经过 predicate 检查结果为真值的数组，predicate 会传入3个参数：(value, index|key, collection)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回筛选结果的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var resolve = _.partial(_.map, _, &apos;user&apos;);
+
+var users = [
+  { &apos;user&apos;: &apos;barney&apos;, &apos;age&apos;: 36, &apos;active&apos;: true },
+  { &apos;user&apos;: &apos;fred&apos;,   &apos;age&apos;: 40, &apos;active&apos;: false }
+];
+
+resolve( _.filter(users, function(o) { return !o.active; }) );
+// =&gt; [&apos;fred&apos;]
+
+// 使用了 `_.matches` 的回调结果
+resolve( _.filter(users, { &apos;age&apos;: 36, &apos;active&apos;: true }) );
+// =&gt; [&apos;barney&apos;]
+
+// 使用了 `_.matchesProperty` 的回调结果
+resolve( _.filter(users, [&apos;active&apos;, false]) );
+// =&gt; [&apos;fred&apos;]
+
+// 使用了 `_.property` 的回调结果
+resolve( _.filter(users, &apos;active&apos;) );
+// =&gt; [&apos;barney&apos;]
+</code></pre><hr>
+<h2 id="find"><a href="#find" class="headerlink" title="_.find"></a>_.find</h2><p><strong><code>_.find(collection, [predicate=_.identity])</code></strong></p>
+<p>遍历集合中的元素，返回最先经 predicate 检查为真值的元素。 predicate 会传入3个元素：(value, index|key, collection)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回匹配元素，否则返回 undefined</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;age&apos;: 36, &apos;active&apos;: true },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;age&apos;: 40, &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;age&apos;: 1,  &apos;active&apos;: true }
+];
+
+_.find(users, function(o) { return o.age &lt; 40; });
+// =&gt; 结果: &apos;barney&apos;
+
+// 使用了 `_.matches` 的回调结果
+_.find(users, { &apos;age&apos;: 1, &apos;active&apos;: true });
+// =&gt; 结果: &apos;pebbles&apos;
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.find(users, [&apos;active&apos;, false]);
+// =&gt; 结果: &apos;fred&apos;
+
+// 使用了 `_.property` 的回调结果
+_.find(users, &apos;active&apos;);
+// =&gt; 结果: &apos;barney&apos;
+</code></pre><hr>
+<h2 id="findLast"><a href="#findLast" class="headerlink" title="_.findLast"></a>_.findLast</h2><p><strong><code>_.findLast(collection, [predicate=_.identity])</code></strong></p>
+<p>这个方法类似 _.find，除了它是从右至左遍历集合的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回匹配元素，否则返回 undefined</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.findLast([1, 2, 3, 4], function(n) {
+  return n % 2 == 1;
+});
+// =&gt; 3
+</code></pre><hr>
+<h2 id="flatMap"><a href="#flatMap" class="headerlink" title="_.flatMap"></a>_.flatMap</h2><p><strong><code>_.flatMap(collection, [iteratee=_.identity])</code></strong></p>
+<p>创建一个扁平化的数组，每一个值会传入 iteratee 处理，处理结果会与值合并。 iteratee 会传入3个参数：(value, index|key, array)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function duplicate(n) {
+  return [n, n];
+}
+
+_.flatMap([1, 2], duplicate);
+// =&gt; [1, 1, 2, 2]
+</code></pre><hr>
+<h2 id="forEach-each"><a href="#forEach-each" class="headerlink" title="_.forEach(each)"></a>_.forEach(each)</h2><p><strong><code>_.forEach(collection, [iteratee=_.identity])</code></strong></p>
+<p>调用 iteratee 遍历集合中的元素， iteratee 会传入3个参数：(value, index|key, collection)。 如果显式的返回 false ，iteratee 会提前退出。 </p>
+<p>注意: 与其他集合方法一样，对象的 length 属性也会被遍历，避免这种情况，可以用 .forIn 或者 .forOwn 代替。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array|Object)</code></strong></p>
+<p>返回集合</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_([1, 2]).forEach(function(value) {
+  console.log(value);
+});
+// =&gt; 输出 `1` 和 `2`
+
+_.forEach({ &apos;a&apos;: 1, &apos;b&apos;: 2 }, function(value, key) {
+  console.log(key);
+});
+// =&gt; 输出 &apos;a&apos; 和 &apos;b&apos; (不保证遍历的顺序)
+</code></pre><hr>
+<h2 id="forEachRight-eachRight"><a href="#forEachRight-eachRight" class="headerlink" title="_.forEachRight(eachRight)"></a>_.forEachRight(eachRight)</h2><p><strong><code>_.forEachRight(collection, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.forEach，除了它是从右到左遍历的集合中的元素的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array|Object)</code></strong></p>
+<p>返回集合</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.forEachRight([1, 2], function(value) {
+  console.log(value);
+});
+// =&gt; 输出 `2` 和 `1`
+</code></pre><hr>
+<h2 id="groupBy"><a href="#groupBy" class="headerlink" title="_.groupBy"></a>_.groupBy</h2><p><strong><code>_.groupBy(collection, [iteratee=_.identity])</code></strong></p>
+<p>创建一个对象组成，key 是经 iteratee 处理的结果， value 是产生 key 的元素数组。 iteratee 会传入1个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回一个组成汇总的对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.groupBy([6.1, 4.2, 6.3], Math.floor);
+// =&gt; { &apos;4&apos;: [4.2], &apos;6&apos;: [6.1, 6.3] }
+
+// 使用了 `_.property` 的回调结果
+_.groupBy([&apos;one&apos;, &apos;two&apos;, &apos;three&apos;], &apos;length&apos;);
+// =&gt; { &apos;3&apos;: [&apos;one&apos;, &apos;two&apos;], &apos;5&apos;: [&apos;three&apos;] }
+</code></pre><hr>
+<h2 id="includes"><a href="#includes" class="headerlink" title="_.includes"></a>_.includes</h2><p><strong><code>_.includes(collection, value, [fromIndex=0])</code></strong></p>
+<p>检查 值 是否在 集合中，如果集合是字符串，那么检查 值 是否在字符串中。 其他情况用 SameValueZero 等值比较。 如果指定 fromIndex 是负数，从结尾开始检索。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object|string):要检索的集合</p>
+</li>
+<li><p>value (*):要检索的值</p>
+</li>
+<li><p>[fromIndex=0] (number):要检索的 index 位置</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Boolean)</code></strong></p>
+<p>如果找到 value 返回 ture， 否则返回 false。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.includes([1, 2, 3], 1);
+// =&gt; true
+
+_.includes([1, 2, 3], 1, 2);
+// =&gt; false
+
+_.includes({ &apos;user&apos;: &apos;fred&apos;, &apos;age&apos;: 40 }, &apos;fred&apos;);
+// =&gt; true
+
+_.includes(&apos;pebbles&apos;, &apos;eb&apos;);
+// =&gt; true
+</code></pre><hr>
+<h2 id="invokeMap"><a href="#invokeMap" class="headerlink" title="_.invokeMap"></a>_.invokeMap</h2><p><strong><code>_.invokeMap(collection, path, [args])</code></strong></p>
+<p>调用 path 的方法处理集合中的每一个元素，返回处理的数组。 如何附加的参数会传入到调用方法中。如果方法名是个函数，集合中的每个元素都会被调用到。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>path (Array|Function|string):要调用的方法名 或者 这个函数会处理每一个元素</p>
+</li>
+<li><p>[args] (…*):The arguments to invoke each method with.</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回数组结果</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.invokeMap([[5, 1, 7], [3, 2, 1]], &apos;sort&apos;);
+// =&gt; [[1, 5, 7], [1, 2, 3]]
+
+_.invokeMap([123, 456], String.prototype.split, &apos;&apos;);
+// =&gt; [[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;], [&apos;4&apos;, &apos;5&apos;, &apos;6&apos;]]
+</code></pre><hr>
+<h2 id="keyBy"><a href="#keyBy" class="headerlink" title="_.keyBy"></a>_.keyBy</h2><p><strong><code>_.keyBy(collection, [iteratee=_.identity])</code></strong></p>
+<p>创建一个对象组成。key 是经 iteratee 处理的结果，value 是产生key的元素。 iteratee 会传入1个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回一个组成汇总的对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [
+  { &apos;dir&apos;: &apos;left&apos;, &apos;code&apos;: 97 },
+  { &apos;dir&apos;: &apos;right&apos;, &apos;code&apos;: 100 }
+];
+
+_.keyBy(array, function(o) {
+  return String.fromCharCode(o.code);
+});
+// =&gt; { &apos;a&apos;: { &apos;dir&apos;: &apos;left&apos;, &apos;code&apos;: 97 }, &apos;d&apos;: { &apos;dir&apos;: &apos;right&apos;, &apos;code&apos;: 100 } }
+
+_.keyBy(array, &apos;dir&apos;);
+// =&gt; { &apos;left&apos;: { &apos;dir&apos;: &apos;left&apos;, &apos;code&apos;: 97 }, &apos;right&apos;: { &apos;dir&apos;: &apos;right&apos;, &apos;code&apos;: 100 } }
+</code></pre><hr>
+<h2 id="map"><a href="#map" class="headerlink" title="_.map"></a>_.map</h2><p><strong><code>_.map(collection, [iteratee=_.identity])</code></strong></p>
+<p>创建一个经过 iteratee 处理的集合中每一个元素的结果数组。 iteratee 会传入3个参数：(value, index|key, collection)。 </p>
+<p>有许多 lodash 的方法以 iteratees 的身份守护其工作，例如： <em>.every, </em>.filter, <em>.map, </em>.mapValues, <em>.reject, 以及 </em>.some </p>
+<p>被守护的有:<br>ary, curry, curryRight, drop, dropRight, every, fill, invert, parseInt, random, range, rangeRight, slice, some, sortBy, take, takeRight, template, trim, trimEnd, trimStart, 以及 words</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回映射后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function square(n) {
+  return n * n;
+}
+
+_.map([4, 8], square);
+// =&gt; [16, 64]
+
+_.map({ &apos;a&apos;: 4, &apos;b&apos;: 8 }, square);
+// =&gt; [16, 64] (无法保证遍历的顺序)
+
+var users = [
+  { &apos;user&apos;: &apos;barney&apos; },
+  { &apos;user&apos;: &apos;fred&apos; }
+];
+
+// 使用了 `_.property` 的回调结果
+_.map(users, &apos;user&apos;);
+// =&gt; [&apos;barney&apos;, &apos;fred&apos;]
+</code></pre><hr>
+<h2 id="orderBy"><a href="#orderBy" class="headerlink" title="_.orderBy"></a>_.orderBy</h2><p><strong><code>_.orderBy(collection, [iteratees=[_.identity]], [orders])</code></strong></p>
+<p>这个方法类似 _.sortBy，除了它允许指定 iteratees 结果如何排序。 如果没指定 orders，所有值以升序排序。 其他情况，指定 “desc” 降序，指定 “asc” 升序其对应值。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratees=[_.identity]] (Function[]|Object[]|string[]):通过 iteratees 决定排序</p>
+</li>
+<li><p>[orders] (string[]):决定 iteratees 的排序方法collection (Array|Object):需要遍历的集合</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回排序后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;fred&apos;,   &apos;age&apos;: 48 },
+  { &apos;user&apos;: &apos;barney&apos;, &apos;age&apos;: 34 },
+  { &apos;user&apos;: &apos;fred&apos;,   &apos;age&apos;: 42 },
+  { &apos;user&apos;: &apos;barney&apos;, &apos;age&apos;: 36 }
+];
+
+// 以 `user` 升序排序 再 以 `age` 降序排序。
+_.orderBy(users, [&apos;user&apos;, &apos;age&apos;], [&apos;asc&apos;, &apos;desc&apos;]);
+// =&gt; 结果: [[&apos;barney&apos;, 36], [&apos;barney&apos;, 34], [&apos;fred&apos;, 48], [&apos;fred&apos;, 42]]
+</code></pre><hr>
+<h2 id="partition"><a href="#partition" class="headerlink" title="_.partition"></a>_.partition</h2><p><strong><code>_.partition(collection, [predicate=_.identity])</code></strong></p>
+<p>创建一个拆分为两部分的数组。 第一部分是 predicate 检查为真值的，第二部分是 predicate 检查为假值的。 predicate 会传入3个参数：(value, index|key, collection)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回分组元素的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;,  &apos;age&apos;: 36, &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;fred&apos;,    &apos;age&apos;: 40, &apos;active&apos;: true },
+  { &apos;user&apos;: &apos;pebbles&apos;, &apos;age&apos;: 1,  &apos;active&apos;: false }
+];
+
+_.partition(users, function(o) { return o.active; });
+// =&gt; 结果: [[&apos;fred&apos;], [&apos;barney&apos;, &apos;pebbles&apos;]]
+
+// 使用了 `_.matches` 的回调结果
+_.partition(users, { &apos;age&apos;: 1, &apos;active&apos;: false });
+// =&gt; 结果: [[&apos;pebbles&apos;], [&apos;barney&apos;, &apos;fred&apos;]]
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.partition(users, [&apos;active&apos;, false]);
+// =&gt; 结果: [[&apos;barney&apos;, &apos;pebbles&apos;], [&apos;fred&apos;]]
+
+// 使用了 `_.property` 的回调结果
+_.partition(users, &apos;active&apos;);
+// =&gt; 结果: [[&apos;fred&apos;], [&apos;barney&apos;, &apos;pebbles&apos;]]
+</code></pre><hr>
+<h2 id="reduce"><a href="#reduce" class="headerlink" title="_.reduce"></a>_.reduce</h2><p><strong><code>_.reduce(collection, [iteratee=_.identity], [accumulator])</code></strong></p>
+<p>通过 iteratee 遍历集合中的每个元素。 每次返回的值会作为下一次 iteratee 使用。 如果没有提供 accumulator，则集合中的第一个元素作为 accumulator。 iteratee 会传入4个参数：(accumulator, value, index|key, collection)。 </p>
+<p>有许多 lodash 的方法以 iteratees 的身份守护其工作，例如： <em>.reduce, </em>.reduceRight, 以及 _.transform. </p>
+<p>被守护的有:<br>assign, defaults, defaultsDeep, includes, merge, orderBy, 以及 sortBy</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):这个函数会处理每一个元素</p>
+</li>
+<li><p>[accumulator] (*):初始化的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回累加后的值</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.reduce([1, 2], function(sum, n) {
+  return sum + n;
+}, 0);
+// =&gt; 3
+
+_.reduce({ &apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 1 }, function(result, value, key) {
+  (result[value] || (result[value] = [])).push(key);
+  return result;
+}, {});
+// =&gt; { &apos;1&apos;: [&apos;a&apos;, &apos;c&apos;], &apos;2&apos;: [&apos;b&apos;] } (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="reduceRight"><a href="#reduceRight" class="headerlink" title="_.reduceRight"></a>_.reduceRight</h2><p><strong><code>_.reduceRight(collection, [iteratee=_.identity], [accumulator])</code></strong></p>
+<p>这个方法类似 _.reduce ，除了它是从右到左遍历的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):这个函数会处理每一个元素</p>
+</li>
+<li><p>[accumulator] (*):初始化的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回累加后的值</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var array = [[0, 1], [2, 3], [4, 5]];
+
+_.reduceRight(array, function(flattened, other) {
+  return flattened.concat(other);
+}, []);
+// =&gt; [4, 5, 2, 3, 0, 1]
+</code></pre><hr>
+<h2 id="reject"><a href="#reject" class="headerlink" title="_.reject"></a>_.reject</h2><p><strong><code>_.reject(collection, [predicate=_.identity])</code></strong></p>
+<p>反向版 _.filter，这个方法返回 predicate 检查为非真值的元素。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回过滤后的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;barney&apos;, &apos;age&apos;: 36, &apos;active&apos;: false },
+  { &apos;user&apos;: &apos;fred&apos;,   &apos;age&apos;: 40, &apos;active&apos;: true }
+];
+
+_.reject(users, function(o) { return !o.active; });
+// =&gt; 结果: [&apos;fred&apos;]
+
+// 使用了 `_.matches` 的回调结果
+_.reject(users, { &apos;age&apos;: 40, &apos;active&apos;: true });
+// =&gt; 结果: [&apos;barney&apos;]
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.reject(users, [&apos;active&apos;, false]);
+// =&gt; 结果: [&apos;fred&apos;]
+
+// 使用了 `_.property` 的回调结果
+_.reject(users, &apos;active&apos;);
+// =&gt; 结果: [&apos;barney&apos;]
+</code></pre><hr>
+<h2 id="sample"><a href="#sample" class="headerlink" title="_.sample"></a>_.sample</h2><p><strong><code>_.sample(collection)</code></strong></p>
+<p>从集合中随机获得元素</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>collection (Array|Object):要取样的集合</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回随机元素</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sample([1, 2, 3, 4]);
+// =&gt; 2
+</code></pre><hr>
+<h2 id="sampleSize"><a href="#sampleSize" class="headerlink" title="_.sampleSize"></a>_.sampleSize</h2><p><strong><code>_.sampleSize(collection, [n=0])</code></strong></p>
+<p>从集合中随机获得 N 个元素</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):要取样的集合</p>
+</li>
+<li><p>[n=0] (number):要取得的元素个数</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回随机元素</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.sampleSize([1, 2, 3], 2);
+// =&gt; [3, 1]
+
+_.sampleSize([1, 2, 3], 4);
+// =&gt; [2, 3, 1]
+</code></pre><hr>
+<h2 id="shuffle"><a href="#shuffle" class="headerlink" title="_.shuffle"></a>_.shuffle</h2><p><strong><code>_.shuffle(collection)</code></strong></p>
+<p>创建一个被打乱元素的集合。 使用了 <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle" target="_blank" rel="external">Fisher-Yates shuffle</a> 版本。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>collection (Array|Object):要打乱的集合</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回一个被打乱元素的新集合</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.shuffle([1, 2, 3, 4]);
+// =&gt; [4, 1, 3, 2]
+</code></pre><hr>
+<h2 id="size"><a href="#size" class="headerlink" title="_.size"></a>_.size</h2><p><strong><code>_.size(collection)</code></strong></p>
+<p>返回集合的长度或对象中可枚举属性的个数。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>collection (Array|Object):要打乱的集合</li>
+</ol>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回集合的大小</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.size([1, 2, 3]);
+// =&gt; 3
+
+_.size({ &apos;a&apos;: 1, &apos;b&apos;: 2 });
+// =&gt; 2
+
+_.size(&apos;pebbles&apos;);
+// =&gt; 7
+</code></pre><hr>
+<h2 id="some"><a href="#some" class="headerlink" title="_.some"></a>_.some</h2><p><strong><code>_.some(collection, [predicate=_.identity])</code></strong></p>
+<p>通过 predicate 检查集合中的元素是否存在任意真值的元素，只要 predicate 返回一次真值，遍历就停止，并返回 true。 predicate 会传入3个参数：(value, index|key, collection)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Boolean)</code></strong></p>
+<p>返回 true，如果任意元素经 predicate 检查都为真值，否则返回 false。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.some([null, 0, &apos;yes&apos;, false], Boolean);
+// =&gt; true
+
+var users = [
+  { &apos;user&apos;: &apos;barney&apos;, &apos;active&apos;: true },
+  { &apos;user&apos;: &apos;fred&apos;,   &apos;active&apos;: false }
+];
+
+// 使用了 `_.matches` 的回调结果
+_.some(users, { &apos;user&apos;: &apos;barney&apos;, &apos;active&apos;: false });
+// =&gt; false
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.some(users, [&apos;active&apos;, false]);
+// =&gt; true
+
+// 使用了 `_.property` 的回调结果
+_.some(users, &apos;active&apos;);
+// =&gt; true
+</code></pre><hr>
+<h2 id="sortBy"><a href="#sortBy" class="headerlink" title="_.sortBy"></a>_.sortBy</h2><p><strong><code>_.sortBy(collection, [iteratees=[_.identity]])</code></strong></p>
+<p>创建一个元素数组。 以 iteratee 处理的结果升序排序。 这个方法执行稳定排序，也就是说相同元素会保持原始排序。 iteratees 会传入1个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>collection (Array|Object):需要遍历的集合</p>
+</li>
+<li><p>[iteratees=[_.identity]] (…(Function|Function[]|Object|Object[]|string|string[]):这个函数决定排序</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回排序后的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = [
+  { &apos;user&apos;: &apos;fred&apos;,   &apos;age&apos;: 48 },
+  { &apos;user&apos;: &apos;barney&apos;, &apos;age&apos;: 36 },
+  { &apos;user&apos;: &apos;fred&apos;,   &apos;age&apos;: 42 },
+  { &apos;user&apos;: &apos;barney&apos;, &apos;age&apos;: 34 }
+];
+
+
+_.sortBy(users, function(o) { return o.user; });
+// =&gt; 排序结果 [[&apos;barney&apos;, 36], [&apos;barney&apos;, 34], [&apos;fred&apos;, 48], [&apos;fred&apos;, 42]]
+
+_.sortBy(users, [&apos;user&apos;, &apos;age&apos;]);
+// =&gt; 排序结果 [[&apos;barney&apos;, 34], [&apos;barney&apos;, 36], [&apos;fred&apos;, 42], [&apos;fred&apos;, 48]]
+
+_.sortBy(users, &apos;user&apos;, function(o) {
+  return Math.floor(o.age / 10);
+});
+// =&gt; 排序结果 [[&apos;barney&apos;, 36], [&apos;barney&apos;, 34], [&apos;fred&apos;, 48], [&apos;fred&apos;, 42]]
+</code></pre><hr>
+<h1 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h1><hr>
+<h2 id="now"><a href="#now" class="headerlink" title="_.now"></a>_.now</h2><p><strong><code>_.now()</code></strong></p>
+<p>获得 Unix 纪元(1970 1月1日 00:00:00 UTC) 直到现在的毫秒数。</p>
+<p><strong><code>参数</code></strong></p>
+<p>无</p>
+<p><strong><code>返回值 (Number)</code></strong></p>
+<p>返回时间戳</p>
+<p><strong><code>示例</code></strong></p>
+<p><em>.defer(function(stamp) {<br>  console.log(</em>.now() - stamp);<br>}, _.now());<br>// =&gt; 记录延迟函数调用的毫秒数</p>
+<hr>
+<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><hr>
+<h2 id="assign"><a href="#assign" class="headerlink" title="_.assign"></a>_.assign</h2><p><strong><code>_.assign(object, [sources])</code></strong></p>
+<p>分配来源对象的可枚举属性到目标对象上。 来源对象的应用规则是从左到右，随后的下一个对象的属性会覆盖上一个对象的属性。</p>
+<p>注意: 这方法会改变源对象，参考自 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="external">Object.assign</a>.</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):目标对象</p>
+</li>
+<li><p>[sources] (…Object):来源对象</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.c = 3;
+}
+
+function Bar() {
+  this.e = 5;
+}
+
+Foo.prototype.d = 4;
+Bar.prototype.f = 6;
+
+_.assign({ &apos;a&apos;: 1 }, new Foo, new Bar);
+// =&gt; { &apos;a&apos;: 1, &apos;c&apos;: 3, &apos;e&apos;: 5 }
+</code></pre><hr>
+<h2 id="assignIn-extend"><a href="#assignIn-extend" class="headerlink" title=".assignIn(.extend)"></a><em>.assignIn(</em>.extend)</h2><p><strong><code>_.assignIn(object, [sources])</code></strong></p>
+<p>这个方法类似 _.assign。 除了它会遍历并继承来源对象的属性。 </p>
+<p>注意: 这方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):目标对象</p>
+</li>
+<li><p>[sources] (…Object):来源对象</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.b = 2;
+}
+
+function Bar() {
+  this.d = 4;
+}
+
+Foo.prototype.c = 3;
+Bar.prototype.e = 5;
+
+_.assignIn({ &apos;a&apos;: 1 }, new Foo, new Bar);
+// =&gt; { &apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 3, &apos;d&apos;: 4, &apos;e&apos;: 5 }
+</code></pre><hr>
+<h2 id="assignInWith-extendWith"><a href="#assignInWith-extendWith" class="headerlink" title=".assignInWith(.extendWith)"></a><em>.assignInWith(</em>.extendWith)</h2><p><strong><code>_.assignInWith(object, sources, [customizer])</code></strong></p>
+<p>这个方法类似 _.assignIn。 除了它接受一个 customizer决定如何分配值。 如果customizer返回undefined将会由分配处理方法代替。customizer` 会传入5个参数：(objValue, srcValue, key, object, source)。 </p>
+<p>注意: 这方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):目标对象</p>
+</li>
+<li><p>[sources] (…Object):来源对象</p>
+</li>
+<li><p>[customizer] (Function):这个函数决定分配的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function customizer(objValue, srcValue) {
+  return _.isUndefined(objValue) ? srcValue : objValue;
+}
+
+var defaults = _.partialRight(_.assignInWith, customizer);
+
+defaults({ &apos;a&apos;: 1 }, { &apos;b&apos;: 2 }, { &apos;a&apos;: 3 });
+// =&gt; { &apos;a&apos;: 1, &apos;b&apos;: 2 }
+</code></pre><hr>
+<h2 id="assignWith"><a href="#assignWith" class="headerlink" title="_.assignWith"></a>_.assignWith</h2><p><strong><code>_.assignWith(object, sources, [customizer])</code></strong></p>
+<p>这个方法类似 _.assign。 除了它接受一个 customizer决定如何分配值。 如果customizer返回undefined将会由分配处理方法代替。customizer` 会传入5个参数：(objValue, srcValue, key, object, source)。 </p>
+<p>注意: 这方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):目标对象</p>
+</li>
+<li><p>[sources] (…Object):来源对象</p>
+</li>
+<li><p>[customizer] (Function):这个函数决定分配的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function customizer(objValue, srcValue) {
+  return _.isUndefined(objValue) ? srcValue : objValue;
+}
+
+var defaults = _.partialRight(_.assignWith, customizer);
+
+defaults({ &apos;a&apos;: 1 }, { &apos;b&apos;: 2 }, { &apos;a&apos;: 3 });
+// =&gt; { &apos;a&apos;: 1, &apos;b&apos;: 2 }
+</code></pre><hr>
+<h2 id="at"><a href="#at" class="headerlink" title="_.at"></a>_.at</h2><p><strong><code>_.at(object, [paths])</code></strong></p>
+<p>根据 object 的路径获取值为数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[paths] (…(string|string[]):要获取的对象的元素路径，单独指定或者指定在数组中</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回选中值的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c&apos;: 3 } }, 4] };
+
+_.at(object, [&apos;a[0].b.c&apos;, &apos;a[1]&apos;]);
+// =&gt; [3, 4]
+
+_.at([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;], 0, 2);
+// =&gt; [&apos;a&apos;, &apos;c&apos;]
+</code></pre><hr>
+<h2 id="create"><a href="#create" class="headerlink" title="_.create"></a>_.create</h2><p><strong><code>_.create(prototype, [properties])</code></strong></p>
+<p>创建一个继承 prototype 的对象。 如果提供了 properties，它的可枚举属性会被分配到创建的对象上。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>prototype (Object):要继承的对象</p>
+</li>
+<li><p>[properties] (Object):待分配的属性</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Shape() {
+  this.x = 0;
+  this.y = 0;
+}
+
+function Circle() {
+  Shape.call(this);
+}
+
+Circle.prototype = _.create(Shape.prototype, {
+  &apos;constructor&apos;: Circle
+});
+
+var circle = new Circle;
+circle instanceof Circle;
+// =&gt; true
+
+circle instanceof Shape;
+// =&gt; true
+</code></pre><hr>
+<h2 id="defaults"><a href="#defaults" class="headerlink" title="_.defaults"></a>_.defaults</h2><p><strong><code>_.defaults(object, [sources])</code></strong></p>
+<p>分配来源对象的可枚举属性到目标对象所有解析为 undefined 的属性上。 来源对象从左到右应用。 一旦设置了相同属性的值，后续的将被忽略掉。 </p>
+<p>注意: 这方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):目标对象</p>
+</li>
+<li><p>[sources] (…Object):来源对象</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.defaults({ &apos;user&apos;: &apos;barney&apos; }, { &apos;age&apos;: 36 }, { &apos;user&apos;: &apos;fred&apos; });
+// =&gt; { &apos;user&apos;: &apos;barney&apos;, &apos;age&apos;: 36 }
+</code></pre><hr>
+<h2 id="defaultsDeep"><a href="#defaultsDeep" class="headerlink" title="_.defaultsDeep"></a>_.defaultsDeep</h2><p><strong><code>_.defaultsDeep(object, [sources])</code></strong></p>
+<p>这个方法类似 _.defaults，除了它会递归分配默认属性。 </p>
+<p>注意: 这方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):目标对象</p>
+</li>
+<li><p>[sources] (…Object):来源对象</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.defaultsDeep({ &apos;user&apos;: { &apos;name&apos;: &apos;barney&apos; } }, { &apos;user&apos;: { &apos;name&apos;: &apos;fred&apos;, &apos;age&apos;: 36 } });
+// =&gt; { &apos;user&apos;: { &apos;name&apos;: &apos;barney&apos;, &apos;age&apos;: 36 } }
+</code></pre><hr>
+<h2 id="findKey"><a href="#findKey" class="headerlink" title="_.findKey"></a>_.findKey</h2><p><strong><code>_.findKey(object, [predicate=_.identity])</code></strong></p>
+<p>这个方法类似 _.find。 除了它返回最先被 predicate 判断为真值的元素 key，而不是元素本身。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):需要检索的对象</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (String|undefined)</code></strong></p>
+<p>返回匹配的 key，否则返回 undefined。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = {
+  &apos;barney&apos;:  { &apos;age&apos;: 36, &apos;active&apos;: true },
+  &apos;fred&apos;:    { &apos;age&apos;: 40, &apos;active&apos;: false },
+  &apos;pebbles&apos;: { &apos;age&apos;: 1,  &apos;active&apos;: true }
+};
+
+_.findKey(users, function(o) { return o.age &lt; 40; });
+// =&gt; &apos;barney&apos; (无法保证遍历的顺序)
+
+// 使用了 `_.matches` 的回调结果
+_.findKey(users, { &apos;age&apos;: 1, &apos;active&apos;: true });
+// =&gt; &apos;pebbles&apos;
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.findKey(users, [&apos;active&apos;, false]);
+// =&gt; &apos;fred&apos;
+
+// 使用了 `_.property` 的回调结果
+_.findKey(users, &apos;active&apos;);
+// =&gt; &apos;barney&apos;
+</code></pre><hr>
+<h2 id="findLastKey"><a href="#findLastKey" class="headerlink" title="_.findLastKey"></a>_.findLastKey</h2><p><strong><code>_.findLastKey(object, [predicate=_.identity])</code></strong></p>
+<p>这个方法类似 _.findKey。 不过它是反方向开始遍历的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):需要检索的对象</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (String|undefined)</code></strong></p>
+<p>返回匹配的 key，否则返回 undefined。</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = {
+  &apos;barney&apos;:  { &apos;age&apos;: 36, &apos;active&apos;: true },
+  &apos;fred&apos;:    { &apos;age&apos;: 40, &apos;active&apos;: false },
+  &apos;pebbles&apos;: { &apos;age&apos;: 1,  &apos;active&apos;: true }
+};
+
+_.findLastKey(users, function(o) { return o.age &lt; 40; });
+// =&gt; 返回 &apos;pebbles&apos;， `_.findKey` 会返回 &apos;barney&apos;
+
+// 使用了 `_.matches` 的回调结果
+_.findLastKey(users, { &apos;age&apos;: 36, &apos;active&apos;: true });
+// =&gt; &apos;barney&apos;
+
+// 使用了 `_.matchesProperty` 的回调结果
+_.findLastKey(users, [&apos;active&apos;, false]);
+// =&gt; &apos;fred&apos;
+
+// 使用了 `_.property` 的回调结果
+_.findLastKey(users, &apos;active&apos;);
+// =&gt; &apos;pebbles&apos;
+</code></pre><hr>
+<h2 id="forIn"><a href="#forIn" class="headerlink" title="_.forIn"></a>_.forIn</h2><p><strong><code>_.forIn(object, [iteratee=_.identity])</code></strong></p>
+<p>使用 iteratee 遍历对象的自身和继承的可枚举属性。 iteratee 会传入3个参数：(value, key, object)。 如果返回 false，iteratee 会提前退出遍历。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.forIn(new Foo, function(value, key) {
+  console.log(key);
+});
+// =&gt; 输出 &apos;a&apos;, &apos;b&apos;, 然后 &apos;c&apos; (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="forInRight"><a href="#forInRight" class="headerlink" title="_.forInRight"></a>_.forInRight</h2><p><strong><code>_.forInRight(object, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.forIn。 除了它是反方向开始遍历的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.forInRight(new Foo, function(value, key) {
+  console.log(key);
+});
+// =&gt; 输出 &apos;c&apos;, &apos;b&apos;, 然后 &apos;a&apos;， `_.forIn` 会输出 &apos;a&apos;, &apos;b&apos;, 然后 &apos;c&apos;
+</code></pre><hr>
+]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Array&quot;&gt;&lt;a href=&quot;#Array&quot; class=&quot;headerlink&quot; title=&quot;Array&quot;&gt;&lt;/a&gt;Array&lt;/h1&gt;&lt;h2 id=&quot;chunk&quot;&gt;&lt;a href=&quot;#chunk&quot; class=&quot;headerlink&quot; title=&quot;_.c
+      &lt;h1 id=&quot;Array&quot;&gt;&lt;a href=&quot;#Array&quot; class=&quot;headerlink&quot; title=&quot;Array&quot;&gt;&lt;/a&gt;Array&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;chunk&quot;&gt;&lt;a href=&quot;#chunk&quot; class=&quot;headerlink&quot; title
     
     </summary>
     
