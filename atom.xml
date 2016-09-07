@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helloworld.zhoufei.name/"/>
-  <updated>2016-09-02T10:01:00.207Z</updated>
+  <updated>2016-09-07T05:37:11.822Z</updated>
   <id>http://helloworld.zhoufei.name/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/"/>
     <id>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</id>
     <published>2016-07-26T11:08:00.000Z</published>
-    <updated>2016-09-02T10:01:00.207Z</updated>
+    <updated>2016-09-07T05:37:11.822Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><hr>
 <h2 id="chunk"><a href="#chunk" class="headerlink" title="_.chunk"></a>_.chunk</h2><p><strong><code>_.chunk(array, [size=0])</code></strong></p>
@@ -2078,6 +2078,640 @@ _.forInRight(new Foo, function(value, key) {
 });
 // =&gt; 输出 &apos;c&apos;, &apos;b&apos;, 然后 &apos;a&apos;， `_.forIn` 会输出 &apos;a&apos;, &apos;b&apos;, 然后 &apos;c&apos;
 </code></pre><hr>
+<h2 id="forOwn"><a href="#forOwn" class="headerlink" title="_.forOwn"></a>_.forOwn</h2><p><strong><code>_.forOwn(object, [iteratee=_.identity])</code></strong></p>
+<p>使用 iteratee 遍历自身的可枚举属性。 iteratee 会传入3个参数：(value, key, object)。 如果返回 false，iteratee 会提前退出遍历。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.forOwn(new Foo, function(value, key) {
+  console.log(key);
+});
+// =&gt; 输出 &apos;a&apos; 然后 &apos;b&apos; (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="forOwn-1"><a href="#forOwn-1" class="headerlink" title="_.forOwn"></a>_.forOwn</h2><p><strong><code>_.forOwn(object, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.forOwn。 除了它是反方向开始遍历的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.forOwnRight(new Foo, function(value, key) {
+  console.log(key);
+});
+// =&gt; 输出 &apos;b&apos; 然后 &apos;a&apos;， `_.forOwn` 会输出 &apos;a&apos; 然后 &apos;b&apos;
+</code></pre><hr>
+<h2 id="functions"><a href="#functions" class="headerlink" title="_.functions"></a>_.functions</h2><p><strong><code>_.functions(object)</code></strong></p>
+<p>返回一个 function 对象自身可枚举属性名的数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回包含属性名的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = _.constant(&apos;a&apos;);
+  this.b = _.constant(&apos;b&apos;);
+}
+
+Foo.prototype.c = _.constant(&apos;c&apos;);
+
+_.functions(new Foo);
+// =&gt; [&apos;a&apos;, &apos;b&apos;]
+</code></pre><hr>
+<h2 id="functionsIn"><a href="#functionsIn" class="headerlink" title="_.functionsIn"></a>_.functionsIn</h2><p><strong><code>_.functionsIn(object)</code></strong></p>
+<p>返回一个 function 对象自身可枚举属性名的数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回包含属性名的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = _.constant(&apos;a&apos;);
+  this.b = _.constant(&apos;b&apos;);
+}
+
+Foo.prototype.c = _.constant(&apos;c&apos;);
+
+_.functionsIn(new Foo);
+// =&gt; [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]
+</code></pre><hr>
+<h2 id="get"><a href="#get" class="headerlink" title="_.get"></a>_.get</h2><p><strong><code>_.get(object, path, [defaultValue])</code></strong></p>
+<p>根据对象路径获取值。 如果解析 value 是 undefined 会以 defaultValue 取代。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要检索的对象</p>
+</li>
+<li><p>path (Array|string):要获取的对象路径</p>
+</li>
+<li><p>[defaultValue] (*):如果解析值是 undefined，这值会被返回</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回解析的值</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c&apos;: 3 } }] };
+
+_.get(object, &apos;a[0].b.c&apos;);
+// =&gt; 3
+
+_.get(object, [&apos;a&apos;, &apos;0&apos;, &apos;b&apos;, &apos;c&apos;]);
+// =&gt; 3
+
+_.get(object, &apos;a.b.c&apos;, &apos;default&apos;);
+// =&gt; &apos;default&apos;
+</code></pre><hr>
+<h2 id="has"><a href="#has" class="headerlink" title="_.has"></a>_.has</h2><p><strong><code>_.has(object, path)</code></strong></p>
+<p>检查 path 是否是对象的直接属性。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要检索的对象</p>
+</li>
+<li><p>path (Array|string):要获取的对象路径</p>
+</li>
+</ol>
+<p><strong><code>返回值 (boolean)</code></strong></p>
+<p>如果存在返回 true，否则返回 false</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: { &apos;b&apos;: { &apos;c&apos;: 3 } } };
+var other = _.create({ &apos;a&apos;: _.create({ &apos;b&apos;: _.create({ &apos;c&apos;: 3 }) }) });
+
+_.has(object, &apos;a&apos;);
+// =&gt; true
+
+_.has(object, &apos;a.b.c&apos;);
+// =&gt; true
+
+_.has(object, [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]);
+// =&gt; true
+
+_.has(other, &apos;a&apos;);
+// =&gt; false
+</code></pre><hr>
+<h2 id="hasIn"><a href="#hasIn" class="headerlink" title="_.hasIn"></a>_.hasIn</h2><p><strong><code>_.hasIn(object, path)</code></strong></p>
+<p>检查 path 是否是对象的直接 或者 继承属性。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要检索的对象</p>
+</li>
+<li><p>path (Array|string):要获取的对象路径</p>
+</li>
+</ol>
+<p><strong><code>返回值 (boolean)</code></strong></p>
+<p>如果存在返回 true，否则返回 false</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = _.create({ &apos;a&apos;: _.create({ &apos;b&apos;: _.create({ &apos;c&apos;: 3 }) }) });
+
+_.hasIn(object, &apos;a&apos;);
+// =&gt; true
+
+_.hasIn(object, &apos;a.b.c&apos;);
+// =&gt; true
+
+_.hasIn(object, [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]);
+// =&gt; true
+
+_.hasIn(object, &apos;b&apos;);
+// =&gt; false
+</code></pre><hr>
+<h2 id="invert"><a href="#invert" class="headerlink" title="_.invert"></a>_.invert</h2><p><strong><code>_.invert(object, [multiVal])</code></strong></p>
+<p>创建一个键值倒置的对象。 如果 object 有重复的值，后面的值会覆盖前面的值。 如果 multiVal 为 true，重复的值则组成数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要倒置的对象</p>
+</li>
+<li><p>[multiVal] (boolean):每个 key 允许多个值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新的倒置的对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 1 };
+
+_.invert(object);
+// =&gt; { &apos;1&apos;: &apos;c&apos;, &apos;2&apos;: &apos;b&apos; }
+</code></pre><hr>
+<h2 id="invertBy"><a href="#invertBy" class="headerlink" title="_.invertBy"></a>_.invertBy</h2><p><strong><code>_.invertBy(object, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.invert。 除了它接受 iteratee 调用每一个元素，可在返回值中定制key。 iteratee 会传入1个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要倒置的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会调用每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新的倒置的对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 1 };
+
+_.invertBy(object);
+// =&gt; { &apos;1&apos;: [&apos;a&apos;, &apos;c&apos;], &apos;2&apos;: [&apos;b&apos;] }
+
+_.invertBy(object, function(value) {
+  return &apos;group&apos; + value;
+});
+// =&gt; { &apos;group1&apos;: [&apos;a&apos;, &apos;c&apos;], &apos;group2&apos;: [&apos;b&apos;] }
+</code></pre><hr>
+<h2 id="invoke"><a href="#invoke" class="headerlink" title="_.invoke"></a>_.invoke</h2><p><strong><code>_.invoke(object, path, [args])</code></strong></p>
+<p>调用对象路径的方法.</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要检索的对象</p>
+</li>
+<li><p>path (Array|string):要调用方法的路径</p>
+</li>
+<li><p>[args] (…*):调用方法的参数</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回调用方法的结果</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c&apos;: [1, 2, 3, 4] } }] };
+
+_.invoke(object, &apos;a[0].b.c.slice&apos;, 1, 3); // =&gt; [2, 3]
+</code></pre><hr>
+<h2 id="keys"><a href="#keys" class="headerlink" title="_.keys"></a>_.keys</h2><p><strong><code>_.keys(object)</code></strong></p>
+<p>创建 object 自身可枚举属性名为一个数组。 </p>
+<p>注意: 非对象的值会被强制转换为对象，查看 <a href="http://ecma-international.org/ecma-262/6.0/#sec-object.keys" target="_blank" rel="external">ES spec</a> 了解详情</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回包含属性名的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.keys(new Foo);
+// =&gt; [&apos;a&apos;, &apos;b&apos;] (无法保证遍历的顺序)
+
+_.keys(&apos;hi&apos;);
+// =&gt; [&apos;0&apos;, &apos;1&apos;]
+</code></pre><hr>
+<h2 id="keysIn"><a href="#keysIn" class="headerlink" title="_.keysIn"></a>_.keysIn</h2><p><strong><code>_.keysIn(object)</code></strong></p>
+<p>创建 object 自身 或 继承的可枚举属性名为一个数组。 </p>
+<p>注意: 非对象的值会被强制转换为对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回包含属性名的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.keysIn(new Foo);
+// =&gt; [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;] (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="mapKeys"><a href="#mapKeys" class="headerlink" title="_.mapKeys"></a>_.mapKeys</h2><p><strong><code>_.mapKeys(object, [iteratee=_.identity])</code></strong></p>
+<p>反向版 _.mapValues。 这个方法创建一个对象，对象的值与源对象相同，但 key 是通过 iteratee 产生的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回映射后的新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.mapKeys({ &apos;a&apos;: 1, &apos;b&apos;: 2 }, function(value, key) {
+  return key + value;
+});
+// =&gt; { &apos;a1&apos;: 1, &apos;b2&apos;: 2 }
+</code></pre><hr>
+<h2 id="mapValues"><a href="#mapValues" class="headerlink" title="_.mapValues"></a>_.mapValues</h2><p><strong><code>_.mapValues(object, [iteratee=_.identity])</code></strong></p>
+<p>创建一个对象，对象的key相同，值是通过 iteratee 产生的。 iteratee 会传入3个参数： (value, key, object)</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回映射后的新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = {
+  &apos;fred&apos;:    { &apos;user&apos;: &apos;fred&apos;,    &apos;age&apos;: 40 },
+  &apos;pebbles&apos;: { &apos;user&apos;: &apos;pebbles&apos;, &apos;age&apos;: 1 }
+};
+
+_.mapValues(users, function(o) { return o.age; });
+// =&gt; { &apos;fred&apos;: 40, &apos;pebbles&apos;: 1 } (无法保证遍历的顺序)
+
+// 使用了 `_.property` 的回调结果
+_.mapValues(users, &apos;age&apos;);
+// =&gt; { &apos;fred&apos;: 40, &apos;pebbles&apos;: 1 } (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="merge"><a href="#merge" class="headerlink" title="_.merge"></a>_.merge</h2><p><strong><code>_.merge(object, [sources])</code></strong></p>
+<p>递归合并来源对象的自身和继承的可枚举属性到目标对象。 跳过来源对象解析为 undefined 的属性。 数组和普通对象会递归合并，其他对象和值会被直接分配。 来源对象从左到右分配，后续的来源对象属性会覆盖之前分配的属性。 </p>
+<p>注意: 这方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):目标对象</p>
+</li>
+<li><p>[sources] (…Object):来源对象</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = {
+  &apos;data&apos;: [{ &apos;user&apos;: &apos;barney&apos; }, { &apos;user&apos;: &apos;fred&apos; }]
+};
+
+var ages = {
+  &apos;data&apos;: [{ &apos;age&apos;: 36 }, { &apos;age&apos;: 40 }]
+};
+
+_.merge(users, ages);
+// =&gt; { &apos;data&apos;: [{ &apos;user&apos;: &apos;barney&apos;, &apos;age&apos;: 36 }, { &apos;user&apos;: &apos;fred&apos;, &apos;age&apos;: 40 }] }
+</code></pre><hr>
+<h2 id="mergeWith"><a href="#mergeWith" class="headerlink" title="_.mergeWith"></a>_.mergeWith</h2><p><strong><code>_.mergeWith(object, sources, customizer)</code></strong></p>
+<p>这个方法类似 _.merge。 除了它接受一个 customizer 决定如何合并。 如果 customizer 返回 undefined 将会由合并处理方法代替。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):目标对象</p>
+</li>
+<li><p>sources (…Object):来源对象</p>
+</li>
+<li><p>customizer (Function):这个方法决定如何合并object (Object):目标对象</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function customizer(objValue, srcValue) {
+  if (_.isArray(objValue)) {
+    return objValue.concat(srcValue);
+  }
+}
+
+var object = {
+  &apos;fruits&apos;: [&apos;apple&apos;],
+  &apos;vegetables&apos;: [&apos;beet&apos;]
+};
+
+var other = {
+  &apos;fruits&apos;: [&apos;banana&apos;],
+  &apos;vegetables&apos;: [&apos;carrot&apos;]
+};
+
+_.mergeWith(object, other, customizer);
+// =&gt; { &apos;fruits&apos;: [&apos;apple&apos;, &apos;banana&apos;], &apos;vegetables&apos;: [&apos;beet&apos;, &apos;carrot&apos;] }
+</code></pre><hr>
+<h2 id="omit"><a href="#omit" class="headerlink" title="_.omit"></a>_.omit</h2><p><strong><code>_.omit(object, [props])</code></strong></p>
+<p>反向版 _.pick。 这个方法返回忽略属性之外的自身和继承的可枚举属性。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):来源对象</p>
+</li>
+<li><p>[props] (…(string|string[]):要被忽略的属性，单独指定或指定在数组中</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 };
+
+_.omit(object, [&apos;a&apos;, &apos;c&apos;]);
+// =&gt; { &apos;b&apos;: &apos;2&apos; }
+</code></pre><hr>
+<h2 id="omitBy"><a href="#omitBy" class="headerlink" title="_.omitBy"></a>_.omitBy</h2><p><strong><code>_.omitBy(object, [predicate=_.identity])</code></strong></p>
+<p>反向版 _.pickBy。 这个方法返回经 predicate 判断不是真值的属性的自身和继承的可枚举属性。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):来源对象</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会调用每一个属性</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 };
+
+_.omitBy(object, _.isNumber);
+// =&gt; { &apos;b&apos;: &apos;2&apos; }
+</code></pre><hr>
+<h2 id="pick"><a href="#pick" class="headerlink" title="_.pick"></a>_.pick</h2><p><strong><code>_.pick(object, [props])</code></strong></p>
+<p>创建一个从 object 中选中的属性的对象。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):来源对象</p>
+</li>
+<li><p>[props] (…(string|string[]):要选中的属性名，单独指定或指定在数组中</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 };
+
+_.pick(object, [&apos;a&apos;, &apos;c&apos;]);
+// =&gt; { &apos;a&apos;: 1, &apos;c&apos;: 3 }
+</code></pre><hr>
+<h2 id="pickBy"><a href="#pickBy" class="headerlink" title="_.pickBy"></a>_.pickBy</h2><p><strong><code>_.pickBy(object, [predicate=_.identity])</code></strong></p>
+<p>创建一个从 object 中经 predicate 判断为真值的属性为对象。 predicate 会传入1个参数：(value)</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):来源对象</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会调用每一个属性</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 };
+
+_.pickBy(object, _.isNumber);
+// =&gt; { &apos;a&apos;: 1, &apos;c&apos;: 3 }
+</code></pre><hr>
+<h2 id="result"><a href="#result" class="headerlink" title="_.result"></a>_.result</h2><p><strong><code>_.result(object, path, [defaultValue])</code></strong></p>
+<p>这个方法类似 _.get。 除了如果解析到的值是一个函数的话，就绑定 this 到这个函数并返回执行后的结果。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):来源对象</p>
+</li>
+<li><p>path (Array|string):要解析的属性路径</p>
+</li>
+<li><p>[defaultValue] (*):如果值是 undefined，返回这个值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回解析后的值</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c1&apos;: 3, &apos;c2&apos;: _.constant(4) } }] };
+
+_.result(object, &apos;a[0].b.c1&apos;);
+// =&gt; 3
+
+_.result(object, &apos;a[0].b.c2&apos;);
+// =&gt; 4
+
+_.result(object, &apos;a[0].b.c3&apos;, &apos;default&apos;);
+// =&gt; &apos;default&apos;
+
+_.result(object, &apos;a[0].b.c3&apos;, _.constant(&apos;default&apos;));
+// =&gt; &apos;default&apos;
+</code></pre><hr>
+<h2 id="set"><a href="#set" class="headerlink" title="_.set"></a>_.set</h2><p><strong><code>_.set(object, path, value)</code></strong></p>
+<p>设置值到对象对应的属性路径上，如果没有则创建这部分路径。 缺少的索引属性会创建为数组，而缺少的属性会创建为对象。 使用 _.setWith 定制创建。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要修改的对象</p>
+</li>
+<li><p>path (Array|string):要设置的对象路径</p>
+</li>
+<li><p>value (*):要设置的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c&apos;: 3 } }] };
+
+_.set(object, &apos;a[0].b.c&apos;, 4);
+console.log(object.a[0].b.c);
+// =&gt; 4
+
+_.set(object, &apos;x[0].y.z&apos;, 5);
+console.log(object.x[0].y.z);
+// =&gt; 5
+</code></pre><hr>
+<h2 id="setWith"><a href="#setWith" class="headerlink" title="_.setWith"></a>_.setWith</h2><p><strong><code>_.setWith(object, path, value, [customizer])</code></strong></p>
+<p>这个方法类似 _.set。 除了它接受一个 customizer 决定如何设置对象路径的值。 如果 customizer 返回 undefined 将会有它的处理方法代替。 customizer 会传入3个参数：(nsValue, key, nsObject) </p>
+<p>注意: 这个方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要修改的对象</p>
+</li>
+<li><p>path (Array|string):要设置的对象路径</p>
+</li>
+<li><p>value (*):要设置的值</p>
+</li>
+<li><p>[customizer] (Function):这个函数决定如何分配值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.setWith({ &apos;0&apos;: { &apos;length&apos;: 2 } }, &apos;[0][1][2]&apos;, 3, Object);
+// =&gt; { &apos;0&apos;: { &apos;1&apos;: { &apos;2&apos;: 3 }, &apos;length&apos;: 2 } }
+</code></pre><hr>
+<h2 id="toPairs"><a href="#toPairs" class="headerlink" title="_.toPairs"></a>_.toPairs</h2><p><strong><code>_.toPairs(object)</code></strong></p>
+<p>创建一个对象自身可枚举属性的键值对数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回键值对的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.toPairs(new Foo);
+// =&gt; [[&apos;a&apos;, 1], [&apos;b&apos;, 2]] (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="toPairsIn"><a href="#toPairsIn" class="headerlink" title="_.toPairsIn"></a>_.toPairsIn</h2><p><strong><code>_.toPairsIn(object)</code></strong></p>
+<p>创建一个对象自身和继承的可枚举属性的键值对数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回键值对的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.toPairsIn(new Foo);
+// =&gt; [[&apos;a&apos;, 1], [&apos;b&apos;, 2], [&apos;c&apos;, 3]] (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="transform"><a href="#transform" class="headerlink" title="_.transform"></a>_.transform</h2><p><strong><code>_.transform(object, [iteratee=_.identity], [accumulator])</code></strong></p>
+<p>_.reduce 的代替方法。 这个方法会改变对象为一个新的 accumulator 对象，来自每一次经 iteratee 处理自身可枚举对象的结果。 每次调用可能会改变 accumulator 对象。 iteratee 会传入4个对象：(accumulator, value, key, object)。 如果返回 false，iteratee 会提前退出。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Array|Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):这个函数会处理每一个元素</p>
+</li>
+<li><p>[accumulator] (*):定制叠加的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回叠加后的值</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.transform([2, 3, 4], function(result, n) {
+  result.push(n *= n);
+  return n % 2 == 0;
+}, []);
+// =&gt; [4, 9]
+
+_.transform({ &apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 1 }, function(result, value, key) {
+  (result[value] || (result[value] = [])).push(key);
+}, {});
+// =&gt; { &apos;1&apos;: [&apos;a&apos;, &apos;c&apos;], &apos;2&apos;: [&apos;b&apos;] }
+</code></pre><hr>
+<h2 id="unset"><a href="#unset" class="headerlink" title="_.unset"></a>_.unset</h2><p><strong><code>_.unset(object, path)</code></strong></p>
+<p>移除对象路径的属性。 </p>
+<p>注意: 这个方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要修改的对象</p>
+</li>
+<li><p>path (Array|string):要移除的对象路径</p>
+</li>
+</ol>
+<p><strong><code>返回值 (boolean)</code></strong></p>
+<p>移除成功返回 true，否则返回 false</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c&apos;: 7 } }] };
+_.unset(object, &apos;a[0].b.c&apos;);
+// =&gt; true
+
+console.log(object);
+// =&gt; { &apos;a&apos;: [{ &apos;b&apos;: {} }] };
+
+_.unset(object, &apos;a[0].b.c&apos;);
+// =&gt; true
+
+console.log(object);
+// =&gt; { &apos;a&apos;: [{ &apos;b&apos;: {} }] };
+</code></pre><hr>
+<h2 id="values"><a href="#values" class="headerlink" title="_.values"></a>_.values</h2><p><strong><code>_.values(object)</code></strong></p>
+<p>创建 object 自身可枚举属性的值为数组 </p>
+<p>注意: 非对象的值会强制转换为对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回对象属性的值的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.values(new Foo);
+// =&gt; [1, 2] (无法保证遍历的顺序)
+
+_.values(&apos;hi&apos;);
+// =&gt; [&apos;h&apos;, &apos;i&apos;]
+</code></pre><hr>
+<h2 id="valuesIn"><a href="#valuesIn" class="headerlink" title="_.valuesIn"></a>_.valuesIn</h2><p><strong><code>_.valuesIn(object)</code></strong></p>
+<p>创建 object 自身和继承的可枚举属性的值为数组 </p>
+<p>注意: 非对象的值会强制转换为对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回对象属性的值的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.valuesIn(new Foo);
+// =&gt; [1, 2, 3] (无法保证遍历的顺序)
+</code></pre><hr>
 ]]></content>
     
     <summary type="html">
@@ -2091,6 +2725,135 @@ _.forInRight(new Foo, function(value, key) {
     
     
       <category term="Lodash" scheme="http://helloworld.zhoufei.name/tags/Lodash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vi/vim简单教程</title>
+    <link href="http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/"/>
+    <id>http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/</id>
+    <published>2016-03-15T14:08:00.000Z</published>
+    <updated>2016-09-07T08:34:05.883Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>vim学习笔记</p>
+</blockquote>
+<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><ul>
+<li><code>Normal模式</code>: 在Insert模式下按Esc进入Normal模式</li>
+<li><code>Insert模式</code>: 在Normal模式下按下i等字符进入Insert模式</li>
+</ul>
+<h2 id="Vim即语言"><a href="#Vim即语言" class="headerlink" title="Vim即语言"></a>Vim即语言</h2><h3 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h3><ul>
+<li><code>d</code>:删除</li>
+<li><code>c</code>:修改</li>
+<li><code>y</code>:拖拉(拷贝)</li>
+<li><code>v</code>:可视化选择</li>
+</ul>
+<h3 id="修饰语"><a href="#修饰语" class="headerlink" title="修饰语"></a>修饰语</h3><ul>
+<li><code>i</code>:内部</li>
+<li><code>a</code>:周围</li>
+<li><code>num</code>:数字(e.g.:1,2,10)</li>
+<li><code>t</code>:查找到指定字符串,并跳转到这个字符串的前面</li>
+<li><code>f</code>:查找到指定字符,并跳转到这个字符所处的位置</li>
+<li><code>/</code>:查找字符串</li>
+</ul>
+<h3 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h3><ul>
+<li><code>w</code>:单词</li>
+<li><code>s</code>:句子</li>
+<li><code>)</code>:句子(另一种操作方式)</li>
+<li><code>p</code>:段落</li>
+<li><code>}</code>:段落(另一种操作方式)</li>
+<li><code>t</code>:标签(html/xml)</li>
+<li><code>b</code>:块(编程语言)</li>
+</ul>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><h4 id="基本移动"><a href="#基本移动" class="headerlink" title="基本移动"></a>基本移动</h4><ul>
+<li><code>h</code>:向左移动一个字符</li>
+<li><code>j</code>:向下移动一行</li>
+<li><code>k</code>:向上移动一行</li>
+<li><code>l</code>:向右移动一个字符</li>
+</ul>
+<h4 id="行内移动"><a href="#行内移动" class="headerlink" title="行内移动"></a>行内移动</h4><ul>
+<li><code>0</code>:移动到行首</li>
+<li><code>$</code>:移动到行末</li>
+<li><code>^</code>:移动到行首非空字符</li>
+<li><code>t&quot;</code>:跳转到下一个引号前</li>
+<li><code>f&quot;</code>:调换到下一个引号处</li>
+</ul>
+<h4 id="单词移动"><a href="#单词移动" class="headerlink" title="单词移动"></a>单词移动</h4><ul>
+<li><code>w</code>:移动到下一个单词的开始</li>
+<li><code>b</code>:移动到上一个单词的开始</li>
+<li><code>e</code>:移动到下一个单词的结尾</li>
+<li><code>W</code>:移动到下一个大单词的开始</li>
+<li><code>B</code>:移动到上一个大单词的开始</li>
+<li><code>E</code>:移动到下一个大单词的开始</li>
+</ul>
+<h4 id="句段移动"><a href="#句段移动" class="headerlink" title="句段移动"></a>句段移动</h4><ul>
+<li><code>(</code>:向上移动一句</li>
+<li><code>)</code>:向下移动一句</li>
+<li><code>{</code>:向上移动一段</li>
+<li><code>}</code>:向下移动一段</li>
+</ul>
+<h4 id="屏间移动"><a href="#屏间移动" class="headerlink" title="屏间移动"></a>屏间移动</h4><ul>
+<li><code>gg</code>:移动第一行</li>
+<li><code>G</code>:移动到最后一行</li>
+<li><code>nG</code>:移动到第n行</li>
+<li><code>H</code>:移动到屏幕的顶端</li>
+<li><code>M</code>:移动到屏幕的中间</li>
+<li><code>L</code>:移动到屏幕的低端</li>
+<li><code>Ctrl+E</code>:向上移(滚)动一行</li>
+<li><code>Ctrl+Y</code>:向下移(滚)动一行</li>
+<li><code>Ctrl+U</code>:向上移(滚)动半屏</li>
+<li><code>Ctrl+D</code>:向下移(滚)动半屏</li>
+<li><code>Ctrl+B</code>:上一页</li>
+<li><code>Ctrl+F</code>:下一页</li>
+<li><code>:n</code>:移动到第n行,同<code>nG</code></li>
+<li><code>Ctrl+I</code>:跳转到之前的位置</li>
+<li><code>Ctrl+O</code>:跳转到实际位置OA</li>
+</ul>
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;vim学习笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;模式&quot;&gt;&lt;a href=&quot;#模式&quot; class=&quot;headerlink&quot; title=&quot;模式&quot;&gt;&lt;/a&gt;模式&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Normal模式&lt;/code&gt;:
+    
+    </summary>
+    
+      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+    
+    
+      <category term="vi" scheme="http://helloworld.zhoufei.name/tags/vi/"/>
+    
+      <category term="vim" scheme="http://helloworld.zhoufei.name/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>API和DOC收藏夹</title>
+    <link href="http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/"/>
+    <id>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</id>
+    <published>2015-10-01T04:03:00.000Z</published>
+    <updated>2016-09-07T05:37:11.822Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h2><h3 id="java-8"><a href="#java-8" class="headerlink" title="java 8"></a>java 8</h3><p><a href="http://docs.oracle.com/javase/8/docs/index.html" target="_blank" rel="external"><strong><code>java 8 Documentation:</code></strong></a>    <a href="http://docs.oracle.com/javase/8/docs/api/index.html" target="_blank" rel="external">http://docs.oracle.com/javase/8/docs/api/index.html</a></p>
+<h3 id="java-7"><a href="#java-7" class="headerlink" title="java 7"></a>java 7</h3><p><a href="http://docs.oracle.com/javase/7/docs/index.html" target="_blank" rel="external"><strong><code>java 7 Documentation:</code></strong></a>    <a href="http://docs.oracle.com/javase/7/docs/api/index.html" target="_blank" rel="external">http://docs.oracle.com/javase/7/docs/api/index.html</a></p>
+<h2 id="JAVASCRIPT"><a href="#JAVASCRIPT" class="headerlink" title="JAVASCRIPT"></a>JAVASCRIPT</h2><h3 id="lodash"><a href="#lodash" class="headerlink" title="lodash"></a>lodash</h3><p><a href="https://lodash.com" target="_blank" rel="external"><strong><code>lodash主页:</code></strong></a>    <a href="https://lodash.com/docs" target="_blank" rel="external">https://lodash.com/docs</a></p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h2 id="OTHER"><a href="#OTHER" class="headerlink" title="OTHER"></a>OTHER</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;JAVA&quot;&gt;&lt;a href=&quot;#JAVA&quot; class=&quot;headerlink&quot; title=&quot;JAVA&quot;&gt;&lt;/a&gt;JAVA&lt;/h2&gt;&lt;h3 id=&quot;java-8&quot;&gt;&lt;a href=&quot;#java-8&quot; class=&quot;headerlink&quot; title=&quot;java 
+    
+    </summary>
+    
+      <category term="Document" scheme="http://helloworld.zhoufei.name/categories/Document/"/>
+    
+    
+      <category term="API" scheme="http://helloworld.zhoufei.name/tags/API/"/>
+    
+      <category term="Doc" scheme="http://helloworld.zhoufei.name/tags/Doc/"/>
     
   </entry>
   

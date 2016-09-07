@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/</loc>
+    
+    <lastmod>2016-09-07T08:34:05.883Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</loc>
+    
+    <lastmod>2016-09-07T05:37:11.822Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</loc>
     
-    <lastmod>2016-09-02T10:01:00.207Z</lastmod>
+    <lastmod>2016-09-07T05:37:11.822Z</lastmod>
     
   </url>
   

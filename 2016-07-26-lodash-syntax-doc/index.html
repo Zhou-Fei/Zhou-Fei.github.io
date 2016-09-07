@@ -112,7 +112,7 @@ array (Array):需要被处理的数组
 返回一个拆分好的新数组
 示例
 _.chunk([&amp;apos;a&amp;ap">
-<meta property="og:updated_time" content="2016-09-02T10:01:00.207Z">
+<meta property="og:updated_time" content="2016-09-07T05:37:11.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lodash中文文档">
 <meta name="twitter:description" content="Array
@@ -2412,6 +2412,640 @@ _.forInRight(new Foo, function(value, key) {
 });
 // =&gt; 输出 &apos;c&apos;, &apos;b&apos;, 然后 &apos;a&apos;， `_.forIn` 会输出 &apos;a&apos;, &apos;b&apos;, 然后 &apos;c&apos;
 </code></pre><hr>
+<h2 id="forOwn"><a href="#forOwn" class="headerlink" title="_.forOwn"></a>_.forOwn</h2><p><strong><code>_.forOwn(object, [iteratee=_.identity])</code></strong></p>
+<p>使用 iteratee 遍历自身的可枚举属性。 iteratee 会传入3个参数：(value, key, object)。 如果返回 false，iteratee 会提前退出遍历。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.forOwn(new Foo, function(value, key) {
+  console.log(key);
+});
+// =&gt; 输出 &apos;a&apos; 然后 &apos;b&apos; (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="forOwn-1"><a href="#forOwn-1" class="headerlink" title="_.forOwn"></a>_.forOwn</h2><p><strong><code>_.forOwn(object, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.forOwn。 除了它是反方向开始遍历的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.forOwnRight(new Foo, function(value, key) {
+  console.log(key);
+});
+// =&gt; 输出 &apos;b&apos; 然后 &apos;a&apos;， `_.forOwn` 会输出 &apos;a&apos; 然后 &apos;b&apos;
+</code></pre><hr>
+<h2 id="functions"><a href="#functions" class="headerlink" title="_.functions"></a>_.functions</h2><p><strong><code>_.functions(object)</code></strong></p>
+<p>返回一个 function 对象自身可枚举属性名的数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回包含属性名的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = _.constant(&apos;a&apos;);
+  this.b = _.constant(&apos;b&apos;);
+}
+
+Foo.prototype.c = _.constant(&apos;c&apos;);
+
+_.functions(new Foo);
+// =&gt; [&apos;a&apos;, &apos;b&apos;]
+</code></pre><hr>
+<h2 id="functionsIn"><a href="#functionsIn" class="headerlink" title="_.functionsIn"></a>_.functionsIn</h2><p><strong><code>_.functionsIn(object)</code></strong></p>
+<p>返回一个 function 对象自身可枚举属性名的数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回包含属性名的新数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = _.constant(&apos;a&apos;);
+  this.b = _.constant(&apos;b&apos;);
+}
+
+Foo.prototype.c = _.constant(&apos;c&apos;);
+
+_.functionsIn(new Foo);
+// =&gt; [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]
+</code></pre><hr>
+<h2 id="get"><a href="#get" class="headerlink" title="_.get"></a>_.get</h2><p><strong><code>_.get(object, path, [defaultValue])</code></strong></p>
+<p>根据对象路径获取值。 如果解析 value 是 undefined 会以 defaultValue 取代。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要检索的对象</p>
+</li>
+<li><p>path (Array|string):要获取的对象路径</p>
+</li>
+<li><p>[defaultValue] (*):如果解析值是 undefined，这值会被返回</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回解析的值</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c&apos;: 3 } }] };
+
+_.get(object, &apos;a[0].b.c&apos;);
+// =&gt; 3
+
+_.get(object, [&apos;a&apos;, &apos;0&apos;, &apos;b&apos;, &apos;c&apos;]);
+// =&gt; 3
+
+_.get(object, &apos;a.b.c&apos;, &apos;default&apos;);
+// =&gt; &apos;default&apos;
+</code></pre><hr>
+<h2 id="has"><a href="#has" class="headerlink" title="_.has"></a>_.has</h2><p><strong><code>_.has(object, path)</code></strong></p>
+<p>检查 path 是否是对象的直接属性。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要检索的对象</p>
+</li>
+<li><p>path (Array|string):要获取的对象路径</p>
+</li>
+</ol>
+<p><strong><code>返回值 (boolean)</code></strong></p>
+<p>如果存在返回 true，否则返回 false</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: { &apos;b&apos;: { &apos;c&apos;: 3 } } };
+var other = _.create({ &apos;a&apos;: _.create({ &apos;b&apos;: _.create({ &apos;c&apos;: 3 }) }) });
+
+_.has(object, &apos;a&apos;);
+// =&gt; true
+
+_.has(object, &apos;a.b.c&apos;);
+// =&gt; true
+
+_.has(object, [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]);
+// =&gt; true
+
+_.has(other, &apos;a&apos;);
+// =&gt; false
+</code></pre><hr>
+<h2 id="hasIn"><a href="#hasIn" class="headerlink" title="_.hasIn"></a>_.hasIn</h2><p><strong><code>_.hasIn(object, path)</code></strong></p>
+<p>检查 path 是否是对象的直接 或者 继承属性。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要检索的对象</p>
+</li>
+<li><p>path (Array|string):要获取的对象路径</p>
+</li>
+</ol>
+<p><strong><code>返回值 (boolean)</code></strong></p>
+<p>如果存在返回 true，否则返回 false</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = _.create({ &apos;a&apos;: _.create({ &apos;b&apos;: _.create({ &apos;c&apos;: 3 }) }) });
+
+_.hasIn(object, &apos;a&apos;);
+// =&gt; true
+
+_.hasIn(object, &apos;a.b.c&apos;);
+// =&gt; true
+
+_.hasIn(object, [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]);
+// =&gt; true
+
+_.hasIn(object, &apos;b&apos;);
+// =&gt; false
+</code></pre><hr>
+<h2 id="invert"><a href="#invert" class="headerlink" title="_.invert"></a>_.invert</h2><p><strong><code>_.invert(object, [multiVal])</code></strong></p>
+<p>创建一个键值倒置的对象。 如果 object 有重复的值，后面的值会覆盖前面的值。 如果 multiVal 为 true，重复的值则组成数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要倒置的对象</p>
+</li>
+<li><p>[multiVal] (boolean):每个 key 允许多个值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新的倒置的对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 1 };
+
+_.invert(object);
+// =&gt; { &apos;1&apos;: &apos;c&apos;, &apos;2&apos;: &apos;b&apos; }
+</code></pre><hr>
+<h2 id="invertBy"><a href="#invertBy" class="headerlink" title="_.invertBy"></a>_.invertBy</h2><p><strong><code>_.invertBy(object, [iteratee=_.identity])</code></strong></p>
+<p>这个方法类似 _.invert。 除了它接受 iteratee 调用每一个元素，可在返回值中定制key。 iteratee 会传入1个参数：(value)。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要倒置的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会调用每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新的倒置的对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 1 };
+
+_.invertBy(object);
+// =&gt; { &apos;1&apos;: [&apos;a&apos;, &apos;c&apos;], &apos;2&apos;: [&apos;b&apos;] }
+
+_.invertBy(object, function(value) {
+  return &apos;group&apos; + value;
+});
+// =&gt; { &apos;group1&apos;: [&apos;a&apos;, &apos;c&apos;], &apos;group2&apos;: [&apos;b&apos;] }
+</code></pre><hr>
+<h2 id="invoke"><a href="#invoke" class="headerlink" title="_.invoke"></a>_.invoke</h2><p><strong><code>_.invoke(object, path, [args])</code></strong></p>
+<p>调用对象路径的方法.</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要检索的对象</p>
+</li>
+<li><p>path (Array|string):要调用方法的路径</p>
+</li>
+<li><p>[args] (…*):调用方法的参数</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回调用方法的结果</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c&apos;: [1, 2, 3, 4] } }] };
+
+_.invoke(object, &apos;a[0].b.c.slice&apos;, 1, 3); // =&gt; [2, 3]
+</code></pre><hr>
+<h2 id="keys"><a href="#keys" class="headerlink" title="_.keys"></a>_.keys</h2><p><strong><code>_.keys(object)</code></strong></p>
+<p>创建 object 自身可枚举属性名为一个数组。 </p>
+<p>注意: 非对象的值会被强制转换为对象，查看 <a href="http://ecma-international.org/ecma-262/6.0/#sec-object.keys" target="_blank" rel="external">ES spec</a> 了解详情</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回包含属性名的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.keys(new Foo);
+// =&gt; [&apos;a&apos;, &apos;b&apos;] (无法保证遍历的顺序)
+
+_.keys(&apos;hi&apos;);
+// =&gt; [&apos;0&apos;, &apos;1&apos;]
+</code></pre><hr>
+<h2 id="keysIn"><a href="#keysIn" class="headerlink" title="_.keysIn"></a>_.keysIn</h2><p><strong><code>_.keysIn(object)</code></strong></p>
+<p>创建 object 自身 或 继承的可枚举属性名为一个数组。 </p>
+<p>注意: 非对象的值会被强制转换为对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回包含属性名的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.keysIn(new Foo);
+// =&gt; [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;] (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="mapKeys"><a href="#mapKeys" class="headerlink" title="_.mapKeys"></a>_.mapKeys</h2><p><strong><code>_.mapKeys(object, [iteratee=_.identity])</code></strong></p>
+<p>反向版 _.mapValues。 这个方法创建一个对象，对象的值与源对象相同，但 key 是通过 iteratee 产生的。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回映射后的新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.mapKeys({ &apos;a&apos;: 1, &apos;b&apos;: 2 }, function(value, key) {
+  return key + value;
+});
+// =&gt; { &apos;a1&apos;: 1, &apos;b2&apos;: 2 }
+</code></pre><hr>
+<h2 id="mapValues"><a href="#mapValues" class="headerlink" title="_.mapValues"></a>_.mapValues</h2><p><strong><code>_.mapValues(object, [iteratee=_.identity])</code></strong></p>
+<p>创建一个对象，对象的key相同，值是通过 iteratee 产生的。 iteratee 会传入3个参数： (value, key, object)</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function|Object|string):这个函数会处理每一个元素</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回映射后的新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = {
+  &apos;fred&apos;:    { &apos;user&apos;: &apos;fred&apos;,    &apos;age&apos;: 40 },
+  &apos;pebbles&apos;: { &apos;user&apos;: &apos;pebbles&apos;, &apos;age&apos;: 1 }
+};
+
+_.mapValues(users, function(o) { return o.age; });
+// =&gt; { &apos;fred&apos;: 40, &apos;pebbles&apos;: 1 } (无法保证遍历的顺序)
+
+// 使用了 `_.property` 的回调结果
+_.mapValues(users, &apos;age&apos;);
+// =&gt; { &apos;fred&apos;: 40, &apos;pebbles&apos;: 1 } (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="merge"><a href="#merge" class="headerlink" title="_.merge"></a>_.merge</h2><p><strong><code>_.merge(object, [sources])</code></strong></p>
+<p>递归合并来源对象的自身和继承的可枚举属性到目标对象。 跳过来源对象解析为 undefined 的属性。 数组和普通对象会递归合并，其他对象和值会被直接分配。 来源对象从左到右分配，后续的来源对象属性会覆盖之前分配的属性。 </p>
+<p>注意: 这方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):目标对象</p>
+</li>
+<li><p>[sources] (…Object):来源对象</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var users = {
+  &apos;data&apos;: [{ &apos;user&apos;: &apos;barney&apos; }, { &apos;user&apos;: &apos;fred&apos; }]
+};
+
+var ages = {
+  &apos;data&apos;: [{ &apos;age&apos;: 36 }, { &apos;age&apos;: 40 }]
+};
+
+_.merge(users, ages);
+// =&gt; { &apos;data&apos;: [{ &apos;user&apos;: &apos;barney&apos;, &apos;age&apos;: 36 }, { &apos;user&apos;: &apos;fred&apos;, &apos;age&apos;: 40 }] }
+</code></pre><hr>
+<h2 id="mergeWith"><a href="#mergeWith" class="headerlink" title="_.mergeWith"></a>_.mergeWith</h2><p><strong><code>_.mergeWith(object, sources, customizer)</code></strong></p>
+<p>这个方法类似 _.merge。 除了它接受一个 customizer 决定如何合并。 如果 customizer 返回 undefined 将会由合并处理方法代替。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):目标对象</p>
+</li>
+<li><p>sources (…Object):来源对象</p>
+</li>
+<li><p>customizer (Function):这个方法决定如何合并object (Object):目标对象</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function customizer(objValue, srcValue) {
+  if (_.isArray(objValue)) {
+    return objValue.concat(srcValue);
+  }
+}
+
+var object = {
+  &apos;fruits&apos;: [&apos;apple&apos;],
+  &apos;vegetables&apos;: [&apos;beet&apos;]
+};
+
+var other = {
+  &apos;fruits&apos;: [&apos;banana&apos;],
+  &apos;vegetables&apos;: [&apos;carrot&apos;]
+};
+
+_.mergeWith(object, other, customizer);
+// =&gt; { &apos;fruits&apos;: [&apos;apple&apos;, &apos;banana&apos;], &apos;vegetables&apos;: [&apos;beet&apos;, &apos;carrot&apos;] }
+</code></pre><hr>
+<h2 id="omit"><a href="#omit" class="headerlink" title="_.omit"></a>_.omit</h2><p><strong><code>_.omit(object, [props])</code></strong></p>
+<p>反向版 _.pick。 这个方法返回忽略属性之外的自身和继承的可枚举属性。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):来源对象</p>
+</li>
+<li><p>[props] (…(string|string[]):要被忽略的属性，单独指定或指定在数组中</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 };
+
+_.omit(object, [&apos;a&apos;, &apos;c&apos;]);
+// =&gt; { &apos;b&apos;: &apos;2&apos; }
+</code></pre><hr>
+<h2 id="omitBy"><a href="#omitBy" class="headerlink" title="_.omitBy"></a>_.omitBy</h2><p><strong><code>_.omitBy(object, [predicate=_.identity])</code></strong></p>
+<p>反向版 _.pickBy。 这个方法返回经 predicate 判断不是真值的属性的自身和继承的可枚举属性。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):来源对象</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会调用每一个属性</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 };
+
+_.omitBy(object, _.isNumber);
+// =&gt; { &apos;b&apos;: &apos;2&apos; }
+</code></pre><hr>
+<h2 id="pick"><a href="#pick" class="headerlink" title="_.pick"></a>_.pick</h2><p><strong><code>_.pick(object, [props])</code></strong></p>
+<p>创建一个从 object 中选中的属性的对象。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):来源对象</p>
+</li>
+<li><p>[props] (…(string|string[]):要选中的属性名，单独指定或指定在数组中</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 };
+
+_.pick(object, [&apos;a&apos;, &apos;c&apos;]);
+// =&gt; { &apos;a&apos;: 1, &apos;c&apos;: 3 }
+</code></pre><hr>
+<h2 id="pickBy"><a href="#pickBy" class="headerlink" title="_.pickBy"></a>_.pickBy</h2><p><strong><code>_.pickBy(object, [predicate=_.identity])</code></strong></p>
+<p>创建一个从 object 中经 predicate 判断为真值的属性为对象。 predicate 会传入1个参数：(value)</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):来源对象</p>
+</li>
+<li><p>[predicate=_.identity] (Function|Object|string):这个函数会调用每一个属性</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回新对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: 1, &apos;b&apos;: &apos;2&apos;, &apos;c&apos;: 3 };
+
+_.pickBy(object, _.isNumber);
+// =&gt; { &apos;a&apos;: 1, &apos;c&apos;: 3 }
+</code></pre><hr>
+<h2 id="result"><a href="#result" class="headerlink" title="_.result"></a>_.result</h2><p><strong><code>_.result(object, path, [defaultValue])</code></strong></p>
+<p>这个方法类似 _.get。 除了如果解析到的值是一个函数的话，就绑定 this 到这个函数并返回执行后的结果。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):来源对象</p>
+</li>
+<li><p>path (Array|string):要解析的属性路径</p>
+</li>
+<li><p>[defaultValue] (*):如果值是 undefined，返回这个值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回解析后的值</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c1&apos;: 3, &apos;c2&apos;: _.constant(4) } }] };
+
+_.result(object, &apos;a[0].b.c1&apos;);
+// =&gt; 3
+
+_.result(object, &apos;a[0].b.c2&apos;);
+// =&gt; 4
+
+_.result(object, &apos;a[0].b.c3&apos;, &apos;default&apos;);
+// =&gt; &apos;default&apos;
+
+_.result(object, &apos;a[0].b.c3&apos;, _.constant(&apos;default&apos;));
+// =&gt; &apos;default&apos;
+</code></pre><hr>
+<h2 id="set"><a href="#set" class="headerlink" title="_.set"></a>_.set</h2><p><strong><code>_.set(object, path, value)</code></strong></p>
+<p>设置值到对象对应的属性路径上，如果没有则创建这部分路径。 缺少的索引属性会创建为数组，而缺少的属性会创建为对象。 使用 _.setWith 定制创建。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要修改的对象</p>
+</li>
+<li><p>path (Array|string):要设置的对象路径</p>
+</li>
+<li><p>value (*):要设置的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c&apos;: 3 } }] };
+
+_.set(object, &apos;a[0].b.c&apos;, 4);
+console.log(object.a[0].b.c);
+// =&gt; 4
+
+_.set(object, &apos;x[0].y.z&apos;, 5);
+console.log(object.x[0].y.z);
+// =&gt; 5
+</code></pre><hr>
+<h2 id="setWith"><a href="#setWith" class="headerlink" title="_.setWith"></a>_.setWith</h2><p><strong><code>_.setWith(object, path, value, [customizer])</code></strong></p>
+<p>这个方法类似 _.set。 除了它接受一个 customizer 决定如何设置对象路径的值。 如果 customizer 返回 undefined 将会有它的处理方法代替。 customizer 会传入3个参数：(nsValue, key, nsObject) </p>
+<p>注意: 这个方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要修改的对象</p>
+</li>
+<li><p>path (Array|string):要设置的对象路径</p>
+</li>
+<li><p>value (*):要设置的值</p>
+</li>
+<li><p>[customizer] (Function):这个函数决定如何分配值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (Object)</code></strong></p>
+<p>返回对象</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.setWith({ &apos;0&apos;: { &apos;length&apos;: 2 } }, &apos;[0][1][2]&apos;, 3, Object);
+// =&gt; { &apos;0&apos;: { &apos;1&apos;: { &apos;2&apos;: 3 }, &apos;length&apos;: 2 } }
+</code></pre><hr>
+<h2 id="toPairs"><a href="#toPairs" class="headerlink" title="_.toPairs"></a>_.toPairs</h2><p><strong><code>_.toPairs(object)</code></strong></p>
+<p>创建一个对象自身可枚举属性的键值对数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回键值对的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.toPairs(new Foo);
+// =&gt; [[&apos;a&apos;, 1], [&apos;b&apos;, 2]] (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="toPairsIn"><a href="#toPairsIn" class="headerlink" title="_.toPairsIn"></a>_.toPairsIn</h2><p><strong><code>_.toPairsIn(object)</code></strong></p>
+<p>创建一个对象自身和继承的可枚举属性的键值对数组。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回键值对的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.toPairsIn(new Foo);
+// =&gt; [[&apos;a&apos;, 1], [&apos;b&apos;, 2], [&apos;c&apos;, 3]] (无法保证遍历的顺序)
+</code></pre><hr>
+<h2 id="transform"><a href="#transform" class="headerlink" title="_.transform"></a>_.transform</h2><p><strong><code>_.transform(object, [iteratee=_.identity], [accumulator])</code></strong></p>
+<p>_.reduce 的代替方法。 这个方法会改变对象为一个新的 accumulator 对象，来自每一次经 iteratee 处理自身可枚举对象的结果。 每次调用可能会改变 accumulator 对象。 iteratee 会传入4个对象：(accumulator, value, key, object)。 如果返回 false，iteratee 会提前退出。</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Array|Object):要遍历的对象</p>
+</li>
+<li><p>[iteratee=_.identity] (Function):这个函数会处理每一个元素</p>
+</li>
+<li><p>[accumulator] (*):定制叠加的值</p>
+</li>
+</ol>
+<p><strong><code>返回值 (*)</code></strong></p>
+<p>返回叠加后的值</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>_.transform([2, 3, 4], function(result, n) {
+  result.push(n *= n);
+  return n % 2 == 0;
+}, []);
+// =&gt; [4, 9]
+
+_.transform({ &apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 1 }, function(result, value, key) {
+  (result[value] || (result[value] = [])).push(key);
+}, {});
+// =&gt; { &apos;1&apos;: [&apos;a&apos;, &apos;c&apos;], &apos;2&apos;: [&apos;b&apos;] }
+</code></pre><hr>
+<h2 id="unset"><a href="#unset" class="headerlink" title="_.unset"></a>_.unset</h2><p><strong><code>_.unset(object, path)</code></strong></p>
+<p>移除对象路径的属性。 </p>
+<p>注意: 这个方法会改变源对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li><p>object (Object):要修改的对象</p>
+</li>
+<li><p>path (Array|string):要移除的对象路径</p>
+</li>
+</ol>
+<p><strong><code>返回值 (boolean)</code></strong></p>
+<p>移除成功返回 true，否则返回 false</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>var object = { &apos;a&apos;: [{ &apos;b&apos;: { &apos;c&apos;: 7 } }] };
+_.unset(object, &apos;a[0].b.c&apos;);
+// =&gt; true
+
+console.log(object);
+// =&gt; { &apos;a&apos;: [{ &apos;b&apos;: {} }] };
+
+_.unset(object, &apos;a[0].b.c&apos;);
+// =&gt; true
+
+console.log(object);
+// =&gt; { &apos;a&apos;: [{ &apos;b&apos;: {} }] };
+</code></pre><hr>
+<h2 id="values"><a href="#values" class="headerlink" title="_.values"></a>_.values</h2><p><strong><code>_.values(object)</code></strong></p>
+<p>创建 object 自身可枚举属性的值为数组 </p>
+<p>注意: 非对象的值会强制转换为对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回对象属性的值的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.values(new Foo);
+// =&gt; [1, 2] (无法保证遍历的顺序)
+
+_.values(&apos;hi&apos;);
+// =&gt; [&apos;h&apos;, &apos;i&apos;]
+</code></pre><hr>
+<h2 id="valuesIn"><a href="#valuesIn" class="headerlink" title="_.valuesIn"></a>_.valuesIn</h2><p><strong><code>_.valuesIn(object)</code></strong></p>
+<p>创建 object 自身和继承的可枚举属性的值为数组 </p>
+<p>注意: 非对象的值会强制转换为对象</p>
+<p><strong><code>参数</code></strong></p>
+<ol>
+<li>object (Object):要检索的对象</li>
+</ol>
+<p><strong><code>返回值 (Array)</code></strong></p>
+<p>返回对象属性的值的数组</p>
+<p><strong><code>示例</code></strong></p>
+<pre><code>function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+
+Foo.prototype.c = 3;
+
+_.valuesIn(new Foo);
+// =&gt; [1, 2, 3] (无法保证遍历的顺序)
+</code></pre><hr>
 
       
     </div>
@@ -2442,8 +3076,8 @@ _.forInRight(new Foo, function(value, key) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015-05-29-baidu-ueditor-use/" rel="next" title="富文本编辑器-百度Ueditor的使用">
-                <i class="fa fa-chevron-left"></i> 富文本编辑器-百度Ueditor的使用
+              <a href="/2016-03-15-vi-and-vim-tutorial/" rel="next" title="vi/vim简单教程">
+                <i class="fa fa-chevron-left"></i> vi/vim简单教程
               </a>
             
           </div>
@@ -2520,7 +3154,7 @@ _.forInRight(new Foo, function(value, key) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -2537,7 +3171,7 @@ _.forInRight(new Foo, function(value, key) {
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2560,20 +3194,29 @@ _.forInRight(new Foo, function(value, key) {
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://www.facebook.com/zhoufei.name" target="_blank" title="Facebook">
-                  
-                    <i class="fa fa-fw fa-facebook"></i>
-                  
-                  Facebook
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
                 <a href="http://helloworld.zhoufei.name/ohhi/" target="_blank" title="ohhi">
                   
                     <i class="fa fa-fw fa-gamepad"></i>
                   
                   ohhi
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://helloworld.zhoufei.name/hextris/" target="_blank" title="hextris">
+                  
+                    <i class="fa fa-fw fa-gamepad"></i>
+                  
+                  hextris
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://helloworld.zhoufei.name/tetris/" target="_blank" title="tetris">
+                  
+                    <i class="fa fa-fw fa-gamepad"></i>
+                  
+                  tetris
                 </a>
               </span>
             
@@ -2595,7 +3238,7 @@ _.forInRight(new Foo, function(value, key) {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">1.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chunk"><span class="nav-number">1.1.</span> <span class="nav-text">_.chunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compact"><span class="nav-number">1.2.</span> <span class="nav-text">_.compact</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">1.3.</span> <span class="nav-text">_.concat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#difference"><span class="nav-number">1.4.</span> <span class="nav-text">_.difference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceBy"><span class="nav-number">1.5.</span> <span class="nav-text">_.differenceBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceWith"><span class="nav-number">1.6.</span> <span class="nav-text">_.differenceWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop"><span class="nav-number">1.7.</span> <span class="nav-text">_.drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRight"><span class="nav-number">1.8.</span> <span class="nav-text">_.dropRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRightWhile"><span class="nav-number">1.9.</span> <span class="nav-text">_.dropRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropWhile"><span class="nav-number">1.10.</span> <span class="nav-text">_.dropWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fill"><span class="nav-number">1.11.</span> <span class="nav-text">_.fill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findIndex"><span class="nav-number">1.12.</span> <span class="nav-text">_.findIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastIndex"><span class="nav-number">1.13.</span> <span class="nav-text">_.findLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatten"><span class="nav-number">1.14.</span> <span class="nav-text">_.flatten</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDeep"><span class="nav-number">1.15.</span> <span class="nav-text">_.flattenDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDepth"><span class="nav-number">1.16.</span> <span class="nav-text">_.flattenDepth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fromPairs"><span class="nav-number">1.17.</span> <span class="nav-text">_.fromPairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head-first"><span class="nav-number">1.18.</span> <span class="nav-text">_.head(first)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOf"><span class="nav-number">1.19.</span> <span class="nav-text">_.indexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initial"><span class="nav-number">1.20.</span> <span class="nav-text">_.initial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection"><span class="nav-number">1.21.</span> <span class="nav-text">_.intersection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionBy"><span class="nav-number">1.22.</span> <span class="nav-text">_.intersectionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionWith"><span class="nav-number">1.23.</span> <span class="nav-text">_.intersectionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">1.24.</span> <span class="nav-text">_.join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last"><span class="nav-number">1.25.</span> <span class="nav-text">_.last</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">1.26.</span> <span class="nav-text">_.lastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull"><span class="nav-number">1.27.</span> <span class="nav-text">_.pull</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAll"><span class="nav-number">1.28.</span> <span class="nav-text">_.pullAll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAllBy"><span class="nav-number">1.29.</span> <span class="nav-text">_.pullAllBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAt"><span class="nav-number">1.30.</span> <span class="nav-text">_.pullAt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#remove"><span class="nav-number">1.31.</span> <span class="nav-text">_.remove</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">1.32.</span> <span class="nav-text">_.reverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slice"><span class="nav-number">1.33.</span> <span class="nav-text">_.slice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndex"><span class="nav-number">1.34.</span> <span class="nav-text">_.sortedIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndexBy"><span class="nav-number">1.35.</span> <span class="nav-text">_.sortedIndexBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndexOf"><span class="nav-number">1.36.</span> <span class="nav-text">_.sortedIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndex"><span class="nav-number">1.37.</span> <span class="nav-text">_.sortedLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndexBy"><span class="nav-number">1.38.</span> <span class="nav-text">_.sortedLastIndexBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndexOf"><span class="nav-number">1.39.</span> <span class="nav-text">_.sortedLastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedUniq"><span class="nav-number">1.40.</span> <span class="nav-text">_.sortedUniq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedUniqBy"><span class="nav-number">1.41.</span> <span class="nav-text">_.sortedUniqBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tail"><span class="nav-number">1.42.</span> <span class="nav-text">_.tail</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#take"><span class="nav-number">1.43.</span> <span class="nav-text">_.take</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeRight"><span class="nav-number">1.44.</span> <span class="nav-text">_.takeRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeRightWhile"><span class="nav-number">1.45.</span> <span class="nav-text">_.takeRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeWhile"><span class="nav-number">1.46.</span> <span class="nav-text">_.takeWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#union"><span class="nav-number">1.47.</span> <span class="nav-text">_.union</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unionBy"><span class="nav-number">1.48.</span> <span class="nav-text">_.unionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unionWith"><span class="nav-number">1.49.</span> <span class="nav-text">_.unionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniq"><span class="nav-number">1.50.</span> <span class="nav-text">_.uniq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniqBy"><span class="nav-number">1.51.</span> <span class="nav-text">_.uniqBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniqWith"><span class="nav-number">1.52.</span> <span class="nav-text">_.uniqWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unzip"><span class="nav-number">1.53.</span> <span class="nav-text">_.unzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unzipWith"><span class="nav-number">1.54.</span> <span class="nav-text">_.unzipWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#without"><span class="nav-number">1.55.</span> <span class="nav-text">_.without</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xor"><span class="nav-number">1.56.</span> <span class="nav-text">_.xor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xorBy"><span class="nav-number">1.57.</span> <span class="nav-text">_.xorBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xorWith"><span class="nav-number">1.58.</span> <span class="nav-text">_.xorWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zip"><span class="nav-number">1.59.</span> <span class="nav-text">_.zip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipObject"><span class="nav-number">1.60.</span> <span class="nav-text">_.zipObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipObjectDeep"><span class="nav-number">1.61.</span> <span class="nav-text">_.zipObjectDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipWith"><span class="nav-number">1.62.</span> <span class="nav-text">_.zipWith</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Collection"><span class="nav-number">2.</span> <span class="nav-text">Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#countBy"><span class="nav-number">2.1.</span> <span class="nav-text">_.countBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#every"><span class="nav-number">2.2.</span> <span class="nav-text">_.every</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter"><span class="nav-number">2.3.</span> <span class="nav-text">_.filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find"><span class="nav-number">2.4.</span> <span class="nav-text">_.find</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLast"><span class="nav-number">2.5.</span> <span class="nav-text">_.findLast</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatMap"><span class="nav-number">2.6.</span> <span class="nav-text">_.flatMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forEach-each"><span class="nav-number">2.7.</span> <span class="nav-text">_.forEach(each)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forEachRight-eachRight"><span class="nav-number">2.8.</span> <span class="nav-text">_.forEachRight(eachRight)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#groupBy"><span class="nav-number">2.9.</span> <span class="nav-text">_.groupBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#includes"><span class="nav-number">2.10.</span> <span class="nav-text">_.includes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invokeMap"><span class="nav-number">2.11.</span> <span class="nav-text">_.invokeMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keyBy"><span class="nav-number">2.12.</span> <span class="nav-text">_.keyBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map"><span class="nav-number">2.13.</span> <span class="nav-text">_.map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orderBy"><span class="nav-number">2.14.</span> <span class="nav-text">_.orderBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#partition"><span class="nav-number">2.15.</span> <span class="nav-text">_.partition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reduce"><span class="nav-number">2.16.</span> <span class="nav-text">_.reduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reduceRight"><span class="nav-number">2.17.</span> <span class="nav-text">_.reduceRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reject"><span class="nav-number">2.18.</span> <span class="nav-text">_.reject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sample"><span class="nav-number">2.19.</span> <span class="nav-text">_.sample</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sampleSize"><span class="nav-number">2.20.</span> <span class="nav-text">_.sampleSize</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shuffle"><span class="nav-number">2.21.</span> <span class="nav-text">_.shuffle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#size"><span class="nav-number">2.22.</span> <span class="nav-text">_.size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#some"><span class="nav-number">2.23.</span> <span class="nav-text">_.some</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortBy"><span class="nav-number">2.24.</span> <span class="nav-text">_.sortBy</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Date"><span class="nav-number">3.</span> <span class="nav-text">Date</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#now"><span class="nav-number">3.1.</span> <span class="nav-text">_.now</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object"><span class="nav-number">4.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#assign"><span class="nav-number">4.1.</span> <span class="nav-text">_.assign</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#assignIn-extend"><span class="nav-number">4.2.</span> <span class="nav-text">.assignIn(.extend)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#assignInWith-extendWith"><span class="nav-number">4.3.</span> <span class="nav-text">.assignInWith(.extendWith)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#assignWith"><span class="nav-number">4.4.</span> <span class="nav-text">_.assignWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#at"><span class="nav-number">4.5.</span> <span class="nav-text">_.at</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create"><span class="nav-number">4.6.</span> <span class="nav-text">_.create</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaults"><span class="nav-number">4.7.</span> <span class="nav-text">_.defaults</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaultsDeep"><span class="nav-number">4.8.</span> <span class="nav-text">_.defaultsDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findKey"><span class="nav-number">4.9.</span> <span class="nav-text">_.findKey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastKey"><span class="nav-number">4.10.</span> <span class="nav-text">_.findLastKey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forIn"><span class="nav-number">4.11.</span> <span class="nav-text">_.forIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forInRight"><span class="nav-number">4.12.</span> <span class="nav-text">_.forInRight</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">1.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chunk"><span class="nav-number">1.1.</span> <span class="nav-text">_.chunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compact"><span class="nav-number">1.2.</span> <span class="nav-text">_.compact</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">1.3.</span> <span class="nav-text">_.concat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#difference"><span class="nav-number">1.4.</span> <span class="nav-text">_.difference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceBy"><span class="nav-number">1.5.</span> <span class="nav-text">_.differenceBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceWith"><span class="nav-number">1.6.</span> <span class="nav-text">_.differenceWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop"><span class="nav-number">1.7.</span> <span class="nav-text">_.drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRight"><span class="nav-number">1.8.</span> <span class="nav-text">_.dropRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRightWhile"><span class="nav-number">1.9.</span> <span class="nav-text">_.dropRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropWhile"><span class="nav-number">1.10.</span> <span class="nav-text">_.dropWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fill"><span class="nav-number">1.11.</span> <span class="nav-text">_.fill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findIndex"><span class="nav-number">1.12.</span> <span class="nav-text">_.findIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastIndex"><span class="nav-number">1.13.</span> <span class="nav-text">_.findLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatten"><span class="nav-number">1.14.</span> <span class="nav-text">_.flatten</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDeep"><span class="nav-number">1.15.</span> <span class="nav-text">_.flattenDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDepth"><span class="nav-number">1.16.</span> <span class="nav-text">_.flattenDepth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fromPairs"><span class="nav-number">1.17.</span> <span class="nav-text">_.fromPairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head-first"><span class="nav-number">1.18.</span> <span class="nav-text">_.head(first)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOf"><span class="nav-number">1.19.</span> <span class="nav-text">_.indexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initial"><span class="nav-number">1.20.</span> <span class="nav-text">_.initial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection"><span class="nav-number">1.21.</span> <span class="nav-text">_.intersection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionBy"><span class="nav-number">1.22.</span> <span class="nav-text">_.intersectionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionWith"><span class="nav-number">1.23.</span> <span class="nav-text">_.intersectionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">1.24.</span> <span class="nav-text">_.join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last"><span class="nav-number">1.25.</span> <span class="nav-text">_.last</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">1.26.</span> <span class="nav-text">_.lastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull"><span class="nav-number">1.27.</span> <span class="nav-text">_.pull</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAll"><span class="nav-number">1.28.</span> <span class="nav-text">_.pullAll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAllBy"><span class="nav-number">1.29.</span> <span class="nav-text">_.pullAllBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAt"><span class="nav-number">1.30.</span> <span class="nav-text">_.pullAt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#remove"><span class="nav-number">1.31.</span> <span class="nav-text">_.remove</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">1.32.</span> <span class="nav-text">_.reverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slice"><span class="nav-number">1.33.</span> <span class="nav-text">_.slice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndex"><span class="nav-number">1.34.</span> <span class="nav-text">_.sortedIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndexBy"><span class="nav-number">1.35.</span> <span class="nav-text">_.sortedIndexBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndexOf"><span class="nav-number">1.36.</span> <span class="nav-text">_.sortedIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndex"><span class="nav-number">1.37.</span> <span class="nav-text">_.sortedLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndexBy"><span class="nav-number">1.38.</span> <span class="nav-text">_.sortedLastIndexBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndexOf"><span class="nav-number">1.39.</span> <span class="nav-text">_.sortedLastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedUniq"><span class="nav-number">1.40.</span> <span class="nav-text">_.sortedUniq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedUniqBy"><span class="nav-number">1.41.</span> <span class="nav-text">_.sortedUniqBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tail"><span class="nav-number">1.42.</span> <span class="nav-text">_.tail</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#take"><span class="nav-number">1.43.</span> <span class="nav-text">_.take</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeRight"><span class="nav-number">1.44.</span> <span class="nav-text">_.takeRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeRightWhile"><span class="nav-number">1.45.</span> <span class="nav-text">_.takeRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeWhile"><span class="nav-number">1.46.</span> <span class="nav-text">_.takeWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#union"><span class="nav-number">1.47.</span> <span class="nav-text">_.union</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unionBy"><span class="nav-number">1.48.</span> <span class="nav-text">_.unionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unionWith"><span class="nav-number">1.49.</span> <span class="nav-text">_.unionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniq"><span class="nav-number">1.50.</span> <span class="nav-text">_.uniq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniqBy"><span class="nav-number">1.51.</span> <span class="nav-text">_.uniqBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniqWith"><span class="nav-number">1.52.</span> <span class="nav-text">_.uniqWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unzip"><span class="nav-number">1.53.</span> <span class="nav-text">_.unzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unzipWith"><span class="nav-number">1.54.</span> <span class="nav-text">_.unzipWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#without"><span class="nav-number">1.55.</span> <span class="nav-text">_.without</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xor"><span class="nav-number">1.56.</span> <span class="nav-text">_.xor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xorBy"><span class="nav-number">1.57.</span> <span class="nav-text">_.xorBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xorWith"><span class="nav-number">1.58.</span> <span class="nav-text">_.xorWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zip"><span class="nav-number">1.59.</span> <span class="nav-text">_.zip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipObject"><span class="nav-number">1.60.</span> <span class="nav-text">_.zipObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipObjectDeep"><span class="nav-number">1.61.</span> <span class="nav-text">_.zipObjectDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipWith"><span class="nav-number">1.62.</span> <span class="nav-text">_.zipWith</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Collection"><span class="nav-number">2.</span> <span class="nav-text">Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#countBy"><span class="nav-number">2.1.</span> <span class="nav-text">_.countBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#every"><span class="nav-number">2.2.</span> <span class="nav-text">_.every</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter"><span class="nav-number">2.3.</span> <span class="nav-text">_.filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find"><span class="nav-number">2.4.</span> <span class="nav-text">_.find</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLast"><span class="nav-number">2.5.</span> <span class="nav-text">_.findLast</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatMap"><span class="nav-number">2.6.</span> <span class="nav-text">_.flatMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forEach-each"><span class="nav-number">2.7.</span> <span class="nav-text">_.forEach(each)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forEachRight-eachRight"><span class="nav-number">2.8.</span> <span class="nav-text">_.forEachRight(eachRight)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#groupBy"><span class="nav-number">2.9.</span> <span class="nav-text">_.groupBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#includes"><span class="nav-number">2.10.</span> <span class="nav-text">_.includes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invokeMap"><span class="nav-number">2.11.</span> <span class="nav-text">_.invokeMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keyBy"><span class="nav-number">2.12.</span> <span class="nav-text">_.keyBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map"><span class="nav-number">2.13.</span> <span class="nav-text">_.map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orderBy"><span class="nav-number">2.14.</span> <span class="nav-text">_.orderBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#partition"><span class="nav-number">2.15.</span> <span class="nav-text">_.partition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reduce"><span class="nav-number">2.16.</span> <span class="nav-text">_.reduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reduceRight"><span class="nav-number">2.17.</span> <span class="nav-text">_.reduceRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reject"><span class="nav-number">2.18.</span> <span class="nav-text">_.reject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sample"><span class="nav-number">2.19.</span> <span class="nav-text">_.sample</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sampleSize"><span class="nav-number">2.20.</span> <span class="nav-text">_.sampleSize</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shuffle"><span class="nav-number">2.21.</span> <span class="nav-text">_.shuffle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#size"><span class="nav-number">2.22.</span> <span class="nav-text">_.size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#some"><span class="nav-number">2.23.</span> <span class="nav-text">_.some</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortBy"><span class="nav-number">2.24.</span> <span class="nav-text">_.sortBy</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Date"><span class="nav-number">3.</span> <span class="nav-text">Date</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#now"><span class="nav-number">3.1.</span> <span class="nav-text">_.now</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object"><span class="nav-number">4.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#assign"><span class="nav-number">4.1.</span> <span class="nav-text">_.assign</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#assignIn-extend"><span class="nav-number">4.2.</span> <span class="nav-text">.assignIn(.extend)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#assignInWith-extendWith"><span class="nav-number">4.3.</span> <span class="nav-text">.assignInWith(.extendWith)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#assignWith"><span class="nav-number">4.4.</span> <span class="nav-text">_.assignWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#at"><span class="nav-number">4.5.</span> <span class="nav-text">_.at</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create"><span class="nav-number">4.6.</span> <span class="nav-text">_.create</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaults"><span class="nav-number">4.7.</span> <span class="nav-text">_.defaults</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaultsDeep"><span class="nav-number">4.8.</span> <span class="nav-text">_.defaultsDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findKey"><span class="nav-number">4.9.</span> <span class="nav-text">_.findKey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastKey"><span class="nav-number">4.10.</span> <span class="nav-text">_.findLastKey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forIn"><span class="nav-number">4.11.</span> <span class="nav-text">_.forIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forInRight"><span class="nav-number">4.12.</span> <span class="nav-text">_.forInRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forOwn"><span class="nav-number">4.13.</span> <span class="nav-text">_.forOwn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forOwn-1"><span class="nav-number">4.14.</span> <span class="nav-text">_.forOwn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#functions"><span class="nav-number">4.15.</span> <span class="nav-text">_.functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#functionsIn"><span class="nav-number">4.16.</span> <span class="nav-text">_.functionsIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get"><span class="nav-number">4.17.</span> <span class="nav-text">_.get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#has"><span class="nav-number">4.18.</span> <span class="nav-text">_.has</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hasIn"><span class="nav-number">4.19.</span> <span class="nav-text">_.hasIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invert"><span class="nav-number">4.20.</span> <span class="nav-text">_.invert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invertBy"><span class="nav-number">4.21.</span> <span class="nav-text">_.invertBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invoke"><span class="nav-number">4.22.</span> <span class="nav-text">_.invoke</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keys"><span class="nav-number">4.23.</span> <span class="nav-text">_.keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keysIn"><span class="nav-number">4.24.</span> <span class="nav-text">_.keysIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapKeys"><span class="nav-number">4.25.</span> <span class="nav-text">_.mapKeys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapValues"><span class="nav-number">4.26.</span> <span class="nav-text">_.mapValues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge"><span class="nav-number">4.27.</span> <span class="nav-text">_.merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mergeWith"><span class="nav-number">4.28.</span> <span class="nav-text">_.mergeWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#omit"><span class="nav-number">4.29.</span> <span class="nav-text">_.omit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#omitBy"><span class="nav-number">4.30.</span> <span class="nav-text">_.omitBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pick"><span class="nav-number">4.31.</span> <span class="nav-text">_.pick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pickBy"><span class="nav-number">4.32.</span> <span class="nav-text">_.pickBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#result"><span class="nav-number">4.33.</span> <span class="nav-text">_.result</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">4.34.</span> <span class="nav-text">_.set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setWith"><span class="nav-number">4.35.</span> <span class="nav-text">_.setWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toPairs"><span class="nav-number">4.36.</span> <span class="nav-text">_.toPairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toPairsIn"><span class="nav-number">4.37.</span> <span class="nav-text">_.toPairsIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transform"><span class="nav-number">4.38.</span> <span class="nav-text">_.transform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unset"><span class="nav-number">4.39.</span> <span class="nav-text">_.unset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#values"><span class="nav-number">4.40.</span> <span class="nav-text">_.values</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#valuesIn"><span class="nav-number">4.41.</span> <span class="nav-text">_.valuesIn</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

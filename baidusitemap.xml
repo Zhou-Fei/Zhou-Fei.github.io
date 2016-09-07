@@ -4,8 +4,52 @@
 
     
   <url>
+    <loc>http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/</loc>
+    <lastmod>2016-09-07T08:34:05.883Z</lastmod>
+    <data>
+        <display>
+        <title>vi/vim简单教程</title>
+        <pubTime>2016-03-15T14:08:00.000Z</pubTime>
+        
+        <tag>vi</tag>
+         
+        <tag>vim</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tutorial" url="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</loc>
+    <lastmod>2016-09-07T05:37:11.822Z</lastmod>
+    <data>
+        <display>
+        <title>API和DOC收藏夹</title>
+        <pubTime>2015-10-01T04:03:00.000Z</pubTime>
+        
+        <tag>API</tag>
+         
+        <tag>Doc</tag>
+         
+         
+           
+             
+              <breadCrumb title="Document" url="http://helloworld.zhoufei.name/categories/Document/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</loc>
-    <lastmod>2016-09-02T10:01:00.207Z</lastmod>
+    <lastmod>2016-09-07T05:37:11.822Z</lastmod>
     <data>
         <display>
         <title>Lodash中文文档</title>
