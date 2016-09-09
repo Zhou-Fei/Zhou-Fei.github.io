@@ -2733,16 +2733,16 @@ _.valuesIn(new Foo);
     <link href="http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/"/>
     <id>http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/</id>
     <published>2016-03-15T14:08:00.000Z</published>
-    <updated>2016-09-07T08:34:05.883Z</updated>
+    <updated>2016-09-09T08:51:20.995Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>vim学习笔记</p>
 </blockquote>
 <h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><ul>
-<li><code>Normal模式</code>: 在Insert模式下按Esc进入Normal模式</li>
-<li><code>Insert模式</code>: 在Normal模式下按下i等字符进入Insert模式</li>
+<li><code>normal模式</code>: 在insert模式下按esc进入normal模式</li>
+<li><code>insert模式</code>: 在normal模式下按下i等字符进入insert模式</li>
 </ul>
-<h2 id="Vim即语言"><a href="#Vim即语言" class="headerlink" title="Vim即语言"></a>Vim即语言</h2><h3 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h3><ul>
+<h2 id="vim即语言"><a href="#vim即语言" class="headerlink" title="vim即语言"></a>vim即语言</h2><h3 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h3><ul>
 <li><code>d</code>:删除</li>
 <li><code>c</code>:修改</li>
 <li><code>y</code>:拖拉(拷贝)</li>
@@ -2782,9 +2782,9 @@ _.valuesIn(new Foo);
 <li><code>w</code>:移动到下一个单词的开始</li>
 <li><code>b</code>:移动到上一个单词的开始</li>
 <li><code>e</code>:移动到下一个单词的结尾</li>
-<li><code>W</code>:移动到下一个大单词的开始</li>
-<li><code>B</code>:移动到上一个大单词的开始</li>
-<li><code>E</code>:移动到下一个大单词的开始</li>
+<li><code>w</code>:移动到下一个大单词的开始</li>
+<li><code>b</code>:移动到上一个大单词的开始</li>
+<li><code>e</code>:移动到下一个大单词的开始</li>
 </ul>
 <h4 id="句段移动"><a href="#句段移动" class="headerlink" title="句段移动"></a>句段移动</h4><ul>
 <li><code>(</code>:向上移动一句</li>
@@ -2794,22 +2794,42 @@ _.valuesIn(new Foo);
 </ul>
 <h4 id="屏间移动"><a href="#屏间移动" class="headerlink" title="屏间移动"></a>屏间移动</h4><ul>
 <li><code>gg</code>:移动第一行</li>
-<li><code>G</code>:移动到最后一行</li>
-<li><code>nG</code>:移动到第n行</li>
-<li><code>H</code>:移动到屏幕的顶端</li>
-<li><code>M</code>:移动到屏幕的中间</li>
-<li><code>L</code>:移动到屏幕的低端</li>
-<li><code>Ctrl+E</code>:向上移(滚)动一行</li>
-<li><code>Ctrl+Y</code>:向下移(滚)动一行</li>
-<li><code>Ctrl+U</code>:向上移(滚)动半屏</li>
-<li><code>Ctrl+D</code>:向下移(滚)动半屏</li>
-<li><code>Ctrl+B</code>:上一页</li>
-<li><code>Ctrl+F</code>:下一页</li>
-<li><code>:n</code>:移动到第n行,同<code>nG</code></li>
-<li><code>Ctrl+I</code>:跳转到之前的位置</li>
-<li><code>Ctrl+O</code>:跳转到实际位置OA</li>
+<li><code>g</code>:移动到最后一行</li>
+<li><code>ng</code>:移动到第n行</li>
+<li><code>h</code>:移动到屏幕的顶端</li>
+<li><code>m</code>:移动到屏幕的中间</li>
+<li><code>l</code>:移动到屏幕的低端</li>
+<li><code>ctrl+e</code>:向上移(滚)动一行</li>
+<li><code>ctrl+y</code>:向下移(滚)动一行</li>
+<li><code>ctrl+u</code>:向上移(滚)动半屏</li>
+<li><code>ctrl+d</code>:向下移(滚)动半屏</li>
+<li><code>ctrl+b</code>:上一页</li>
+<li><code>ctrl+f</code>:下一页</li>
+<li><code>:n</code>:移动到第n行,同<code>ng</code></li>
+<li><code>ctrl+i</code>:跳转到之前的位置</li>
+<li><code>ctrl+o</code>:跳转到实际位置oa</li>
 </ul>
-<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3>]]></content>
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><ul>
+<li><code>i</code>:从当前光标位置之前插入</li>
+<li><code>i</code>:从当前行开始位置插入</li>
+<li><code>a</code>:从当前光标位置之后插入</li>
+<li><code>a</code>:从当前行行末位置插入</li>
+<li><code>o</code>:在当前行下方新增一行，并从新行插入</li>
+<li><code>o</code>:在当前行上方新增一行，并从新行插入</li>
+<li><code>r</code>:替换当前光标所在的字符</li>
+<li><code>r</code>:替换当前光标所在的字符，并一直向后替换(替换模式)</li>
+<li><code>c</code>:修改当前所在行</li>
+<li><code>s</code>:替换当前字符</li>
+<li><code>S</code>:替换整行</li>
+</ul>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><ul>
+<li><code>x</code>:删除当前光标的字符</li>
+<li><code>X</code>:删除当前光标的前一个字符</li>
+<li><code>dm</code>:删除 根据定义的m来确定删除范围，单词,句子,段落,其他</li>
+<li><code>D</code>:删除当前光标位置到本行末的所有内容(对比C,D不会进入插入模式)</li>
+<li><code>J</code>:将上下两行合并(删除两行之间的换行符)</li>
+</ul>
+]]></content>
     
     <summary type="html">
     
@@ -2817,11 +2837,11 @@ _.valuesIn(new Foo);
 &lt;p&gt;vim学习笔记&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;模式&quot;&gt;&lt;a href=&quot;#模式&quot; class=&quot;headerlink&quot; title=&quot;模式&quot;&gt;&lt;/a&gt;模式&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Normal模式&lt;/code&gt;:
+&lt;li&gt;&lt;code&gt;normal模式&lt;/code&gt;:
     
     </summary>
     
-      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+      <category term="tutorial" scheme="http://helloworld.zhoufei.name/categories/tutorial/"/>
     
     
       <category term="vi" scheme="http://helloworld.zhoufei.name/tags/vi/"/>
