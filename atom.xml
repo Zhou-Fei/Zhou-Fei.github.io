@@ -4189,9 +4189,9 @@ sudo find / -name qq*
       <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
     
     
-      <category term="Ubuntu" scheme="http://helloworld.zhoufei.name/tags/Ubuntu/"/>
-    
       <category term="wine-qq" scheme="http://helloworld.zhoufei.name/tags/wine-qq/"/>
+    
+      <category term="Ubuntu" scheme="http://helloworld.zhoufei.name/tags/Ubuntu/"/>
     
   </entry>
   

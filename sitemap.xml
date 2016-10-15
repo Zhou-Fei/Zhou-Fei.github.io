@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://helloworld.zhoufei.name/about/index.html</loc>
+    
+    <lastmod>2016-10-15T03:16:06.635Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/</loc>
     
     <lastmod>2016-09-09T08:51:20.995Z</lastmod>
@@ -9,14 +16,14 @@
   </url>
   
   <url>
-    <loc>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</loc>
+    <loc>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</loc>
     
     <lastmod>2016-09-07T05:37:11.822Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</loc>
+    <loc>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</loc>
     
     <lastmod>2016-09-07T05:37:11.822Z</lastmod>
     
@@ -40,13 +47,6 @@
     <loc>http://helloworld.zhoufei.name/2014-07-22-idea-keymap/</loc>
     
     <lastmod>2016-08-22T01:01:21.189Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://helloworld.zhoufei.name/about/index.html</loc>
-    
-    <lastmod>2016-08-17T02:53:12.073Z</lastmod>
     
   </url>
   
