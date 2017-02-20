@@ -2,28 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://helloworld.zhoufei.name/about/index.html</loc>
+    <loc>http://helloworld.zhoufei.name/2017-02-20-chinese-domain-name-binding-pages/</loc>
     
-    <lastmod>2016-10-15T03:16:06.635Z</lastmod>
+    <lastmod>2017-02-20T03:38:00.576Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/</loc>
     
-    <lastmod>2016-09-09T08:51:20.995Z</lastmod>
+    <lastmod>2017-02-20T03:13:59.162Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</loc>
+    <loc>http://helloworld.zhoufei.name/about/index.html</loc>
+    
+    <lastmod>2016-12-12T02:05:42.034Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</loc>
     
     <lastmod>2016-09-07T05:37:11.822Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</loc>
+    <loc>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</loc>
     
     <lastmod>2016-09-07T05:37:11.822Z</lastmod>
     

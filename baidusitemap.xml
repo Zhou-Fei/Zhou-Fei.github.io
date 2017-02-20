@@ -3,10 +3,31 @@
 
 
     
+  <url>
+    <loc>http://helloworld.zhoufei.name/2017-02-20-chinese-domain-name-binding-pages/</loc>
+    <lastmod>2017-02-20T03:38:00.576Z</lastmod>
+    <data>
+        <display>
+        <title>中文域名解析和绑定Pages服务</title>
+        <pubTime>2017-02-20T03:08:00.000Z</pubTime>
+        
+        <tag>Domain</tag>
+         
+        <tag>Pages</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tutorial" url="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/</loc>
-    <lastmod>2016-09-09T08:51:20.995Z</lastmod>
+    <lastmod>2017-02-20T03:13:59.162Z</lastmod>
     <data>
         <display>
         <title>vi/vim简单教程</title>
@@ -19,7 +40,30 @@
          
            
              
-              <breadCrumb title="tutorial" url="http://helloworld.zhoufei.name/categories/tutorial/"/>
+              <breadCrumb title="Tutorial" url="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</loc>
+    <lastmod>2016-09-07T05:37:11.822Z</lastmod>
+    <data>
+        <display>
+        <title>API和DOC收藏夹</title>
+        <pubTime>2015-10-01T04:03:00.000Z</pubTime>
+        
+        <tag>API</tag>
+         
+        <tag>Doc</tag>
+         
+         
+           
+             
+              <breadCrumb title="Document" url="http://helloworld.zhoufei.name/categories/Document/"/>
           
         </display>
     </data>
@@ -35,28 +79,6 @@
         <pubTime>2016-07-26T11:08:00.000Z</pubTime>
         
         <tag>Lodash</tag>
-         
-         
-           
-             
-              <breadCrumb title="Document" url="http://helloworld.zhoufei.name/categories/Document/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</loc>
-    <lastmod>2016-09-07T05:37:11.822Z</lastmod>
-    <data>
-        <display>
-        <title>API和DOC收藏夹</title>
-        <pubTime>2015-10-01T04:03:00.000Z</pubTime>
-        
-        <tag>API</tag>
-         
-        <tag>Doc</tag>
          
          
            

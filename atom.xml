@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helloworld.zhoufei.name/"/>
-  <updated>2016-09-07T05:37:11.822Z</updated>
+  <updated>2017-02-20T03:38:00.576Z</updated>
   <id>http://helloworld.zhoufei.name/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>中文域名解析和绑定Pages服务</title>
+    <link href="http://helloworld.zhoufei.name/2017-02-20-chinese-domain-name-binding-pages/"/>
+    <id>http://helloworld.zhoufei.name/2017-02-20-chinese-domain-name-binding-pages/</id>
+    <published>2017-02-20T03:08:00.000Z</published>
+    <updated>2017-02-20T03:38:00.576Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>中文域名绑定到Pages服务时出现不支持的中文域名的解决办法</p>
+</blockquote>
+<h3 id="绑定到GitHub"><a href="#绑定到GitHub" class="headerlink" title="绑定到GitHub"></a>绑定到GitHub</h3><ol>
+<li>中文域名的字符串专为Punycode标准编码的字符串，如<code>中国.我爱你</code>转为<code>xn--fiqs8s.xn--6qq986b3xl</code></li>
+<li>GitHub中添加gh-pages分支</li>
+<li>在gh-pages分支下新建CNAME文件,并写入域名<code>xn--fiqs8s.xn--6qq986b3xl</code></li>
+<li>将域名的A记录解析到<code>192.30.252.153</code></li>
+</ol>
+<h3 id="绑定到Coding"><a href="#绑定到Coding" class="headerlink" title="绑定到Coding"></a>绑定到Coding</h3><ol>
+<li>中文域名的字符串专为Punycode标准编码的字符串，如<code>中国.我爱你</code>转为<code>xn--fiqs8s.xn--6qq986b3xl</code></li>
+<li>Coding中添加coding-pages分支</li>
+<li>在gh-pages分支下新建CNAME文件,并写入域名<code>xn--fiqs8s.xn--6qq986b3xl</code></li>
+<li>将域名的CNAME记录解析到<code>pages.coding.me</code> </li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;中文域名绑定到Pages服务时出现不支持的中文域名的解决办法&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;绑定到GitHub&quot;&gt;&lt;a href=&quot;#绑定到GitHub&quot; class=&quot;headerlink&quot; title=&quot;绑定到GitHub
+    
+    </summary>
+    
+      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
+    
+    
+      <category term="Domain" scheme="http://helloworld.zhoufei.name/tags/Domain/"/>
+    
+      <category term="Pages" scheme="http://helloworld.zhoufei.name/tags/Pages/"/>
+    
+  </entry>
   
   <entry>
     <title>Lodash中文文档</title>
@@ -2733,7 +2775,7 @@ _.valuesIn(new Foo);
     <link href="http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/"/>
     <id>http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/</id>
     <published>2016-03-15T14:08:00.000Z</published>
-    <updated>2016-09-09T08:51:20.995Z</updated>
+    <updated>2017-02-20T03:13:59.162Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>vim学习笔记</p>
@@ -2841,7 +2883,7 @@ _.valuesIn(new Foo);
     
     </summary>
     
-      <category term="tutorial" scheme="http://helloworld.zhoufei.name/categories/tutorial/"/>
+      <category term="Tutorial" scheme="http://helloworld.zhoufei.name/categories/Tutorial/"/>
     
     
       <category term="vi" scheme="http://helloworld.zhoufei.name/tags/vi/"/>
