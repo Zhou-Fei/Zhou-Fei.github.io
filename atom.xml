@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helloworld.zhoufei.name/"/>
-  <updated>2017-02-20T04:00:40.512Z</updated>
+  <updated>2017-02-20T04:32:44.386Z</updated>
   <id>http://helloworld.zhoufei.name/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://helloworld.zhoufei.name/2017-02-20-chinese-domain-name-binding-pages/"/>
     <id>http://helloworld.zhoufei.name/2017-02-20-chinese-domain-name-binding-pages/</id>
     <published>2017-02-20T03:08:00.000Z</published>
-    <updated>2017-02-20T04:00:40.512Z</updated>
+    <updated>2017-02-20T04:32:44.386Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>中文域名绑定到Pages服务时出现不支持的中文域名的解决办法</p>
@@ -31,6 +31,9 @@
 </li>
 <li><p>GitHub中添加gh-pages分支</p>
 </li>
+</ol>
+<a id="more"></a>
+<ol>
 <li><p>在gh-pages分支下新建CNAME文件,并写入域名<code>xn--fiqs8s.xn--6qq986b3xl</code></p>
 </li>
 <li><p>将域名的A记录解析到<code>192.30.252.153</code></p>
@@ -54,7 +57,13 @@
       &lt;blockquote&gt;
 &lt;p&gt;中文域名绑定到Pages服务时出现不支持的中文域名的解决办法&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;绑定到GitHub&quot;&gt;&lt;a href=&quot;#绑定到GitHub&quot; class=&quot;headerlink&quot; title=&quot;绑定到GitHub
+&lt;h3 id=&quot;绑定到GitHub&quot;&gt;&lt;a href=&quot;#绑定到GitHub&quot; class=&quot;headerlink&quot; title=&quot;绑定到GitHub&quot;&gt;&lt;/a&gt;绑定到GitHub&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;中文域名的字符串专为&lt;a href=&quot;http://baike.baidu.com/item/Punycode&quot;&gt;Punycode标准编码&lt;/a&gt;的字符串，如&lt;code&gt;中国.我爱你&lt;/code&gt;转为&lt;code&gt;xn--fiqs8s.xn--6qq986b3xl&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt; 转换地址：&lt;a href=&quot;http://www.webmasterhome.cn/tool/punycode.asp&quot;&gt;Punycode标准编码&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;GitHub中添加gh-pages分支&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -72,7 +81,7 @@
     <link href="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/"/>
     <id>http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/</id>
     <published>2016-07-26T11:08:00.000Z</published>
-    <updated>2016-09-07T05:37:11.822Z</updated>
+    <updated>2017-02-20T04:34:06.646Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><hr>
 <h2 id="chunk"><a href="#chunk" class="headerlink" title="_.chunk"></a>_.chunk</h2><p><strong><code>_.chunk(array, [size=0])</code></strong></p>
@@ -84,6 +93,7 @@
 </ol>
 <p><strong><code>返回值 (Array)</code></strong></p>
 <p>返回一个拆分好的新数组</p>
+<a id="more"></a>
 <p><strong><code>示例</code></strong></p>
 <pre><code>_.chunk([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;], 2);
 // =&gt; [[&apos;a&apos;, &apos;b&apos;], [&apos;c&apos;, &apos;d&apos;]]
@@ -2769,7 +2779,15 @@ _.valuesIn(new Foo);
     <summary type="html">
     
       &lt;h1 id=&quot;Array&quot;&gt;&lt;a href=&quot;#Array&quot; class=&quot;headerlink&quot; title=&quot;Array&quot;&gt;&lt;/a&gt;Array&lt;/h1&gt;&lt;hr&gt;
-&lt;h2 id=&quot;chunk&quot;&gt;&lt;a href=&quot;#chunk&quot; class=&quot;headerlink&quot; title
+&lt;h2 id=&quot;chunk&quot;&gt;&lt;a href=&quot;#chunk&quot; class=&quot;headerlink&quot; title=&quot;_.chunk&quot;&gt;&lt;/a&gt;_.chunk&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;_.chunk(array, [size=0])&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;将数组拆分成多个 size 长度的块，并组成一个新数组。 如果数组无法被分割成全部等长的块，那么最后剩余的元素将组成一个块。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;参数&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;array (Array):需要被处理的数组&lt;/li&gt;
+&lt;li&gt;[size=0] (number):每个块的长度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;返回值 (Array)&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;返回一个拆分好的新数组&lt;/p&gt;
     
     </summary>
     
@@ -2785,7 +2803,7 @@ _.valuesIn(new Foo);
     <link href="http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/"/>
     <id>http://helloworld.zhoufei.name/2016-03-15-vi-and-vim-tutorial/</id>
     <published>2016-03-15T14:08:00.000Z</published>
-    <updated>2017-02-20T03:13:59.162Z</updated>
+    <updated>2017-02-20T04:34:25.215Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>vim学习笔记</p>
@@ -2800,6 +2818,7 @@ _.valuesIn(new Foo);
 <li><code>y</code>:拖拉(拷贝)</li>
 <li><code>v</code>:可视化选择</li>
 </ul>
+<a id="more"></a>
 <h3 id="修饰语"><a href="#修饰语" class="headerlink" title="修饰语"></a>修饰语</h3><ul>
 <li><code>i</code>:内部</li>
 <li><code>a</code>:周围</li>
@@ -2889,7 +2908,15 @@ _.valuesIn(new Foo);
 &lt;p&gt;vim学习笔记&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;模式&quot;&gt;&lt;a href=&quot;#模式&quot; class=&quot;headerlink&quot; title=&quot;模式&quot;&gt;&lt;/a&gt;模式&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;normal模式&lt;/code&gt;:
+&lt;li&gt;&lt;code&gt;normal模式&lt;/code&gt;: 在insert模式下按esc进入normal模式&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;insert模式&lt;/code&gt;: 在normal模式下按下i等字符进入insert模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;vim即语言&quot;&gt;&lt;a href=&quot;#vim即语言&quot; class=&quot;headerlink&quot; title=&quot;vim即语言&quot;&gt;&lt;/a&gt;vim即语言&lt;/h2&gt;&lt;h3 id=&quot;动词&quot;&gt;&lt;a href=&quot;#动词&quot; class=&quot;headerlink&quot; title=&quot;动词&quot;&gt;&lt;/a&gt;动词&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt;:删除&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;c&lt;/code&gt;:修改&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;y&lt;/code&gt;:拖拉(拷贝)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v&lt;/code&gt;:可视化选择&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -2907,16 +2934,18 @@ _.valuesIn(new Foo);
     <link href="http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/"/>
     <id>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</id>
     <published>2015-10-01T04:03:00.000Z</published>
-    <updated>2016-09-07T05:37:11.822Z</updated>
+    <updated>2017-02-20T04:34:55.784Z</updated>
     
     <content type="html"><![CDATA[<h2 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h2><h3 id="java-8"><a href="#java-8" class="headerlink" title="java 8"></a>java 8</h3><p><a href="http://docs.oracle.com/javase/8/docs/index.html" target="_blank" rel="external"><strong><code>java 8 Documentation:</code></strong></a>    <a href="http://docs.oracle.com/javase/8/docs/api/index.html" target="_blank" rel="external">http://docs.oracle.com/javase/8/docs/api/index.html</a></p>
 <h3 id="java-7"><a href="#java-7" class="headerlink" title="java 7"></a>java 7</h3><p><a href="http://docs.oracle.com/javase/7/docs/index.html" target="_blank" rel="external"><strong><code>java 7 Documentation:</code></strong></a>    <a href="http://docs.oracle.com/javase/7/docs/api/index.html" target="_blank" rel="external">http://docs.oracle.com/javase/7/docs/api/index.html</a></p>
+<a id="more"></a>
 <h2 id="JAVASCRIPT"><a href="#JAVASCRIPT" class="headerlink" title="JAVASCRIPT"></a>JAVASCRIPT</h2><h3 id="lodash"><a href="#lodash" class="headerlink" title="lodash"></a>lodash</h3><p><a href="https://lodash.com" target="_blank" rel="external"><strong><code>lodash主页:</code></strong></a>    <a href="https://lodash.com/docs" target="_blank" rel="external">https://lodash.com/docs</a></p>
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h2 id="OTHER"><a href="#OTHER" class="headerlink" title="OTHER"></a>OTHER</h2>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;JAVA&quot;&gt;&lt;a href=&quot;#JAVA&quot; class=&quot;headerlink&quot; title=&quot;JAVA&quot;&gt;&lt;/a&gt;JAVA&lt;/h2&gt;&lt;h3 id=&quot;java-8&quot;&gt;&lt;a href=&quot;#java-8&quot; class=&quot;headerlink&quot; title=&quot;java 
+      &lt;h2 id=&quot;JAVA&quot;&gt;&lt;a href=&quot;#JAVA&quot; class=&quot;headerlink&quot; title=&quot;JAVA&quot;&gt;&lt;/a&gt;JAVA&lt;/h2&gt;&lt;h3 id=&quot;java-8&quot;&gt;&lt;a href=&quot;#java-8&quot; class=&quot;headerlink&quot; title=&quot;java 8&quot;&gt;&lt;/a&gt;java 8&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://docs.oracle.com/javase/8/docs/index.html&quot;&gt;&lt;strong&gt;&lt;code&gt;java 8 Documentation:&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;    &lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/index.html&quot;&gt;http://docs.oracle.com/javase/8/docs/api/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;java-7&quot;&gt;&lt;a href=&quot;#java-7&quot; class=&quot;headerlink&quot; title=&quot;java 7&quot;&gt;&lt;/a&gt;java 7&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/index.html&quot;&gt;&lt;strong&gt;&lt;code&gt;java 7 Documentation:&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;    &lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/index.html&quot;&gt;http://docs.oracle.com/javase/7/docs/api/index.html&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -2934,12 +2963,13 @@ _.valuesIn(new Foo);
     <link href="http://helloworld.zhoufei.name/2015-05-29-baidu-ueditor-use/"/>
     <id>http://helloworld.zhoufei.name/2015-05-29-baidu-ueditor-use/</id>
     <published>2015-05-29T11:08:00.000Z</published>
-    <updated>2016-08-04T05:39:11.784Z</updated>
+    <updated>2017-02-20T04:38:16.110Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>UEditor是由百度web前端研发部开发所见即所得富文本web编辑器，具有轻量，可定制，注重用户体验等特点，开源基于MIT协议，允许自由使用和修改代码…</p>
 </blockquote>
 <p>1. 首先，你要有一个项目，本文中假设我们有个项目article，是在tomcat环境下模拟的一个项目。</p>
+<a id="more"></a>
 <p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-01.png" alt="Alt text"></p>
 <p>2. 在Ueditor主页下载最新的版本，解压缩，等待拷贝到项目中。</p>
 <p><img src="/images/post_images/2015-05-29-baidu-ueditor-use-02.png" alt="Alt text"></p>
@@ -2974,7 +3004,7 @@ _.valuesIn(new Foo);
       &lt;blockquote&gt;
 &lt;p&gt;UEditor是由百度web前端研发部开发所见即所得富文本web编辑器，具有轻量，可定制，注重用户体验等特点，开源基于MIT协议，允许自由使用和修改代码…&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;1. 首先，你要有一个项目，本文中假设我们有个项目
+&lt;p&gt;1. 首先，你要有一个项目，本文中假设我们有个项目article，是在tomcat环境下模拟的一个项目。&lt;/p&gt;
     
     </summary>
     
@@ -2990,12 +3020,13 @@ _.valuesIn(new Foo);
     <link href="http://helloworld.zhoufei.name/2015-04-13-weather-forecast-interface/"/>
     <id>http://helloworld.zhoufei.name/2015-04-13-weather-forecast-interface/</id>
     <published>2015-04-13T03:13:00.000Z</published>
-    <updated>2016-08-04T05:39:11.782Z</updated>
+    <updated>2017-02-20T04:38:35.400Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>看了前两个天气预报接口的童鞋估计不会再看这篇文章了，其实这篇文档也挺有用的，用的是中国天气网-气象数据开放平台的接口，相信这个接口是比较稳定的，也可以放心使用。</p>
 </blockquote>
 <p>1.直接给出代码:</p>
+<a id="more"></a>
 <pre><code>package name.zhoufei.weather;
 import name.zhoufei.util.HttpPost;
 import name.zhoufei.util.StringUtils;
@@ -3404,7 +3435,6 @@ temperature:15~8℃
 &lt;p&gt;看了前两个天气预报接口的童鞋估计不会再看这篇文章了，其实这篇文档也挺有用的，用的是中国天气网-气象数据开放平台的接口，相信这个接口是比较稳定的，也可以放心使用。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;1.直接给出代码:&lt;/p&gt;
-&lt;pre&gt;&lt;co
     
     </summary>
     
@@ -3420,13 +3450,14 @@ temperature:15~8℃
     <link href="http://helloworld.zhoufei.name/2015-03-06-weather-forecast-interface/"/>
     <id>http://helloworld.zhoufei.name/2015-03-06-weather-forecast-interface/</id>
     <published>2015-03-06T03:13:00.000Z</published>
-    <updated>2016-08-04T05:39:11.780Z</updated>
+    <updated>2017-02-20T04:38:52.005Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>最近使用天气预报接口很不如意啊，稳定的要收费，免费的又不稳定, 记录下自己的做法……</p>
 </blockquote>
 <p>1. 根据网络请求获得当前城市的ID,方法,额,百度吧.或者直接搜天气咯.</p>
 <p>2. 根据百度搜索天气预报第一条获得的数据，进去<a href="http://www.weather.com.cn/weather1d/101020100.shtml进行网页抓取" target="_blank" rel="external">http://www.weather.com.cn/weather1d/101020100.shtml进行网页抓取</a></p>
+<a id="more"></a>
 <p><img src="/images/post_images/2015-03-06-weather-forecast-interface-01.png" alt="Alt text"></p>
 <p>3. 根据今天的白天和夜晚得到的数据进行组合,具体要显示哪些信息,由自己根据需求拼在一起.</p>
 <p><img src="/images/post_images/2015-03-06-weather-forecast-interface-02.png" alt="Alt text"></p>
@@ -3679,7 +3710,7 @@ public class Weather {
 &lt;p&gt;最近使用天气预报接口很不如意啊，稳定的要收费，免费的又不稳定, 记录下自己的做法……&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;1. 根据网络请求获得当前城市的ID,方法,额,百度吧.或者直接搜天气咯.&lt;/p&gt;
-&lt;p&gt;2. 根据百度搜索天气预报第一
+&lt;p&gt;2. 根据百度搜索天气预报第一条获得的数据，进去&lt;a href=&quot;http://www.weather.com.cn/weather1d/101020100.shtml进行网页抓取&quot;&gt;http://www.weather.com.cn/weather1d/101020100.shtml进行网页抓取&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -3695,7 +3726,7 @@ public class Weather {
     <link href="http://helloworld.zhoufei.name/2014-10-15-sort-algorithm-java/"/>
     <id>http://helloworld.zhoufei.name/2014-10-15-sort-algorithm-java/</id>
     <published>2014-10-15T03:13:00.000Z</published>
-    <updated>2016-08-23T00:47:20.762Z</updated>
+    <updated>2017-02-20T04:39:01.260Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>分类：</p>
@@ -3709,6 +3740,7 @@ public class Weather {
 <p>所需辅助空间最多：归并排序<br>所需辅助空间最少：堆排序<br>平均速度最快：快速排序</p>
 <p>不稳定：快速排序，希尔排序，堆排序。</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>在要排序的一组数中，假设前面(n-1)[n&gt;=2] 个数已经是排好顺序的，现在要把第n个数插到前面的有序数中，使得这个数也是排好顺序的。如此反复循环，直到全部排好顺序。</p>
 <pre><code>package name.zhoufei.helloworld.sort;
 
@@ -4114,6 +4146,10 @@ public class RadixSort {
 &lt;li&gt;选择排序（直接选择排序、堆排序）&lt;/li&gt;
 &lt;li&gt;归并排序&lt;/li&gt;
 &lt;li&gt;分配排序（基数排序）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所需辅助空间最多：归并排序&lt;br&gt;所需辅助空间最少：堆排序&lt;br&gt;平均速度最快：快速排序&lt;/p&gt;
+&lt;p&gt;不稳定：快速排序，希尔排序，堆排序。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -4131,7 +4167,7 @@ public class RadixSort {
     <link href="http://helloworld.zhoufei.name/2014-09-20-ubuntu-theme-icon/"/>
     <id>http://helloworld.zhoufei.name/2014-09-20-ubuntu-theme-icon/</id>
     <published>2014-09-20T08:47:04.000Z</published>
-    <updated>2016-08-04T05:39:11.779Z</updated>
+    <updated>2017-02-20T04:39:19.215Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>对于那些想要一个易于使用的界面的用户，Ubuntu是一个很好的Linux发行版，并且对于一个Linux新手也可以说是最好的Linux发行版。不过这产生了一些副作用，那就是，对于界面和外观，Canonical公司已经为用户做了很多设定，尤其是Unity桌面环境。</p>
@@ -4139,6 +4175,7 @@ public class RadixSort {
 </blockquote>
 <p>首先来一张预览图,然后让我们分步来实现定制Ubuntu桌面。</p>
 <p><img src="/images/post_images/2014-09-20-ubuntu-theme-icon-01.png" alt="桌面预览图"></p>
+<a id="more"></a>
 <p>1. 安装Unity Tweak Tool</p>
 <p>在你能对Ubuntu外观做任何有效地修改之前，你不得不安装Unity Tweak Tool。这是一个Unity桌面环境下特殊设置管理软件，并且通过它你可以实现替换系统图标和主题。你可以从Ubuntu软件中心下载该软件，如果你更加偏爱terminal终端的话，你也可以使用下面的命令：</p>
 <pre><code>sudo apt-get install unity-tweak-tool
@@ -4190,7 +4227,11 @@ sudo apt-get install  docky
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;对于那些想要一个易于使用的界面的用户，Ubuntu是一个很好的Linux发行版，并且对于一个Linux新手也可以说是最好的Linux发行版。不过这产生了一些副作用，那就是，对于界面和外观，Canonical公司已经为用户做了很多设定，尤其是Unit
+&lt;p&gt;对于那些想要一个易于使用的界面的用户，Ubuntu是一个很好的Linux发行版，并且对于一个Linux新手也可以说是最好的Linux发行版。不过这产生了一些副作用，那就是，对于界面和外观，Canonical公司已经为用户做了很多设定，尤其是Unity桌面环境。&lt;/p&gt;
+&lt;p&gt;然而这些不是一成不变的。下面是一些关于怎样让你更加舒心地使用Ubuntu的技巧。看过上面的截图中我对Ubuntu的设定，你可以看到我的的Unity桌面，相比于默认设定的桌面有何不同。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;首先来一张预览图,然后让我们分步来实现定制Ubuntu桌面。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/post_images/2014-09-20-ubuntu-theme-icon-01.png&quot; alt=&quot;桌面预览图&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -4206,7 +4247,7 @@ sudo apt-get install  docky
     <link href="http://helloworld.zhoufei.name/2014-08-08-install-wine-qqintl/"/>
     <id>http://helloworld.zhoufei.name/2014-08-08-install-wine-qqintl/</id>
     <published>2014-08-08T14:08:00.000Z</published>
-    <updated>2016-08-04T05:39:11.778Z</updated>
+    <updated>2017-02-20T04:39:29.849Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>wine-qqintl比wineqq2013sp6-20更好用,问题更少,Ubuntu 16.04运行良好.</p>
@@ -4218,7 +4259,8 @@ sudo apt-get install  docky
 sudp dpkg -i ttf*
 sudo dpkg -i win*
 sudo apt-get -f install
-</code></pre><p>4. 查看wine QQ的安装信息：</p>
+</code></pre><a id="more"></a>
+<p>4. 查看wine QQ的安装信息：</p>
 <pre><code>sudo dpkg -l|grep qq
 sudo find / -name qq*
 </code></pre><p>5. 三种方式打开QQ</p>
@@ -4234,7 +4276,14 @@ sudo find / -name qq*
       &lt;blockquote&gt;
 &lt;p&gt;wine-qqintl比wineqq2013sp6-20更好用,问题更少,Ubuntu 16.04运行良好.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;1. 下载wine-qqintl.zip压缩文件 &lt;a href=&quot;http://pan.bai
+&lt;p&gt;1. 下载wine-qqintl.zip压缩文件 &lt;a href=&quot;http://pan.baidu.com/s/1bp6yQuj&quot;&gt;http://pan.baidu.com/s/1bp6yQuj&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2. 解压后进入解压目录&lt;/p&gt;
+&lt;p&gt;3. 输入命令安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo dpkg -i font*
+sudp dpkg -i ttf*
+sudo dpkg -i win*
+sudo apt-get -f install
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
@@ -4252,7 +4301,7 @@ sudo find / -name qq*
     <link href="http://helloworld.zhoufei.name/2014-07-22-idea-keymap/"/>
     <id>http://helloworld.zhoufei.name/2014-07-22-idea-keymap/</id>
     <published>2014-07-21T18:08:00.000Z</published>
-    <updated>2016-08-22T01:01:21.189Z</updated>
+    <updated>2017-02-20T04:39:50.936Z</updated>
     
     <content type="html"><![CDATA[<h3 id="实用快捷键"><a href="#实用快捷键" class="headerlink" title="实用快捷键"></a>实用快捷键</h3><pre><code>Ctrl+/ 或 Ctrl+Shift+/ 注释（// 或者/*…*/ ）
 
@@ -4282,6 +4331,7 @@ Ctrl+J 自动代码
 
 大小写转化 ctr+shift+U
 </code></pre><hr>
+<a id="more"></a>
 <h3 id="常用快捷键列表"><a href="#常用快捷键列表" class="headerlink" title="常用快捷键列表"></a>常用快捷键列表</h3><pre><code>Alt+回车 导入包,自动修正
 
 Ctrl+N   查找类
@@ -4503,6 +4553,30 @@ CTRL+F4   非常重要下班都用
 
 Ctrl+D 复制行
 
+Ctrl+X 删除行
+
+快速修复 alt+enter (modify/cast)
+
+代码提示 alt+/
+
+ctr+G 定位某一行
+
+Shift+F6 重构-重命名
+
+Ctrl+R 替换文本
+
+Ctrl+F 查找文本
+
+Ctrl+E 最近打开的文件
+
+Ctrl+J 自动代码
+
+组织导入 ctr+alt+O
+
+格式化代码 ctr+alt+L
+
+大小写转化 ctr+shift+U
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
     
     </summary>
     
@@ -4520,11 +4594,12 @@ Ctrl+D 复制行
     <link href="http://helloworld.zhoufei.name/2014-07-01-markdown-syntax-doc/"/>
     <id>http://helloworld.zhoufei.name/2014-07-01-markdown-syntax-doc/</id>
     <published>2014-07-01T04:03:00.000Z</published>
-    <updated>2016-08-09T00:40:26.755Z</updated>
+    <updated>2017-02-20T04:41:31.470Z</updated>
     
     <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="宗旨"><a href="#宗旨" class="headerlink" title="宗旨"></a>宗旨</h3><p>Markdown 的目标是实现「易读易写」。</p>
 <p>可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、atx、Textile、reStructuredText、Grutatext 和 EtText，而最大灵感来源其实是纯文本电子邮件的格式。</p>
 <p>总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像*强调*。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。</p>
+<a id="more"></a>
 <h3 id="兼容-HTML"><a href="#兼容-HTML" class="headerlink" title="兼容 HTML"></a>兼容 HTML</h3><p>Markdown 语法的目标是：成为一种适用于网络的书写语言。</p>
 <p>Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想不是要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种发布的格式，Markdown 是一种书写的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。</p>
 <p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。</p>
@@ -4993,7 +5068,9 @@ g    | h    | i
     
     <summary type="html">
     
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;宗旨&quot;&gt;&lt;a href=&quot;#宗旨&quot; class=&quot;headerlink&quot; title=&quot;宗旨&quot;&gt;&lt;/a&gt;宗旨&lt;/h3&gt;&lt;p&gt;Mar
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;宗旨&quot;&gt;&lt;a href=&quot;#宗旨&quot; class=&quot;headerlink&quot; title=&quot;宗旨&quot;&gt;&lt;/a&gt;宗旨&lt;/h3&gt;&lt;p&gt;Markdown 的目标是实现「易读易写」。&lt;/p&gt;
+&lt;p&gt;可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、atx、Textile、reStructuredText、Grutatext 和 EtText，而最大灵感来源其实是纯文本电子邮件的格式。&lt;/p&gt;
+&lt;p&gt;总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像*强调*。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。&lt;/p&gt;
     
     </summary>
     
@@ -5009,13 +5086,14 @@ g    | h    | i
     <link href="http://helloworld.zhoufei.name/2014-06-21-install-jdk-and-maven/"/>
     <id>http://helloworld.zhoufei.name/2014-06-21-install-jdk-and-maven/</id>
     <published>2014-06-21T11:08:00.000Z</published>
-    <updated>2016-08-04T05:39:11.774Z</updated>
+    <updated>2017-02-20T04:40:09.164Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>贴出这些主要是方便自己查看,配了好几次也没有具体记在心里,大写的尴尬……</p>
 </blockquote>
 <h3 id="JDK环境变量配置"><a href="#JDK环境变量配置" class="headerlink" title="JDK环境变量配置"></a>JDK环境变量配置</h3><p>1. 官网下载JDK：<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
 <p>2. 安装JDK 选择安装目录 安装过程中会出现两次安装提示 。第一次是安装 jdk ，第二次是安装 jre 。建议两个都安装在同一个java文件夹中的不同文件夹中,如下图。</p>
+<a id="more"></a>
 <p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-01.png" alt="Alt text"></p>
 <p>3. 安装完JDK后配置环境变量  计算机→属性→高级系统设置→高级→环境变量 如下图。</p>
 <p><img src="/images/post_images/2014-06-21-install-jdk-and-maven-02.png" alt="Alt text"></p>
@@ -5048,7 +5126,8 @@ g    | h    | i
       &lt;blockquote&gt;
 &lt;p&gt;贴出这些主要是方便自己查看,配了好几次也没有具体记在心里,大写的尴尬……&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;JDK环境变量配置&quot;&gt;&lt;a href=&quot;#JDK环境变量配置&quot; class=&quot;headerlink&quot; title=&quot;JDK
+&lt;h3 id=&quot;JDK环境变量配置&quot;&gt;&lt;a href=&quot;#JDK环境变量配置&quot; class=&quot;headerlink&quot; title=&quot;JDK环境变量配置&quot;&gt;&lt;/a&gt;JDK环境变量配置&lt;/h3&gt;&lt;p&gt;1. 官网下载JDK：&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/index.html&quot;&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2. 安装JDK 选择安装目录 安装过程中会出现两次安装提示 。第一次是安装 jdk ，第二次是安装 jre 。建议两个都安装在同一个java文件夹中的不同文件夹中,如下图。&lt;/p&gt;
     
     </summary>
     
@@ -5066,11 +5145,12 @@ g    | h    | i
     <link href="http://helloworld.zhoufei.name/2014-06-06-hello-world/"/>
     <id>http://helloworld.zhoufei.name/2014-06-06-hello-world/</id>
     <published>2014-06-05T17:00:00.000Z</published>
-    <updated>2016-08-04T05:39:11.773Z</updated>
+    <updated>2017-02-20T04:40:50.700Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>Welcome to Hello World! This is my very first post,I will share one of my favorite poems for everyone,Let us encourage each other in our endeavours.</p>
 </blockquote>
+<a id="more"></a>
 <blockquote class="blockquote-center"><h4 id="Seven-times-have-I-despised-my-soul"><a href="#Seven-times-have-I-despised-my-soul" class="headerlink" title="Seven times have I despised my soul"></a>Seven times have I despised my soul</h4><p><code>by Kahlil Gibran</code></p>
 <p>The first time when I saw her being meek that she might attain height .</p>
 <p>The second time when I saw her limping before the crippled .</p>
@@ -5093,7 +5173,8 @@ g    | h    | i
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;Welcome to Hello World! This is my very first post,I will share one of my favorite poems for everyone,Let us encourage each 
+&lt;p&gt;Welcome to Hello World! This is my very first post,I will share one of my favorite poems for everyone,Let us encourage each other in our endeavours.&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
