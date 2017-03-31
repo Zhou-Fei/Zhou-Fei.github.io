@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -27,9 +27,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,9 +66,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="API,Doc," />
@@ -77,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
 
 
 
@@ -92,7 +95,7 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
 <meta property="og:site_name" content="Hello World">
 <meta property="og:description" content="JAVAjava 8java 8 Documentation:    http://docs.oracle.com/javase/8/docs/api/index.html
 java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.html">
-<meta property="og:updated_time" content="2017-02-20T04:34:55.784Z">
+<meta property="og:updated_time" content="2017-02-21T02:04:51.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="API和DOC收藏夹">
 <meta name="twitter:description" content="JAVAjava 8java 8 Documentation:    http://docs.oracle.com/javase/8/docs/api/index.html
@@ -100,19 +103,35 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 63064331961248000000,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
+
+
+
+  <link rel="canonical" href="http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/"/>
+
+
+
+
 
   <title> API和DOC收藏夹 | Hello World </title>
 </head>
@@ -128,9 +147,13 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
 
 
 
+
+
+
   <div style="display: none;">
-    <script src="http://s6.cnzz.com/stat.php?id=1259920222&web_id=1259920222" type="text/javascript"></script>
+    <script src="//s95.cnzz.com/z_stat.php?id=1259920222&web_id=1259920222" language="JavaScript"></script>
   </div>
+
 
 
 
@@ -141,29 +164,33 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hello World</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hello World</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -230,6 +257,8 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -243,13 +272,23 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
     
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Phil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+    </span>
 
     
       <header class="post-header">
@@ -268,24 +307,36 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-10-01T12:03:00+08:00" content="2015-10-01">
-              2015-10-01
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-01T12:03:00+08:00">
+                2015-10-01
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Document/" itemprop="url" rel="index">
                     <span itemprop="name">Document</span>
                   </a>
@@ -293,7 +344,6 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
 
                 
                 
-
               
             </span>
           
@@ -301,20 +351,26 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015-10-01-api-or-doc-favorites/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015-10-01-api-or-doc-favorites/" itemprop="commentsCount"></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2015-10-01-api-or-doc-favorites/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -329,14 +385,23 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
         <h2 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h2><h3 id="java-8"><a href="#java-8" class="headerlink" title="java 8"></a>java 8</h3><p><a href="http://docs.oracle.com/javase/8/docs/index.html" target="_blank" rel="external"><strong><code>java 8 Documentation:</code></strong></a>    <a href="http://docs.oracle.com/javase/8/docs/api/index.html" target="_blank" rel="external">http://docs.oracle.com/javase/8/docs/api/index.html</a></p>
 <h3 id="java-7"><a href="#java-7" class="headerlink" title="java 7"></a>java 7</h3><p><a href="http://docs.oracle.com/javase/7/docs/index.html" target="_blank" rel="external"><strong><code>java 7 Documentation:</code></strong></a>    <a href="http://docs.oracle.com/javase/7/docs/api/index.html" target="_blank" rel="external">http://docs.oracle.com/javase/7/docs/api/index.html</a></p>
 <a id="more"></a>
-<h2 id="JAVASCRIPT"><a href="#JAVASCRIPT" class="headerlink" title="JAVASCRIPT"></a>JAVASCRIPT</h2><h3 id="lodash"><a href="#lodash" class="headerlink" title="lodash"></a>lodash</h3><p><a href="https://lodash.com" target="_blank" rel="external"><strong><code>lodash主页:</code></strong></a>    <a href="https://lodash.com/docs" target="_blank" rel="external">https://lodash.com/docs</a></p>
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h2 id="OTHER"><a href="#OTHER" class="headerlink" title="OTHER"></a>OTHER</h2>
+<h2 id="JAVASCRIPT"><a href="#JAVASCRIPT" class="headerlink" title="JAVASCRIPT"></a>JAVASCRIPT</h2><h3 id="lodash"><a href="#lodash" class="headerlink" title="lodash"></a>lodash</h3><p><a href="https://lodash.com" target="_blank" rel="external"><strong><code>lodash主页:</code></strong></a>    <a href="https://lodash.com/docs" target="_blank" rel="external">https://lodash.com/docs</a><br><a href="http://lodashjs.com/docs/" target="_blank" rel="external"><strong><code>lodash中文文档:</code></strong></a>    <a href="http://lodashjs.com/docs/" target="_blank" rel="external">http://lodashjs.com/docs/</a></p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h2 id="OTHER"><a href="#OTHER" class="headerlink" title="OTHER"></a>OTHER</h2><h3 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h3><p><a href="http://www.bootcss.com/" target="_blank" rel="external"><strong><code>Bootstrap中文网:</code></strong></a><a href="http://www.bootcss.com/" target="_blank" rel="external">http://www.bootcss.com/</a></p>
+
       
     </div>
 
     <div>
       
         
+
+      
+    </div>
+
+    <div>
+      
+        
+
       
     </div>
 
@@ -351,11 +416,15 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
       
         <div class="post-tags">
           
-            <a href="/tags/API/" rel="tag">#API</a>
+            <a href="/tags/API/" rel="tag"># API</a>
           
-            <a href="/tags/Doc/" rel="tag">#Doc</a>
+            <a href="/tags/Doc/" rel="tag"># Doc</a>
           
         </div>
+      
+
+      
+        
       
 
       
@@ -367,6 +436,8 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -398,9 +469,7 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015-10-01-api-or-doc-favorites/"
-           data-title="API和DOC收藏夹" data-url="http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/">
-      </div>
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     
   </div>
 
@@ -433,25 +502,32 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
                alt="Phil" />
           <p class="site-author-name" itemprop="name">Phil</p>
-          <p class="site-description motion-element" itemprop="description">JUST DO IT.</p>
+           
+              <p class="site-description motion-element" itemprop="description">JUST DO IT.</p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">14</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -459,9 +535,11 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">19</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -519,19 +597,29 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
         
         
 
+        
+
+
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA"><span class="nav-number">1.</span> <span class="nav-text">JAVA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java-8"><span class="nav-number">1.1.</span> <span class="nav-text">java 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-7"><span class="nav-number">1.2.</span> <span class="nav-text">java 7</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVASCRIPT"><span class="nav-number">2.</span> <span class="nav-text">JAVASCRIPT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lodash"><span class="nav-number">2.1.</span> <span class="nav-text">lodash</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">3.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">4.</span> <span class="nav-text">CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OTHER"><span class="nav-number">5.</span> <span class="nav-text">OTHER</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA"><span class="nav-number">1.</span> <span class="nav-text">JAVA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java-8"><span class="nav-number">1.1.</span> <span class="nav-text">java 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-7"><span class="nav-number">1.2.</span> <span class="nav-text">java 7</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVASCRIPT"><span class="nav-number">2.</span> <span class="nav-text">JAVASCRIPT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lodash"><span class="nav-number">2.1.</span> <span class="nav-text">lodash</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">3.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">4.</span> <span class="nav-text">CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OTHER"><span class="nav-number">5.</span> <span class="nav-text">OTHER</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap"><span class="nav-number">5.1.</span> <span class="nav-text">Bootstrap</span></a></li></ol></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -549,14 +637,14 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
   &copy;  2014 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-keyboard-o"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Phil</span>
 </div>
-<!-- fa-heart -->
-<!-- 
+
+
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
@@ -566,30 +654,6 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
   </a>
 </div>
 
- -->
-
-<!-- 后面修改 -->
-
-<div class="powered-by">
-  由
-  <a class="theme-link" href="http://hexo.io" target="_blank">
-    Hexo
-  </a>
-  强力驱动
-</div>
-
-<div class="theme-info">
-  托管于
-  <a class="theme-link" href="https://github.com" target="_blank">
-    GitHub
-  </a>
-</div>
-
-<div class="fangketongji">
-  <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-</div>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
         
 
@@ -597,9 +661,13 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -622,90 +690,117 @@ java 7java 7 Documentation:    http://docs.oracle.com/javase/7/docs/api/index.ht
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
   
-  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
 
   
     
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"zhoufei"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-      
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
-    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "b5a3157034bd4c648aec9f461cbcba0b",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
   
 
 
 
 
 
+
+
+
+
+
   
-  
-  
+
+
+
+
 
   
 
   
-<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
 
+
+  
+
+  
 
 </body>
 </html>

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://helloworld.zhoufei.name/2014-11-16-git-note/</loc>
+    
+    <lastmod>2017-03-20T03:06:23.477Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</loc>
+    
+    <lastmod>2017-02-21T02:04:51.179Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://helloworld.zhoufei.name/2014-07-01-markdown-syntax-doc/</loc>
     
     <lastmod>2017-02-20T04:41:31.470Z</lastmod>
@@ -68,13 +82,6 @@
     <loc>http://helloworld.zhoufei.name/2015-05-29-baidu-ueditor-use/</loc>
     
     <lastmod>2017-02-20T04:38:16.110Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</loc>
-    
-    <lastmod>2017-02-20T04:34:55.784Z</lastmod>
     
   </url>
   

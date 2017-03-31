@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -27,9 +27,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,9 +66,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Lodash," />
@@ -77,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
 
 
 
@@ -124,19 +127,35 @@ array (Array):需要被处理的数组
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 63064331961248000000,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
+
+
+
+  <link rel="canonical" href="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/"/>
+
+
+
+
 
   <title> Lodash中文文档 | Hello World </title>
 </head>
@@ -152,9 +171,13 @@ array (Array):需要被处理的数组
 
 
 
+
+
+
   <div style="display: none;">
-    <script src="http://s6.cnzz.com/stat.php?id=1259920222&web_id=1259920222" type="text/javascript"></script>
+    <script src="//s95.cnzz.com/z_stat.php?id=1259920222&web_id=1259920222" language="JavaScript"></script>
   </div>
+
 
 
 
@@ -165,29 +188,33 @@ array (Array):需要被处理的数组
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Hello World</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hello World</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -254,6 +281,8 @@ array (Array):需要被处理的数组
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -267,13 +296,23 @@ array (Array):需要被处理的数组
     
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Phil">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+    </span>
 
     
       <header class="post-header">
@@ -292,24 +331,36 @@ array (Array):需要被处理的数组
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-26T19:08:00+08:00" content="2016-07-26">
-              2016-07-26
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-26T19:08:00+08:00">
+                2016-07-26
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Document/" itemprop="url" rel="index">
                     <span itemprop="name">Document</span>
                   </a>
@@ -317,7 +368,6 @@ array (Array):需要被处理的数组
 
                 
                 
-
               
             </span>
           
@@ -325,20 +375,26 @@ array (Array):需要被处理的数组
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016-07-26-lodash-syntax-doc/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016-07-26-lodash-syntax-doc/" itemprop="commentsCount"></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2016-07-26-lodash-syntax-doc/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -3048,6 +3104,14 @@ _.valuesIn(new Foo);
     <div>
       
         
+
+      
+    </div>
+
+    <div>
+      
+        
+
       
     </div>
 
@@ -3062,9 +3126,13 @@ _.valuesIn(new Foo);
       
         <div class="post-tags">
           
-            <a href="/tags/Lodash/" rel="tag">#Lodash</a>
+            <a href="/tags/Lodash/" rel="tag"># Lodash</a>
           
         </div>
+      
+
+      
+        
       
 
       
@@ -3076,6 +3144,8 @@ _.valuesIn(new Foo);
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -3107,9 +3177,7 @@ _.valuesIn(new Foo);
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016-07-26-lodash-syntax-doc/"
-           data-title="Lodash中文文档" data-url="http://helloworld.zhoufei.name/2016-07-26-lodash-syntax-doc/">
-      </div>
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     
   </div>
 
@@ -3142,25 +3210,32 @@ _.valuesIn(new Foo);
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
                alt="Phil" />
           <p class="site-author-name" itemprop="name">Phil</p>
-          <p class="site-description motion-element" itemprop="description">JUST DO IT.</p>
+           
+              <p class="site-description motion-element" itemprop="description">JUST DO IT.</p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">14</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -3168,9 +3243,11 @@ _.valuesIn(new Foo);
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">19</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -3228,19 +3305,29 @@ _.valuesIn(new Foo);
         
         
 
+        
+
+
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">1.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chunk"><span class="nav-number">1.1.</span> <span class="nav-text">_.chunk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compact"><span class="nav-number">1.2.</span> <span class="nav-text">_.compact</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#concat"><span class="nav-number">1.3.</span> <span class="nav-text">_.concat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#difference"><span class="nav-number">1.4.</span> <span class="nav-text">_.difference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceBy"><span class="nav-number">1.5.</span> <span class="nav-text">_.differenceBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differenceWith"><span class="nav-number">1.6.</span> <span class="nav-text">_.differenceWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#drop"><span class="nav-number">1.7.</span> <span class="nav-text">_.drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRight"><span class="nav-number">1.8.</span> <span class="nav-text">_.dropRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropRightWhile"><span class="nav-number">1.9.</span> <span class="nav-text">_.dropRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dropWhile"><span class="nav-number">1.10.</span> <span class="nav-text">_.dropWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fill"><span class="nav-number">1.11.</span> <span class="nav-text">_.fill</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findIndex"><span class="nav-number">1.12.</span> <span class="nav-text">_.findIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastIndex"><span class="nav-number">1.13.</span> <span class="nav-text">_.findLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatten"><span class="nav-number">1.14.</span> <span class="nav-text">_.flatten</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDeep"><span class="nav-number">1.15.</span> <span class="nav-text">_.flattenDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flattenDepth"><span class="nav-number">1.16.</span> <span class="nav-text">_.flattenDepth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fromPairs"><span class="nav-number">1.17.</span> <span class="nav-text">_.fromPairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head-first"><span class="nav-number">1.18.</span> <span class="nav-text">_.head(first)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOf"><span class="nav-number">1.19.</span> <span class="nav-text">_.indexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#initial"><span class="nav-number">1.20.</span> <span class="nav-text">_.initial</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersection"><span class="nav-number">1.21.</span> <span class="nav-text">_.intersection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionBy"><span class="nav-number">1.22.</span> <span class="nav-text">_.intersectionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intersectionWith"><span class="nav-number">1.23.</span> <span class="nav-text">_.intersectionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join"><span class="nav-number">1.24.</span> <span class="nav-text">_.join</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last"><span class="nav-number">1.25.</span> <span class="nav-text">_.last</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">1.26.</span> <span class="nav-text">_.lastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull"><span class="nav-number">1.27.</span> <span class="nav-text">_.pull</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAll"><span class="nav-number">1.28.</span> <span class="nav-text">_.pullAll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAllBy"><span class="nav-number">1.29.</span> <span class="nav-text">_.pullAllBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullAt"><span class="nav-number">1.30.</span> <span class="nav-text">_.pullAt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#remove"><span class="nav-number">1.31.</span> <span class="nav-text">_.remove</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reverse"><span class="nav-number">1.32.</span> <span class="nav-text">_.reverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#slice"><span class="nav-number">1.33.</span> <span class="nav-text">_.slice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndex"><span class="nav-number">1.34.</span> <span class="nav-text">_.sortedIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndexBy"><span class="nav-number">1.35.</span> <span class="nav-text">_.sortedIndexBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedIndexOf"><span class="nav-number">1.36.</span> <span class="nav-text">_.sortedIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndex"><span class="nav-number">1.37.</span> <span class="nav-text">_.sortedLastIndex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndexBy"><span class="nav-number">1.38.</span> <span class="nav-text">_.sortedLastIndexBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedLastIndexOf"><span class="nav-number">1.39.</span> <span class="nav-text">_.sortedLastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedUniq"><span class="nav-number">1.40.</span> <span class="nav-text">_.sortedUniq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedUniqBy"><span class="nav-number">1.41.</span> <span class="nav-text">_.sortedUniqBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tail"><span class="nav-number">1.42.</span> <span class="nav-text">_.tail</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#take"><span class="nav-number">1.43.</span> <span class="nav-text">_.take</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeRight"><span class="nav-number">1.44.</span> <span class="nav-text">_.takeRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeRightWhile"><span class="nav-number">1.45.</span> <span class="nav-text">_.takeRightWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeWhile"><span class="nav-number">1.46.</span> <span class="nav-text">_.takeWhile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#union"><span class="nav-number">1.47.</span> <span class="nav-text">_.union</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unionBy"><span class="nav-number">1.48.</span> <span class="nav-text">_.unionBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unionWith"><span class="nav-number">1.49.</span> <span class="nav-text">_.unionWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniq"><span class="nav-number">1.50.</span> <span class="nav-text">_.uniq</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniqBy"><span class="nav-number">1.51.</span> <span class="nav-text">_.uniqBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniqWith"><span class="nav-number">1.52.</span> <span class="nav-text">_.uniqWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unzip"><span class="nav-number">1.53.</span> <span class="nav-text">_.unzip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unzipWith"><span class="nav-number">1.54.</span> <span class="nav-text">_.unzipWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#without"><span class="nav-number">1.55.</span> <span class="nav-text">_.without</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xor"><span class="nav-number">1.56.</span> <span class="nav-text">_.xor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xorBy"><span class="nav-number">1.57.</span> <span class="nav-text">_.xorBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xorWith"><span class="nav-number">1.58.</span> <span class="nav-text">_.xorWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zip"><span class="nav-number">1.59.</span> <span class="nav-text">_.zip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipObject"><span class="nav-number">1.60.</span> <span class="nav-text">_.zipObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipObjectDeep"><span class="nav-number">1.61.</span> <span class="nav-text">_.zipObjectDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zipWith"><span class="nav-number">1.62.</span> <span class="nav-text">_.zipWith</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Collection"><span class="nav-number">2.</span> <span class="nav-text">Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#countBy"><span class="nav-number">2.1.</span> <span class="nav-text">_.countBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#every"><span class="nav-number">2.2.</span> <span class="nav-text">_.every</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter"><span class="nav-number">2.3.</span> <span class="nav-text">_.filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find"><span class="nav-number">2.4.</span> <span class="nav-text">_.find</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLast"><span class="nav-number">2.5.</span> <span class="nav-text">_.findLast</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatMap"><span class="nav-number">2.6.</span> <span class="nav-text">_.flatMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forEach-each"><span class="nav-number">2.7.</span> <span class="nav-text">_.forEach(each)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forEachRight-eachRight"><span class="nav-number">2.8.</span> <span class="nav-text">_.forEachRight(eachRight)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#groupBy"><span class="nav-number">2.9.</span> <span class="nav-text">_.groupBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#includes"><span class="nav-number">2.10.</span> <span class="nav-text">_.includes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invokeMap"><span class="nav-number">2.11.</span> <span class="nav-text">_.invokeMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keyBy"><span class="nav-number">2.12.</span> <span class="nav-text">_.keyBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map"><span class="nav-number">2.13.</span> <span class="nav-text">_.map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orderBy"><span class="nav-number">2.14.</span> <span class="nav-text">_.orderBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#partition"><span class="nav-number">2.15.</span> <span class="nav-text">_.partition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reduce"><span class="nav-number">2.16.</span> <span class="nav-text">_.reduce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reduceRight"><span class="nav-number">2.17.</span> <span class="nav-text">_.reduceRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reject"><span class="nav-number">2.18.</span> <span class="nav-text">_.reject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sample"><span class="nav-number">2.19.</span> <span class="nav-text">_.sample</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sampleSize"><span class="nav-number">2.20.</span> <span class="nav-text">_.sampleSize</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shuffle"><span class="nav-number">2.21.</span> <span class="nav-text">_.shuffle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#size"><span class="nav-number">2.22.</span> <span class="nav-text">_.size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#some"><span class="nav-number">2.23.</span> <span class="nav-text">_.some</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortBy"><span class="nav-number">2.24.</span> <span class="nav-text">_.sortBy</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Date"><span class="nav-number">3.</span> <span class="nav-text">Date</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#now"><span class="nav-number">3.1.</span> <span class="nav-text">_.now</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object"><span class="nav-number">4.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#assign"><span class="nav-number">4.1.</span> <span class="nav-text">_.assign</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#assignIn-extend"><span class="nav-number">4.2.</span> <span class="nav-text">.assignIn(.extend)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#assignInWith-extendWith"><span class="nav-number">4.3.</span> <span class="nav-text">.assignInWith(.extendWith)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#assignWith"><span class="nav-number">4.4.</span> <span class="nav-text">_.assignWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#at"><span class="nav-number">4.5.</span> <span class="nav-text">_.at</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create"><span class="nav-number">4.6.</span> <span class="nav-text">_.create</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaults"><span class="nav-number">4.7.</span> <span class="nav-text">_.defaults</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defaultsDeep"><span class="nav-number">4.8.</span> <span class="nav-text">_.defaultsDeep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findKey"><span class="nav-number">4.9.</span> <span class="nav-text">_.findKey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#findLastKey"><span class="nav-number">4.10.</span> <span class="nav-text">_.findLastKey</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forIn"><span class="nav-number">4.11.</span> <span class="nav-text">_.forIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forInRight"><span class="nav-number">4.12.</span> <span class="nav-text">_.forInRight</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forOwn"><span class="nav-number">4.13.</span> <span class="nav-text">_.forOwn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forOwn-1"><span class="nav-number">4.14.</span> <span class="nav-text">_.forOwn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#functions"><span class="nav-number">4.15.</span> <span class="nav-text">_.functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#functionsIn"><span class="nav-number">4.16.</span> <span class="nav-text">_.functionsIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get"><span class="nav-number">4.17.</span> <span class="nav-text">_.get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#has"><span class="nav-number">4.18.</span> <span class="nav-text">_.has</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hasIn"><span class="nav-number">4.19.</span> <span class="nav-text">_.hasIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invert"><span class="nav-number">4.20.</span> <span class="nav-text">_.invert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invertBy"><span class="nav-number">4.21.</span> <span class="nav-text">_.invertBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invoke"><span class="nav-number">4.22.</span> <span class="nav-text">_.invoke</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keys"><span class="nav-number">4.23.</span> <span class="nav-text">_.keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keysIn"><span class="nav-number">4.24.</span> <span class="nav-text">_.keysIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapKeys"><span class="nav-number">4.25.</span> <span class="nav-text">_.mapKeys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapValues"><span class="nav-number">4.26.</span> <span class="nav-text">_.mapValues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge"><span class="nav-number">4.27.</span> <span class="nav-text">_.merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mergeWith"><span class="nav-number">4.28.</span> <span class="nav-text">_.mergeWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#omit"><span class="nav-number">4.29.</span> <span class="nav-text">_.omit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#omitBy"><span class="nav-number">4.30.</span> <span class="nav-text">_.omitBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pick"><span class="nav-number">4.31.</span> <span class="nav-text">_.pick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pickBy"><span class="nav-number">4.32.</span> <span class="nav-text">_.pickBy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#result"><span class="nav-number">4.33.</span> <span class="nav-text">_.result</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">4.34.</span> <span class="nav-text">_.set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setWith"><span class="nav-number">4.35.</span> <span class="nav-text">_.setWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toPairs"><span class="nav-number">4.36.</span> <span class="nav-text">_.toPairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toPairsIn"><span class="nav-number">4.37.</span> <span class="nav-text">_.toPairsIn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transform"><span class="nav-number">4.38.</span> <span class="nav-text">_.transform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unset"><span class="nav-number">4.39.</span> <span class="nav-text">_.unset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#values"><span class="nav-number">4.40.</span> <span class="nav-text">_.values</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#valuesIn"><span class="nav-number">4.41.</span> <span class="nav-text">_.valuesIn</span></a></li></ol></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
       
 
     </div>
@@ -3258,14 +3345,14 @@ _.valuesIn(new Foo);
   &copy;  2014 - 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-keyboard-o"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Phil</span>
 </div>
-<!-- fa-heart -->
-<!-- 
+
+
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
@@ -3275,30 +3362,6 @@ _.valuesIn(new Foo);
   </a>
 </div>
 
- -->
-
-<!-- 后面修改 -->
-
-<div class="powered-by">
-  由
-  <a class="theme-link" href="http://hexo.io" target="_blank">
-    Hexo
-  </a>
-  强力驱动
-</div>
-
-<div class="theme-info">
-  托管于
-  <a class="theme-link" href="https://github.com" target="_blank">
-    GitHub
-  </a>
-</div>
-
-<div class="fangketongji">
-  <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-</div>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
         
 
@@ -3306,9 +3369,13 @@ _.valuesIn(new Foo);
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -3331,90 +3398,117 @@ _.valuesIn(new Foo);
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
 
 
 
   
-  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
 
   
     
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"zhoufei"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-      
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
-    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "b5a3157034bd4c648aec9f461cbcba0b",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
   
 
 
 
 
 
+
+
+
+
+
   
-  
-  
+
+
+
+
 
   
 
   
-<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
 
+
+  
+
+  
 
 </body>
 </html>

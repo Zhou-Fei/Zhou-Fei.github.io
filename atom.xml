@@ -2934,13 +2934,14 @@ _.valuesIn(new Foo);
     <link href="http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/"/>
     <id>http://helloworld.zhoufei.name/2015-10-01-api-or-doc-favorites/</id>
     <published>2015-10-01T04:03:00.000Z</published>
-    <updated>2017-02-20T04:34:55.784Z</updated>
+    <updated>2017-02-21T02:04:51.179Z</updated>
     
     <content type="html"><![CDATA[<h2 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h2><h3 id="java-8"><a href="#java-8" class="headerlink" title="java 8"></a>java 8</h3><p><a href="http://docs.oracle.com/javase/8/docs/index.html" target="_blank" rel="external"><strong><code>java 8 Documentation:</code></strong></a>    <a href="http://docs.oracle.com/javase/8/docs/api/index.html" target="_blank" rel="external">http://docs.oracle.com/javase/8/docs/api/index.html</a></p>
 <h3 id="java-7"><a href="#java-7" class="headerlink" title="java 7"></a>java 7</h3><p><a href="http://docs.oracle.com/javase/7/docs/index.html" target="_blank" rel="external"><strong><code>java 7 Documentation:</code></strong></a>    <a href="http://docs.oracle.com/javase/7/docs/api/index.html" target="_blank" rel="external">http://docs.oracle.com/javase/7/docs/api/index.html</a></p>
 <a id="more"></a>
-<h2 id="JAVASCRIPT"><a href="#JAVASCRIPT" class="headerlink" title="JAVASCRIPT"></a>JAVASCRIPT</h2><h3 id="lodash"><a href="#lodash" class="headerlink" title="lodash"></a>lodash</h3><p><a href="https://lodash.com" target="_blank" rel="external"><strong><code>lodash主页:</code></strong></a>    <a href="https://lodash.com/docs" target="_blank" rel="external">https://lodash.com/docs</a></p>
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h2 id="OTHER"><a href="#OTHER" class="headerlink" title="OTHER"></a>OTHER</h2>]]></content>
+<h2 id="JAVASCRIPT"><a href="#JAVASCRIPT" class="headerlink" title="JAVASCRIPT"></a>JAVASCRIPT</h2><h3 id="lodash"><a href="#lodash" class="headerlink" title="lodash"></a>lodash</h3><p><a href="https://lodash.com" target="_blank" rel="external"><strong><code>lodash主页:</code></strong></a>    <a href="https://lodash.com/docs" target="_blank" rel="external">https://lodash.com/docs</a><br><a href="http://lodashjs.com/docs/" target="_blank" rel="external"><strong><code>lodash中文文档:</code></strong></a>    <a href="http://lodashjs.com/docs/" target="_blank" rel="external">http://lodashjs.com/docs/</a></p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h2 id="OTHER"><a href="#OTHER" class="headerlink" title="OTHER"></a>OTHER</h2><h3 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h3><p><a href="http://www.bootcss.com/" target="_blank" rel="external"><strong><code>Bootstrap中文网:</code></strong></a><a href="http://www.bootcss.com/" target="_blank" rel="external">http://www.bootcss.com/</a></p>
+]]></content>
     
     <summary type="html">
     
@@ -3718,6 +3719,34 @@ public class Weather {
     
     
       <category term="Weather" scheme="http://helloworld.zhoufei.name/tags/Weather/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git学习笔记</title>
+    <link href="http://helloworld.zhoufei.name/2014-11-16-git-note/"/>
+    <id>http://helloworld.zhoufei.name/2014-11-16-git-note/</id>
+    <published>2014-11-16T03:13:00.000Z</published>
+    <updated>2017-03-20T03:06:23.477Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>git学习</p>
+</blockquote>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;git学习&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Coding" scheme="http://helloworld.zhoufei.name/categories/Coding/"/>
+    
+    
+      <category term="Git" scheme="http://helloworld.zhoufei.name/tags/Git/"/>
     
   </entry>
   
