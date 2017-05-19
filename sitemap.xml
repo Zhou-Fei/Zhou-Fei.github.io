@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://helloworld.zhoufei.name/2017-05-20-aws-note/</loc>
+    
+    <lastmod>2017-05-19T02:52:35.636Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://helloworld.zhoufei.name/2014-11-16-git-note/</loc>
     
-    <lastmod>2017-03-20T03:06:23.477Z</lastmod>
+    <lastmod>2017-05-19T02:37:07.498Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://helloworld.zhoufei.name/2016-11-12-vi-and-vim-doc/</loc>
+    
+    <lastmod>2017-04-05T10:03:36.260Z</lastmod>
     
   </url>
   

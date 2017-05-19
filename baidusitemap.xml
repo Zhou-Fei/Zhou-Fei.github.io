@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://helloworld.zhoufei.name/2017-05-20-aws-note/</loc>
+    <lastmod>2017-05-19T02:52:35.636Z</lastmod>
+    <data>
+        <display>
+        <title>AWS学习笔记</title>
+        <pubTime>2017-05-20T03:13:00.000Z</pubTime>
+        
+        <tag>AWS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Coding" url="http://helloworld.zhoufei.name/categories/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://helloworld.zhoufei.name/2014-11-16-git-note/</loc>
-    <lastmod>2017-03-20T03:06:23.477Z</lastmod>
+    <lastmod>2017-05-19T02:37:07.498Z</lastmod>
     <data>
         <display>
         <title>Git学习笔记</title>
@@ -17,6 +37,28 @@
            
              
               <breadCrumb title="Coding" url="http://helloworld.zhoufei.name/categories/Coding/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://helloworld.zhoufei.name/2016-11-12-vi-and-vim-doc/</loc>
+    <lastmod>2017-04-05T10:03:36.260Z</lastmod>
+    <data>
+        <display>
+        <title>Vim 从入门到精通 [转]</title>
+        <pubTime>2016-11-12T14:08:00.000Z</pubTime>
+        
+        <tag>vi</tag>
+         
+        <tag>vim</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tutorial" url="http://helloworld.zhoufei.name/categories/Tutorial/"/>
           
         </display>
     </data>
