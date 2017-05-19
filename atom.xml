@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helloworld.zhoufei.name/"/>
-  <updated>2017-05-19T02:52:35.636Z</updated>
+  <updated>2017-05-19T03:13:49.071Z</updated>
   <id>http://helloworld.zhoufei.name/</id>
   
   <author>
@@ -20,53 +20,51 @@
     <link href="http://helloworld.zhoufei.name/2017-05-20-aws-note/"/>
     <id>http://helloworld.zhoufei.name/2017-05-20-aws-note/</id>
     <published>2017-05-20T03:13:00.000Z</published>
-    <updated>2017-05-19T02:52:35.636Z</updated>
+    <updated>2017-05-19T03:13:49.071Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>aws的所有学习笔记</p>
 </blockquote>
 <h3 id="申请"><a href="#申请" class="headerlink" title="申请"></a>申请</h3><p>网上有教程，需信用卡</p>
 <h3 id="设置root和ec2-user的shh登录"><a href="#设置root和ec2-user的shh登录" class="headerlink" title="设置root和ec2-user的shh登录"></a>设置root和ec2-user的shh登录</h3><p>给root和ec2-user设置密码，并可以使用账号密码登录</p>
-<ul>
+<ol>
 <li><p>根据官网提供的方法登录连接到EC2服务器（官网推荐windows用户使用PUTTY连接）</p>
-<p>  主机：是服务器的Public DNS<br>  端口：22</p>
+<p> 主机：是服务器的Public DNS<br> 端口：22</p>
 </li>
 <li><p>创建root的密码，输入如下命令：</p>
-<p>  sudo passwd root</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo passwd root</div></pre></td></tr></table></figure>
 </li>
 <li><p>然后会提示你输入new password。输入一个你要设置的root的密码，需要你再输入一遍进行验证。</p>
 </li>
 <li><p>接下来，切换到root身份，输入如下命令：</p>
-<p>  su root</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su root</div></pre></td></tr></table></figure>
+ <a id="more"></a>
 </li>
-</ul>
-<a id="more"></a>
-<ul>
 <li><p>使用root身份编辑亚马逊云主机的ssh登录方式，找到 PasswordAuthentication no，把no改成yes。输入：</p>
-<p>  vim /etc/ssh/sshd_config</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/ssh/sshd_config</div></pre></td></tr></table></figure>
 </li>
 <li><p>接下来，要重新启动下sshd，如下命令：</p>
-<p>  sudo /sbin/service sshd restart</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /sbin/service sshd restart</div></pre></td></tr></table></figure>
 </li>
 <li><p>然后再切换到root身份</p>
-<p>  su root</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su root</div></pre></td></tr></table></figure>
 </li>
 <li><p>再为原来的”ec2-user”添加登录密码。如下命令：</p>
-<p>  passwd ec2-user</p>
-<p>  按提示，两次输入密码。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">passwd ec2-user</div></pre></td></tr></table></figure>
+<p> 按提示，两次输入密码。</p>
 </li>
 <li><p>如果需要root用户登录，需修改sshd配置文件</p>
-<p>  vi /etc/ssh/sshd_config</p>
-<p>  PermitRootLogin这行改为</p>
-<p>  PermitRootLogin yes</p>
-<p>  PasswordAuthentication no改为</p>
-<p>  PasswordAuthentication yes</p>
-<p>  UsePAM yes改为</p>
-<p>  UsePAM no</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/ssh/sshd_config</div></pre></td></tr></table></figure>
+<p> PermitRootLogin这行改为</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PermitRootLogin yes</div></pre></td></tr></table></figure>
+<p> PasswordAuthentication no改为</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PasswordAuthentication yes</div></pre></td></tr></table></figure>
+<p> UsePAM yes改为</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UsePAM no</div></pre></td></tr></table></figure>
 </li>
 <li><p>重启AWS VPS，就可以使用root正常登陆了</p>
 </li>
-</ul>
+</ol>
 ]]></content>
     
     <summary type="html">
@@ -76,19 +74,17 @@
 &lt;/blockquote&gt;
 &lt;h3 id=&quot;申请&quot;&gt;&lt;a href=&quot;#申请&quot; class=&quot;headerlink&quot; title=&quot;申请&quot;&gt;&lt;/a&gt;申请&lt;/h3&gt;&lt;p&gt;网上有教程，需信用卡&lt;/p&gt;
 &lt;h3 id=&quot;设置root和ec2-user的shh登录&quot;&gt;&lt;a href=&quot;#设置root和ec2-user的shh登录&quot; class=&quot;headerlink&quot; title=&quot;设置root和ec2-user的shh登录&quot;&gt;&lt;/a&gt;设置root和ec2-user的shh登录&lt;/h3&gt;&lt;p&gt;给root和ec2-user设置密码，并可以使用账号密码登录&lt;/p&gt;
-&lt;ul&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;根据官网提供的方法登录连接到EC2服务器（官网推荐windows用户使用PUTTY连接）&lt;/p&gt;
-&lt;p&gt;  主机：是服务器的Public DNS&lt;br&gt;  端口：22&lt;/p&gt;
+&lt;p&gt; 主机：是服务器的Public DNS&lt;br&gt; 端口：22&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;创建root的密码，输入如下命令：&lt;/p&gt;
-&lt;p&gt;  sudo passwd root&lt;/p&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo passwd root&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;然后会提示你输入new password。输入一个你要设置的root的密码，需要你再输入一遍进行验证。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;接下来，切换到root身份，输入如下命令：&lt;/p&gt;
-&lt;p&gt;  su root&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;su root&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -96,6 +92,8 @@
     
     
       <category term="AWS" scheme="http://helloworld.zhoufei.name/tags/AWS/"/>
+    
+      <category term="Linux" scheme="http://helloworld.zhoufei.name/tags/Linux/"/>
     
   </entry>
   
