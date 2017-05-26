@@ -99,9 +99,9 @@
  主机：是服务器的Public DNS 端口：22
 
 创建root的密码，输入如下命令：
- 1sudo passwd root
+ 1$ sudo passwd root
 
-然后会提示你输入new">
+然后会提示你输入n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AWS学习笔记">
 <meta property="og:url" content="http://helloworld.zhoufei.name/2017-05-20-aws-note/index.html">
@@ -115,10 +115,10 @@
  主机：是服务器的Public DNS 端口：22
 
 创建root的密码，输入如下命令：
- 1sudo passwd root
+ 1$ sudo passwd root
 
-然后会提示你输入new">
-<meta property="og:updated_time" content="2017-05-19T03:13:49.071Z">
+然后会提示你输入n">
+<meta property="og:updated_time" content="2017-05-26T09:01:16.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AWS学习笔记">
 <meta name="twitter:description" content="aws的所有学习笔记
@@ -130,9 +130,9 @@
  主机：是服务器的Public DNS 端口：22
 
 创建root的密码，输入如下命令：
- 1sudo passwd root
+ 1$ sudo passwd root
 
-然后会提示你输入new">
+然后会提示你输入n">
 
 
 
@@ -418,29 +418,29 @@
 <p> 主机：是服务器的Public DNS<br> 端口：22</p>
 </li>
 <li><p>创建root的密码，输入如下命令：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo passwd root</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo passwd root</div></pre></td></tr></table></figure>
 </li>
 <li><p>然后会提示你输入new password。输入一个你要设置的root的密码，需要你再输入一遍进行验证。</p>
 </li>
 <li><p>接下来，切换到root身份，输入如下命令：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su root</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ su root</div></pre></td></tr></table></figure>
  <a id="more"></a>
 </li>
 <li><p>使用root身份编辑亚马逊云主机的ssh登录方式，找到 PasswordAuthentication no，把no改成yes。输入：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/ssh/sshd_config</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/ssh/sshd_config</div></pre></td></tr></table></figure>
 </li>
 <li><p>接下来，要重新启动下sshd，如下命令：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /sbin/service sshd restart</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo /sbin/service sshd restart</div></pre></td></tr></table></figure>
 </li>
 <li><p>然后再切换到root身份</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su root</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ su root</div></pre></td></tr></table></figure>
 </li>
 <li><p>再为原来的”ec2-user”添加登录密码。如下命令：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">passwd ec2-user</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ passwd ec2-user</div></pre></td></tr></table></figure>
 <p> 按提示，两次输入密码。</p>
 </li>
 <li><p>如果需要root用户登录，需修改sshd配置文件</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/ssh/sshd_config</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi /etc/ssh/sshd_config</div></pre></td></tr></table></figure>
 <p> PermitRootLogin这行改为</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PermitRootLogin yes</div></pre></td></tr></table></figure>
 <p> PasswordAuthentication no改为</p>
@@ -451,6 +451,43 @@
 <li><p>重启AWS VPS，就可以使用root正常登陆了</p>
 </li>
 </ol>
+<h3 id="安装常用软件"><a href="#安装常用软件" class="headerlink" title="安装常用软件"></a>安装常用软件</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>查看版本当前操作系统发行版信息</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cat /etc/issue</div><div class="line">Amazon Linux AMI release 2017.03</div><div class="line">Kernel \r on an \m</div></pre></td></tr></table></figure>
+</code></pre><p>查看当前操作系统版本内核信息</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ uname -a</div><div class="line"></div><div class="line">Linux ip-255-255-255-255 4.9.20-11.31.amzn1.x86_64 #1 SMP Thu Apr 13 01:53:57 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</div></pre></td></tr></table></figure>
+</code></pre><p>更新现有软件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo yum update</div></pre></td></tr></table></figure>
+<p>安装lrzsz</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yum -y install lrzsz</div></pre></td></tr></table></figure>
+<p>如果安装不成功</p>
+<p>安装gcc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo yum install gcc build-essential</div></pre></td></tr></table></figure>
+<p>去页面找到下载地址<br><a href="https://ohse.de/uwe/software/lrzsz.html" target="_blank" rel="external">https://ohse.de/uwe/software/lrzsz.html</a><br><a href="https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz" target="_blank" rel="external">https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz</a></p>
+<p>用命令下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget https://ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz</div></pre></td></tr></table></figure>
+<p>解压缩<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar -xzvf lrzsz-0.12.20.tar.gz</div></pre></td></tr></table></figure></p>
+<p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ cd lrzsz-0.12.20</div><div class="line"></div><div class="line">$ ./configure --prefix=/usr/local/lrzsz</div><div class="line"></div><div class="line">$ sudo make </div><div class="line"></div><div class="line">$ sudo make install </div><div class="line"></div><div class="line">$ cd /usr/bin</div><div class="line">$ ln -s /usr/local/lrzsz/bin/lrz rz</div><div class="line">$ ln -s /usr/local/lrzsz/bin/lsz sz</div></pre></td></tr></table></figure>
+<p>测试 rz  sz</p>
+<h4 id="更换JDK"><a href="#更换JDK" class="headerlink" title="更换JDK"></a>更换JDK</h4><p>查看jdk版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ java -version</div><div class="line">java version &quot;1.7.0_131&quot;</div><div class="line">OpenJDK Runtime Environment (amzn-2.6.9.0.71.amzn1-x86_64 u131-b00)</div><div class="line">OpenJDK 64-Bit Server VM (build 24.131-b00, mixed mode)</div></pre></td></tr></table></figure>
+<p>查询是否被安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ rpm -qa |grep java</div><div class="line">java-1.7.0-openjdk-1.7.0.131-2.6.9.0.71.amzn1.x86_64</div><div class="line">javapackages-tools-0.9.1-1.5.amzn1.noarch</div><div class="line">tzdata-java-2017b-1.69.amzn1.noarch</div></pre></td></tr></table></figure>
+<p>卸载JDK</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rpm -e --nodeps java-1.7.0-openjdk-1.7.0.131-2.6.9.0.71.amzn1.x86_64</div><div class="line">$ rpm -e --nodeps tzdata-java-2017b-1.69.amzn1.noarch</div></pre></td></tr></table></figure>
+<p>查询是否被安装(是否卸载成功)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rpm -qa |grep java</div><div class="line">javapackages-tools-0.9.1-1.5.amzn1.noarch</div></pre></td></tr></table></figure>
+<p>去官网找到下载链接，然后下载jdk 安装，JDK默认会安装到/usr/java/目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ wget --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm</div><div class="line">$ rpm -ivh jdk-8u131-linux-x64.rpm</div></pre></td></tr></table></figure>
+<p>配置JAVA_HOME,CLASSPATH,PATH环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi /etc/profile</div></pre></td></tr></table></figure>
+<p>添加下面几行后保存退出</p>
+<pre><code>export JAVA_HOME=/usr/java/jdk1.8.0_131
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=.:$JAVA_HOME/lib
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ source /etc/profile</div></pre></td></tr></table></figure>
+<p>查看安装成功，如下显示安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ java -version</div><div class="line">java version &quot;1.8.0_131&quot;</div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_131-b11)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -672,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#申请"><span class="nav-number">1.</span> <span class="nav-text">申请</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置root和ec2-user的shh登录"><span class="nav-number">2.</span> <span class="nav-text">设置root和ec2-user的shh登录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#申请"><span class="nav-number">1.</span> <span class="nav-text">申请</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置root和ec2-user的shh登录"><span class="nav-number">2.</span> <span class="nav-text">设置root和ec2-user的shh登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装常用软件"><span class="nav-number">3.</span> <span class="nav-text">安装常用软件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备"><span class="nav-number">3.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更换JDK"><span class="nav-number">3.2.</span> <span class="nav-text">更换JDK</span></a></li></ol></li></ol></div>
             
 
           </div>
